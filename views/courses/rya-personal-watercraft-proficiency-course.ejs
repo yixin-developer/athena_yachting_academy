@@ -1,0 +1,216 @@
+<%- include("../partials/headers/header-pwc"); -%>
+
+<section>
+
+  <!-- Cover image -->
+  <div>
+    <img src="/images/course-cover/course-cover-rya-personal-watercraft-proficiency-course.jpg" width="100%" class="top-image" alt="course-cover-rya-personal-watercraft-proficiency-course">
+  </div>
+
+  <div class="container-fluid course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>RYA Personal Watercraft Proficiency Course</b></h1>
+        <h6>FUN | SAFE | BEGINNER </h6>
+        <br> <%- include("../partials/summary-course"); -%>
+        <p class="lead course-subtitle"><em>Fast, fun and easy to handle, go from beginner to confident rider in just one day</em></p>
+        <br><br>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>This course is arranged upon request, please contact us or send us an enquiry if you're interested. 😉‍</b></p>
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-12">  
+          <iframe width="100%" height="250" src="https://www.youtube.com/embed/eLjbL0ceI-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        </div>
+      </div>
+
+      <!-- Course detail accordion -->
+      <div class="accordion" id="accordionExample">
+
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Course Overview
+              </button>
+            </h2>
+          </div>
+
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              Personal Watercraft (PW), commonly referred to as Jetskis, are fantastic and fun craft on which to go exploring. Small, lightweight and easily manoeuvrable, they are fast and exciting but need to be handled with care.
+              <br><br>
+              Whether you want to have a go on holiday or buy your own machine, our Personal Watercraft Proficiency course will teach you how to get the best from it and stay safe on the water.
+              <br><br>
+              Many UK harbours require PW riders to hold an RYA qualification to launch. You may also need an RYA certificate or ICC if you want to use your PW abroad.
+              <br><br>
+              RYA PWC Jet Ski Course is designed for first time and experienced riders alike who want to safely ride jet skis in open waters and to improve their skills..
+              <br><br>
+             The one day course teaches the rider to act responsibly as well as enjoying the thrill of speed on the water.
+              <br><br>
+              The course take place over one day and can be taken either on a centre's craft or your own.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Course Requirements
+              </button>
+            </h2>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+              <ul>
+                <li>Pre-course experience: None</li>
+                <!-- <li>Assumed knowledge: Theory well above the level of Day Skipper. It is recommended you complete the YM Coastal Skipper shorebased course beforehand.</li>  -->
+                <li>Duration: 1 day</li>
+                <li>12 (candidates aged 12-16 must only use PWs under the supervision of a responsible adult and their certificate will be endorsed accordingly)</li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Course Content
+              </button>
+            </h2>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              <p>
+               Launching, handling and recovery skills, passage planning and decision making, high and low speed riding skills, essential safety information, collision avoidance and orientation at sea, weather, safety & courtesy to others, emergencies, rules of the road, essential navigation, aftercare.
+              </p>
+              <p>
+               Course suppporting book: <a class="book-link" href="https://www.rya.org.uk/shop/p/rya-personal-watercraft-handbook-ebook"><em>RYA Personal Watercraft Course Notes</em></a>
+              </p>
+               <img src="/images/books/rya-personal-watercraft.jpeg" width="20%" alt="rya-personal-watercraft">
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingTen">
+            <h2 class="mb-0">
+              <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                Supporting Courses
+              </button>
+            </h2>
+          </div>
+          <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
+            <div class="card-body">
+             <p>It's recommended to take <a href="/courses/rya-essential-navigation-and-seamanship"><em>RYA Essential Navigation And Seamanship course</em></a> The course can be taken online, and is a basic introduction to navigation and safety for anyone new to boating: sailors, powerboaters, jetskier, sea anglers, divers and boatmasters. Also useful for experienced dinghy and keelboat sailors and inshore racers. </p>
+             <p>If you decide to take the course online, you will find many interactive exercises to help reinforce the information and lots of chances to try out what you've learned.</p>
+            <p>To book this course, simply add it in the <a href="/booking/courses/<%=courseName%>"><em>Course Booking Page</em></a>, and we will send you a log-in and instructions after receiving your booking.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="headingFive">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  Recommended to bring
+                </button>
+              </h2>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+              <div class="card-body">
+                <ul>
+                  <li>Sunglasses</li>
+                  <li>High factor sun cream</li>
+                  <li>Shorts (Please be aware that these are liable to get dirty or wet, so not your best ones!)</li>
+                  <li>T-Shirts</li>
+                  <li>Light long sleeved shirt if you need to cover up in the sun</li>
+                  <li>And above all, enthusiasm!</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="headingNine">
+              <h2 class="mb-0">
+                <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                  Frequently Asked Question
+                </button>
+              </h2>
+            </div>
+            <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+              <div class="card-body">
+                <p>For more details about course, booking, and certificate, please refer to the <a href="/blog/630f5b4e1289aa00040bf1c0"><em>FAQ's section.</em></a></p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <%- include("../partials/reviews"); -%>
+        <!-- Bottom buttons -->
+        <div class="course-bottom-buttons">
+          <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+          <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+          <% if(courseProfileFound.onlineLink != "") {%>
+          <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+          <%}%>
+              <% if(courseProfileFound.ryaLink != "") {%>
+          <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+          <%}%>
+      </div>
+
+    </div>
+    <div class="videos-wrapper">
+      <h3>Recommended videos:</h3>
+      <div class="videos-container">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/0MSWY2QI-10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/BQMpY3Xt8EQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/siaJexbF0t8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/ujpn5Orxx-U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      
+    </div>
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

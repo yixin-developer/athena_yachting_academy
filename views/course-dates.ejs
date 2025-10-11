@@ -1,0 +1,20 @@
+<%-include("partials/header")-%>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const promotions = document.querySelector('.home-page-promotion');
+      const navbarWrapper = document.querySelector('.navbar-wrapper');
+      navbarWrapper.after(promotions);
+      $('.navbar-wrapper').append(promotions);
+      promotions.style.position = 'relative';
+    })
+</script>
+
+<div class="home-page-promotion">
+    <a class="btn btn-warning" href="/shop/promotion">Promotion Click Here</a>
+</div>
+
+<div id="course-dates-app" class="course-dates-app"></div>
+<%-include("partials/components/CourseDatesApp")-%>
+
+<%-include("partials/footer")-%>

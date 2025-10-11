@@ -1,0 +1,254 @@
+<%- include("../partials/headers/header-powerboat-level1"); -%>
+
+<section>
+
+  <!-- Cover image -->
+  <div>
+    <img src="/images/course-cover/course-cover-rya-level-1-powerboating.jpg" width="100%" class="top-image" alt="course-cover-rya-level-1-powerboating">
+  </div>
+
+  <div class="container-fluid course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>RYA Level 1 Start Powerboating</b>
+          <h6>FUN | SAFE | BEGINNER </h6>
+          <br>
+        </h1> <%- include("../partials/summary-course"); -%>
+        <p class="lead course-subtitle"><em>This course is an introduction to boating techniques for launching and recovering a boat from a road trailer, everyday boat handling and the use of safety equipment.</em></p>
+        <br><br>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>This course is run on demand. Most beginner students choose to take <a href="/courses/rya-level-2-powerboat-handling"><em>Powerboat Level 2 Handling course</em></a> directly. Please send us an enquiry for latest availability. If you would like own boat tuition to complete this course please call us to discuss the options 😉‍</b></p>
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+              </div>
+            </div>
+          </div>
+
+          <%- include("../partials/maps/kalkara"); -%>
+
+              </div>
+            </div>
+
+            <!-- Course detail accordion -->
+            <div class="accordion" id="accordionExample">
+
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Course Overview
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      The RYA Powerboat Level 1 course provides a basic introduction to power boating and is suitable for children as well as adults. During the course you will learn about basic safety equipment, how to launch and recover the boat and use of a kill chord. You will also learn very basic boat manoeuvres including starting, stopping, leaving and coming alongside and securing to a mooring buoy.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Course Requirements
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul>
+                      <li>Pre-course experience: None</li>
+                      <li>Duration: 1 days</li>
+                      <li>Minimum age: 8. Certificates for under 16s will be endorsed as ‘qualified under the supervision of a responsible adult’. Under 18`s must be accompanied by a parent or guardian.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Course Content
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      Launch and recovery, preparation of boat and crew, boat handling, pick up and securing to a mooring buoy, leaving and coming alongside, being towed.
+                    </p>
+                    <p>
+                      Course supporting book: <a class="book-link" href="https://www.rya.org.uk/shop/p/rya-start-powerboating"><em>RYA Start Powerboating Course Notes</em></a>
+                    </p>
+                    <img src="/images/books/start-powerboating.jpeg" width="20%" alt="start-powerboating">
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                      Course Syllabus
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>Aim: To provide a practical introduction to boat handling and safety in powerboats.</p>
+                    <ul>
+                      <li>
+                        <div style="text-align: left;"><strong>Launch and recovery<br></strong>Consdierations to be taken during the launch<br>The use of a trailer or launching trolley<br>Considerations to be taken regarding sea conditions and hazards<br>Construction, width and condition of ramp/slipway<br></div>
+                      </li>
+                      <li>
+                        <div style="text-align: left;"><strong>Preparation of boat and crew<br></strong>Personal buoyancy and appropriae clothing<br>The use of the following equipment: lines, fenders, anchor and warp, bailer, fire extinguisher, pump, paddles or oars, compass, flares, torch, whistle, charts, first aid kit, sharp knife.<br>Perform the following: fasten a cleat and stow an anchor<br></div>
+                      </li>
+                      <li>
+                        <div style="text-align: left;"><strong>Boat handling<br></strong>Planning of boats: propeller angle and immersion, use of shallow drive<br>Low speed handling: ahead and astern<br>Displacement boats: handling ahead and astern, carrying way in neutral<br>How to carry out pre-start checks, including fuel tank and fuel bulb<br>Steering controls and windage<br>Steer and control boat speed<br>Start and stop the engine<br>Demonstrate the use of an appropriate length kill cord at all times<br></div>
+                      </li>
+                      <li>
+                        <div style="text-align: left;"><strong>Picking up and securing to a mooring buoy<br></strong>Preparation of mooring warps<br>Use of a boat hook<br>Method of approach<br>Crew communication<br>Making fast<br></div>
+                      </li>
+                      <li>
+                        <div style="text-align: left;"><strong>Leaving and coming alongside<br></strong>Wind effect<br>Approach in tidal stream or current<br>Leaving - ahead or astern<br>Demonstrste the use of painter, lines and fenders, attachment to boat, stowage under way<br>Control speed and angle approach<br>Make fast alongside<br></div>
+                      </li>
+                      <li>
+                        <div style="text-align: left;"><strong>Being towed<br></strong>Preparing own lines for towing<br>Accepting a tow<br>Securing tow lines<br>Trim and balance under tow<br></div>
+                      </li>
+                      <li>
+                        <div style="text-align: left;"><strong>Theory<br></strong>Loading and balancing the boat and the effect on handling and performance<br>Local byelaws and insurance<br>Crew numbers: minimum number in the boat, keeping a look-out<br>Awareness of other water users, inclusing effect of wash<br>Application or IRPCS. Understands rules 5 &amp; 6, and conduct around commercial shipping in confined waters<br></div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      Recommended To Bring
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul>
+                      <li>Sunglasses</li>
+                      <li>High factor sun cream</li>
+                      <li>Soft shoes with a non marking sole</li>
+                      <li>Shorts (Please be aware that these are liable to get dirty or wet, so not your best ones!)</li>
+                      <li>T-Shirts</li>
+                      <li>Fleece or jumper for the evenings and windy days at sea</li>
+                      <li>Light long sleeved shirt if you need to cover up in the sun</li>
+                      <li>Baseball/sun hat (preferably with a clip to stop it blowing overboard!)</li>
+                      <li>Sea sickness tablets should you need them</li>
+                      <li>And above all, enthusiasm!</li>
+                    </ul>
+                    <p>
+                      Please note that the temperatures in Malta are normally very warm during the day
+                      but it can be cold in the evenings and windy days at sea. It is a good idea to bring a
+                      small light rain mac if you have one and also a pair of long trousers and a warm
+                      fleece, just in case.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingNine">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                      Frequently Asked Question
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>For more details about course, booking, and certificate, please refer to the <a href="/blog/630f5b4e1289aa00040bf1c0"><em>FAQ's section.</em></a></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingEight">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                      RYA Powerboat Course System and Next Step
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <img src="/images/course-element/course-element-powerboat-course-system.jpg" width="100%" alt="RYA-powerboat-course-system">
+                    <a class="btn btn-primary btn-block" href="/courses/rya-level-2-powerboat-handling" role="button">Next step: RYA Level 2 Powerboat Handling &raquo</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <%- include("../partials/reviews"); -%>
+            <!-- Bottom buttons -->
+            <div class="course-bottom-buttons">
+              <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+              <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+              <% if(courseProfileFound.onlineLink != "") {%>
+              <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+              <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+              <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+              <%}%>
+      </div>
+
+    </div>
+
+    <div class="videos-wrapper">
+      <h3>Recommended videos:</h3>
+      <div class="videos-container">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/B_Sq3Py2nQw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/rI5bVAukFlE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/0tBXsgJmnm4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/3ixSWt1927U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      
+    </div>
+
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

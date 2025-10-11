@@ -1,0 +1,56 @@
+<%-include("partials/header")-%> <%- include("partials/faqs-data") -%>
+
+<section>
+  <div class="container-fluid faqs-background">
+    <div class="faqs-page">
+      <h1 class="mb-5">Frequently Asked Questions</h1>
+      <p class="lead">
+        You will be sent the
+        <a href="/files/9fc7a1b357d3ba558c7a9710307903d4.pdf"><u>Joining Instruction</u></a>
+        for practical sailing courses answering many of your questions, but here
+        are a few more details:
+      </p>
+      <br /><br />
+
+      <div class="faqs-container">
+        <div class="d-none d-md-block faqs-sections">
+          <div id="list-example" class="list-group">
+            <% faqsData.forEach(({id, title, accordion}) => {%>
+            <a class="list-group-item list-group-item-action" href="#<%=id%>"><%=title%></a>
+            <% }); %>
+          </div>
+        </div>
+
+        <div class="faqs-details scrollspy-example" data-spy="scroll" data-target="#list-example">
+          <% faqsData.forEach(({id, title, accordion}) => {%>
+          <div id="<%=id%>">
+            <h3><%= title%></h3>
+            <div class="accordion" id="accordionExample<%=id%>">
+              <% accordion.forEach(({title, text}, i) => { %>
+              <div class="card">
+                <div class="card-header" id="heading<%=id%>-<%=i%>">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse<%=id%>-<%=i%>" aria-expanded="true" aria-controls="collapse<%=id%>-<%=i%>">
+                      <%= title %>
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapse<%=id%>-<%=i%>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample<%=id%>">
+                  <div class="card-body">
+                    <%-text.replace(/\n/g, "<br />") %>
+                  </div>
+                </div>
+              </div>
+
+              <% })%>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script></script>
+<%-include("partials/footer")-%>

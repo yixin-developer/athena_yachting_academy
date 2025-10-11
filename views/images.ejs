@@ -1,0 +1,92 @@
+<%- include('partials/header') %>
+
+<section>
+  <div class="container-fluid images-background">
+    <div class="row">
+      <% if(files){ %> <% files.reverse().forEach(function(file) { %> <% if(isAuthenticated) {
+            %>
+      <div class="col-md-3">
+        <div class="card card-body mb-3">
+          <%if(file.isImage) {%>
+          <img width="100%" src="/images/<%= file.filename %>" />
+          <%} else {%>
+          <img width="100%" src="/images/document_icon.jpg" />
+          <%}%>
+                    <small>
+                        <%= file.filename %> <%= file.description%>
+          <a href="/images/category/<%= file.category%>">#<%= file.category%></a>
+          </small>
+          <form method="POST" action="/images/<%= file.filename %>?_method=DELETE">
+            <a class="btn btn-warning btn-block mt-2" href="/files/<%=file.filename%>">View</a>
+            <button class="btn btn-dark btn-block">Delete</button>
+          </form>
+        </div>
+      </div>
+      <%} else {%> <%if(file.isImage) {%>
+      <div class="col-md-3">
+        <div class="card card-body mb-3">
+          <img width="100%" src="/images/<%= file.filename %>" alt="This is not an image" />
+          <small>
+            <%= file.description%>
+            <a href="/images/category/<%= file.category%>">#<%= file.category%></a>
+          </small>
+          <!--  <a class="btn btn-warning btn-block mt-2" href="/files/<%=file.filename%>"></a> -->
+          <a type="button" class="btn btn-warning btn-block mt-2 viewModal" data-toggle="modal" data-target="#myModal-blog" data-img=<%=file.filename%>>
+            View
+          </a>
+        </div>
+      </div>
+      <%}}})} else {%>
+      <p>No images to show</p>
+      <% } %>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal-blog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-blog modal-body">
+          <span class="prev">&larr;</span>
+          <img width="400px" height="400px" id="modal-img" />
+          <span class="next" aria-hidden="true">&rarr;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", () => {
+    const modalButtons = document.querySelectorAll('.viewModal')
+    const myModal = document.getElementById('myModal-blog');
+
+    const modalImg = document.querySelector('#modal-img');
+    let currentIndex = 0;
+    myModal.querySelector('.prev').addEventListener('click', (e) => {
+      if (currentIndex > 0) {
+        modalImg.setAttribute('src', `/images/${modalButtons[currentIndex].dataset.img}`);
+        currentIndex--;
+      } else {
+        modalImg.setAttribute('src', `/images/${modalButtons[0].dataset.img}`);
+      }
+    });
+    myModal.querySelector('.next').addEventListener('click', (e) => {
+      if (currentIndex < modalButtons.length - 1) {
+        modalImg.setAttribute('src', `/images/${modalButtons[currentIndex].dataset.img}`);
+        currentIndex++;
+      } else {
+        modalImg.setAttribute('src', `/images/${modalButtons[modalButtons.length-1].dataset.img}`);
+      }
+    });
+
+    modalButtons.forEach((element, i) => {
+      element.addEventListener('click', (e) => {
+        currentIndex = i;
+        modalImg.setAttribute('src', `/images/${element.dataset.img}`);
+        $(myModal).modal('show');
+      });
+    });
+  })
+</script>
+<%- include('partials/footer') %>

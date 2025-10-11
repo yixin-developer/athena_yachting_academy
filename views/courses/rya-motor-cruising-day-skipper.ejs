@@ -1,0 +1,262 @@
+<%- include("../partials/header"); -%>
+
+<section>
+
+  <!-- Cover image -->
+  <div>
+    <img src="/images/course-cover/course-cover-rya-motor-cruising-day-skipper.jpg" width="100%" class="top-image" alt="course-cover-rya-motor-cruising-day-skipper">
+  </div>
+
+  <div class="container-fluid course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>RYA Motor Cruising Day Skipper</b></h1> <%- include("../partials/summary-course"); -%>
+        <p class="lead course-subtitle"><em>Take charge on short passages under instruction, with help and advice from your instructor.</em></p>
+        <br><br>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3  calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>Please contact us if you're interested in private class or on a different date 😉‍</b></p>
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+              </div>
+            </div>
+          </div>
+
+          <!-- the map -->
+          <%- include("../partials/maps/portomaso"); -%>
+
+              </div>
+            </div>
+
+            <!-- Course detail accordion -->
+            <div class="accordion" id="accordionExample">
+
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Course Overview
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      The aim of the RYA Day Skipper Motorboat Cruising & Power practical course is to teach pilotage, navigation, seamanship and large boat handling up to the standard required to skipper a motor cruiser safely by day in waters with which
+                      the student is familiar.
+                    </p>
+                    <p>
+                      The student will learn to skipper a short passage with the instructor on hand to give advice and encouragement and ensure your safety. Experience being in charge and taking control of the boat and the crew.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Course Requirements
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul>
+                      <li>Pre-course experience: Minimum RYA PB L2 or RYA Helmsman qualification and experience on twin engine boats</li>
+                      <li>Assumed knowledge: Theory to the level of Day Skipper. It is recommended you complete the Day Skipper shorebased course beforehand.</li>
+                      <li>Duration: 4 days</li>
+                      <li>Minimum age: 16. Under 18`s must be accompanied by a parent or guardian.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Course Content
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      Preparation for sea, deck work, navigation, pilotage, meteorology, rules of the road, maintenance and repair work, engines, victualling, emergency situations, boat handling under power, passage making, night cruising.
+                    </p>
+                    <p>
+                      Course book links: <a class="book-link" href="https://www.rya.org.uk/shop/p/rya-day-skipper-handbook-motor"><em>RYA Day Skipper Motor Handbook</em></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                      Course Details
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+
+                  <div class="card-body">
+                    Please note: This does not include accommodation.
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      Recommended to bring
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Recommended to bring with you:
+                    <br><br>
+                    <ul>
+                      <li>Sunglasses</li>
+                      <li>High factor sun cream (not oil please !)</li>
+                      <li>Deck shoes if possible, otherwise soft shoes with a non marking sole</li>
+                      <li>Shorts (Please be aware that these are liable to get dirty, so not your bestones!)</li>
+                      <li>T-Shirts</li>
+                      <li>Fleece or jumper for the evenings and windy days at sea</li>
+                      <li>Light long sleeved shirt if you need to cover up in the sun</li>
+                      <li>Baseball/sun hat (preferably with a clip to stop it blowing overboard!)</li>
+                      <li>Sea sickness tablets should you need them</li>
+                      <li>Sailing Gloves (if available)</li>
+                      <li>And above all, enthusiasm!</li>
+                    </ul>
+                    Please note that the temperatures in Malta are normally very warm during the day
+                    but it can be cold in the evenings and windy days at sea. It is a good idea to bring a
+                    small light rain mac if you have one and also a pair of long trousers and a warm
+                    fleece, just in case.
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="card">
+                <div class="card-header" id="headingSix">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      Provisioning
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                  <div class="card-body">
+                    The yacht will be provisioned for you upon your arrival with a basic welcome
+                    package, including ham, cheese, bread, soft drinks etc. We do not provide alcohol
+                    other than the initial welcome pack!
+                    <br><br>
+                    Please ensure you have taken adequate holiday insurance to cover personal
+                    belongings and injury. Most travel policies will cover sailing in their conditions but
+                    please do check this. It is also a good idea to collect the EHIC (European Health
+                    Insurance Card) form from your local post office or online at www.ehic.org.uk
+                    providing medical cover if it should be needed. This ensures immediate free medical
+                    treatment if needed.
+                    <br><br>
+                    Please note you are not in anyway obliged to buy the skippers evening meals but
+                    please do not be offended if they should not be able to eat out with you every night.
+                    We do hope that you understand and of course, if you should wish to, you are more
+                    than welcome to treat your skipper at any point (but you must not feel that you have
+                    to!) This is customary but not compulsory!
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingSeven">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                      Flight and On-arrival
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                  <div class="card-body">
+                    You need a flight to Malta International, airport code MLA. We are happy to help you
+                    find a flight if you would like us to.
+                    <br><br>
+                    On arrival at Malta airport, there is a kiosk at the exit from the airport where you
+                    can pre pay the taxi to the boat, or we can arrange for you to be collected by a local
+                    taxi firm. The cost of this is usually 25 Euro.The taxi drivers speak good English.
+                    <br><br>
+                    You will then have a short “live aboard” safety brief and then hopefully join us for a
+                    drink to celebrate your arrival and meet your crew mates!
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingEight">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                      RYA Motor Cruising Course System and Next Step
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <img src="/images/course-element/course-element-motor-cruising-course-system.png" width="100%" alt="RYA-motor-cruising-course-system">
+                    <a class="btn btn-dark btn-block" href="/courses/rya-motor-cruising-advanced-pilotage" role="button">Next step:<br> RYA Motor Cruising Advanced Pilotage &raquo</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <%- include("../partials/reviews"); -%>
+            <!-- Bottom buttons -->
+            <div class="course-bottom-buttons">
+              <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+              <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+              <% if(courseProfileFound.onlineLink != "") {%>
+              <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+              <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+              <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+              <%}%>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

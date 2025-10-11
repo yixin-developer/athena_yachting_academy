@@ -1,0 +1,124 @@
+<%- include("../partials/header"); -%>
+
+<section>
+
+  <!-- Cover image -->
+  <div>
+    <img src="/images/course-cover/course-cover-own-boat-tuition.jpeg" width="100%" class="top-image" alt="course-cover-rya-commercial-endorsements">
+  </div>
+
+  <div class="container-fluid course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>Own Boat Tuition</b></h1>
+        <h6>COMFORT | CONFIDENCE | CUSTOM MADE </h6>
+        <br>
+        <p class="lead course-subtitle"><em>Practical and private tuition tailored for each boat owner's need.</b></em></p>
+        <br>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>This course is arranged on request. Please contact us or send us an enquiry if you're interested. 😉‍</b></p>
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning  course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-12">
+            <iframe width="100%" height="250" src="https://www.youtube.com/embed/viAo7JEJO7o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Course detail accordion -->
+      <div class="accordion" id="accordionExample">
+
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button style="text-align: left" class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Own Boat Tuition Overview
+              </button>
+            </h2>
+          </div>
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              <p>We understand that sometimes you want to learn in the familiar environment of your own boat and people you know. Our instructors can teach you anything from a full RYA course to maybe just a day’s instruction focusing on your own individual requirements.</p>
+              <p>Instruction can be arranged any time that is suitable for you for a minimum of one day.</p>
+              <p><b>Cost: Sail or Power €400 per day.</b></p>
+              <p>There will be an extra charge to cover the instructor’s travel from Malta to Gozo and you will be responsible for feeding the instructor throughout the training. All running costs associated with the running of the boat will be borne by the owner. If you have booked in any tuition please make sure that you carry the basic equipment which will be needed.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingFour">
+            <h2 class="mb-0">
+              <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                Own Boat Tuition Check List
+              </button>
+            </h2>
+          </div>
+          <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionExample">
+            <div class="card-body">
+              <p><b>Equipment list for Own Boat Tuition</b></p>
+              <p>Anchor<br>Bilge pump (manual as well as electric)<br>Radar reflector<br>Flares for the waters in which you will use your boat<br>Fire extinguishers and fire blanket<br>Lifejackets (with harness) plus safety strops<br>Liferaft (not a necessity for the Solent)<br>Horse shoe buoy(s) with light
+                Dan buoy<br>Man overboard recovery equipment<br>VHF Radio
+                Navigational equipment (Almanac, charts, plotter, dividers and GPS)<br>First Aid kit<br>Mooring warps and fenders<br>Spare fuel<br>Tool kit<br>Depth and speed<br>Engine spars – fuel/oil filters, drive belt, impeller spare oil</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingTen">
+            <h2 class="mb-0">
+              <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                Own boat tuition Terms and conditions
+              </button>
+            </h2>
+          </div>
+          <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
+            <div class="card-body">
+              <p>The owner is considered to be the ‘skipper’ of the vessel at all times and is responsible for the vessel, the provisioning and fuel and for ensuring the vessel is fully insured, seaworthy, and with all boat papers in date and onboard to satisfy the local transport authority and maritime law of the country in which the training is taking place. If any accidents occur onboard during training the claim is to be made against the insurance of the boat. Sailing School Malta shall not be liable for any incidents or accidents onboard. The owner must notify their insurance company that there will be a qualified instructor on board delivering tuition but the owner remains the skipper at all times. It is also agreed that the owner’s insurance is fully comprehensive and covers all aspects of normal marine insurance for the area in which the skipper is expected to sail.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <%- include("../partials/reviews"); -%>
+      <!-- Bottom buttons -->
+      <div class="course-bottom-buttons">
+        <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+        <a class="btn btn-warning  course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+        <a href="https://www.rya.org.uk/knowledge/abroad/icc" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

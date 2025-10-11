@@ -1,0 +1,55 @@
+    <div class="swiper swiper-container mySwiper course-carousel">
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-wrapper">
+        <% files.forEach( (file) => {%>
+        <div class="swiper-slide">
+          <img src="/images/<%=file.filename%>" width="237px" height="133px" class="slider-img" loading="lazy" />
+        </div>
+        <% }); %>
+      </div>
+
+      <div class="swiper-pagination"></div>
+
+    </div>
+
+    <script type="text/javascript">
+      const BREAKPOINTS_CONFIG = {
+        500: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+        },
+        800: {
+          slidesPerView: 4,
+          slidesPerGroup: 4,
+        },
+        1100: {
+          slidesPerView: 5,
+          slidesPerGroup: 5,
+        },
+        1400: {
+          slidesPerView: 6,
+          slidesPerGroup: 6,
+        },
+        1700: {
+          slidesPerView: 7,
+          slidesPerGroup: 7,
+        },
+      };
+      const isMobile = window.innerWidth <= 480;
+      var swiper2 = new Swiper(".mySwiper", {
+        parallax: true,
+        slidesPerView: 1,
+        speed: 1800,
+        lazy: !isMobile,
+        breakpoints: BREAKPOINTS_CONFIG,
+        loop: !isMobile,
+        freeMode: isMobile,
+        touchRatio: isMobile ? 1.5 : 1,
+        grabCursor: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>

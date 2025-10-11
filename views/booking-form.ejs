@@ -1,0 +1,203 @@
+<%-include("partials/header")-%>
+
+<!-- application form -->
+<section>
+
+  <div class="container-fluid auto-generated-application-form-background">
+    <div id="HTMLtoPDF" class="auto-generated-application-form-page">
+      <h4>Sailing School Malta - Booking Form for RYA Courses</h4>
+      <p class="my-1">Tel: 00356 9964 3706 | Email: admin@sailingschoolmalta.com</p>
+      <p class="mb-3">Booking generated on <%=bookingFound.timeCreated%> Page 1/2</p>
+      <table>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Date of Birth</th>
+          <th>Nationality</th>
+          <th>Passport/ID</th>
+        </tr>
+        <tr>
+          <td>
+            <%=bookingFound.firstName%>
+          </td>
+          <td>
+            <%=bookingFound.lastName%>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <th>Address</th>
+        </tr>
+        <tr>
+          <td>
+            <%=bookingFound.address%>,<%=bookingFound.city%>,<%=bookingFound.state%>,<%=bookingFound.zip%>,
+            <%=bookingFound.country%>
+          </td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+        <tr>
+          <td>
+            <%=bookingFound.email%>
+          </td>
+          <td>
+            <%=bookingFound.phone%>
+          </td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <th>RYA Course Applied</th>
+          <th>Required Course date</th>
+          <th>No. Place</th>
+        </tr>
+        <tr>
+          <td>
+            <%=bookingFound.selectedCourseTitle%>
+          </td>
+          <td>
+            <%=bookingFound.selectedCourseDate%>
+            <%=bookingFound.preferedCourseDate%>
+          </td>
+          <td>
+            <%=bookingFound.numberOfPeople%>
+          </td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <th>Extra Product and Service Purchased</th>
+        </tr>
+        <tr>
+          <% if(bookingFound.extraItems.length===0 || bookingFound.extraItems[0].name===undefined) {%>
+          <td>
+            <%=bookingFound.extraItems%>
+          </td>
+          <%} else {%>
+          <% var String="" ; for(var i=0;i<bookingFound.extraItems.length;i++){ %>
+          <% String=String + bookingFound.extraItems[i].name + " x " + bookingFound.extraItems[i].quantity +"; "%>
+          <%}%>
+					<td><%=String%></td>
+          <%}%>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <th>Previous Experience (both practical and theoretical)</th>
+        </tr>
+        <tr>
+          <td>_______________________________________________________________________________________________________________________________________________________________________________________________________________</td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <th>Special Dietary Need</th>
+        </tr>
+        <tr>
+          <td>_______________________________________________________________________________________________________________________________________________________________________________________________________________</td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <th>Known Medical Conditions, Previous Injuries & Treatment</th>
+        </tr>
+        <tr>
+          <td>_______________________________________________________________________________________________________________________________________________________________________________________________________________</td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <th>No. Invoice</th>
+          <th>Subtotal</th>
+          <th>Discount Applied</th>
+          <th>Total</th>
+        </tr>
+        <tr>
+          <td><%=bookingFound.invoiceNumber%></td>
+          <td>EUR <%=bookingFound.totalBeforeDiscount%></td>
+          <td><%=bookingFound.totalPriceDiscount%> (EUR<%=bookingFound.discountAmount%>)</td>
+          <td>EUR <%=bookingFound.paymentAmount%></td>
+        </tr>
+      </table>
+
+      <p>page 2/2</p>
+      <table>
+        <tr>
+          <th>Declaration</th>
+        </tr>
+        <tr>
+          <td>
+            I declare that to the best of my knowledge, I am not suffering from Epilepsy, Giddy Spells, Asthma, Diabetes, Angina or other heart conditions (other than previously advised in confidence) and that I am fit to participate in the requested
+            course or trip. I have arranged adequate insurance cover.I agree to the GDPR procedures and Terms & Conditions provided in the website footer.
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <th>Signature</th>
+          <th>Date</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <th>Declaration for Skippers Courses</th>
+        </tr>
+        <tr>
+          <td>
+            I have read and understood the document Choosing the right RYA course for me and have the appropriate pre-requisite knowledge for the course I have booked.
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <th>Signature</th>
+          <th>Date</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <th>Note</th>
+        </tr>
+        <tr>
+          <td>
+            Passport photos are needed for issuing the licences. If booking for a group, please fill in seperate sheets for each course particpant and return the forms by email admin@sailingschoolmalta.com and bring the signed originals with you.
+          </td>
+        </tr>
+      </table>
+      <p class=" my-1">This is an automatically generated form</p>
+
+    </div>
+    <!-- here we call the function that makes PDF -->
+    <a href="#" class="btn btn-warning generate-pdf" onclick="HTMLtoPDF()">Generate PDF</a>
+  </div>
+</section>
+
+<!-- these js files are used for making PDF -->
+<script src="/pdf-generator/jspdf.js"></script>
+<script src="/pdf-generator/pdfFromHTML.js"></script>
+
+<%-include("partials/footer")-%>

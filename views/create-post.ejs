@@ -1,0 +1,58 @@
+<%- include("partials/header"); -%>
+
+<section>
+  <div class="container-fluid compose-background">
+    <div class="compose-page">
+      <h1>Create New Post</h1>
+      <br>
+
+      <form class="" action="/blog/post/create" method="post">
+        <div class="form-group">
+          <label>Images</label>
+          <input required class="form-control" type="text" name="images" placeholder="input uploaded image name here (required)">
+          <input class="form-control" type="text" name="images" placeholder="input uploaded image name here (optional)">
+          <input class="form-control" type="text" name="images" placeholder="input uploaded image name here (optional)">
+          <input class="form-control" type="text" name="images" placeholder="input uploaded image name here (optional)">
+          <input class="form-control" type="text" name="images" placeholder="input uploaded image name here (optional)">
+          <small><a href="/upload">Click to open upload page</a></small>
+          <br><br>
+          <label>Title</label>
+          <input class="form-control" type="text" name="title" required>
+          <br>
+          <label>Subtitle or Summary</label>
+          <input class="form-control" type="text" name="subtitle">
+          <br>
+          <label>Date</label>
+          <input class="form-control" type="date" name="date" required>
+          <br>
+          <label>Author</label>
+          <input class="form-control" type="text" name="author" required>
+          <br>
+          <label>Category</label>
+          <input class="form-control" type="text" name="category" list="category-select">
+          <datalist id="category-select" name="category" required>
+            <option value="Boats">Boats</option>
+            <option value="Courses">Courses</option>
+            <option value="Culture">Culture</option>
+            <option value="Students">Students</option>
+            <option value="News&Events">News&Events</option>
+            <option value="Trips">Trips</option>
+            <option value="CrewsLog">CrewsLog</option>
+            <option value="Opinion">Opinion</option>
+            <option value="Business">Business</option>
+            <option value="School">School</option>
+          </datalist>
+          <br>
+          <label>Content</label>
+          <textarea class="form-control" type="text" name="content" rows="5" cols="50" required></textarea>
+          <br>
+        </div>
+        <button class="btn btn-warning" id="submitPost" type="submit" name="button">Publish</button>
+      </form>
+
+    </div>
+
+  </div>
+</section>
+
+<%- include("partials/footer"); -%>

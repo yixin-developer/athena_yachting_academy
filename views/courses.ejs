@@ -1,0 +1,119 @@
+<%-include("partials/header")-%>
+
+<section>
+  <div class="container-fluid all-courses-background">
+    <!-- Titles -->
+    <div class="text-center">
+      <h1><b>A List of All Our Courses and Prices <%=new Date().getFullYear()%></b></h1>
+      <br />
+      <p class="lead text-center">
+        We are a Royal Yachting Association recognised sea school in Malta
+        running almost all the RYA courses up to Yachtmaster Ocean.
+      </p>
+      <!-- <p class="lead text-center">Our mission is to deliver sailing excellence for the novice to the more experienced sailors.</p> -->
+      <p class="lead text-center">
+        The prices of the courses are shown in euro. Discounts available for
+        families and groups (<a href="/contact#enquiry-form">contact us for discount code</a>).
+      </p>
+      <br /><br />
+    </div>
+
+    <div class="row">
+      <!-- Shorebased -->
+      <div class="col-md-2 course-columns">
+        <h5><a href="/courses/rya-shorebased-courses">Shorebased 📖📟</a></h5>
+        <br />
+        <ul>
+          <%courseProfilesFound.forEach(function(courseProfile,index){%> <% if
+          (courseProfile.category === "RYA Shorebased Courses"){%>
+          <li class="lead">
+            <a href="<%=courseProfile.courseLink%>"><%=courseProfile.title%>: <%=courseProfile.price%></a>
+          </li>
+          <%}})%>
+        </ul>
+      </div>
+      <!-- Sailing -->
+      <div class="col-md-2 course-columns">
+        <h5>
+          <a href="/courses/rya-practical-sail-cruising">Sail Cruising ⛵</a>
+        </h5>
+        <br />
+        <ul>
+          <%courseProfilesFound.forEach(function(courseProfile,index){%> <% if
+          (courseProfile.category === "RYA Practical Sail Cruising" &&
+          courseProfile.title !== "RYA Yachtmaster Fast Track"){%>
+          <li class="lead">
+            <a href="<%=courseProfile.courseLink%>"><%=courseProfile.title%>: <%=courseProfile.price%></a>
+          </li>
+          <%}})%>
+        </ul>
+      </div>
+      <!-- Motorboat -->
+      <div class="col-md-2 course-columns">
+        <h5>
+          <a href="/courses/rya-practical-motor-cruising">Motor Cruising 🛥</a>
+        </h5>
+        <br />
+        <ul>
+          <%courseProfilesFound.forEach(function(courseProfile,index){%> <% if
+          (courseProfile.category === "RYA Practical Motor Cruising"){%>
+          <li class="lead">
+            <a href="<%=courseProfile.courseLink%>"><%=courseProfile.title%>: <%=courseProfile.price%></a>
+          </li>
+          <%}})%>
+        </ul>
+      </div>
+      <!-- Powerboat -->
+      <div class="col-md-2 course-columns">
+        <h5><a href="/courses/rya-practical-powerboat">Powerboat 🚤</a></h5>
+        <br />
+        <ul>
+          <%courseProfilesFound.forEach(function(courseProfile,index){%> <% if
+          (courseProfile.category === "RYA Practical Powerboat"){%>
+          <li class="lead">
+            <a href="<%=courseProfile.courseLink%>"><%=courseProfile.title%>: <%=courseProfile.price%></a>
+          </li>
+          <%}})%>
+        </ul>
+      </div>
+      <!-- TM -->
+      <div class="col-md-2 course-columns">
+        <h5>
+          <a href="/courses/transport-malta-nautical-license">Transport Malta 🎫</a>
+        </h5>
+        <br />
+        <ul>
+          <%courseProfilesFound.forEach(function(courseProfile,index){%> <% if
+          (courseProfile.category === "Transport Malta"){%>
+          <li class="lead">
+            <a href="<%=courseProfile.courseLink%>"><%=courseProfile.title%>: <%=courseProfile.price%></a>
+          </li>
+          <%}})%>
+        </ul>
+      </div>
+      <!-- Other Courses -->
+      <div class="col-md-2 course-columns">
+        <h5><a href="#">Other Courses 🛳 </a></h5>
+        <br />
+        <ul>
+          <%courseProfilesFound.forEach(function(courseProfile,index){%> <% if
+          (courseProfile.category === "Other Courses"){%>
+          <li class="lead">
+            <a href="<%=courseProfile.courseLink%>"><%=courseProfile.title%>: POA</a>
+          </li>
+          <%}})%>
+        </ul>
+      </div>
+    </div>
+    <!-- Notes -->
+    <div>
+      <p class="lead course-subtitle">
+        * The final prices may vary from the above standard prices due to seasonal change
+         and promotions.
+      </p>
+      <br />
+    </div>
+  </div>
+</section>
+
+<%-include("partials/footer")-%>

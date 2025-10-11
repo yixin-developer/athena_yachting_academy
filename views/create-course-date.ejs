@@ -1,0 +1,187 @@
+<%- include("partials/header"); -%>
+
+<section>
+  <div class="container-fluid create-course-date-background">
+    <div class="create-course-date-page">
+      <h1>Course Date Creating Form</h1>
+      <br />
+      <form action="/course-dates/create" method="post">
+        <div class="form-group">
+          <label>Course title</label>
+          <input value="<%=course.title %>" class="form-control" type="text" name="title" id="title" list="course-select" />
+          <datalist required id="course-select" name="title">
+            <option value="RYA Start Yachting">RYA Start Yachting</option>
+            <option value="RYA Competent Crew">RYA Competent Crew</option>
+            <option value="RYA Day Skipper Practical">
+              RYA Day Skipper Practical
+            </option>
+            <option value="Day Skipper Plus Practical Course">
+              Day Skipper Plus Practical Course
+            </option>
+            <option value="RYA Coastal Skipper Practical">
+              RYA Coastal Skipper Practical
+            </option>
+            <option value="RYA Yachtmaster Preparation And Exam">
+              RYA Yachtmaster Preparation And Exam
+            </option>
+            <option value="RYA Yachtmaster Fast Track">
+              RYA Yachtmaster Fast Track
+            </option>
+            <option value="RYA Level 1 Powerboating">
+              RYA Level 1 Powerboating
+            </option>
+            <option value="RYA Level 2 Powerboat Handling">
+              RYA Level 2 Powerboat Handling
+            </option>
+            <option value="RYA Personal Watercraft Proficiency Course">
+              RYA Personal Watercraft Proficiency Course
+            </option>
+            <option value="RYA Start Motor Cruising">
+              RYA Start Motor Cruising
+            </option>
+            <option value="RYA Motor Cruising Helmsman">
+              RYA Motor Cruising Helmsman
+            </option>
+            <option value="RYA Motor Cruising Day Skipper">
+              RYA Motor Cruising Day Skipper
+            </option>
+            <option value="RYA Motor Cruising Coastal Skipper">
+              RYA Motor Cruising Coastal Skipper
+            </option>
+            <option value="RYA Motor Cruising Advanced Pilotage">
+              RYA Motor Cruising Advanced Pilotage
+            </option>
+            <option value="RYA Day Skipper Theory">
+              RYA Day Skipper Theory
+            </option>
+            <option value="RYA Coastal Skipper Yachtmaster Offshore Theory">
+              RYA Coastal Skipper Yachtmaster Offshore Theory
+            </option>
+            <option value="RYA Yacht Master Ocean Theory">
+              RYA Yacht Master Ocean Theory
+            </option>
+            <option value="RYA Marine Radio">RYA Marine Radio</option>
+            <option value="RYA Professional Practices And Responsibilities">
+              RYA Professional Practices And Responsibilities
+            </option>
+            <option value="RYA Diesel Engine">RYA Diesel Engine</option>
+            <option value="RYA First Aid">RYA First Aid</option>
+            <option value="RYA Radar">RYA Radar</option>
+            <option value="RYA Sea Survival">RYA Sea Survival</option>
+            <option value="RYA Commercial Endorsements">
+              RYA Commercial Endorsements
+            </option>
+            <option value="Transport Malta Nautical License">
+              Transport Malta Nautical License
+            </option>
+            <option value="Transport Malta Commercial Vessel Operations License">
+              Transport Malta Commercial Vessel Operations License
+            </option>
+            <option value="STCW Courses">STCW Courses</option>
+            <option value="Mile Builder">Mile Builder</option>
+            <option value="Flotilla Skipper Training">
+              Flotilla Skipper Training
+            </option>
+            <option value="Corporate Team Building">
+              Corporate Team Building
+            </option>
+          </datalist>
+          <br />
+
+          <label>Course category</label>
+          <input class="form-control" value="<%=course.category %>" type="text" name="category" id="category" value="<%= course.title %>" list="category-select" />
+          <datalist required id="category-select" name="category">
+            <option value="RYA Shorebased Courses">
+              RYA Shorebased Courses
+            </option>
+            <option value="RYA Practical Sail Cruising">
+              RYA Practical Sail Cruising
+            </option>
+            <option value="RYA Practical Motor Cruising">
+              RYA Practical Motor Cruising
+            </option>
+            <option value="RYA Practical Powerboat">
+              RYA Practical Powerboat
+            </option>
+            <option value="Transport Malta">Transport Malta</option>
+            <option value="STCW Courses">STCW Courses</option>
+            <option value="Online Courses">Online Courses</option>
+            <option value="Other Courses">Other Courses</option>
+          </datalist>
+          <br />
+
+          <label>Course start date</label>
+          <input required class="form-control" value="<%= course.date && new Intl.DateTimeFormat('sv-SE').format(new Date(course.date))  %>" type="date" name="date" />
+          <br />
+
+          <label>Course duration in days</label>
+          <input required class="form-control" type="number" value="<%= course.duration%>" name="duration" min="1" />
+          <br />
+
+          <label>Location</label>
+          <input class="form-control" type="text" name="location" value="<%= course.location%>" id="location" list="location-select" />
+          <datalist required id="location-select" name="title">
+            <option value=""></option>
+            <option value="Manoel Island Yacht Marina Ponton D">
+              Manoel Island Yacht Marina Ponton D
+            </option>
+            <option value="Portomaso Marina, St Julian">
+              Portomaso Marina, St Julian
+            </option>
+            <option value="Kalkara Marina, Kalkara">
+              Kalkara Marina, Kalkara
+            </option>
+            <option value="Geoemms 3, Triq Hal Kaprat, Santa Venera">
+              Geoemms 3, Triq Hal Kaprat, Santa Venera
+            </option>
+          </datalist>
+          <br />
+
+          <label>Instructor</label>
+          <input class="form-control" type="text" value="<%=course.instructor%>" name="instructor" id="instructor" list="instructor-select" />
+          <datalist required id="instructor-select" name="instructor">
+            <option value="Stephen Baynham">Stephen Baynham</option>
+            <option value="Mathew Aris">Mathew Aris</option>
+            <option value="Simon Bradburn">Simon Bradburn</option>
+          </datalist>
+          <br />
+
+          <label>Vessel</label>
+          <input class="form-control" type="text" name="vessel" value="<%=course.vessel%>" id="vessel" list="vessel-select" />
+          <datalist required id="vessel-select" name="vessel">
+            <option value="Look Far - Bavaria 44 - Four cabin version">
+              Look Far - Bavaria 44 - Four cabin version
+            </option>
+            <option value="Motor Cruiser">Motor Cruiser</option>
+            <option value="Powerboat">Powerboat</option>
+            <option value="Shorebased">Shorebased</option>
+          </datalist>
+          <br />
+
+          <label>Course capacity</label>
+          <input required class="form-control" value="<%=course.capacity%>" type="number" name="capacity" min="1" />
+          <br />
+
+          <label>Places available</label>
+          <input required class="form-control" value="<%=course.available%>" type="number" name="available" min="0" />
+          <br />
+
+          <label>Price per person</label>
+          <input required class="form-control" value="<%=course.pricePerson%>" type="number" name="pricePerson" min="0" />
+          <br />
+
+          <label>Price for exclusive use</label>
+          <input class="form-control" type="text" value="<%=course.priceExclusive%>" name="priceExclusive" min="0" />
+          <br />
+
+          <label>Other comment</label>
+          <textarea class="form-control" type="text" name="comment" rows="3"><%=course.comment%></textarea>
+          <br />
+        </div>
+        <button class="btn btn-warning" type="submit">Publish</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<%- include("partials/footer"); -%>

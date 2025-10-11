@@ -1,0 +1,381 @@
+<%- include("../partials/header"); -%>
+
+<section>
+
+  <!-- Cover image -->
+  <div>
+    <img src="/images/course-cover/course-cover-rya-day-skipper-theory.jpg" width="100%" class="top-image" alt="course-cover-rya-day-skipper-theory">
+  </div>
+
+  <div class="container-fluid course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>RYA Day Skipper Theory</b></h1>
+        <h6>BEGINNERS | SHOREBASED | NAVIGATION | SATISFACTION</h6>
+        <br>
+        <%- include("../partials/summary-course"); -%>
+        <p class="lead course-subtitle"><em>A comprehensive introduction to sail cruising for inexperienced skippers.</em></p>
+        <br><br>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <!-- calendar pop-up -->
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>Please note that if the dates listed are not suitable for you or you wish to have a course run at your own venue please contact us.😉‍</b></p>
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <a class="btn btn-info course-four-bottom" href="/courses/rya-day-skipper-package" role="button">DS Package &raquo;</a>        
+
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+              </div>
+            </div>
+          </div>
+
+          <%- include("../partials/maps/ssm"); -%>
+
+              </div>
+            </div>
+
+            <!-- Course detail accordion -->
+            <div class="accordion" id="accordionExample">
+
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Course Overivew
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      The RYA Day Skipper Theory course is a prelude(must) to the <a href="/courses/rya-day-skipper-practical"><em>Day Skipper Course Practical</em></a> and equips the aspiring skipper with enough knowledge to navigate around familiar waters by day. A basic knowledge of lights is also included to introduce you to night cruising.
+                    </p>
+                    <p>
+                      In the Day Skipper Theory course, students are taught the basics of coastal and inshore navigation and pilotage including chartwork, position fixing, plotting a course to steer, weather forecasting, a knowledge of tides and the International Regulations for Prevention of Collision at Sea.
+                    </p>
+                    <p>
+                      The first time you safely navigate to a new destination will give you an immense feeling of satisfaction. As well as navigation the RYA Day Skipper theory course will give students an understanding of different yacht types and the equipment they carry as well as safety procedures such as distress calls, use of flares, safety harnesses, life jackets and liferafts.
+                    </p>
+                    <p>
+                      RYA is continually updating our courses to take into account developments in technology and the electronic navigation aids now available on most cruising boats. In conjunction with the UK Hydrographic Office RYA has developed a chart plotter specifically for use on training courses, giving you a realistic insight into electronic navigation. Use of this plotter is an integral part of our Day Skipper shorebased course.
+                    </p>
+                    <p>
+                      The course is taught over 40 hours with two exam papers. It can be covered as a series of short sessions, as an intensive week-long course, or by <a href="/courses/rya-online-courses"><em>distance learning</em></a> .
+                    </p>
+                    <p>
+                      This course is the ideal method to advance to your next level – RYA Day Skipper Practical Course on board the yacht. On successful completion you will receive an official RYA certificate signed by your instructor.
+                    </p>
+                    <p>
+                      <b>We run Day Skipper Theory course almost every week Monday to Friday, all year round. You can book the course directly on our website and make the course fee payment by credit card, PayPal, or bank transfer. Just click <a href="/booking/courses/<%=courseName%>"><em>Book Now</em></a> button and you will be lead to a page where you can choose dates, number of participants, and fill other necessary information. We will send you a confirmation email together with joining instruction once the payment goes through.</b>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Course Requirements
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      No previous knowledge is required. It is likely you have your RYA Competent Crew or some previous sailing experience.
+                    </p>
+                    <p>
+                      Please note that we also offer a 10 day Day Skipper Package course covering 40 hours delivered in our classroom at our shore-based centre followed by 5 days <a class="book-link" href="/courses/rya-day-skipper-practical"><em>RYA Day Skipper Practical Course</em></a> onboard our training yacht, upon request and availability. The Day Skipper package course has a discount of 10%, and can also include VHF course as optional.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Course Syllubus
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <div>
+                      <p>A comprehensive introduction to chart work, navigation, meteorology and the basics of seamanship for Competent Crew. You will find this course invaluable if you want to learn to start making decisions onboard.;</p>
+                      <p>1. Nautical terms;</p>
+                      <ul>
+                        <li>Parts of a boat and hull ;</li>
+                        <li>General nautical terminology ;</li>
+                      </ul>
+                      <p>2. Ropework ;</p>
+                      <ul>
+                        <li>Knowledge of the properties of synthetic ropes in common use ;</li>
+                      </ul>
+                      <p>3. Anchorwork ;</p>
+                      <ul>
+                        <li>Characteristics of different types of anchor ;</li>
+                        <li>Considerations to be taken into account when anchoring ;</li>
+                      </ul>
+                      <p>4. Safety ;</p>
+                      <ul>
+                        <li>Knowledge of the safety equipment to be carried, its stowage and use (see RYA Boat Safety Handbook, C8) ;</li>
+                        <li>Fire precautions and fire fighting ;</li>
+                        <li>Use of personal safety equipment, harnesses and lifejacketsd. ;</li>
+                        <li>Ability to send a distress signal by VHF radiotelephonee. ;</li>
+                        <li>Basic knowledge of rescue procedures including helicopter rescue ;</li>
+                      </ul>
+                      <p>5. International Regulations for Preventing Collisions at Sea ;</p>
+                      <ul>
+                        <li>Steering and sailing rules (5,7,8,9,10 and 12-19) ;</li>
+                        <li>General rules (all other rules) ;</li>
+                      </ul>
+                      <p>6. Definition of position, course and speed ;</p>
+                      <ul>
+                        <li>Latitude and longitude ;</li>
+                        <li>Knowledge of standard navigational terms ;</li>
+                        <li>True bearings and courses ;</li>
+                        <li>The knot ;</li>
+                      </ul>
+                      <p>7. Navigational charts and publications ;</p>
+                      <ul>
+                        <li>Information shown on charts, chart symbols and representation of direction and distance ;</li>
+                        <li>Navigational publications in common use ;</li>
+                        <li>Chart correction ;</li>
+                      </ul>
+                      <p>8. Navigational drawing instruments ;</p>
+                      <ul>
+                        <li>Use of parallel rulers, dividers and proprietary plotting instruments ;</li>
+                      </ul>
+                      <p>9. Compass ;</p>
+                      <ul>
+                        <li>Application of variation ;</li>
+                        <li>Awareness of deviation and its causes ;</li>
+                        <li>Use of hand-bearing compass ;</li>
+                      </ul>
+                      <p>10. Chartwork ;</p>
+                      <ul>
+                        <li>Dead reckoning and estimated position including an awareness of leeway ;</li>
+                        <li>Techniques of visual fixing ;</li>
+                        <li>Satellite-derived positions ;</li>
+                        <li>Use of waypoints to fix position ;</li>
+                        <li>Course to steer ;</li>
+                      </ul>
+                      <p>11. Tides and tidal streams ;</p>
+                      <ul>
+                        <li>Tidal definitions, levels and datum ;</li>
+                        <li>Tide tables ;</li>
+                        <li>Use of Admiralty method of determining tidal height at standard port and awareness of corrections for secondary ports ;</li>
+                        <li>Use of tidal diamonds and tidal stream atlases for chartwork ;</li>
+                      </ul>
+                      <p>12. Visual aids to navigation ;</p>
+                      <ul>
+                        <li>Lighthouses and beacons, light characteristics ;</li>
+                      </ul>
+                      <p>13. Meteorology ;</p>
+                      <ul>
+                        <li>Sources of broadcast meteorological information ;</li>
+                        <li>Knowledge of terms used in shipping forecasts, including the Beaufort scale, and their significance to small craft ;</li>
+                        <li>Basic knowledge of highs, lows and fronts ;</li>
+                      </ul>
+                      <p>14. Passage planning ;</p>
+                      <ul>
+                        <li>Preparation of navigational plan for short coastal passagesb. Meteorological considerations in planning short coastal passages ;</li>
+                        <li>Use of waypoints on passaged. Importance of confirmation of position by an independent source ;</li>
+                        <li>Keeping a navigational ;</li>
+                      </ul>
+                      <p>15. Navigation in restricted visibility ;</p>
+                      <ul>
+                        <li>Precautions to be taken in, and limitations imposed by fog ;</li>
+                      </ul>
+                      <p>16. Pilotage ;</p>
+                      <ul>
+                        <li>Use of transits, leading lines and clearing lines ;</li>
+                        <li>IALA system of buoyage for Region A ;</li>
+                        <li>Use of sailing directions ;</li>
+                        <li>Pilotage plans and harbour entry ;</li>
+                      </ul>
+                      <p>17. Marine environment ;</p>
+                      <ul>
+                        <li>Responsibility for avoiding pollution and protecting the marine environment</li>
+                      </ul>
+                    </div>
+                    <p>
+                      Course books (included in the course package): <a class="book-link" href="https://www.rya.org.uk/shop/p/rya-day-skipper-shorebased-notes"><em>RYA Day Skipper Theory Notes</em></a>
+                    </p>
+                    <img src="/images/course-element/course-element-day-skipper-theory.jpg" width="20%" alt="day-skipper-theory-book">
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                      Course Details
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      Our classroom taught RYA Day Skipper Theory Course is available in a choice of formats. The first being run over 5 consecutive days, the second being 2 weekends including two Friday making up the 6 days. Alternatively, you can choose online course by clicking the Online Course button and go through the payment process. We will send you the login info once the payment is realized.
+                    </p>
+                    <p>
+                      Our course fee includes all the equipment and tools needed to successfully complete the course. Unlimited tea and coffee is included, as well as a free parking for the duration of the course. Also included within the course fee is the RYA Day Skipper Shorebased Notes book, charts for exercies, and other course supporting materials.
+                    </p>
+                    <p>
+                      During the 5 days of the course you will work from 9:30am to 5pm each day (we do stop for lunch & coffee breaks ! ) with sessions of instructor lead tuition followed by exercises to consolidate the new knowledge. Starting with safety and seamanship, then moving onto navigation and more. A small amount of homework will be given each night as we need to meet a 40 hours of tuition guideline.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      Recommended to Bring
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul>
+                      <li>Note book</li>
+                      <li>Pen</li>
+                      <li>2B pencil</li>
+                      <li>Eraser</li>
+                      <li>Course Plotter (we have one for you during the class and they are available for sale)</li>
+                      <li>Dividers (we have one for you during the class and they are available for sale)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingTen">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                      Supporting Courses
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>It highly recommended to take <a href="/courses/rya-marine-radio"><em>RYA Marine Radio VHF course</em></a>. VHF course will be useful if you want to do chartering in the future, because you are required to hold a VHF certificate for that purpose. The course is designed and created by RYA, and it will be given online. Once you complete the online course, you will have a 30 minutes exam with us during your stay in Malta. Usually it takes 1-2 days to complete. You can have exam during, or after DS Theory course.
+                    <p>To book VHF course, simply add it in the <a href="/booking/courses/<%=courseName%>"><em>Course Booking Page</em></a>, and we will send you a log-in and instructions after receiving your booking.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingSeven">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                      Flight and On-arrival
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>If you need a flight to Malta International, the airport code is MLA. There is only one airport.</p>
+                    <p>On arrival at Malta airport, there is a kiosk at the exit from the airport where you can pre pay the taxi to the boat. The cost of this is usually 20 Euro.The taxi drivers speak good English.</p>
+                    <p>Cheaper transport option would be use taxi app such as: Bolt, Ecab, Cool. There are plenty of taxi connected to these apps.</p>
+                    <p>The course is carried out in our school office: Geoemms 3, Triq Hal Kaprat, Santa Venera, SVR 1671, Malta. Please call Stephen +356 9964 3706 when you arrive. </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingNine">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                      Frequently Asked Question
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>For more details about course, logistics, accommodation, booking, and certificate, please refer to the <a href="/faqs"><em>FAQ's section.</em></a></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingEight">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                      Course System and Next Step
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <img src="/images/course-element/course-element-sail-course-system.jpeg" width="100%" alt="RYA-sail-course-system">
+                    <a class="btn btn-primary btn-block" href="/courses/rya-day-skipper-practical" role="button">Next step: RYA Day Skipper Practical &raquo</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <%- include("../partials/reviews"); -%>
+            <!-- Bottom buttons -->
+            <div class="course-bottom-buttons">
+              <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+              <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+              <% if(courseProfileFound.onlineLink != "") {%>
+              <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+              <%}%>
+        <a class="btn btn-info course-four-bottom" href="/courses/rya-day-skipper-package" role="button">DS Package &raquo;</a>
+
+        <% if(courseProfileFound.ryaLink != "") {%>
+              <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+              <%}%>
+      </div>
+
+    </div>
+
+    <div class="videos-wrapper">
+      <h3>Recommended videos:</h3>
+      <div class="videos-container">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/EsYoeT6dxC0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/zYmjew0-3fw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/z3XlLx_PvIA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/e2iebpyntoY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

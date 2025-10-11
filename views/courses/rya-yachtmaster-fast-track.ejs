@@ -1,0 +1,284 @@
+<%- include("../partials/header"); -%>
+
+<section>
+
+  <!-- Top video -->
+  <div class="container-video">
+    <iframe class="video-top" src="https://www.youtube.com/embed/4jYP2T7sNjo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="container-fluid video-course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>RYA Yachtmaster Fast-track Programme</b></h1><br>
+        <p class="lead course-subtitle"><em>Fast Track Yachtmaster is a 15 week program for thoese who looks for a career in the sailing industry. This structured program will prepare you for the examination that will give you the most respected RYA / MCA qualifications in the world. </em></p>
+        <br><br>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>Please contact us if you're interested in private class or on a different date 😉‍</b></p>
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+              </div>
+            </div>
+          </div>
+
+          <!-- the map -->
+          <%- include("../partials/maps/manoel"); -%>
+
+              </div>
+            </div>
+
+            <!-- Course detail accordion -->
+            <div class="accordion" id="accordionExample">
+
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Program Overview
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      Fast Track Yachtmaster is a 15 week course. We also run a halftrack course for those with suitable experience. Please call us to discuss these options.
+                    </p>
+                    <p>
+                      If you’re looking for a career in the sailing industry, we will teach and refine your skills and when you’re ready, organise examinations for RYA / MCA qualifications.
+                    </p>
+                    <p>
+                      Prior to the Yachtmaster exam we will ensure you have achieved a minimum of 2,500 sea miles at least half of which will be tidal. In reality you will log considerably more! Quality miles and expert tuition.
+                    </p>
+                    <p>
+                      If you put in the study hours both on and off the water you can achieve the coveted Yachtmaster qualification, known and respected throughout the world.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Course Content
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      The course includes:
+                    </p>
+                    <ul>
+                      <li>15 weeks half board</li>
+                      <li>DSC VHF course</li>
+                      <li>Yacht Maintenance</li>
+                      <li>Sail care and repair</li>
+                      <li>Knots and Splicing</li>
+                      <li>Sail Trimming</li>
+                      <li>RYA Theory courses</li>
+                      <li>RYA Competant Crew</li>
+                      <li>RYA Day Skipper</li>
+                      <li>RYA Coastal Skipper</li>
+                      <li>RYA Sea Survival</li>
+                      <li>RYA First Aid</li>
+                      <li>Self Skippering weeks</li>
+                      <li>Weather course</li>
+                      <li>Rigging and tuning</li>
+                      <li>All RYA courses, quality mileage, and skippered passages required for Yachtmaster</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Course Detail - Live the Dream!
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul>
+                      <li>Two Base sailing Malta and Canary Islands or the UK</li>
+                      <li>Don't get stuck in the same marina for months on end!</li>
+                      <li>Minimum of 2,500 sea miles</li>
+                      <li>Required 5 x 60 mile passages</li>
+                      <li>Visit different Marinas and Anchorages</li>
+                      <li>Maximum 5 students to a yacht</li>
+                      <li>Visiting differnt countries, eg. UK, Malta, Italy, Spain, Tunisia, Morocco and Portugal</li>
+                      <li>Excellent shore-based facilities, classrooms, and restaurants at the Royal Malta Yacht Club, Valletta</li>
+                      <li>Exam fees excluded</li>
+                      <li>Full range of modern yachts</li>
+                      <li>Big boat handling (45+ ft)</li>
+                      <li>Professional sailing on modern safe yachts in a warm and exciting sailing area. Enjoy sailing and live the dream!</li>
+                    </ul>
+                    <p>
+                      It is recommended that you undertake an MCA medical examination prior to the course in order for you to do your final Yachtmaster examination... Contact us for details.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      Certification
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      RYA Yachtmaster Department of Transport (DoT) certificates with option to add commercial endorsement and opening the path to Cruising Instructor and/or Ocean Yachtmaster.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingSix">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      Course requirements
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      Fastrackers - you must come with your own life jacket and harness, waterproofs, deck shoes, Breton / Portland plotter or similar, dividers, notepads and pencils. Please phone for advice before purchasing expensive items.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingSeven">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                      Yachtmaster Preparation
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      All students are ready to be prepared for the Yachtmaster Exam. The weeks training will be intense, focusing on the weaker points to ensure you are well above the standard required. We coach you at your pace so you benefit from
+                      one-to-one coaching. And finally the Big Day!
+                    </p>
+                    <p>
+                      You will be so well prepared, having sailed so many quality sea miles, entered a host of different marinas, sailed tidal and non-tidal waters that, although maybe a little nervous, you’ll skipper with confidence.
+                    </p>
+                    <p>
+                      You will be so well prepared, having sailed so many quality sea miles, entered a host of different marinas, sailed tidal and non-tidal waters that, although maybe a little nervous, you’ll skipper with confidence.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingEight">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                      Price Options
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul>
+                      <li>
+                        Fast Track Yachtmaster<br>
+                        15 weeks with half board accommodation for the duration<br>
+                        Total £9,295
+                      </li><br>
+
+                      <li>
+                        Fast Track Yachtmaster Plus includes STCW 95 <br>
+                        16 weeks with half board accommodation for the duration<br>
+                        Total £11,495 </li><br>
+
+                      <li>
+                        Half Track<br>
+                        For those with prior experience. Talk to us about your requirements first please.
+                      </li><br>
+
+                      <li>
+                        STCW Modules can be taken separately, call us for details. Update courses also available.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingNine">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                      RYA Sail Cruising Course System and Next Step
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <img src="/images/course-element/course-element-sail-course-system.jpeg" width="100%" alt="RYA-sail-course-system">
+                    <a class="btn btn-dark btn-block" href="/courses/rya-yachtmaster-ocean-theory" role="button">Next step: RYA Yachtmaster Ocean Theory &raquo</a>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+            <%- include("../partials/reviews"); -%>
+            <!-- Bottom buttons -->
+            <div class="course-bottom-buttons">
+              <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+              <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+              <% if(courseProfileFound.onlineLink != "") {%>
+              <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+              <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+              <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+              <%}%>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

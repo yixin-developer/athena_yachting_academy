@@ -1,0 +1,186 @@
+<%- include("../partials/header"); -%>
+
+<section>
+
+  <!-- Cover image -->
+  <div>
+    <img src="/images/course-cover/course-cover-rya-radar.jpg" width="100%" class="top-image" alt="course-cover-rya-radar">
+  </div>
+
+  <div class="container-fluid course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>RYA Radar</b></h1> <%- include("../partials/summary-course"); -%>
+        <p class="lead course-subtitle"><em>A one-day course giving you an understanding of radar as an aid to navigation and collision avoidance.</em></p>
+        <br><br>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>This course is arranged upon request, please contact us or send us an enquiry if you're interested. 😉‍</b></p>
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+              </div>
+            </div>
+          </div>
+
+          <!-- the map -->
+          <%- include("../partials/maps/ssm"); -%>
+
+              </div>
+            </div>
+
+            <!-- Course detail accordion -->
+            <div class="accordion" id="accordionExample">
+
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Course Overview
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      Cruising boats increasingly have radar on board. The International Regulations for the Prevention of Collisions at Sea state that if you have a radar, you must know how to use it.
+                    </p>
+                    <p>
+                      Radar is probably the most versatile of all electronic navigation aids, but the best results are only obtained when you know how to use all the functions correctly. It is not an all seeing eye, and can easily mislead those who do not understand its controls, allow for its limitations, or interpret its picture.
+                    </p>
+                    <p>
+                      The RYA Radar course starts from basics by looking at the way a radar set works and then goes on to demonstrate how the different adjustments and features available affect the working of the set. Other subjects covered include target definition, radar reflectors, types of radar displays, radar plotting and the use of radar for navigation and collision avoidance. At the end of the course students are awarded with an RYA Radar course certificate.
+                    </p>
+                    <p>
+                      The course can be conducted ashore using RYA approved software, or afloat on an authorised vessel.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Course Content
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <div id="phContent">The aim of the course is to teach students to use small boat Radar to assist decision-making in navigation, pilotage and collision avoidance. <p>1. Switching on and setting up </p>
+                      <ul>
+                        <li>Adjusting brilliance, contrast, gain, range and tuning </li>
+                      </ul>
+                      <p>2. Refining the picture </p>
+                      <ul>
+                        <li>Adjust the sea clutter and rain clutter controls to suit prevailing conditions Head up, North up mode </li>
+                      </ul>
+                      <p>3. Understanding the picture </p>
+                      <ul>
+                        <li>The factors affecting the clarity of the visual image </li>
+                      </ul>
+                      <p>4. Radar reflectors </p>
+                      <ul>
+                        <li>Understanding what affects the received image </li>
+                      </ul>
+                      <p>5. Fixing position by radar </p>
+                      <ul>
+                        <li>Plot the vessel's position. Use of VRM and EBL </li>
+                      </ul>
+                      <p>6. Pilotage by radar </p>
+                      <ul>
+                        <li>Understands how to prepare a simple pilotage plan including use of clearing ranges </li>
+                      </ul>
+                      <p>7. Collision avoidance </p>
+                      <ul>
+                        <li>Understands how to determine the risk of collision with another vessel </li>
+                        <li>CPA, course and speed </li>
+                        <li>The existence of automatic radar plotting aids (ARPA &amp; MARPA) </li>
+                        <li>The implications of IRPCS when in restricted visibility</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                      Course Requirement
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul>
+                      <li>Duration: 1 day</li>
+                      <li>Minimum age: None</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingEight">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                      RYA Shorebased Course System
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <img src="/images/course-element/course-element-shorebased-course-system.png" width="100%" alt="RYA-shorebased-course-system">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <%- include("../partials/reviews"); -%>
+            <!-- Bottom buttons -->
+            <div class="course-bottom-buttons">
+              <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+              <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+              <% if(courseProfileFound.onlineLink != "") {%>
+              <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+              <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+              <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+              <%}%>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

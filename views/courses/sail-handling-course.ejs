@@ -1,0 +1,312 @@
+<%- include("../partials/header"); -%>
+
+<section>
+
+  <!-- Cover image -->
+  <div>
+    <img src="/images/course-cover/course-cover-sail-handling-course.jpeg" width="100%" class="top-image" alt="course-cover-sail-handling-course">
+  </div>
+
+  <div class="container-fluid course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>Sail Handling Course</b></h1> <%- include("../partials/summary-course"); -%>
+        <p class="lead course-subtitle"><em>A hands on course that will unlock the mysteries of basic sail trim and enable you to gain more from your boat.</em></p>
+        <br><br>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3  calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>This course is arranged upon request, please contact us or send us an enquiry if you're interested. 😉‍ The course is delivered over 2 days, each day 0930 until approximately 1700, usually on a weekend, (usually arranged before Yachtmaster preparation and exam week). But the course is quite flexible.</b></p> 
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+              </div>
+            </div>
+          </div>
+
+          <!-- the map -->
+          <%- include("../partials/maps/ssm"); -%>
+
+              </div>
+            </div>
+
+            <!-- Course detail accordion -->
+            <div class="accordion" id="accordionExample">
+
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Course Overview
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      This 2-day intensive course is designed for sailors looking to refine their sail handling and advanced sail trim skills to improve performance, efficiency, and control.                    </p>
+                    <p>
+                      Covering rig tuning, sail trim adjustments, and essential maneuvers, this course enhances confidence in sailing under different conditions, mooring under sail, and handling emergency scenarios. Ideal for cruising sailors, mile builders, and Yachtmaster candidates, it provides structured, hands-on training with expert guidance from RYA-certified instructors.                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Course Content
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul>
+                      <li><strong>Sail Handling & Boat Control</strong>
+                          <ul>
+                              <li>Raising and dropping sails efficiently</li>
+                              <li>Mainsail hoist, reefing, and flaking</li>
+                              <li>Genoa and headsail control</li>
+                          </ul>
+                      </li>
+                  
+                      <li><strong>Essential Sailing Maneuvers</strong>
+                          <ul>
+                              <li>Efficient tacking & gybing techniques</li>
+                              <li>Adjusting sail trim for different wind angles</li>
+                              <li>Boat speed management – acceleration & deceleration</li>
+                          </ul>
+                      </li>
+                  
+                      <li><strong>Man Overboard (MOB) Recovery Under Sail</strong>
+                          <ul>
+                              <li>Turning techniques for quick and safe recovery</li>
+                              <li>Stopping and holding position under sail</li>
+                          </ul>
+                      </li>
+                  
+                      <li><strong>Sailing Onto a Mooring Buoy</strong>
+                          <ul>
+                              <li>Theoretical revision of techniques</li>
+                              <li>Practical mooring exercises under sail</li>
+                          </ul>
+                      </li>
+                  
+                      <li><strong>Understanding Rig Setup & Tuning</strong>
+                          <ul>
+                              <li>Differences between masthead and fractional rigs</li>
+                              <li>Optimizing rig tension for performance and safety</li>
+                              <li>Identifying and preventing rigging failures</li>
+                          </ul>
+                      </li>
+                  
+                      <li><strong>Fine-Tuning Sail Trim</strong>
+                          <ul>
+                              <li>Understanding tell-tales and airflow</li>
+                              <li>Adjusting draft, camber, twist, and traveler position</li>
+                              <li>Genoa car positioning for upwind & downwind sailing</li>
+                              <li>Reducing weather helm and improving balance</li>
+                          </ul>
+                      </li>
+                  
+                      <li><strong>Use of Spinnakers (where applicable)</strong>
+                          <ul>
+                              <li>Setting, trimming, and dousing the spinnaker</li>
+                              <li>Understanding asymmetrical vs. symmetrical spinnakers</li>
+                          </ul>
+                      </li>
+                  
+                      <li><strong>Anchoring Under Sail</strong>
+                          <ul>
+                              <li>Theory of approaching an anchorage under sail</li>
+                              <li>Practical anchoring exercise without engine assistance</li>
+                          </ul>
+                      </li>
+                  
+                      <li><strong>Rudderless Sailing</strong>
+                          <ul>
+                              <li>Steering the boat using sails alone</li>
+                              <li>Controlling boat direction with sheet tension and heel</li>
+                          </ul>
+                      </li>
+                  
+                      <li><strong>Sailing Onto a Pontoon</strong>
+                          <ul>
+                              <li>Docking under sail – precision boat control in tight spaces</li>
+                              <li>Managing boat speed and crew coordination</li>
+                          </ul>
+                      </li>
+                  
+                      <li><strong>Handling Strong Winds & Heavy Weather Sailing</strong>
+                          <ul>
+                              <li>Proper reefing techniques and depowering sails</li>
+                              <li>Balancing boat control and crew safety in high winds</li>
+                          </ul>
+                      </li>
+                  
+                      <li><strong>Race-Level Performance Optimization</strong>
+                          <ul>
+                              <li>Trimming techniques for speed and efficiency</li>
+                              <li>Maximizing upwind and downwind performance</li>
+                          </ul>
+                      </li>
+                  
+                      <li><strong>Final Skills Review & Debrief</strong>
+                          <ul>
+                              <li>Discussion of key learnings and areas for improvement</li>
+                              <li>Logbook updates for those working towards qualifications</li>
+                          </ul>
+                      </li>
+                  </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Course Requirement
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul>
+                      <li><strong>Recommended Experience</strong>
+                          <ul>
+                              <li>RYA Day Skipper level or above</li>
+                              <li>Basic understanding of sailing maneuvers and sail controls</li>
+                          </ul>
+                      </li>
+                  
+                      <li><strong>Who This Course Is For</strong>
+                          <ul>
+                              <li>Cruising sailors looking to improve sail handling skills</li>
+                              <li>Yachtmaster candidates preparing for advanced certification</li>
+                          </ul>
+                      </li>
+                  
+                      <li><strong>Physical Requirements</strong>
+                          <ul>
+                              <li>Ability to move safely around a yacht under sail</li>
+                              <li>Comfortable spending extended time on the water</li>
+                          </ul>
+                      </li>
+                  
+                      <li><strong>Required Gear</strong>
+                          <ul>
+                              <li>Non-marking deck shoes</li>
+                              <li>Weather-appropriate clothing (including waterproofs)</li>
+                              <li>Personal sailing gloves (optional but recommended)</li>
+                          </ul>
+                      </li>
+                  </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      Course Details
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul>
+                      <li><strong>Duration:</strong> 2 days (9:00 AM – 5:00 PM daily)</li>
+                      <li><strong>Instructor:</strong> RYA-certified sailing instructor</li>
+                      <li><strong>Group Size:</strong> Small groups for personalized instruction, 4:1 student to instructor ratio</li>
+                      <li><strong>Meals:</strong> Bring a packed lunch</li>
+                  </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      Why Take This Course?
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul>
+                      <li><strong>✔ Master sail trim and handling techniques for better sailing efficiency</li>
+                      <li><strong>✔ Improve confidence in maneuvering under sail alone</li>
+                      <li><strong>✔ Gain hands-on experience with advanced sailing skills</li>
+                      <li><strong>✔ Perfect for those preparing for offshore passages or Yachtmaster certification</li>
+                      <li><strong>✔ Learn in a structured and supportive environment with experienced instructors</li>
+                  </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingSix">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      Support Courses
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <a href="/courses/boat-handling-course">Boat Handling Course</a>
+                  </div>
+                </div>
+              </div>
+
+              
+
+            </div>
+
+            <%- include("../partials/reviews"); -%>
+            <!-- Bottom buttons -->
+            <div class="course-bottom-buttons">
+              <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+              <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+              <% if(courseProfileFound.onlineLink != "") {%>
+              <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+              <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+              <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+              <%}%>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

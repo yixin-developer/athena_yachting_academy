@@ -1,0 +1,567 @@
+<%- include("../partials/headers/header-day-skipper-practical"); -%>
+
+<section>
+
+  <!-- Cover video -->
+  <div class="container-video">
+    <iframe class="video-top" src="https://www.youtube.com/embed/5hArHpw1gxE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="container-fluid video-course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>RYA Day Skipper Practical</b></h1>
+        <h6>FUN | SAFE | CONFIDENCE BUILDING | PROGRESSION | SKIPPERING | PILOTAGE </h6>
+        <br>
+        <h6 class="text-center mb-4">⭐️⭐️⭐️⭐️⭐️ 5.0 based on 1000+ Happy Sailors</h6>
+        <br>
+        <%- include("../partials/summary-course"); -%>
+        <p class="lead course-subtitle"><em>A course for aspiring skippers with some yachting experience and basic navigation and sailing skills.</em></p>
+        <br><br>
+      </div>
+
+      <div class="d-flex justify-content-center mb-5">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/F6mc2ajAZnA?si=eMZmfRf9Pe9svGVf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>You can book the course directly online by clicking the Course Booking Button. Please contact us if you're interested in private class or on a different date 😉‍</b></p>
+                <a class="btn btn-primary course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/contact#enquiry-form" role="button">Send enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a target="_blank" rel="noopener noreferrer"  href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a target="_blank" rel="noopener noreferrer"  href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+                <a class="btn btn-info course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/courses/rya-day-skipper-theory" role="button">Day Skipper Theory &raquo;</a>
+                <a class="btn btn-info course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/courses/rya-day-skipper-package" role="button">Day Skipper Package &raquo;</a>
+                <a class="btn btn-info course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/courses/rya-day-skipper-fast-track" role="button">Day Skipper Fast-track (3 weeks) &raquo;</a>
+                <a class="btn btn-info course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/courses/rya-day-skipper-fast-track-practical-only" role="button">Day Skipper Fast-track (2 weeks) &raquo;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- the map -->
+          <%- include("../partials/maps/manoel"); -%>
+
+              </div>
+            </div>
+            <%- include("../partials/carousel"); -%>
+
+            <!-- Course detail accordion -->
+            <div class="accordion" id="accordionExample">
+
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      🧭 Course Overview
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                    <strong>RYA Day Skipper Practical</strong> is a must for skippers who wish to take out their family and friends, the entry level to skippering and a minimum qualification.
+                    </p>
+                    <p>
+                      The course is designed to teach you to "take charge" safely and confidently. A skipper does much more than navigate. He/She is responsible for the complete safety and wellbeing of the yacht and crew.
+                    </p>
+                    <p>
+                      The student will learn to skipper a short passage with the instructor on hand to give advice and encouragement and ensure your safety, have the experience being in charge and taking control of the yacht and the crew.
+                    </p>
+                    <p>
+                      There is particular emphasis on <strong>boat handling</strong> for Day Skippers and during the course you will practice mooring under various conditions. For those we need extra practicing and training of boat manoeuvring, we have a special <a target="_blank" rel="noopener noreferrer"  href="/courses/boat-handling-course"><u>Boat Handling Course</u></a> for that.
+                    </p>
+                    <p>
+                      Along the Day Skipper course, you will visit some great harbours, bays, and anchorages to practice pilotage techniques which, like boat handling, is an essential skill for the aspiring skipper. You will complete at least 4 night hours sailing to experience night pilotage and identify lights.
+                    </p>
+                    <p>
+                      Upon the completion of the course, the student is expected to be able to skipper a small yacht in familiar waters by day. Students who successfully complete the Day Skipper course are awarded the RYA Day Skipper practical course completion certificate.
+                    </p>
+                    <p>
+                      RYA Day Skipper Practical licence is the entry level and the minimum requirement for chartering yachts in many locations around the world, <strong>coupled it with your <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-marine-radio"><u>Marine Radio VHF license</u></a></strong>. This course will also enable you to <a target="_blank" rel="noopener noreferrer"  href="/courses/icc-assessment"><u>apply for the ICC</u></a> (International Certificate of Competence, limited to certain nationalities).
+                    </p>
+                    <p>
+                      The course lasts 5 days. Each day the course starts at 09:30 and ends at around 17:00 (except for the day of night sail). The course is usually run from Monday to Friday every week. Accommodation onboard during the course is included in the course price.
+                    </p>
+                    <p>
+                      You are also welcome to charter the whole yacht for yourself and take your RYA Day Skipper course in a more relaxed way for yourself and friends/family (they can take their RYA Competent Crew course with you at same time,  up to 5 students per course). More details on private group/family sailing course can be found <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-courses-family-sailing"><u>here</u></a>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      ☑️ Course Requirements
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                  <ul>
+                    <li>
+                      <strong>Pre-course experience:</strong> 5 days at sea, 100 nautical miles, and 4 night hours onboard a sailing yacht. If you haven't achieved this yet, we recommend starting with the <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-competent-crew"><u>RYA Competent Crew course</u></a>.
+                    </li>
+                    <li>
+                      <strong>Required knowledge:</strong> Navigation knowledge to <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-day-skipper-theory"><u>Day Skipper Theory</u></a> level and basic sailing ability. We highly recommend completing the theory component before attempting the practical.
+                    </li>
+                    <li>
+                      To prepare fully, you can take our <a target="_blank" rel="noopener noreferrer"  href="/courses/day-skipper-package"><u>Day Skipper Package Course</u></a>, which includes the <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-day-skipper-theory"><u>RYA Day Skipper Theory</u></a>, <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-day-skipper-practical"><u>RYA Day Skipper Practical</u></a>, and <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-vhf-radio"><u>RYA VHF Radio</u></a> course—offered with a 10% package discount.
+                    </li>
+                    <li>
+                      If you already hold a Day Skipper certificate but haven’t sailed in a while, consider our <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-day-skipper-plus-practical-course"><u>Day Skipper Refresher / Plus course</u></a> to rebuild your confidence and skills.
+                    </li>
+                    <li>
+                      <strong>Day Skipper Practical Course duration:</strong> Minimum of 5 days
+                    </li>
+                    <li>
+                      <strong>Minimum age:</strong> 16 years old
+                    </li>
+                  </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      📑 Course Syllabus
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">      
+                                        <div class="mb-3">
+                    <div class="horizontal-scroll-gallery d-flex flex-nowrap overflow-auto">
+                    <!-- RYA Competent Crew Course Gallery -->
+                    <img src="/images/day-skipper/rya-day-skipper-course-1.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/day-skipper/rya-day-skipper-course-1.webp" alt="RYA Day Skipper Course 1">
+                    <img src="/images/day-skipper/rya-day-skipper-course-2.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/day-skipper/rya-day-skipper-course-2.webp" alt="RYA Day Skipper Course 2">
+                    <img src="/images/day-skipper/rya-day-skipper-course-3.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/day-skipper/rya-day-skipper-course-3.webp" alt="RYA Day Skipper Course 3">
+                    <img src="/images/day-skipper/rya-day-skipper-course-4.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/day-skipper/rya-day-skipper-course-4.webp" alt="RYA Day Skipper Course 4">
+                    <img src="/images/day-skipper/rya-day-skipper-course-5.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/day-skipper/rya-day-skipper-course-5.webp" alt="RYA Day Skipper Course 5">
+                    <img src="/images/day-skipper/rya-day-skipper-course-6.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/day-skipper/rya-day-skipper-course-6.webp" alt="RYA Day Skipper Course 6">
+                    <img src="/images/day-skipper/rya-day-skipper-course-7.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/day-skipper/rya-day-skipper-course-7.webp" alt="RYA Day Skipper Course 7">
+                    <img src="/images/day-skipper/rya-day-skipper-course-8.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/day-skipper/rya-day-skipper-course-8.webp" alt="RYA Day Skipper Course 8">
+                    <img src="/images/day-skipper/rya-day-skipper-course-9.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/day-skipper/rya-day-skipper-course-9.webp" alt="RYA Day Skipper Course 9">
+                    <img src="/images/day-skipper/rya-day-skipper-course-10.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/day-skipper/rya-day-skipper-course-10.webp" alt="RYA Day Skipper Course 10">
+                    <img src="/images/day-skipper/rya-day-skipper-course-11.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/day-skipper/rya-day-skipper-course-11.webp" alt="RYA Day Skipper Course 11">
+                    <img src="/images/day-skipper/rya-day-skipper-course-12.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/day-skipper/rya-day-skipper-course-12.webp" alt="RYA Day Skipper Course 12">
+                    <img src="/images/day-skipper/rya-day-skipper-course-13.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/day-skipper/rya-day-skipper-course-13.webp" alt="RYA Day Skipper Course 13">
+                    <img src="/images/day-skipper/rya-day-skipper-course-14.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/day-skipper/rya-day-skipper-course-14.webp" alt="RYA Day Skipper Course 14">
+                    <img src="/images/day-skipper/rya-day-skipper-course-15.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/day-skipper/rya-day-skipper-course-15.webp" alt="RYA Day Skipper Course 15">
+                    <img src="/images/day-skipper/rya-day-skipper-course-16.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/day-skipper/rya-day-skipper-course-16.webp" alt="RYA Day Skipper Course 16">
+                    <img src="/images/day-skipper/rya-day-skipper-course-17.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/day-skipper/rya-day-skipper-course-17.webp" alt="RYA Day Skipper Course 17">
+                    <img src="/images/day-skipper/rya-day-skipper-course-18.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/day-skipper/rya-day-skipper-course-18.webp" alt="RYA Day Skipper Course 18">
+                    <img src="/images/day-skipper/rya-day-skipper-course-19.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/day-skipper/rya-day-skipper-course-19.webp" alt="RYA Day Skipper Course 19">
+                    <img src="/images/day-skipper/rya-day-skipper-course-20.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/day-skipper/rya-day-skipper-course-20.webp" alt="RYA Day Skipper Course 20">
+
+                    </div>
+                    </div>
+                    <!-- Image Modal -->
+                    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                        <div class="modal-content bg-transparent border-0">
+                          <div class="modal-body text-center">
+                            <img id="modalImage" src="" class="img-fluid rounded" alt="Full Size">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <script>
+                      $(document).ready(function () {
+                        $('#imageModal').on('show.bs.modal', function (event) {
+                          var img = $(event.relatedTarget);
+                          var src = img.data('src');
+                          $('#modalImage').attr('src', src);
+                        });
+                      });
+                    </script>        
+                    <p>
+                      The course syllubus includes: preparation for sea, deck work, navigation, pilotage, meteorology, rules of the road, maintenance and repair work, engines, victualling, emergency situations, yacht handling under power, yacht handling under sail, passage making,
+                      night cruising.
+                    </p>
+                    <p>Preparing for Sea</p>
+                    <ul>
+                      <li>We will supply you with a checklist-at the end of your course!</li>
+                    </ul>
+                    <p>Working on Deck</p>
+                    <ul>
+                      <li>Reefing for prevailing conditions</li>
+                      <li>Preparing a yacht for anchor</li>
+                      <li>Berthing alongside buoy, springing off and general boat handling</li>
+                    </ul>
+                    <p>Navigation on board</p>
+                    <ul>
+                      <li>Plotting fixes, using GPS, DR &amp; EP, tidal heights and streams, course to steer, ships log, depth log and lead line</li>
+                    </ul>
+                    <p>Pilotage</p>
+                    <ul>
+                      <li>Leading lines and transits, sounding etc</li>
+                    </ul>
+                    <p>Weather</p>
+                    <ul>
+                      <li>Interpretation of barometer and shipping forecasts, source of forecasts</li>
+                    </ul>
+                    <p>IRPCS</p>
+                    <ul>
+                      <li>Working knowledge</li>
+                    </ul>
+                    <p>Stocking up</p>
+                    <ul>
+                      <li>How to ensure enough of everything required is on board</li>
+                    </ul>
+                    <p>Emergency</p>
+                    <ul>
+                      <li>Must be able to recover an MOB</li>
+                    </ul>
+                    <p>Emergency equipment</p>
+                    <ul>
+                      <li>VHF &amp; distress messaging</li>
+                      <li>Towing (maybe with a real tow!)</li>
+                      <li>Helicopter rescue procedures</li>
+                    </ul>
+                    <p>Fix it!</p>
+                    <ul>
+                      <li>Can make minor repairs/impeller change for example</li>
+                    </ul>
+                    <p>Engines</p>
+                    <ul>
+                      <li>Thorough brief on fuel and cooling systems, including routine engine checks</li>
+                    </ul>
+                    <p>Handling a yacht under power</p>
+                    <p>Handling a yacht under sail</p>
+                    <p>Passage working</p>
+                    <ul>
+                      <li>Plan a passage, and undertake it with yacht and crew</li>
+                    </ul>
+                    <p>Night Cruising</p>
+                    <ul>
+                      <li>Now included in the DS syllabus to give day sailors experience of night entries</li>
+                    </ul>
+                    <p>More advanced boat handling and skippering skills</p>
+                    <ul>
+                      <li>Rafting up to another boat</li>
+                      <li>Sail onto/off your anchor</li>
+                      <li>Learn new and useful MOB techniques</li>
+                      <li>Sail setting and trimming skills</li>
+                      <li>Advanced pilotage including an introduction to CS/YM techniques</li>
+                      <li>Crew welfare including hygiene on board</li>
+                      <li>Theory revision on any topics of your choosing</li>
+                    </ul>
+                    <p>Supporting books for this course:</p>
+                    <a class="book-link" target="_blank" rel="noopener noreferrer"  href="https://www.rya.org.uk/shop/p/rya-day-skipper-practical-course-notes"><em>RYA Day Skipper Practical Course Notes</em></a>
+                    <br>
+                    <a class="book-link" target="_blank" rel="noopener noreferrer"  href="https://www.rya.org.uk/shop/p/rya-day-skipper-handbook-sail"><em>RYA Day Skipper Handbook Sail</em></a>
+                    <br>
+                    <img src="/images/course-element/course-element-day-skipper-note.jpg" width="20%" alt="day-skipper-note">
+                    <img src="/images/books/day-skipper-handbook.jpeg" width="20%" alt="day-skipper-handbook">
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                     ⛵️ More Details
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <div class="crew-course-details mb-4">
+                      <img src="/images/course-element/course-element-bavaria44.jpg" width="30%" alt="bavaria44" style="border-radius: 5px;">
+                      <img src="/images/course-element/course-element-bavaria44-galley.jpeg" width="30%" alt="bavaria44-galley" style="border-radius: 5px;">
+                      <img src="/images/course-element/course-element-clean-cabin.jpeg" width="30%" alt="bavaria44-cabin" style="border-radius: 5px;">
+                    </div>
+                    <p>
+                      <strong>Learn to Skipper a Yacht with Confidence – RYA Day Skipper Practical Course in Malta</strong>
+                    </p>
+                    <p>
+                      Master the essential skills to confidently skipper a small sailing yacht by day with the 
+                      <strong><a target="_blank" rel="noopener noreferrer"  href="/courses/rya-day-skipper-practical">RYA Day Skipper Practical course</a></strong>. 
+                      Based in sunny Malta, this hands-on 5-day sailing course covers key topics including coastal navigation, passage planning, practical pilotage, seamanship, and boat handling—such as Med-style mooring, a must for sailing in the Mediterranean.
+                    </p>
+                    <p>
+                      Unlike a traditional exam, assessment is continuous and based on your ability to safely skipper the yacht throughout the course. 
+                      If your instructor confirms that you're competent and safe to take a small yacht to sea in moderate conditions, 
+                      you’ll be awarded the <strong>RYA Day Skipper certificate</strong>.
+                    </p>
+                    <p>
+                      Eligible students may also convert this certificate into the <strong>ICC (International Certificate of Competence)</strong>, 
+                      which is required for chartering in many European waters, depending on your nationality.
+                    </p>
+                    <p>
+                      You’ll be training aboard “Lookfar,” a spacious Bavaria 44 Cruiser moored at 
+                      <strong>Manoel Island Marina</strong> in Malta—just a short walk from the popular Paparazzi restaurant. 
+                      The course begins daily at 09:30, and onboard accommodation is available and included from Monday to Friday. 
+                      Early boarding on Sunday or staying Friday night is possible by request.
+                    </p>
+                    <p>
+                      Weather permitting, you’ll explore the stunning Maltese Islands, including <strong>Gozo</strong> and <strong>Comino</strong>, 
+                      gaining real experience with navigation and pilotage. While most nights return to base, some night sailing will be included 
+                      to practice night navigation and identify lights at sea.
+                    </p>
+                    <p>
+                      With consistent winds, crystal-clear waters, and 300+ days of sunshine a year, 
+                      Malta is the ideal location to complete your RYA Day Skipper Practical course. 
+                      Join us and take the first step towards chartering your own yacht or building your sailing career!
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+                            <div class="card">
+                <div class="card-header" id="headingSix">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">🛏️ What is included</button>
+                  </h2>
+                </div>
+                <div id="collapseSix" class="collapse show" aria-labelledby="headingSix" data-parent="#accordionExample">
+                  <div class="card-body">
+                  
+                 <p>Our RYA Day Skipper Practical course is led by highly experienced instructors who are native English speakers and passionate about teaching sailing in a clear, friendly, and practical way. The course fee covers everything essential for a seamless learning experience, including port and mooring fees, fuel, tourist tax, and general yacht maintenance—so there are no hidden extras.
+                  </p>
+                  <p>You’ll stay onboard a well-equipped yacht, with three double cabins and one bunk bed cabin available for student accommodation. More details on <a target="_blank" rel="noopener noreferrer"  href="/yachts/lookfar"><u>accommodation onboard click here</u></a>. 
+                    </p>
+                    <p>
+                      Tea and coffee are provided daily onboard (alcohol is not included), and we recommend grabbing a light breakfast at the nearby Bus Stop Lounge (just 200 meters from the marina) and bringing along a packed lunch each day. You are also welcome to cook your own meals onboard in our fully equipped gally (kitchen).
+                  </p>
+                  <p>While not sailing, you have access to shore-based marina facilities including clean toilets and showers conveniently located by the marina gate. Our base at Manoel Island Yacht Marina is ideally situated in one of Malta’s most lively and scenic areas—full of shops, restaurants, and cafes all within walking distance.
+                  </p>
+                  <p>
+                    Upon successful completion of your <strong>RYA Day Skipper course</strong>, you’ll receive the official <strong>RYA Day Skipper Certificate</strong>—a globally recognised qualification and your first major step toward skippering a sailing yacht with confidence. This certificate proves you’re ready to take charge, plan passages, and ensure the safety of your crew and vessel in familiar waters by day. It also allows you to charter your own yacht from charter companies.
+                  </p>               
+                  
+                  </div>
+                </div>
+              </div>
+
+
+                            <div class="card">
+                <div class="card-header" id="headingTen">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                      📡 Supporting Courses
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <img src="/images/course-element/RYA-VHF-SRC-GMDSS-Marine-Radio-Assessment Medium.jpeg" alt="vhf course" width="300">
+                    <p>It highly recommended to take <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-marine-radio"><em>RYA Marine Radio VHF course</em></a>. VHF course will be useful if you want to do chartering in the future, because you are required to hold a VHF certificate for that purpose. The course is designed and created by RYA, and it will be given online. Once you complete the online course, you will have a 30 minutes exam with us during your stay in Malta. Usually it takes 1-2 days to complete. You can do it before, during, or after DSP course.
+                    <p>To book VHF course, simply add it in the Course Booking Page, and we will send you a log-in and instructions after receiving your booking.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      🎒 Recommended to bring
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      If you choose for accommodation onboard, full bedding is supplied, sheets, pillows and blankets. Also, we provide towels for use on the yacht but not beach towels. If you should require more than one towel during the week, please do bring your own additional towel.
+                    </p>
+                    <ul>
+                      <li>Packed lunch</li>
+                      <li>Sunglasses</li>
+                      <li>High factor sun cream</li>
+                      <li>Deck shoes if possible, otherwise soft shoes with a non marking sole, or just barefoot</li>
+                      <li>Shorts (Please be aware that these are liable to get dirty, so not your bestones!)</li>
+                      <li>T-Shirts</li>
+                      <li>Wash Kit</li>
+                      <li>Fleece or jumper for the evenings and windy days at sea</li>
+                      <li>Soft bag as opposed to a hard suitcase (we can store luggage if you are staying on)</li>
+                      <li>Light long sleeved shirt if you need to cover up in the sun</li>
+                      <li>Baseball/sun hat (preferably with a clip to stop it blowing overboard!)</li>
+                      <li>Sea sickness tablets should you need them</li>
+                      <li>Sailing Gloves (if available)</li>
+                      <li>Phone/ Ipod / lap top chargers – 12V (cigarette style chargers) if needed</li>
+                      <li>And above all, enthusiasm!</li>
+                    </ul>
+                    <p>
+                      Please note that the temperatures in Malta are normally very warm during the day
+                      but it can be cold in the evenings and windy days at sea. It is a good idea to bring a
+                      small light rain mac if you have one and also a pair of long trousers and a warm
+                      fleece, just in case. Please note that We don't provide wet weather gear onboard.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="card">
+                <div class="card-header" id="headingSeven">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                      ✈️ Flight and On-arrival
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>If you need a flight to Malta International, the airport code is MLA. There is only one airport. 
+                    </p>
+                    <p>
+                      Malta International Airport (MLA) is well connected to many European cities, especially major hubs. Low-cost carriers dominate many of the connections, especially from regional airports.
+                    </p>
+                    </p>
+                    <p>On arrival at Malta airport, there is a kiosk at the exit from the airport where you can pre pay
+                      the taxi to the boat. Destination: <a target="_blank" rel="noopener noreferrer"  href="https://www.google.com/maps?ll=35.902325,14.498923&z=15&t=m&hl=en&gl=MT&mapclient=embed&q=Manoel+Island+Yacht+Marina"><u>Manoel Island Yacht Marina Pontoon D.</u></a>
+                      </p>
+                    <p>The cost of this is usually 25 Euro. It only takes about 20 minutes to arrive our marina fron the airport. The taxi drivers speak good English.
+                    </p>
+                    <p>Cheaper transport option would be use taxi app such as: Bolt and Ecab. There are plenty of taxi
+                      connected to these apps.
+                    </p>
+                    <p>You will have a short safety brief on arrival to familiarise yourself with the boat and meet your
+                      crew mates!
+                    </p>                  
+                                    </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingNine">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                      🙋 Frequently Asked Question
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>For more details about course, logistics, accommodation, booking, and certificate, please refer to the <a target="_blank" rel="noopener noreferrer"  href="/faqs"><em>FAQ's section.</em></a></p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="card">
+                <div class="card-header" id="headingEight">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                      RYA Sail Cruising Course System and Next Step
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p><b>After completing the Day Skipper practical course it is really worthwhile consolidating what you have learnt by completing some more sea miles.</b> This could be achieved by joining our <a target="_blank" rel="noopener noreferrer"  href="/courses/mile-builder"><em>Malta-Sicily Mile Building Trip</em></a>, or just coming along for another week or weekend of refresher/consolidation training. Following this you should look to join the <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-coastal-skipper-yachtmaster-offshore-theory"><em>RYA Coastal Skipper/Yachtmaster Theory Course</em></a></p>
+                    <img src="/images/course-element/course-element-sail-course-system.jpeg" width="100%" alt="RYA-sail-course-system">
+                    <a class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer"  href="/courses/rya-coastal-skipper-yachtmaster-offshore-theory" role="button">Next step: RYA Coastal Skipper / Yachtmaster Offshore Theory &raquo</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <%- include("../partials/reviews"); -%>
+                        <!-- Feature on -->
+            <section>
+            <div class="container py-5 text-center">
+              <h2 class="font-weight-bold mb-4">As Featured on</h2>
+              <div class="row justify-content-center">
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/times-malta-logo.jpg" class="img-fluid grayscale" alt="times-malta-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/visit-malta-logo.png" class="img-fluid grayscale" alt="visit-malta-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/RMYC-logo.webp" class="img-fluid grayscale" alt="RMYC-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/yachting-world-logo.png" class="img-fluid grayscale" alt="yachting-world-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/classic-boat-logo.jpeg" class="img-fluid grayscale" alt="classic-boat-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/CA-logo.png" class="img-fluid grayscale" alt="CA-logo">
+                  </div>
+                </div>
+              </div>
+            </div>
+            </section>
+            <!-- Bottom buttons -->
+                            <div class="course-bottom-buttons">
+                <a class="btn btn-info course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/courses/rya-day-skipper-theory" role="button">Day Skipper Theory &raquo;</a>
+                <a class="btn btn-info course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/courses/rya-day-skipper-package" role="button">Day Skipper Package &raquo;</a>
+                <a class="btn btn-info course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/courses/rya-day-skipper-fast-track" role="button">Day Skipper Fast-track (3 weeks) &raquo;</a>
+                <a class="btn btn-info course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/courses/rya-day-skipper-fast-track-practical-only" role="button">Day Skipper Fast-track (2 weeks) &raquo;</a>
+      </div>
+            <div class="course-bottom-buttons">
+              <a class="btn btn-primary course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+              <a class="btn btn-warning course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+              <% if(courseProfileFound.onlineLink != "") {%>
+              <a target="_blank" rel="noopener noreferrer"  href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+              <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+              <a target="_blank" rel="noopener noreferrer"  href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+              <%}%>
+               </div>
+
+
+    </div>
+
+  
+    <div class="videos-wrapper">
+      <h3>Recommended videos to watch before course:</h3>
+      <div class="videos-container">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/pExM7u3fKoI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/SWIX6SUh-nc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/9Q6xCyaIi-0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/By0y8O7AbZw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

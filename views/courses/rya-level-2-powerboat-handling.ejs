@@ -1,0 +1,382 @@
+<%- include("../partials/headers/header-powerboat-level2"); -%>
+
+<section>
+
+  <!-- Cover image -->
+  <div id="carouselExampleCaptions" class="carousel nautical-carousel slide carousel-fade carousel-homepage" data-ride="">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="5"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="6"></li>
+    </ol>
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <%- include("../partials/carousel-pbl2-text"); -%>
+        <img src="/images/course-cover/course-cover-poweroat-level-2-handling-0.jpeg" class="d-block w-100" alt="transport-malta-nautical-licence">
+      </div>
+      <div class="carousel-item ">
+        <%- include("../partials/carousel-pbl2-text"); -%>
+        <img src="/images/course-cover/course-cover-poweroat-level-2-handling-1.jpeg" class="d-block w-100" alt="transport-malta-nautical-licence">
+      </div>
+      <div class="carousel-item">
+        <%- include("../partials/carousel-pbl2-text"); -%>
+        <img src="/images/course-cover/course-cover-transport-malta-nautical-license-2.jpeg" class="d-block w-100" alt="transport-malta-nautical-licence">
+      </div>
+      <div class="carousel-item">
+        <%- include("../partials/carousel-pbl2-text"); -%>
+        <img src="/images/course-cover/course-cover-poweroat-level-2-handling-3.jpeg" class="d-block w-100" alt="transport-malta-nautical-licence">
+      </div>
+      <div class="carousel-item">
+        <%- include("../partials/carousel-pbl2-text"); -%>
+        <img src="/images/course-cover/course-cover-transport-malta-nautical-license-6.jpeg" class="d-block w-100" alt="transport-malta-nautical-licence">
+      </div>
+      <div class="carousel-item">
+        <%- include("../partials/carousel-pbl2-text"); -%>
+        <img src="/images/course-cover/course-cover-transport-malta-nautical-license-3.jpg" class="d-block w-100" alt="course-cover-transport-malta-nautical-licence">
+      </div>
+      <div class="carousel-item">
+        <%- include("../partials/carousel-pbl2-text"); -%>
+        <img src="/images/course-cover/course-cover-transport-malta-nautical-license-4.png" class="d-block w-100" alt="transport-malta-nautical-licence">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <div class="container-fluid course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>RYA Level 2 Powerboat Handling</b></h1>
+        <h6>FUN | SAFE | CONFIDENCE | BEGINNER </h6>
+        <br>
+
+        <%- include("../partials/summary-course"); -%>
+        <p class="lead course-subtitle"><em>This entry level course provides the skills and background knowledge needed to drive a powerboat and is the basis of the International Certificate of Competence (ICC).</em></p>
+        <br><br>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>Please contact us if you're interested in private class or on a different date 😉‍</b></p>
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+              </div>
+            </div>
+          </div>
+
+          <%- include("../partials/maps/kalkara"); -%>
+
+              </div>
+            </div>
+
+            <%- include("../partials/carousel"); -%>
+
+            <!-- Course detail accordion -->
+            <div class="accordion" id="accordionExample">
+
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Course Overview
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      The two day RYA Powerboat Level 2 course is the perfect boat training course for a beginner or for sharpening existing boat handling skills.
+                    </p>
+                    <p>
+                      It aims to teach boat handling and seamanship in powerboats. It focuses on low speed close quarters handling, man overboard recovery, an introduction to driving at planing speed, and collision regulations.
+                    </p>
+                    <p>
+                      The student will also learn marina skills, as well as going onto the open sea, safety equipment, anchoring, securing to a buoy, high speed manoeuveres, and much more.
+                    </p>
+                    <p>
+                      The course provides a level of training that is ideal for anyone from the casual weekend user through to some commercial users. It is also advantageous to tender drivers on superyachts, to dive boat drivers, and to rib drivers.
+                    </p>
+                    <p>
+                      For Maltese residents, you may be eligible to sit the Transport Malta Nautical License exam after successfully completing this Powerboat Level 2 Handling course. You will need to pay an extra 140 euro Nautcial Licence exam fee for that purpose.
+                    </p>
+                    <p>
+                      This course will also enable you to apply for the ICC (International Certificate of Competence). This qualification is required by most European countries to validate your competence to own or charter a boat. The ICC obtained by presenting your Powerboat Level 2 certificate will cover powerboats up to 10 metres in length.
+                    </p>
+                    <p>
+                      You can book the course directly on our website and make the course fee payment by credit card. Just click <a href="/booking/courses/<%=courseName%>"><em>Book Now</em></a> button and you will be lead to a page where you can choose dates, number of participants, extra items to add, and fill other necessary information.
+                    </p>
+                    <p> <b> This course is ideal as a gift experience and like all our courses we can provide a gift voucher.</b> </p>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Course Requirements
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul>
+                      <li>Pre-course experience: None</li>
+                      <li>Duration: 2 days, usually over a weekend with a combination of both-shore based theory session and practical</li>
+                      <li>Minimum age: 12 (candidates under the age of 16 will be issued with an endorsed certificate)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Course Content
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      Launching and recovery, boat handling, securing to a buoy, anchoring, leaving and coming alongside, man overboard, use of the kill cord, high and low speed manoeuvering.
+                    </p>
+                    <p>
+                      Course supporting book: <a class="book-link" href="https://www.rya.org.uk/shop/p/rya-start-powerboating"><em>RYA Start Powerboating Course Notes</em></a>
+                    </p>
+                    <img src="/images/books/start-powerboating.jpeg" width="20%" alt="start-powerboating">
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                      Course Syllabus
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p><strong>An introductory RYA Power boating which covers the following</strong>:</p>
+                    <ul>
+                      <li>Personal Equipment</li>
+                      <li>Parts of the boat</li>
+                      <li>Launching</li>
+                      <li>Engine checks</li>
+                    </ul>
+                    <p><strong>Following our introduction you will cover:</strong></p>
+                    <ul>
+                      <li>Orientation to the power boat</li>
+                      <li>Basic controls</li>
+                      <li>Coming alongside and departing</li>
+                      <li>Rules of the road</li>
+                      <li>International Regulations for the Prevention of Collision at Sea</li>
+                      <li>Other Water Users and local bylaws</li>
+                    </ul>
+                    <p><strong>Out on the water our Instructors will introduce you to:</strong></p>
+                    <ul>
+                      <li>Crewing</li>
+                      <li>Low speed handling and engine trim</li>
+                      <li>Picking up a mooring buoy, towing</li>
+                      <li>High speed manoeuvring</li>
+                      <li>Recovery</li>
+                      <li>Orientation</li>
+                      <li>Boat Controls</li>
+                      <li>Coming alongside and leaving</li>
+                      <li>Turning in a confined space</li>
+                      <li>3 point turns</li>
+                      <li>Turning in length</li>
+                      <li>Figure of 8 forward and reverse</li>
+                      <li>Power Boat Chums Holding station</li>
+                      <li>Anchoring</li>
+                      <li>High speed U turns and S turns</li>
+                      <li>Engine trim</li>
+                      <li>Securing to a Buoy</li>
+                      <li>Man over board</li>
+                      <li>Pilotage with a compass</li>
+                      <li>and an introduction to GPS</li>
+                      <li>You will also cover chart work, safety equipment, fire fighting, meteorology, tides, buoyage, basic navigation and pilotage.</li>
+                    </ul>
+                    <p><strong>After successfully completing this course it is advisable to take the <a href="/courses/rya-marine-radio"><em>VHF/ SRC radio license.</em></a></strong></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingTen">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                      Supporting Course
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>It highly recommended to take <a href="/courses/rya-marine-radio"><em>RYA Marine Radio VHF course</em></a>. VHF course will be useful if you want to do chartering in the future, because you are required to hold a VHF certificate for that purpose. The course is designed and created by RYA, and it will be given online. Once you complete the online course, you will have a 30 minutes exam with us during your stay in Malta. Usually it takes 1-2 days to complete. You can do it before, during, or after the powerboat course.
+                    <p>To book VHF course, simply add it in the <a href="/booking/courses/<%=courseName%>"><em>Course Booking Page</em></a>, and we will send you a log-in and instructions after receiving your booking.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      Recommended to bring
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul>
+                      <li>Sunglasses</li>
+                      <li>High factor sun cream</li>
+                      <li>Soft shoes with a non marking sole</li>
+                      <li>Shorts (Please be aware that these are liable to get dirty or wet, so not your best ones!)</li>
+                      <li>T-Shirts</li>
+                      <li>Fleece or jumper for the evenings and windy days at sea</li>
+                      <li>Light long sleeved shirt if you need to cover up in the sun</li>
+                      <li>Baseball/sun hat (preferably with a clip to stop it blowing overboard!)</li>
+                      <li>Sea sickness tablets should you need them</li>
+                      <li>And above all, enthusiasm!</li>
+                    </ul>
+                    <p>
+                      Please note that the temperatures in Malta are normally very warm during the day
+                      but it can be cold in the evenings and windy days at sea. It is a good idea to bring a
+                      small light rain mac if you have one and also a pair of long trousers and a warm
+                      fleece, just in case.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="card">
+                <div class="card-header" id="headingSeven">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                      Flight and On-arrival
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>If you need a flight to Malta International, the airport code is MLA. There is only one airport in Malta.</p>
+                    <p>On arrival at Malta airport, there is a kiosk at the exit from the airport where you can pre pay the taxi to the boat. The cost of this is usually 25 Euro.The taxi drivers speak good English.</p>
+                    <p>Cheaper transport option would be use taxi app such as: Bolt, Ecab, Cool. There are plenty of taxi connected to these apps.</p>
+                    <p>You will have a short safety brief on arrival to familiarise yourself with the boat and meet your crew mates!</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingNine">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                      Frequently Asked Question
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>For more details about course, booking, and certificate, please refer to the <a href="/blog/630f5b4e1289aa00040bf1c0"><em>FAQ's section.</em></a></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingEight">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                      RYA Powerboat Course System and Next Step
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      Having completed this course you should aim to spend a season putting the skills learnt into practice and then return to attend the RYA Day Skipper Shorebased course.
+                    </p>
+                    <img src="/images/course-element/course-element-powerboat-course-system.jpg" width="100%" alt="RYA-powerboat-course-system">
+                    <a class="btn btn-primary btn-block" href="/courses/rya-day-skipper-theory" role="button">Next step: RYA Day Skipper Theory &raquo</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+
+
+            <%- include("../partials/reviews"); -%>
+            <!-- Bottom buttons -->
+            <div class="course-bottom-buttons">
+              <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+              <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+              <% if(courseProfileFound.onlineLink != "") {%>
+              <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+              <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+              <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+              <%}%>
+      </div>
+
+    </div>
+
+    <div class="videos-wrapper">
+      <h3>Recommended videos:</h3>
+      <div class="videos-container">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/B_Sq3Py2nQw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/rI5bVAukFlE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/0tBXsgJmnm4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/3ixSWt1927U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      
+    </div>
+
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

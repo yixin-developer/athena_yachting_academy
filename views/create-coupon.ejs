@@ -1,0 +1,41 @@
+<%- include("partials/header"); -%>
+
+<section>
+  <div class="container-fluid create-coupon-background">
+    <div class="create-coupon-page">
+      <h1>Generate New Coupon</h1>
+      <br>
+
+      <form action="/shop/coupon/create" method="post">
+        <div class="form-group">
+          <label>Coupon</label>
+          <input required class="form-control" type="text" id="coupon" name="coupon" placeholder="click to auto-generate or create your own" onclick="generateRandomCoupon(10);" value="">
+          <br>
+          <label>Discount</label>
+          <input required class="form-control" type="number" min="0" placeholder="x or xx positive integer only" name="discount">
+          <br>
+          <label>Expiration</label>
+          <input required class="form-control" type="date" name="expiration">
+          <br>
+        </div>
+        <button class="btn btn-warning btn-block" id="submitPost" type="submit">Create</button>
+      </form>
+
+    </div>
+
+  </div>
+</section>
+
+<script type="text/javascript">
+  function generateRandomCoupon(length) {
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    };
+    document.getElementById("coupon").value = result
+  }
+</script>
+
+<%- include("partials/footer"); -%>

@@ -1,0 +1,196 @@
+<%- include("../partials/header"); -%>
+
+<section>
+
+  <!-- Cover image -->
+  <div>
+    <img src="/images/course-cover/course-cover-boat-handling-course.jpeg" width="100%" class="top-image" alt="course-cover-boat-handling-course">
+  </div>
+
+  <div class="container-fluid course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>Boat Handling Course</b></h1> <%- include("../partials/summary-course"); -%>
+        <p class="lead course-subtitle"><em>A hands on course that will help improve your understanding of how a yacht handles under power and improve your boat handling in close quarters situations.</em></p>
+        <br><br>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3  calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>This course is arranged upon request, please contact us or send us an enquiry if you're interested. 😉‍ The course is delivered in the marina over 2 days, each day 0930 until approximately 1700, usually on a weekend, (usually arranged before Yachtmaster preparation and exam week). But the course is quite flexible.</b></p> 
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+              </div>
+            </div>
+          </div>
+
+          <!-- the map -->
+          <%- include("../partials/maps/ssm"); -%>
+
+              </div>
+            </div>
+
+            <!-- Course detail accordion -->
+            <div class="accordion" id="accordionExample">
+
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Course Overview
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      The boat handling course will go a long way to relieving those feelings of apprehension when the time comes to carry out a manoeuvre in a tight marina or in windy conditions. Your experienced instructor will explain the main factors that affect how a yacht handles under power and armed with this information you will have the chance to put theory into practice in a variety of situations.
+                    </p>
+                    <p>
+                      You will come away with a better understanding of how windage, prop walk, tide, rudder shape and prop wash effect your yacht and indeed can in many cases be harnessed to help you pull off a perfect manoeuvre. We are often asked about ways to moor up when short handed so time will also be spent looking at various methods to help. The day is run in a friendly and relaxed manner to help you get the most out of your time on the water.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Course Content
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul>
+                      <li>Bows and Stern to mooring</li>
+                      <li>Side to Mooring, Springing off in confined spaces</li>
+                      <li>Fore and Aft Springs</li>
+                      <li>The Centre Line – short-handed mooring alongside</li>
+                      <li>The Windward Line – mooring up and departing in windy conditions</li>
+                      <li>Prop Walk and Prop Wash</li>
+                      <li>Close Quarter Manoeuvering</li>
+                      <li>Power Turns</li>
+                      <li>Static and Stationary turns within the boat's own length</li>
+                      <li>Astern Manoeuvering in windy conditions or strong current</li>
+                      <li>Recovering from Engine failure in the Marina</li>
+                      <li>Crew and family training</li>
+                      <li>Trim Tabs and how to get the best use (Power)</li>
+                      <li>Twin Props – how to get the best from your power boat (Power)</li>
+                      <li>Single engine failure – how to berth and maneuver safely</li>
+                      <li>Marina Exercises</li>
+                  </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                      Course Requirement
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul>
+                      <li><strong>Recommended Experience</strong>
+                          <ul>
+                              <li>RYA Day Skipper level or above, and RYA Exam Prep candidates</li>
+                          </ul>
+                      </li>
+                  
+                      <li><strong>Who This Course Is For</strong>
+                          <ul>
+                              <li>Cruising sailors looking to improve boat handling skills</li>
+                              <li>Yachtmaster candidates preparing for advanced certification</li>
+                          </ul>
+                      </li>
+                  </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingEight">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                      Course Details
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul>
+                      <li><strong>Duration:</strong> 2 days (9:00 AM – 5:00 PM daily)</li>
+                      <li><strong>Instructor:</strong> RYA-certified sailing instructor</li>
+                      <li><strong>Group Size:</strong> Small groups for personalized instruction, 4:1 student to instructor ratio</li>
+                      <li><strong>Meals:</strong> Bring a packed lunch</li>
+                  </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingEight">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                      Support Courses
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <a href="/courses/sail-handling-course">Sail Handling Course</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <%- include("../partials/reviews"); -%>
+            <!-- Bottom buttons -->
+            <div class="course-bottom-buttons">
+              <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+              <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+              <% if(courseProfileFound.onlineLink != "") {%>
+              <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+              <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+              <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+              <%}%>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

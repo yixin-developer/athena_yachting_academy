@@ -1,0 +1,177 @@
+<%- include("../partials/header"); -%>
+
+<section>
+
+  <!-- Cover image -->
+  <div>
+    <img src="/images/course-cover/course-cover-rya-first-aid.jpg" width="100%" class="top-image" alt="course-cover-rya-first-aid">
+  </div>
+
+  <div class="container-fluid course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>RYA First Aid</b></h1> <%- include("../partials/summary-course"); -%>
+        <p class="lead course-subtitle"><em>Our one-day course covers all the usual first aid subjects, but from a boating perspective. It is aimed at anyone who goes afloat, whether on inland waters, rivers, estuaries or on cross channel
+            passages.</em></p>
+        <br><br>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>This course is arranged upon request, please contact us or send us an enquiry if you're interested. 😉‍</b></p>
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+              </div>
+            </div>
+          </div>
+
+          <!-- the map -->
+          <%- include("../partials/maps/ssm"); -%>
+
+              </div>
+            </div>
+
+            <!-- Course detail accordion -->
+            <div class="accordion" id="accordionExample">
+
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Course Overview
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      Our one-day course covers all the usual first aid subjects, but from a boating perspective. It is aimed at anyone who wish to take out their family and friends, goes afloat, whether on inland waters, rivers, estuaries or on cross
+                      channel passages.
+                    </p>
+                    <p>
+                      In a medical emergency a little first aid knowledge and immediate action can save lives, especially in remote locations. This one-day course is designed to provide a working knowledge of for the range of first aid situations one may encounter on a yacht at sea.
+                    </p>
+                    <p>
+                      It fulfils the requirements for:
+                    </p>
+                    <ul>
+                      <li>first aid training for vessels working up to area Category 2 under the Maritime and Coastguard Agency Codes of Practice for Small Vessels Operated Commercially;</li>
+                      <li>first aid training needed by offshore racers subject to World Sailing's Offshore Special Regulation OSR 6.05.2; </li>
+                      <li>the Health and Safety (First Aid) Regulations, 1981 for the purposes of Emergency First Aid at Work.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Course Content
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      Course subjects include:
+                    </p>
+                    <ul>
+                      <li>Basic Life Support</li>
+                      <li>The recovery position in a confined space</li>
+                      <li>CPR (Cardio Pulmonary Resuscitation), including the drowning protocol</li>
+                      <li>Cold water shock and hypothermia from immersion and/or exposure</li>
+                      <li>seasickness and dehydration</li>
+                      <li>Wounds and Bleeding</li>
+                      <li>Burns</li>
+                      <li>Shock</li>
+                      <li>Medical assistance or advice by VHF</li>
+                      <li>Helicopter rescue</li>
+                      <li>Automated External Defibrillator (AED)</li>
+                    </ul>
+                    You will receive a First Aid qualification valid normally for two years commercially. On successful completion you will be given an official RYA certificate signed by your Instructor
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                      Course Requirement
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul>
+                      <li>Duration: 1 day</li>
+                      <li>Minimum age: None</li>
+                      <li>No previous knowledge</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingEight">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                      RYA Shorebased Course System
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <img src="/images/course-element/course-element-shorebased-course-system.png" width="100%" alt="RYA-shorebased-course-system">
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+            <%- include("../partials/reviews"); -%>
+            <!-- Bottom buttons -->
+            <div class="course-bottom-buttons">
+              <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+              <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+              <% if(courseProfileFound.onlineLink != "") {%>
+              <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+              <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+              <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+              <%}%>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

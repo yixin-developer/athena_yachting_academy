@@ -1,0 +1,46 @@
+<%-include("partials/header")-%>
+
+<section>
+
+  <div class="container-fluid auto-generated-application-form-background">
+    <div id="HTMLtoPDF" class="auto-generated-application-form-page">
+      <h3>Sailing School Malta - Invoice Number: <%=transactionFound.transactions_invoice_number%></h3>
+      <h5>Payment Id: <%=transactionFound.id%></h5>
+      <hr>
+      <p>State: <%=transactionFound.state%></p>
+      <p>Cart: <%=transactionFound.cart%></p>
+      <p>Payment method: <%=transactionFound.payment_method%></p>
+      <p>Payer: <%=transactionFound.payer_info_first_name%> <%=transactionFound.payer_info_last_name%></p>
+      <p>Payer Id: <%=transactionFound.payer_info_id%></p>
+      <p>Payer email: <%=transactionFound.payer_info_email%></p>
+      <p>Payer address: <%=transactionFound.payer_info_address%>, <%=transactionFound.payer_info_city%>, <%=transactionFound.payer_info_state%>, <%=transactionFound.payer_info_postal_code%></p>
+      <p>Payer country code: <%=transactionFound.payer_info_country_code%></p>
+      <hr>
+      <p>Purchased items:</p>
+      <% if(transactionFound.transactions_item_list_items.length === 0){ %>
+      <p>Not provided by Stripe</p>
+      <%} else if (transactionFound.transactions_item_list_items.length != 0 && transactionFound.transactions_item_list_items[0].name===undefined){%>
+      <%transactionFound.transactions_item_list_items.forEach(function(item,index){%>
+      <p><%=item%></p>
+      <%})} else if(transactionFound.transactions_item_list_items.length != 0 && transactionFound.transactions_item_list_items[0].name){%>
+      <%transactionFound.transactions_item_list_items.forEach(function(item,index){%>
+      <p><%=item.name%>: EUR <%=item.price%> x <%=item.quantity%></p>
+      <%})};%>
+      <hr>
+      <p>Transaction Subtotal: EUR <%=transactionFound.transactions_amount_subtotal%></p>
+      <p>Transaction Discount Amount: EUR <%=transactionFound.transactions_amount_shipping_discount%></p>
+      <p>Transaction Total: EUR <%=transactionFound.transactions_amount_total%></p>
+      <hr>
+      <p>Created by: <%=transactionFound.created_by%></p>
+      <p>Created on: <%=transactionFound.create_time%></p>
+    </div>
+    <a href="#" class="btn btn-warning generate-pdf" onclick="HTMLtoPDF()">Generate PDF</a>
+  </div>
+
+</section>
+
+<!-- these js files are used for making PDF -->
+<script src="/pdf-generator/jspdf.js"></script>
+<script src="/pdf-generator/pdfFromHTML.js"></script>
+
+<%-include("partials/footer")-%>

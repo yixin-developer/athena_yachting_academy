@@ -1,0 +1,85 @@
+<%- include("partials/header"); -%>
+
+<section>
+  <div class="container-fluid create-extra-item-background">
+    <div class="create-extra-item-page">
+      <h1>New Product/Service Creating Form</h1>
+      <br>
+
+      <form action="/shop/extra-item/create" method="post">
+        <div class="form-group">
+          <label>Name</label>
+          <input required class="form-control" type="text" name="name">
+          <br>
+          <label>Price</label>
+          <input required class="form-control" type="number" min="0" name="price">
+          <br>
+          <label>Unit</label>
+          <input required class="form-control" type="text" name="unit">
+          <br>
+          <label>Category</label>
+          <input required class="form-control" type="text" name="category" list="category-select">
+          <datalist id="category-select" name="cateogry" required>
+            <option value="non-trip">non-trip</option>
+            <option value="trip">trip</option>
+          </datalist>
+          <br>
+          <label>Brief description</label>
+          <textarea required class="form-control" type="text" name="description" rows="3"></textarea>
+          <br>
+          <label>Inventory</label>
+          <input class="form-control" type="number" min="0" name="inventory">
+          <br>
+          <label>Images</label>
+          <input required class="form-control" type="text" name="images" placeholder="input uploaded image name here (required)">
+          <input class="form-control" type="text" name="images" placeholder="input uploaded image name here (optional)">
+          <input class="form-control" type="text" name="images" placeholder="input uploaded image name here (optional)">
+          <input class="form-control" type="text" name="images" placeholder="input uploaded image name here (optional)">
+          <input class="form-control" type="text" name="images" placeholder="input uploaded image name here (optional)">
+          <small><a href="/upload">Click to open upload page</a></small>
+          <br><br>
+
+          <label>Aplicable courses:</label><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Start Yachting"> RYA Start Yachting</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Competent Crew"> RYA Competent Crew</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Day Skipper Practical"> RYA Day Skipper Practical</input><br>
+          <input type="checkbox" name="applicableCourses" value="Day Skipper Plus Practical Course"> Day Skipper Plus Practical Course</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Coastal Skipper Practical"> RYA Coastal Skipper Practical</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Yachtmaster Preparation And Exam"> RYA Yachtmaster Preparation And Exam</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Yachtmaster Fast Track"> RYA Yachtmaster Fast Track</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Yachtmaster Package"> RYA Yachtmaster Package</input><br>
+          <input type="checkbox" name="applicableCourses" value="Transport Malta Nautical License"> Transport Malta Nautical License</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Level 1 Powerboating"> RYA Level 1 Powerboating</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Level 2 Powerboat Handling"> RYA Level 2 Powerboat Handling</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Personal Watercraft Proficiency Course"> RYA Personal Watercraft Proficiency Course</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Start Motor Cruising"> RYA Start Motor Cruising</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Motor Cruising Helmsman"> RYA Motor Cruising Helmsman</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Motor Cruising Day Skipper"> RYA Motor Cruising Day Skipper</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Motor Cruising Coastal Skipper"> RYA Motor Cruising Coastal Skipper</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Motor Cruising Advanced Pilotage"> RYA Motor Cruising Advanced Pilotage</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Day Skipper Theory"> RYA Day Skipper Theory</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Coastal Skipper Yachtmaster Offshore Theory"> RYA Coastal Skipper Yachtmaster Offshore Theory</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Yacht Master Ocean Theory"> RYA Yacht Master Ocean Theory</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Marine Radio Src"> RYA Marine Radio Src</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Professional Practices And Responsibilities"> RYA Professional Practices And Responsibilities</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Diesel Engine"> RYA Diesel Engine</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA First Aid"> RYA First Aid</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Radar"> RYA Radar</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Sea Survival"> RYA Sea Survival</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Commercial Endorsements"> RYA Commercial Endorsements</input><br>
+          <input type="checkbox" name="applicableCourses" value="STCW Courses"> STCW Courses</input><br>
+          <input type="checkbox" name="applicableCourses" value="Mile Builder"> Mile Builder</input><br>
+          <input type="checkbox" name="applicableCourses" value="Flotilla Skipper Training"> Flotilla Skipper Training</input><br>
+          <input type="checkbox" name="applicableCourses" value="RYA Courses Family Sailing"> RYA Courses Family Sailing</input><br>
+          <br>
+        </div>
+        <button class="btn btn-warning" type="submit">Create</button>
+      </form>
+
+    </div>
+
+  </div>
+</section>
+
+
+<%- include("partials/footer"); -%>

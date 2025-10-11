@@ -1,0 +1,48 @@
+<%-include("partials/header")-%>
+
+<section>
+
+  <!-- Cover image-->
+  <div>
+    <img src="/images/course-category-cover/course-category-cover-rya-practical-motor-cruising.jpg" width="100%" class="top-image" alt="course-category-cover-rya-practical-motor-cruising">
+  </div>
+
+  <div class="container-fluid">
+
+    <!-- Category title -->
+    <div class="text-center">
+      <h1 class="courses-category-title">RYA Practical Motor Cruising Courses</h1>
+      <h5 class="lead">Whether your looking to work as a Superyacht Deckhand, Yacht Captain or even if it is for your own yacht, we have the right course for you. </h5>
+      <h5 class="lead"> Malta's ideal weather conditions make it the ideal place for learning motor cruising.</h5>
+      <br>
+      <a class="lead" href="/files/2bca4785f95c5fbcc5524c08925bd8f2.pdf">
+        <h6>Download RYA Motor Cruising Courses System</h6>
+      </a>
+      <br>
+    </div>
+
+    <!-- Course card -->
+    <div class="row">
+      <% coursesFound.forEach(function(course,index){ %>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card bg-light course-profile-card ">
+          <%- include("partials/course-card-info", {course: course}); -%>
+          <div class="card-body">
+            <a href=<%=course.courseLink%>> <h4 class="card-title"><%=course.title%></h4></a>
+            <p class="lead text-justify"><%=course.introduction%></p>
+            <a href=<%=course.courseLink%> class="btn btn-info btn-block">Course details</a>
+            <a href=/booking/courses/<%=course.title.replace(/ /g,"-").toLowerCase()%> class="btn btn-warning btn-block">Course booking</a>
+            <% if (course.ryaLink) { %>
+            <a href=<%=course.ryaLink%> class="btn btn-light btn-block"><img src="/images/RYA_logo.png" width="50px"></a>
+            <%}%>
+            </div>
+          </div>
+        </div>
+    <%})%>
+          </div>
+
+        </div>
+
+</section>
+
+<%-include("partials/footer")-%>

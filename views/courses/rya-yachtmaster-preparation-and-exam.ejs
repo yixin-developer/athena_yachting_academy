@@ -1,0 +1,782 @@
+<%- include("../partials/headers/header-yachtmaster"); -%>
+
+<section>
+
+  <!-- Cover image -->
+  <div>
+    <img src="/images/course-cover/course-cover-rya-yachtmaster-preparation-and-exam.webp" width="100%" class="top-image" alt="course-cover-rya-yachtmaster-preparation-and-exam">
+ </div>
+
+  <div class="container-fluid course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>RYA Yachtmaster Preparation And Exam</b></h1>
+        <h6>CHALLENGE | ACHIEVEMENT | SKIPPERING | EXAM | PREPARATION </h6>
+        <br>
+        <h6 class="text-center mb-4">⭐️⭐️⭐️⭐️⭐️ 5.0 based on 60+ Yachtmaster Candidates</h6>
+        <br>
+        <%- include("../partials/summary-course"); -%>
+        <p class="lead course-subtitle"><em>Are You Ready to Become a Yachtmaster?</em></p>
+        <p class="lead course-subtitle"><em>This intensive coaching session helps prepare you for the examination which gives you the most respected yachting qualification in the world.</em></p>
+        <br>
+        
+      </div>
+
+      <h6 class="lead text-center"><b>Find out how all candidates past their YM exam with us in Malta</b></h6>
+      <div class="d-flex justify-content-center my-4">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/3YeQwIKRIUo?si=lNX0r_Vts-O0cMgs" title="Yachtmaster preparation and exam" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>It’s essential to understand that within the RYA Sail Cruising scheme, there is no dedicated Yachtmaster course. Instead, most training centres, including us, offer Yachtmaster Exam Preparation Training to refine your skills before taking the official RYA examination. </b></p>
+                <p><i>📩 Interested in YM prep course and exam? Contact us in advance — Yachtmaster exams are only available by prior arrangement. ❗️ Important: Do not book unless you meet the required sea time and experience. 🙋 Not sure if you’re eligible? Get in touch and we’ll help you confirm.</i></p>
+
+                
+                <a class="btn btn-primary course-four-bottom" target="_blank" rel="noopener noreferrer" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <a class="btn btn-info course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/courses/rya-yachtmaster-package" role="button">RYA Yachtmaster Package & Exam &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a target="_blank" rel="noopener noreferrer"  href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a target="_blank" rel="noopener noreferrer"  href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+              </div>
+            </div>
+          </div>
+
+          <!-- the map -->
+          <%- include("../partials/maps/manoel"); -%>
+
+              </div>
+            </div>
+
+            <%- include("../partials/carousel"); -%>
+
+
+            <!-- Course detail accordion -->
+            <div class="accordion" id="accordionExample">
+
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      🧭 Course Overview
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <!-- Yachtmaster Preparation Course Section -->
+                    <h4 class="mb-3">RYA Yachtmaster Preparation Course & Exam</h4>
+
+                    <p>
+                    The <strong>RYA Yachtmaster Certificate of Competence</strong> is one of the most prestigious qualifications in sailing. Recognised and respected around the world, it demonstrates your capability, confidence, and experience as a professional skipper. The <strong>Yachtmaster Offshore Certificate</strong> can be used commercially and also serves as a required qualification for the <strong>MCA Officer of the Watch (OOW)</strong> certification—allowing you to work on vessels up to 3000 GT globally.
+                    </p>
+
+                    <p>
+                    Our <strong>RYA Yachtmaster Preparation Course</strong> is an intensive 7-day programme designed to thoroughly prepare experienced sailors for the <strong>Yachtmaster exam</strong>. It includes:
+                    </p>
+                    <ul>
+                      <li>5 days of practical training and skills refinement onboard</li>
+                      <li>2 days of assessment with an independent RYA examiner</li>
+                    </ul>
+
+                    <p>
+                    Throughout the <strong>Yachtmaster preparation week</strong>, you'll build confidence in key areas such as:
+                    </p>
+                    <ul>
+                      <li>Day and night navigation</li>
+                      <li>Man Overboard (MOB) procedures</li>
+                      <li>Passage planning and navigation tactics in fog (blind navigation)</li>
+                      <li>Crew management and leadership</li>
+                      <li>Emergency situations and safety procedures</li>
+                      <li>Boat handling under sail and power in various weather conditions</li>
+                      <li>Diesel engine troubleshooting</li>
+                      <li>International Regulations for Preventing Collisions at Sea (IRPCS)</li>
+                    </ul>
+
+                    <p>
+                    We offer two levels of certification through this <strong>Yachtmaster preparation course</strong>: <strong>Yachtmaster Coastal</strong> and <strong>Yachtmaster Offshore</strong>.  
+                    The level pursued will depend on your logged experience and readiness. If, during the course, you or your instructor feel you are not yet ready for the exam, we will recommend postponing the assessment for a future date.
+                    </p>
+
+                    <p>
+                    Please note: This is not a beginner's course. You must arrive fully competent in your sailing ability and with a solid understanding of <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-coastal-skipper-yachtmaster-offshore-theory"><u><strong>Yachtmaster offshore theory</strong></u></a>, including chartwork, tides, COLREGS, and meteorology. You will be expected to prepare and present a full <strong>theoretical passage plan</strong> as part of your assessment.
+                    </p>
+
+                    <p>
+                      If you dont feel confident about your theory part, or you have not taken the <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-coastal-skipper-yachtmaster-offshore-theory"><u><strong>RYA Coastal Skipper Yachtmaster Offshore Theory</strong></u></a> course yet, We have a 2-week <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-yachtmaster-package"><u><strong>RYA Yachtmaster Sail Training Package & Exam – Theory & Practical Combined</strong></u></a> that you can join instead.
+                    </p>
+
+                    <p>
+                    The course is led by our senior instructors, who will provide targeted coaching and simulate exam scenarios to boost your confidence and ability to perform under pressure.
+                    </p>
+
+                    <p>
+                    To complement the <strong>Yachtmaster preparation</strong>, we also offer optional <strong><a target="_blank" rel="noopener noreferrer"  href="/courses/boat-handling-course"><u>Boat Handling course</u></a></strong> and  <strong><a target="_blank" rel="noopener noreferrer"  href="/courses/sail-handling-course"><u>Sail Handling course</u></a></strong> in the week prior. This add-on is ideal for those wanting extra time to refine close-quarters maneuvering before beginning the preparation and exam week.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingTen">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                      🎯 Who Should Take This Course?
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTen" class="collapse show" aria-labelledby="headingTen" data-parent="#accordionExample">
+                  <div class="card-body">
+                      <h4 class="mb-3">Yachtmaster Preparation Course Requirements</h4>
+                      <p>
+                        Our <strong>Yachtmaster Preparation Course</strong> is designed for experienced skippers who already meet all the prerequisites required for the <strong>Yachtmaster exam</strong> (see below). To participate, you should:
+                      </p>
+
+                      <ul>
+                        <li>✅ Be a competent skipper, capable of handling a sailing yacht under motor in close-quarters and at sea.</li>
+                        <li>✅ Have thorough navigational knowledge, equivalent to the <strong><a target="_blank" rel="noopener noreferrer"  href="/courses/rya-coastal-skipper-yachtmaster-offshore-theory"><u>RYA Yachtmaster Theory Course</u></a></strong>, and have applied this knowledge in real-world conditions, including day and night passages.</li>
+                        <li>✅ Have the minimum sea time and experience required to sit the <strong>Yachtmaster exam</strong> (see eligibility criteria below).</li>
+                      </ul>
+
+                      <p>
+                        This intensive training is designed to fine-tune your existing skills, assess your strengths and weaknesses, and prepare you for the exam with an independent RYA examiner.
+                      </p>
+
+                      <p>
+                        📌 <strong>Note:</strong> We strongly recommend that you have already completed the <strong><a target="_blank" rel="noopener noreferrer"  href="/courses/rya-coastal-skipper-yachtmaster-offshore-theory"><u>RYA Yachtmaster Theory Course</u></a></strong> to ensure your theoretical knowledge is at the required level. You will be unlikely to pass the final exam without it.
+                      </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      ☑️ Course & Exam Eligibility
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+
+                <h4 class="mb-3">📄 Yachtmaster Exam Requirements</h2>
+                    
+                <div class="container" my-5 style="max-width: 900px; margin-left: 0;">
+                <div class="row">
+                  <!-- Yachtmaster Offshore -->
+                  <div class="col-md-6 text-start">
+                    <h6><b><a target="_blank" rel="noopener noreferrer"  href="https://www.rya.org.uk/training/certificates-of-competence/yachtmaster-offshore" class="text-decoration-none">Yachtmaster Offshore (click to see more details)</a></b></h5>
+                    <ul>
+                      <li>50 days at sea</li>
+                      <li>2,500 miles logged on yachts up to 500 GT</li>
+                      <li>5 passages over 60 miles, including:
+                        <ul>
+                          <li>2 overnight passages</li>
+                          <li>2 days as skipper</li>
+                        </ul>
+                      </li>
+                      <li>5 days as skipper on vessels under 24m LOA</li>
+                      <li>At least 50% of sea time must be in tidal waters</li>
+                      <li>All sea time must be within the last 10 years</li>
+                    </ul>
+                  </div>
+
+                  <!-- Yachtmaster Coastal -->
+                  <div class="col-md-6 text-start">
+                    <h6><b><a target="_blank" rel="noopener noreferrer"  href="https://www.rya.org.uk/training/certificates-of-competence/yachtmaster-coastal" class="text-decoration-none">Yachtmaster Coastal  (click to see more details)</a></b></h5>
+                    <ul>
+                      <li>30 days at sea</li>
+                      <li>800 miles logged on yachts up to 500 GT</li>
+                      <li>12 night hours</li>
+                      <li>2 days as skipper</li>
+                      <li>At least 50% of sea time must be in tidal waters</li>
+                      <li>All sea time must be within the last 10 years</li>
+                    </ul>
+                  </div>
+                </div>
+
+                  <!-- Additional Requirements -->
+                  <div class="row mt-3">
+                    <div class="col-md-6 text-start">
+                      <h6><b>Additional Requirements</b></h5>
+                      <ul>
+                        <li>Navigation skills equivalent to the <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-coastal-skipper-yachtmaster-offshore-theory"><u> Yachtmaster Coastal / shorebased course</u></a></li>
+                        <li>Valid <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-marine-radio"><u>VHF Certificate</u></a></li>
+                        <li>Valid <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-first-aid"><u>First Aid Certificate</u></a></li>
+                        <li>If you don’t have these, we can incorporate them into your package – please ask!</li>
+                      </ul>
+                    </div>
+
+                    <div class="col-md-6 text-start">
+                      <h6><b><a target="_blank" rel="noopener noreferrer"  href="/courses/commercial-endorsement" class="text-decoration-none">For Commercial Endorsement</a></b></h5>
+                      <ul>
+                        <li>STCW or <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-sea-survival"><u>RYA Sea Survival Certificate</u></a></li>
+                        <li>A medical certificate from a Doctor (ENG1 or ML5)</li>
+                        <li><a target="_blank" rel="noopener noreferrer"  href="/courses/rya-professional-practices-and-responsibilities"><u>Online PPR Course (RYA Professional Practices and Responsibilities)</u></a></li>
+                        <li>Once these are completed, you can apply for your Commercial Endorsement through the RYA. Processing takes a few weeks, so plan ahead.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                  <p><strong>⚠️ Important:</strong> You will not be permitted to take the exam without meeting these requirements. You are not required to provide formal proof of miles, but a sea miles log must be submitted to the examiner before the test.</p>
+                  <p><strong>📌 Note:</strong> Your qualifying sea time must have been gained within the last 10 years, and the vessel type must match the qualification you are pursuing (e.g., Yachtmaster Sail candidates must log miles on a sailing yacht).</p>
+                  <p><strong>❕Minimum age:</strong> 18 years old</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingSix">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      🏷️ Cost and Fees
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseSix" class="collapse show" aria-labelledby="headingSix" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <h4 class="mb-3">What’s Included in the Course Fee?</h4>
+                    <ul>
+                      <li>✔ Five-day practical Yachtmaster preparation course and two-day exam onboard: <b>Euro 1500 per person</b> </li>
+                      <li>✔ Accommodation onboard during the course and exam</li>
+                      <li>✔ Use of the training vessel during the exam</li>
+                      <li>✔ Fuel, mooring for both the training and exam</li>
+                    </ul>
+                      <h4>Additional Costs <small>(Not Included in Course Fee)</small></h4>
+                      <ul>
+                        <li><strong>Exam Fee (From 1st January 2025, paid to RYA):</strong>  £256 for Yachtmaster Offshore; £221 for Yachtmaster Coastal</li>
+                        <li><strong>Examiner Expenses:</strong> Typically €50–€200 per student</li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                      ⛵️ Training Boat and Accommodation
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      The training boat is a <a target="_blank" rel="noopener noreferrer"  href="https://mastersailingmalta.com/yacht"><strong>Bavaria 46 Cruiser</strong></a>, 4 cabins and 2 heads, equiped with <strong>55HP Volvo Penta sail drive and bow thruster</strong>. She is a modern 46-foot sailing yacht designed for coastal and offshore training, long passages, and life at sea. Combining comfort and performance, she serves as both your home and classroom throughout your Yachtmaster preparation journey.
+                    </p>
+                    <p>
+                      The boat is moored at <strong>Manoel Island Marina</strong>, pontoon D, near the Paparazzi restaurant in Malta. She will be ready for boarding from around <strong>7 PM on the Sunday</strong> prior to your course start (if you wish to board the night before the course starts). The training begins on Monday morning and exam concludes on Sunday afternoon. Please plan to disembark by <strong>16:00 on Sunday.</strong>.
+                    </p>
+                    <p>
+                      From our base in Manoel Island we will be sailing around the Maltese Archipelago including the picturesque sister Islands of Comino and Gozo. There will also be plenty of time to go ashore in the evenings to
+                      relax and spend time visiting historical landmarks and having the opportunity of tasting local cuisine.
+                    </p>
+                    <p>
+                      Accommodation for the first and last Sunday day can be included by agreement. If you decide you would like to stay on for a few days after your Yachtmaster exam, please do let us know and we would be happy to help you find accommodation.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingNine">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed show" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                      📅 Typical Itinerary for Week
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseNine" class="collapse show" aria-labelledby="headingNine" data-parent="#accordionExample">
+                  <div class="card-body">
+                      <h4 class="mb-4">Typical Itinerary for Yachtmaster Prep & Exam – Malta</h2>
+                      <div class="mb-4">
+                        <h5>Day 0 – Sunday: Arrival & Welcome Aboard</h5>
+                        <p>
+                          Arrive at <strong>Manoel Island Marina</strong> in Gżira by <strong>19:00</strong>. You’ll be welcomed aboard <em><a target="_blank" rel="noopener noreferrer"  href="https://www.mastersailingmalta.com/yacht"><u>our Bavaria 46 Cruiser</u></a></em> , and introduced to your instructor and fellow candidates. After a short briefing, settle into your cabin and enjoy a relaxed evening. The marina is within walking distance of great restaurants and amenities in Sliema and Gżira.
+                        </p>
+                      </div>
+
+                      <div class="mb-4">
+                        <h5>Day 1 – Monday: Safety Briefing & Yacht Familiarisation</h5>
+                        <p>
+                          Start the day with a full safety briefing and an in-depth tour of the yacht’s systems. You’ll prepare the boat for departure, followed by <strong>practical sessions</strong> on <strong>man overboard (MOB) drills</strong>, <strong>sail handling</strong>, and <strong>close-quarters manoeuvring</strong> around the marina. The day ends at anchor, possibly in <em>St. Paul’s Bay</em>.
+                        </p>
+                      </div>
+
+                      <div class="mb-4">
+                        <h5>Day 2 – Tuesday: Boat Handling & Short Passage</h5>
+                        <p>
+                          Focus on <strong>advanced boat handling</strong>, <strong>pilotage</strong>, and <strong>navigational drills</strong> as you cruise south along Malta’s coastline—destinations may include <em>Marsaxlokk</em>, <em>Comino</em>, or <em>Pretty Bay</em> depending on weather. You’ll refine helming, anchoring, and under-sail operations.
+                        </p>
+                      </div>
+
+                      <div class="mb-4">
+                        <h5>Day 3 – Wednesday: Navigation & Night Sailing</h5>
+                        <p>
+                          Conduct <strong>passage planning</strong>, <strong>position fixing</strong>, and <strong>blind navigation</strong> exercises. After a day of drills and practice under sail, you’ll carry out <strong>night pilotage and navigation</strong> exercises to simulate exam conditions—returning to port or anchoring under low visibility.
+                        </p>
+                      </div>
+
+                      <div class="mb-4">
+                        <h5>Day 4 – Thursday: Theory Refresh & Mock Assessment</h5>
+                        <p>
+                          Fine-tune your <strong>RYA theory</strong>, <strong>COLREGs</strong>, and <strong>passage planning</strong> skills. You’ll complete a <strong>mock assessment</strong> to test practical competence and build confidence ahead of the exam. Your instructor will review your progress and help you address any final weak spots.
+                        </p>
+                      </div>
+
+                      <div class="mb-4">
+                        <h5>Day 5 – Friday: Final Prep & Meet Your Examiner</h5>
+                        <p>
+                          Final preparation day. Review your <strong>passage plan</strong>, ensure all documentation and gear are in order, and get familiar with the yacht’s readiness. Your instructor steps off the boat, and you’ll be formally introduced to your <strong>RYA examiner</strong> in the afternoon. You will be examined through the evening and the next days.
+                        </p>
+                      </div>
+
+                      <div class="mb-4">
+                        <h5>Day 6 & 7 – Saturday & Sunday: Yachtmaster Practical Exam</h5>
+                        <p>
+                          Over these two days, you'll complete the <strong>Yachtmaster exam</strong>. Expect a mix of <strong>day and night navigation</strong>, <strong>boat handling</strong>, <strong>emergency scenarios</strong>, and <strong>leadership tasks</strong>. The exam will assess your boat handling and skippering skills, including navigation, sailing ability, seamanship, safety awareness, and knowledge of signals and meteorology.Exams usually conclude by <strong>Sunday afternoon</strong>. After debriefing, disembarkation is typically expected by <strong>16:00 on Sunday afternoon</strong>.
+                        </p>
+                      </div>
+
+                      <div class="mb-4">
+                        <h5>Congratulations! you passed the exam!</h5>
+                        <p>
+                          Passing the Yachtmaster Offshore exam proves your proficiency up to 150 miles offshore, and is recognised worldwide.
+                        </p>
+                      </div>
+                  </div>
+                </div>
+              </div> 
+
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                     📔 Yachtmaster Course and Exam Handbook
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <h4 class="mb-3">
+                      Course supporting books: <a class="book-link" target="_blank" rel="noopener noreferrer"  href="https://www.rya.org.uk/shop/p/rya-yachtmaster-handbook-ebook"><em><u>RYA Yachtmaster Practical Course Notes</u></em></a>
+                    </h4>
+                    <img src="/images/course-element/course-element-yachtmaster-handbook.jpg" width="300px" alt="yachtmaster-handbook">
+                    <br><br> 
+                    <p>
+                      The RYA Yachtmaster examination is the gold-standard qualification for sail and power boaters the world over. This eBook is the RYA’s official and definitive guide to the exam. It offers a unique insight into what you need to know, how the exam will be conducted, and the skills required. Whether you are going to take the exam, or are thinking of it and want to find out what you will face on the day, this is the book that you must have.
+                    </p>
+                    <p>Author James Stevens is the creator of the current RYA Yachtmaster scheme for sail and power boats. Formerly the RYA’s Training Manager, he has over 30 years’ experience examining, and there is nobody better to help you succeed.</p>
+                    <p>This eBook is enhanced with video footage taken from interviews with the author and Yachtmaster examiners Hilary Hillier, Christopher Slade and Sam Connelly.</p>
+                  </div>
+                </div>
+              </div>             
+
+              <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      🎒 Recommended to Bring
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Full bedding is supplied, sheets, pillows and blankets. Also, we provide towels for use on the yacht but not beach towels. If you should require more than one towel during the week, please do bring your own additional towel.
+                    <br><br>
+                    <ul>
+                      <li>Sunglasses</li>
+                      <li>High factor sun cream (not oil please !)</li>
+                      <li>Deck shoes if possible, otherwise soft shoes with a non marking sole</li>
+                      <li>Shorts (Please be aware that these are liable to get dirty, so not your bestones!)</li>
+                      <li>T-Shirts</li>
+                      <li>Fleece or jumper for the evenings and windy days at sea</li>
+                      <li>Soft bag as opposed to a hard suitcase (we can store luggage if you are staying on)</li>
+                      <li>Light long sleeved shirt if you need to cover up in the sun</li>
+                      <li>Baseball/sun hat (preferably with a clip to stop it blowing overboard!)</li>
+                      <li>Sea sickness tablets should you need them</li>
+                      <li>Sailing Gloves (if available)</li>
+                      <li>Phone/ Ipod / lap top chargers – 12V (cigarette style chargers) if needed</li>
+                      <li>RYA Log book if you have one</li>
+                      <li>And above all, enthusiasm!</li>
+                    </ul>
+                    Please note that the temperatures in Malta are normally very warm during the day
+                    but it can be cold in the evenings and windy days at sea. It is a good idea to bring a
+                    small light rain mac if you have one and also a pair of long trousers and a warm
+                    fleece, just in case. Please note that We don't provide wet weather gear onboard.
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="card">
+                <div class="card-header" id="headingSeven">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                      ✈️ Flight and On-arrival
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>If you need a flight to Malta International, the airport code is MLA. There is only one airport. 
+                    </p>
+                    <p>
+                      Malta International Airport (MLA) is well connected to many European cities, especially major hubs. Low-cost carriers dominate many of the connections, especially from regional airports.
+                    </p>
+                    </p>
+                    <p>On arrival at Malta airport, there is a kiosk at the exit from the airport where you can pre pay
+                      the taxi to the boat. Destination: <a target="_blank" rel="noopener noreferrer"  href="https://www.google.com/maps?ll=35.902325,14.498923&z=15&t=m&hl=en&gl=MT&mapclient=embed&q=Manoel+Island+Yacht+Marina"><u>Manoel Island Yacht Marina Pontoon D.</u></a>
+                      </p>
+                    <p>The cost of this is usually 25 Euro. It only takes about 20 minutes to arrive our marina fron the airport. The taxi drivers speak good English.
+                    </p>
+                    <p>Cheaper transport option would be use taxi app such as: Bolt and Ecab. There are plenty of taxi
+                      connected to these apps.
+                    </p>
+                    <p>You will have a short safety brief on arrival to familiarise yourself with the boat and meet your
+                      crew mates!
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              
+
+              <div class="card">
+                <div class="card-header" id="headingFaqs">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFaqs" aria-expanded="false" aria-controls="collapseFaqs">
+                      🙋 Frequently Asked Questions
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFaqs" class="collapse" aria-labelledby="headingFaqs" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <h6>Q: What is the difference between the Yachtmaster Offshore exam and the Yachtmaster Coastal exam?</h6>
+                    <p>Both exams test the same things. If you are going for Yachtmaster Offshore (YMO) you will be expected to do it with that much more finesse than if you are going for Yachtmaster Coastal (YMC). You of course also need more experience as a prerequisite to do the YMO.</p>
+
+                    <h6>Q: I haven't logged all my miles. Does that matter?</h6>
+                    <p>A: It doesn't matter if you haven't logged all your miles and experience. However the examiner will want to see, on paper, what you have done. So, if you haven't kept a logbook of your mileage then you should list what you have done. For each entry write the dates, the boat name and type, where you went, the max wind strength you encountered, what your position on board was (skipper, mate, crew etc), the number of days your spent on board, the distance logged and whether it was tidal or non tidal, the number of night hours you did and the skipper's name. If you can get the skippers signature even better but not the end of the world if you can't. It is worth mentioning that examiners are pretty good at sussing out when someone may have overly elaborated on their experience!</p>
+
+                    <h6>Q: What constitutes tidal miles?</h6>
+                    <p>A: The RYA describe tidal water as being an area where published stream, current or tidal range data is available, and the influence of which is significant enough to require the effects to be taken into account to plan and execute a safe and efficient passage. Some areas in the world don’t have large tides so are often described as being non-tidal for the purposes of the Yachtmaster exams. These includes places such as the Mediterranean, Baltic, Black Sea, Caribbean, and Caspian Sea. Whilst they may have tides, the tidal range is considered so small (around one foot) that they are not significant enough to be considered tidal waters for your exams. <a target="_blank" rel="noopener noreferrer"  href="https://www.rya.org.uk/training/certificates-of-competence/qualifying-passages">More information can be found here.</a></p>
+
+                    <h6>Q: Do I need to have a VHF Radio License, First Aid Qualification or Radar certificate?</h6>
+                    <p>A: You need a VHF Radio License. You need a First Aid Certificate - it is possible to get this after your YM exam but you need to do it within a couple of week of the YM exam and examiners much prefer you to have the certificate in advance. You need knowledge of how to operate a radar.</p>
+
+                    <h6>Q: Is Yachtmaster Offshore internationally recognised?</h6>
+                    <p>A: The Yachtmaster Offshore Certificate of Competence is an internationally recognised certificate, It is issued by the RYA with authority from the UK Maritime and Coastguard Agency (MCA).</p>
+                    
+                    <h6>Q: Is the assessment &amp; exam practical, theoretical, or both?</h6>
+                    <p>A: This Yachtmaster Exam week is not a course! The week includes 5 days of exam preparation focused on intensive “Drills &amp; Skills” for sailing and docking. Theory is tested—not taught—so arrive fully prepared.</p>
+
+                    <h6>Q: What level of experience do you need before you begin?</h6>
+                    <p>A: You'll need 2,500 sea miles (under sail, last 10 years), with 50% in tidal waters. For Offshore level: 5 passages of 60NM or more (2 overnight, 2 as skipper). Familiarity with traditional chart navigation, nav theory, and collision regulations is essential.</p>
+
+                    <h6>Q: How long does the Exam Prep &amp; Exam last?</h6>
+                    <p>A: The program runs for 7 days. For the prep practice and testing of knowledge, drills and skills, your RYA Instructor has just 5 days with a max of 4 candidates on board to prepare for the remaining 2 days of assessment when your Prep instructor steps off the yacht and is replaced by an independent RYA Examiner.</p>
+
+                    <h6>Q: What are the benefits of completing this assessment?</h6>
+                    <p>A: Regardless of the exam outcome, participating in this intensive training week offers valuable experience and skill development. Successfully passing the exam earns you a prestigious certificate that can help lower yacht insurance premiums—both for private use and charters—and serves as a recognized qualification for entering the professional sailing and superyacht industries.</p>
+
+                    <h6>Q: What are the next steps after completing it?</h6>
+                    <p>A: You can progress to <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-yachtmaster-ocean-theory"><u>RYA Yachtmaster Ocean</u></a> (learn celestial navigation), apply for a commercial endorsement to work professionally, or pursue the RYA Cruising Instructor or Yachtmaster Instructor path.</p>
+
+                    <h6>Q: Does it provide international accreditation?</h6>
+                    <p> A: Yes. The RYA Yachtmaster Coastal and Offshore Certificates are internationally recognised and respected by charter companies and the professional sailing industry. The Yachtmaster™ Certificate of Competence is a prestigious qualification that demonstrates a skipper’s experience, skill, and competence—and is often considered the ultimate goal for those pursuing advanced sailing credentials.</p>
+                    <h6>Q: What topics will be covered during the week?</h6>
+                    <p>A: Key areas of the Yachtmaster syllabus will be practiced, especially those relevant to each individual's needs. There is not time to cover everything from scratch—prior training is expected.</p>
+                    <h6>Q: What will be tested in the theoretical part?</h6>
+                    <p>A: Each candidate will be required to prepare and present a theoretical passage plan, using materials such as an almanac, charts, and a weather synopsis. Those attending training in the weeks prior to the exam will receive these materials in advance. During the exam, candidates must present their plans to the examiner, who will also assess their understanding of navigational theory and Collision Regulations—including buoyage, lights, shapes, and sound signals.</p>
+                  </div>
+                </div>
+              </div>       
+            </div>
+            
+               <%- include("../partials/reviews"); -%>
+              <!-- <div class="card">
+                <div class="card-header" id="headingEight">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                      RYA Sail Cruising Course System and Next Step
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <img src="/images/course-element/course-element-sail-course-system.jpeg" width="100%" alt="RYA-sail-course-system">
+                    <a class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer"  href="/courses/rya-yachtmaster-ocean-theory" role="button">Next step: RYA Yachtmaster Ocean Theory &raquo</a>
+                  </div>
+                </div>
+              </div> -->
+
+            
+
+
+            <div class="course-title my-5">
+              <h2><b>RYA Yachtmaster Offshore Prep Course - Complete Breakdown</b></h2>
+              <p class="lead course-subtitle">Rewarding training in the Malta. Here’s more on how it works.</p>
+              <br>
+            </div>
+              
+            <div class="container my-5">
+              <div class="row featurette">
+                <div class="col-md-7">
+                  <h4 class="featurette-heading">Prepare and Practice for the RYA/MCA Yachtmaster Offshore Certificate of Competence exams.</h4>
+                  <p class="lead">The instructor will help you to ensure you are as prepared as possible by focusing on the areas you need most improvement and ironing out any bad habits you may have. You will be pushed hard. You will enter and leave as many ports/harbours as possible. You will practice night sailing and blind navigation. You will go over all the lights, shapes, sound signals and collision regulations. It is not a requirement to do such a course before the exam however it is well worth doing it if only to find out your strengths and weaknesses.</p>
+                  <p class="lead">A Yachtmaster Offshore should be able to enter any well-charted harbour for the first time, with sufficient depth, by day or night.</p>
+                  <p class="lead">You will sail mainly along Maltese Coast and will visit as many places as possible so that you are familiar with them before the exam.</p>
+                  <p class="lead">Malta is an excellent location to take your Yachtmaster Offshore exam. Its a small island country with non-tidal waters, providing an easier and simpler environment for the exam, while the consistent sunshine, reliable winds, and clear sea conditions allow for better exam conditions. </p>
+                  
+                  <a class="btn btn-warning course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/booking/courses/<%=courseName%>" role="button">See our availability and prices &raquo;</a>
+
+                </div>
+
+                <div class="col-md-5">
+                  <img src="/images/yachtmaster-prep-course/yachtmaster-prep-course-and-exam-00.jpg" class="featurette-image img-fluid mx-auto" width="500" height="500" style="border-radius: 5px;" alt="Descriptive alt text">
+                </div>
+              </div>
+              <hr class="featurette-divider">
+              
+              <div class="row featurette">
+                <div class="col-md-5">
+                  <img src="/images/yachtmaster-prep-course/yachtmaster-prep-course-and-exam-05.jpg" class="featurette-image img-fluid mx-auto" width="500" height="500" style="border-radius: 5px;" alt="Descriptive alt text">
+                </div>                                      
+                <div class="col-md-7">
+                  <h4 class="featurette-heading">The Exam</h4>
+                  <p class="lead">The Yachtmaster Offshore exam will take about 8 to 12 hours for one candidate and 10 to 18 hours for two. Candidates will be set tasks to demonstrate their ability as skipper of an offshore cruising yacht and may also be asked questions on any part of the syllabus for all courses except Yachtmaster Ocean.</p>
+                  <p class="lead">Examiners are independent assessors not involved in training candidates and are therefore objective when assessing ability. The RYA examines candidates on behalf of the UK Maritime and Coastguard Agency.</p>
+                  <p class="lead">The RYA examiner will meet you onboard and talk through the plan. Examiners understand you could be nervous and will do their best to allay your fears and make sure you are clear about what they want you to do. They are there to find out what you can do, not to pick holes.</p>
+                  <p class="lead">Please note that the exam fee can be paid directly to the RYA (we will send you details of how to pay) and is not included in the course fee.</p>    
+                  <a class="btn btn-warning course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/booking/courses/<%=courseName%>" role="button">See our availability and prices &raquo;</a>
+                </div>
+              <hr class="featurette-divider">
+              </div>
+
+              <hr class="featurette-divider">
+
+               <div class="row featurette">
+                <div class="col-md-7">
+                  <h4 class="featurette-heading">RYA Certificates of Competence</h4>
+                  <p class="lead">A good skipper leads the crew and communicates with them, making sure they understand what is going on and listening to them when they have something to say. They do not shout a stream of commands, leaving their crew in a quivering mess. Quiet competence instils confidence, helping your crew feel safe in the knowledge that the right decisions are being made.</p>
+                  <p class="lead">There are three RYA Certificates of Competence:</p>
+                  <ul>
+                    <li>Yachtmaster Coastal Certificate of Competence</li>
+                    <li>Yachtmaster Offshore Certificate of Competence</li>
+                    <li>Yachtmaster Ocean Certificate of Competence</li>
+                  </ul>
+                  <p class="lead">The theory is the same for Yachtmaster Coastal and Yachtmaster Offshore. The difference is that less practical experience is required for the Coastal exam. The Yachtmaster Ocean involves astronavigation. See the details for the shorebased course <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-yachtmaster-ocean-theory"><u>Here.</u></a></p>
+                  <p class="lead">Certificates of competence are some of the most useful and credible of yachting qualifications. They thoroughly test the skipper's ability, and can therefore appear daunting to potential candidates. But well prepared skippers with the right experience needn't worry. With the practice and preparation you get from doing the prep course, you should be able to relax sufficiently to let your skills shine through any exam nerves.</p>   
+                  <a class="btn btn-warning course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/booking/courses/<%=courseName%>" role="button">See our availability and prices &raquo;</a>
+                </div>
+                <div class="col-md-5">
+                  <img src="/images/yachtmaster-prep-course/yachtmaster-prep-course-and-exam-03.jpg" class="featurette-image img-fluid mx-auto" width="500" height="500" style="border-radius: 5px;" alt="Descriptive alt text">
+                </div>                                      
+              </div>
+
+              <hr class="featurette-divider">
+               
+              <div class="row featurette">
+                <div class="col-md-5">
+                  <img src="/images/yachtmaster-prep-course/yachtmaster-prep-course-and-exam-06.png" class="featurette-image img-fluid mx-auto" width="500" height="500" style="border-radius: 5px;" alt="Descriptive alt text">
+                  <br><br>
+                  <img src="/images/yachtmaster-prep-course/yachtmaster-prep-course-and-exam-07.png" class="featurette-image img-fluid mx-auto" width="500" height="500" style="border-radius: 5px;" alt="Descriptive alt text">
+                </div>                                      
+                <div class="col-md-7">
+                  <h4 class="featurette-heading">Accommodation</h4>
+                  <p class="lead">Accommodation during a sailing course is on board the yacht. There are almost always three double cabins and one bunk bed cabin which provide accommodation for eight people. However, there would only ever be a maximum of three students on board, plus the instructor.</p>
+                  <p class="lead"><b>Showers/Facilities: </b>Whilst we do have showers on board the yacht but most nights you will be in a marina with good hot showers and shore side facilities in a Marina.</p>
+                  <p class="lead"><b>Food: </b>We have a fully stocked kitchen on board the yacht. We usually provide some snacks onboard. That means there will be plenty of water, fruit, but also a supply of chocolate and biscuits. Students usually do food shopping at the beginning of the course for the entire course duration on their own costs. You will be able to bring your own food if you wish.</p>
+                  <p class="lead">If you have any special dietary requirements, we can normally accommodate these. Just let us know when you fill out your booking form.</p>
+                  <a class="btn btn-warning course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/booking/courses/<%=courseName%>" role="button">See our availability and prices &raquo;</a>
+                </div>
+              </div>
+
+              <hr class="featurette-divider">
+
+              <div class="row featurette">
+                <div class="col-md-7">
+                  <h4 class="featurette-heading">Location</h4>
+                  <p class="lead">Courses run from <a target="_blank" rel="noopener noreferrer"  href="https://www.google.com/maps?ll=35.902325,14.498923&z=15&t=m&hl=en&gl=MT&mapclient=embed&q=Manoel+Island+Yacht+Marina"><u>Manoel Island Yacht Marina Pontoon D.</u></a></p>
+                  <p class="lead">Malta International Airport (MLA) is well connected to many European cities, especially major hubs. Upon arrival, you’ll find a taxi kiosk just outside the terminal where you can prepay for a ride to Manoel Island Yacht Marina — a 20-minute journey that typically costs around €25. Taxi drivers speak good English, and for a more budget-friendly option, ride-hailing apps like Bolt and eCabs are widely available and easy to use.</p>                  
+                  <a class="btn btn-warning course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/booking/courses/<%=courseName%>" role="button">See our availability and prices &raquo;</a>
+                </div>
+                <div class="col-md-5">
+                  <img src="/images/yachtmaster-prep-course/yachtmaster-prep-course-and-exam-08.jpg" class="featurette-image img-fluid mx-auto" width="500" height="500" style="border-radius: 5px;" alt="Descriptive alt text">
+                </div>                                      
+              </div>
+
+              <hr class="featurette-divider">
+
+               
+              <div class="row featurette">
+                <div class="col-md-5">
+                  <img src="/images/yachtmaster-prep-course/yachtmaster-prep-course-and-exam-09.jpg" class="featurette-image img-fluid mx-auto" width="500" height="500" style="border-radius: 5px;" alt="Descriptive alt text">
+                </div>                                      
+                <div class="col-md-7">
+                  <h4 class="featurette-heading">Start / Finish Times</h4>
+                  <p class="lead">We find it is better if you arrive the evening before your course starts. This way you can start getting to know the yacht, the instructor, and crew mates before the course really gets under way. If this is not possible then you need to be at the boat by 9.00am on the first day of the Sailing Course.</p>
+                  <p class="lead">You can expect to get away by 16.30pm on the final day of your exam, possibly earlier. If you will catch a flight, its better to departure after 18:00.</p>
+                  <a class="btn btn-warning course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/booking/courses/<%=courseName%>" role="button">See our availability and prices &raquo;</a>
+                </div>
+              </div>
+              
+          </div>
+
+
+
+              <div class="container py-5">
+                <h2 class="text-center mb-4">Yachtmaster Prep & Exam: Malta vs Med vs UK</h2>
+                <p class="lead course-subtitle mb-5">Why choosing Malta to take your Yachtmaster prep course and exam?</p>
+                <div class="row g-4 text-center">
+                  
+                  <!-- Column 1: Malta -->
+                  <div class="col-md-4">
+                    <div class="card border-success h-100">
+                      <div class="card-header bg-success text-white fw-bold">🇲🇹 Sailing School Malta</div>
+                      <div class="card-body">
+                        <ul class="list-group list-group-flush text-start">
+                          <li class="list-group-item">☀️ Year-round sunny weather</li>
+                          <li class="list-group-item">🌬️ Ideal, predictable wind conditions</li>
+                          <li class="list-group-item">🏝️ Non-tidal waters = easier exams</li>
+                          <li class="list-group-item">🚤 Low marine traffic, stress-free handling</li>
+                          <li class="list-group-item">🗣️ English-speaking country, international environment</li>
+                          <li class="list-group-item">✈️ Excellent flight access from across Europe</li>
+                          <li class="list-group-item">👨‍🏫 Low student-to-instructor ratio</li>
+                          <li class="list-group-item">😊 Friendly and comprehensive examiner. Non-native English speakers friendly. </li>
+                          <li class="list-group-item">📚 5-day focused prep + 2-day exam</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Column 2: Other Med Schools -->
+                  <div class="col-md-4">
+                    <div class="card border-warning h-100">
+                      <div class="card-header bg-warning text-dark fw-bold">🌍 Other Med Schools</div>
+                      <div class="card-body">
+                        <ul class="list-group list-group-flush text-start">
+                          <li class="list-group-item">☀️ Good summer weather, but seasonal</li>
+                          <li class="list-group-item">🌬️ Variable wind strength/location dependent</li>
+                          <li class="list-group-item">🌊 Mostly non-tidal, similar ease</li>
+                          <li class="list-group-item">🚢 High traffic in summer season</li>
+                          <li class="list-group-item">🗣️ May face language barriers</li>
+                          <li class="list-group-item">✈️ Air links deopends on location</li>
+                          <li class="list-group-item">🗺️ More places to visit</li>
+                          <li class="list-group-item">📚 Course formats vary widely</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Column 3: UK Schools -->
+                  <div class="col-md-4">
+                    <div class="card border-secondary h-100">
+                      <div class="card-header bg-secondary text-white fw-bold">🇬🇧 UK Schools</div>
+                      <div class="card-body">
+                        <ul class="list-group list-group-flush text-start">
+                          <li class="list-group-item">🌧️ Cold/wet weather much of the year</li>
+                          <li class="list-group-item">💨 Stronger winds – more challenging</li>
+                          <li class="list-group-item">🌊 Tidal waters – more complex exams</li>
+                          <li class="list-group-item">🚢 Busy marinas and shipping lanes</li>
+                          <li class="list-group-item">🗣️ English-speaking, local familiarity</li>
+                          <li class="list-group-item">✈️ Good access from UK only</li>
+                          <li class="list-group-item">🇬🇧 Non EU, sometimes requires visa to enter</li>
+                          <li class="list-group-item">🧥 Wet weather gear often needed</li>
+                          <li class="list-group-item">📚 Exam prep may include less sailing time</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            <div class="my-5">
+            <div class="course-title">
+              <h2><b>Check Yachtmaster Podcast</b></h2>
+              <p class="lead course-subtitle">The podcasts below will give you an insight in to what to expect on the Yachtmaster prep course by an examiner.</p>
+              <br>
+            </div>
+            <iframe src="https://open.spotify.com/embed/episode/5VmoA90vY1WH1CQpjBkCE8?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowtransparency="true" loading="lazy" style="border-radius: 12px;"></iframe>           
+            </div>
+            
+            <%- include("../partials/reviews"); -%>
+
+
+            <section class="container my-3 pt-lg-5" id="benefits">
+              <div class="course-title text-center">
+                <h2><b>Get Started In 3 Easy Steps</b></h2>
+                <p class="lead course-subtitle">We make learning to be a Yachtmaster Offshore easy.</p>
+                <br>
+              </div>
+
+              <div class="row text-center">
+                <!-- Step 1 -->
+                <div class="col-md-4 mb-4">
+                  <img src="/images/mile-builder/icon1.png" width="48" alt="Bulb icon" class="d-block mb-4 mx-auto">
+                  <h4 class="my-2 pb-1">Select A Date</h4>
+                  <p class="mx-auto" style="max-width: 336px;">Once you’re sure you meet the requirements, look at our upcoming trip dates and choose the one that best suits you.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="col-md-4 mb-4">
+                  <img src="/images/mile-builder/icon2.png" width="48" alt="Award icon" class="d-block mb-4 mx-auto">
+                  <h4 class="my-2 pb-1">Take The Course</h4>
+                  <p class="mx-auto" style="max-width: 336px;">Enjoy the prep days getting up to speed for the exam.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="col-md-4 mb-4">
+                  <img src="/images/mile-builder/icon3.png" width="48" alt="Team icon" class="d-block mb-4 mx-auto">
+                  <h4 class="my-2 pb-1">Become A Pro Sailor</h4>
+                  <p class="mx-auto" style="max-width: 336px;">Take the exam and assuming all goes well you can feel incredibly proud to now be an RYA Yachtmaster Offshore!</p>
+                </div>
+              </div>
+            </section>
+            <!-- Bottom buttons -->
+            <div class="course-bottom-buttons">
+              <a class="btn btn-primary course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+              <a class="btn btn-warning course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+              <a class="btn btn-info course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/courses/rya-yachtmaster-package" role="button">RYA Yachtmaster Package & Exam &raquo;</a>
+              <% if(courseProfileFound.onlineLink != "") {%>
+              <a target="_blank" rel="noopener noreferrer"  href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+              <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+              <a target="_blank" rel="noopener noreferrer"  href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+              <%}%>
+           </div>
+
+    </div>
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

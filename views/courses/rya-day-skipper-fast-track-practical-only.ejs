@@ -1,0 +1,187 @@
+<%- include("../partials/headers/header-day-skipper-fast-track-practical-only"); -%>
+
+
+  <!-- Cover video -->
+  <div>
+    <img src="/images/home/home-carousel-4-malta-skipper-training.webp" width="100%" class="top-image" alt="rya-day-skipper-fast-track-practical-only">
+  </div>
+
+  <div class="container-fluid course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>RYA Day Skipper Fast Track (Practical Only)</b></h1>
+        <%- include("../partials/summary-course"); -%>
+        <p class="lead course-subtitle"><em>Combo course of Competent Crew, Day Skipper Practical, and VHF over 12 days of practical training (Monday-Friday of the 2nd week). Before starting in Malta, students have already done their Day Skipper Theory course (online). This combo course is for complete beginners who aims to get skipper licence in the fastest way possible. </em></p>
+        <br><br>
+      </div>
+
+
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Day Skipper Fast-Track (Practical Only) Program</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>The Day Skipper Fast-Track (Practical only) Program comprises Competent Crew, Day Skipper Practical courses, and VHF course with a discounted total price. Unlike the standard Day Skipper Fast Track, student will need to have completed  <a href="http://localhost:3000/courses/rya-online-courses"><u>Day Skipper Theory course (online)</u></a> before starting this 12-day track. Most students choose to have these three courses continuously in a row (most of time for students that travel from outside to Malta, and onboard accommodation is included during the track), or you can also take each course separately according to your personal schedule. You can find dates and availability of each individual course in their own page. Please send us an enquiry with your intended starting date if you are interested in this program.</b></p>
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <a class="btn btn-info course-four-bottom" href="/courses/rya-competent-crew" role="button">Competent Crew &raquo;</a>
+                <a class="btn btn-info course-four-bottom" href="/courses/rya-day-skipper-theory" role="button">DS Theory &raquo;</a>
+                <a class="btn btn-info course-four-bottom" href="/courses/rya-day-skipper-practical" role="button">DS Practical &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                      <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+                    </div>
+                  </div>
+                </div>
+      
+                <!-- the map -->
+                <%- include("../partials/maps/manoel"); -%>
+
+              </div>
+            </div>
+            <br>
+            <div class="card-deck mb-3 text-center">
+
+              <div class="card mb-3 shadow-sm">
+                <div class="card-header">
+                  <h4 class="my-0 font-weight-normal"><a href="/courses/rya-competent-crew"><b>RYA Competent Crew</b></a></h4>
+                </div>
+                <div class="card-body">
+                  <h3 class="card-title pricing-card-title">€950 <small class="text-muted"></small></h3>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>No previous sailing experience needed;</li>
+                    <li>Duration – 5 Days, Mon-Fri;</li>
+                    <li>Accommodation onboard included;</li>
+                    <li>Professional introduction to sailing on a cruising yacht.</li>
+                  </ul>
+                  <a href="/courses/rya-competent-crew"><button type="button" class="btn btn-md btn-block btn-warning">More info</button></a>
+                  <img src="/images/RYA_logo.png" class="rya-logo" alt="RYA_logo">
+                </div>
+              </div>
+
+              <div class="card mb-3 shadow-sm">
+                <div class="card-header">
+                  <h4 class="my-0 font-weight-normal"><a href="/courses/rya-day-skipper-theory"><b>RYA Marine Radio VHF</b></a></h4>
+                </div>
+                <div class="card-body">
+                  <h3 class="card-title pricing-card-title">€180 <small class="text-muted"></small></h3>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>Online Course created by RYA;</li>
+                    <li>Usually take 1-2 days to complete;</li>
+                    <li>Very useful if you want to do chartering;</li>
+                    <li>In person exam of 30 min at the end of the course.</li>
+                  </ul>
+                  <a href="/courses/rya-day-skipper-theory"><button type="button" class="btn btn-md btn-block btn-warning">More info</button></a>
+                  <img src="/images/RYA_logo.png" class="rya-logo" alt="RYA_logo">
+                </div>
+              </div>
+
+              <div class="w-100 d-none d-sm-block d-md-none">
+                <!-- wrap every 2 on sm-->
+              </div>
+
+              <div class="card mb-3 shadow-sm">
+                <div class="card-header">
+                  <h4 class="my-0 font-weight-normal"><a href="/courses/rya-day-skipper-practical"><b>RYA Day Skipper Practical</b></a></h4>
+                </div>
+                <div class="card-body">
+                  <h3 class="card-title pricing-card-title">€950 <small class="text-muted"></small></h3>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>Duration – 5 Days, Mon-Fri;</li>
+                    <li>DS theory certificate needed before the course;</li>
+                    <li>Accommodation in the cabin included;</li>
+                    <li>Get your Day Skipper license after course completed.</li>
+                    <li>Recommended to take VHF course too.</li>
+                  </ul>
+                  <a href="/courses/rya-day-skipper-practical"><button type="button" class="btn btn-md btn-block btn-warning">More info</button></a>
+                  <img src="/images/RYA_logo.png" class="rya-logo" alt="RYA_logo">
+                </div>
+              </div>
+
+              <div class="w-100 d-none d-md-block d-lg-none">
+                <!-- wrap every 3 on md-->
+              </div>
+
+              <div class="card mb-3 shadow-sm">
+                <div class="card-header">
+                  <h4 class="my-0 font-weight-normal"><a href="/courses/rya-marine-radio"><b>Day Skipper Theory (online)</b></a></h4>
+                </div>
+                <div class="card-body">
+                  <h3 class="card-title pricing-card-title">£273<small class="text-muted"></small></h3>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>Online Course provided by 3rd party RYA school;</li>
+                    <li>Usually take 4-5 days to complete;</li>
+                    <li>Study on your own pace before coming to Malta;</li>
+                    <li>The combo price does NOT include this online course.</li>
+                    <li>You paid this course direclty to 3rd party school or through a link we provide.</li>
+                  </ul>
+                  <a href="/courses/rya-online-courses"><button type="button" class="btn btn-md btn-block btn-info">More info and booking link</button></a>
+                  <img src="/images/RYA_logo.png" class="rya-logo" alt="RYA_logo">
+                </div>
+              </div>
+
+              <div class="w-100 d-none d-lg-block d-xl-none">
+                <!-- wrap every 4 on lg-->
+              </div>
+
+            </div>
+
+
+            <!-- Course detail accordion -->
+            <div class="accordion" id="accordionExample">
+
+
+            </div>
+
+            <%- include("../partials/reviews"); -%>
+            <!-- Bottom buttons -->
+            <div class="course-bottom-buttons">
+              <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+              <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+              <a class="btn btn-info course-four-bottom" href="/courses/rya-competent-crew" role="button">Competent Crew &raquo;</a>
+                <a class="btn btn-info course-four-bottom" href="courses/rya-day-skipper-theory" role="button">DS Theory &raquo;</a>
+              <a class="btn btn-info course-four-bottom" href="/courses/rya-day-skipper-practical" role="button">DS Practical &raquo;</a>
+              <% if(courseProfileFound.onlineLink != "") {%>
+              <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+              <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+              <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+              <%}%>
+      </div>
+
+    </div>
+
+    <div class="videos-wrapper">
+      <h3>Recommended videos to watch before course:</h3>
+      <div class="videos-container">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/pExM7u3fKoI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/SWIX6SUh-nc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/9Q6xCyaIi-0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/By0y8O7AbZw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

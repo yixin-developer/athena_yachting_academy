@@ -1,0 +1,48 @@
+<%-include("partials/header")-%>
+
+<section>
+  <div class="container-fluid blog-background">
+    <div class="blog-page">
+      <!-- //navibar -->
+      <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+          <a class="p-2 text-muted" href="/blog/category/Boats">Boats</a>
+          <a class="p-2 text-muted" href="/blog/category/Courses">Courses</a>
+          <a class="p-2 text-muted" href="/blog/category/CrewsLog">CrewsLog</a>
+          <a class="p-2 text-muted" href="/blog/category/Events">News</a>
+          <a class="p-2 text-muted" href="/blog/category/School">School</a>
+          <a class="p-2 text-muted" href="/blog/category/Students">Students</a>
+          <a class="p-2 text-muted" href="/blog/category/Opinion">Opinion</a>
+          <a class="p-2 text-muted" href="/blog/category/Trips">Trips</a>
+        </nav>
+      </div>
+      <!-- Cover photo -->
+      <div class="jumbotron jumbotron-blog-cover p-3 p-md-5 text-white rounded bg-dark">
+        <div class="col-lg-6 col-md-8 col-sm-12 px-0">
+          <h1 class="display-4 font-italic blog-title">
+            The Reward is in the Journey
+          </h1>
+          <br /><br />
+          <p class="lead mt-2 mb-4">
+            The objective of the blog is to record the development of Sailing
+            School Malta, as well as to share some experience of our students
+            and crews about their sailing
+          </p>
+          <p class="text-white font-weight-bold mt-5">Started since May 2020</p>
+        </div>
+      </div>
+      <!-- All posts -->
+      <br />
+      <% postsFound.forEach(function(post){ %>
+      <h4 class="mb-4"><a href="/blog/<%=post._id%>"><%=post?.title%></a></h4>
+      <p><%=post?.date?.toDateString()%> by <%=post?.author%></p>
+      <p>#<%=post?.category%></p>
+      <p class="lead"><%=post?.content?.substring(0, 450) + " ..."%></p>
+      <a href="/blog/<%=post._id%>">Read More</a>
+      <hr />
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%-include("partials/footer")-%>

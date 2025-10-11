@@ -1,0 +1,226 @@
+<%- include("../partials/header"); -%>
+
+<section>
+
+  <!-- Cover image -->
+  <div>
+    <img src="/images/course-cover/course-cover-rya-diesel-engine.jpg" width="100%" class="top-image" alt="course-cover-rya-diesel-engine">
+  </div>
+
+  <div class="container-fluid course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>RYA Diesel Engine</b></h1> <%- include("../partials/summary-course"); -%>
+        <p class="lead course-subtitle"><em>A one-day beginners’ course to help you prevent and solve diesel engine failure.</em></p>
+        <br><br>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>This course is arranged upon request, please contact us or send us an enquiry if you're interested. 😉‍</b></p>
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+              </div>
+            </div>
+          </div>
+
+          <!-- the map -->
+          <%- include("../partials/maps/ssm"); -%>
+
+              </div>
+            </div>
+
+            <!-- Course detail accordion -->
+            <div class="accordion" id="accordionExample">
+
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Course Overview
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      Mechanical failure is the main cause of rescue call-outs to cruisers. Basic maintenance and engine care will help ensure that you are not part of this statistic.
+                    </p>
+                    <p>
+                      Most engine problems can be avoided by taking simple precautions, and you don’t need a detailed mechanical knowledge. The RYA Diesel Engine course is designed to teach yachtsmen to be more self-sufficient.
+                    </p>
+                    <p>
+                      This course teaches you how your engine works, how to keep it healthy by using basic checks and maintenance procedures, and how to get it started again in the event of a breakdown. Learn how to make simple diagnosis, repairs and checks required of you as a yacht skipper.
+                    </p>
+                    <p>
+                      For this diesel engine course, you will also spend time on a yacht around the engine compartment and simulate or even complete a full engine service!
+                    </p>
+                    <p>
+                      You will have the chance to see exactly how a diesel engine works by way of a cut away demonstration engine as well as get some real hands on experience with a real engine on a yacht.
+                    </p>
+                    <p>
+                      Whether you sail a yacht with an auxiliary diesel engine or are a motor cruising enthusiast, this course could not just save you money, but one day could save your life.
+                    </p>
+                    <p>
+                      Course is usually run on a Friday.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Course Content
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <div class="content-full">
+                      <div>
+                        <p> This one day course provides an awareness of the main systems of a marine diesel engine and teaches the ability to take simple measures to prevent mechanical breakdown at sea and rectify defects which do not require workshop support. Mechanical failure is the main cause of lifeboat callout to yachts and motor cruisers. Basic maintenance and engine care may make sure you are not part of these figures. </p>
+                        <p>1. Introduction </p>
+                        <ul>
+                          <li>Principles of the diesel engine </li>
+                        </ul>
+                        <p>2. The four-stroke cycle </p>
+                        <ul>
+                          <li>Naturally aspirated engines </li>
+                          <li>Turbocharging </li>
+                          <li>Intercooling / aftercooling </li>
+                        </ul>
+                        <p>3. The fuel system </p>
+                        <ul>
+                          <li>The basic system </li>
+                          <li>The tank </li>
+                          <li>The water-separating pre-filter </li>
+                          <li>Fuel lift pump </li>
+                          <li>The engine fine filter </li>
+                          <li>Injection pump </li>
+                          <li>Injectors </li>
+                          <li>Bleeding the system </li>
+                        </ul>
+                        <p>4. The cooling system </p>
+                        <ul>
+                          <li>Seawater cooling </li>
+                          <li>Freshwater cooling </li>
+                          <li>Temperature control </li>
+                          <li>The thermostat </li>
+                          <li>The seawater impeller pump </li>
+                        </ul>
+                        <p>5. The air systems
+                        <ul>
+                          <li>The airway in</li>
+                          <li>The airway out</li>
+                        </ul>
+                        </p>
+                        <p>6. Engine electrical systems </p>
+                        <ul>
+                          <li>The basic system </li>
+                          <li>Battery capacity and care </li>
+                          <li>Drive belts </li>
+                          <li>The alternator </li>
+                        </ul>
+                        <p>7. Spares and tool requirements </p>
+                        <ul>
+                          <li>Basic spares and tools </li>
+                        </ul>
+                        <p>8. Importance of winterisation and servicing </p>
+                        <ul>
+                          <li>Engine lubrication </li>
+                          <li>Transmission lubrication </li>
+                          <li>Winterisation and servicing </li>
+                          <li>Service schedule </li>
+                        </ul>
+                        <p>9. Fault finding</p>
+                      </div>
+                      <p>
+                        Complete this course and you will have a good idea of the mysteries surrounding diesel engines and how to troubleshoot them and maintain and service an engine. On successful completion you will be given an official RYA certificate signed by your Instructor.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header" id="headingFour">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                        Course Requirement
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <ul>
+                        <li>No requirement needed</li>
+                        <li>Duration: 1 day</li>
+                        <li>Minimum age: None</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header" id="headingEight">
+                    <h2 class="mb-0">
+                      <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                        RYA Shorebased Course System
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <img src="/images/course-element/course-element-shorebased-course-system.png" width="100%" alt="RYA-shorebased-course-system">
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+              <%- include("../partials/reviews"); -%>
+              <!-- Bottom buttons -->
+              <div class="course-bottom-buttons">
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

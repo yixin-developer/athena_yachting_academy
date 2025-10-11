@@ -1,0 +1,230 @@
+<%- include("partials/header"); -%>
+<!-- src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FMadrid&amp;src=cWkueWl4aW5AaG90bWFpbC5jb20&amp;color=%23039BE5&amp;showTitle=0&amp;showDate=1&amp;showPrint=1&amp;showTabs=1&amp;showCalendars=0&amp;showTz=1" -->
+
+<section>
+  <div class="container-fluid">
+    <div class="row top-push-down">
+      <!-- course calendar -->
+      <div class="col-md-12">
+        <a href="https://calendar.google.com/calendar/"><button type="button" class="btn btn-primary btn-lg btn-block">Check Course Calender</button></a>
+        <div class="card">
+          <iframe class="google-calendar" src="https://calendar.google.com/calendar/embed?src=sailingschoolmalta%40gmail.com&ctz=Europe%2FMalta" style="border:solid 1px #777" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-md-6">
+        <!-- Create New Bookings -->
+        <a href="/booking/booking/create"><button type="button" class="btn btn-danger btn-lg btn-block">Create New Bookings</button></a>
+        <div class="card">
+          <br>
+          <div class="wrapper">
+            <div class="small-console">
+              <%  sortedBookings.forEach(function(booking,index) {%>
+              <ul <% if ((index) % 2 == 0) {%> class="with-shade" <%}%>>
+            <li>
+            <P>Applicant: <%=booking.firstName%> <%=booking.lastName%> | phone: <%=booking.phone%> | Email: <%=booking.email%> | <a class="edit-delete" href="mailto:<%=booking.email%>">Reply</a></p>
+                <p>Course: <%=booking.selectedCourseTitle%> | Date: <%=booking.selectedCourseDate%> <%=booking.preferedCourseDate%> | Number of people: <%=booking.numberOfPeople%></p>
+                <p class="extraItemsPurchased">Extra items:
+                  <%if(booking.extraItems[0] != undefined){%>
+                  <% booking.extraItems.forEach(function(extraItem,index){ %>
+                  <span><%=extraItem.name%> x<%= extraItem.quantity%>,</span>
+                  <% })} else { %>
+                  null
+                  <%}%>
+              </p>
+                <% for (var i = 0; i < sortedTransactions.length; i++) {%>
+                  <% if ( sortedTransactions[i].transactions_invoice_number === booking.invoiceNumber) {%>
+                  | Booked on: <%= booking.timeCreated && booking.timeCreated.toString().split('GMT')[0] %> | Birthday: <%=booking.birthday%>
+                </p>
+                <p class="extraItemsPurchased paid"><b>Fee Paid</b></p> <% var paid = true }} if(!paid){%> | <p class="extraItemsPurchased unpaid"><b>Unpaid</b></p> <%}%> | Sign-up: <%=booking.signUp%> | Book by: <%=booking.creator%> | Payment: €<%=booking.paymentAmount%> | Invoice No:
+                <%=booking.invoiceNumber%> |
+                <a class="edit-delete" href="/booking/booking-form/<%=booking._id%>">Generate PDF</a>
+                </li>
+              </ul>
+              <% })%>
+            </div>
+            <a class="btn btn-light btn-block" href="#">Show more</a>
+          </div>
+        </div>
+        <br>
+        <!-- Launch New Promotions -->
+        <a href="/shop/promotion/create"><button type="button" class="btn btn-warning btn-lg btn-block">Launch New Promotions</button></a>
+        <div class="card">
+          <br>
+          <div class="wrapper">
+            <div class="small-console">
+              <%  promotionsFound.reverse().forEach(function(promotion,index) {%>
+              <ul <% if ((index) % 2 == 0) {%> class="with-shade" <%}%>>
+                <li>
+                  <%=promotion.title%> | Until: <%=promotion.expiration.toDateString()%> | by <%=promotion.launchedBy%> | <a class="edit-delete" href="/shop/promotion/edit/<%=promotion._id%>">Edit</a> | <a class="edit-delete" href="/shop/promotion/edit/<%=promotion._id%>">Delete</a></p>
+                <%=promotion.content%>
+                </li>
+              </ul>
+              <%})%>
+            </div>
+            <a class="btn btn-light btn-block" href="#">Show more</a>
+          </div>
+        </div>
+        <br>
+        <!-- Create New Course Date -->
+        <a href="/course-dates/create"><button type="button" class="btn btn-secondary btn-lg btn-block">Create New Course Date</button></a>
+        <div class="card">
+          <br>
+          <div class="wrapper">
+            <div class="small-console">
+              <%  sortedCoursesList.forEach(function(course,index) {%>
+              <ul <% if ((index) % 2 == 0) {%> class="with-shade" <%}%>>
+            <li>
+              <p><%=course.date.toDateString()%> | <%=course.title%> | <%=course.available%> places left | Price: €<%=course.pricePerson%> | Excl: €<%=course.priceExclusive%></p>
+                <p>Course_ID: <%=course._id%> | Instructor: <%=course.instructor%> | <a class="edit-delete" href="/course-dates/edit/<%=course._id%>">Edit</a> | <a class="edit-delete" href="/course-dates/edit/<%=course._id%>">Delete</a> | <a class="edit-delete" href="/course-dates/create?courseId=<%=course._id%>">Duplicate</a> </p>
+                </li>
+              </ul>
+              <% })%>
+            </div>
+            <a class="btn btn-light btn-block" href="#">Show more</a>
+          </div>
+        </div>
+        <br>
+        <!-- Sell New Products / Services -->
+        <a href="/shop/extra-item/create"><button type="button" class="btn btn-success btn-lg btn-block">Sell New Products / Services</button></a>
+        <div class="card">
+          <br>
+          <div class="wrapper">
+            <div class="small-console">
+              <%  extraItemsFound.forEach(function(extraItem,index) {%>
+              <ul <% if ((index) % 2 == 0) {%> class="with-shade" <%}%>>
+            <li>
+              <p><%=extraItem.name%> | €<%=extraItem.price%>/<%=extraItem.unit%> | #<%=extraItem.category%> | Inventory:<%=extraItem.inventory%></p>
+                <P>Product_ID: <%=extraItem._id%> | <a class="edit-delete" href="/shop/extra-item/edit/<%=extraItem._id%>">Edit</a> | <a class="edit-delete" href="/shop/extra-item/edit/<%=extraItem._id%>">Delete</a></p>
+                </li>
+              </ul>
+              <% })%>
+            </div>
+            <a class="btn btn-light btn-block" href="#">Show more</a>
+          </div>
+        </div>
+        <br>
+        <!-- Generate New Coupons -->
+        <a href="/shop/coupon/create"><button type="button" class="btn btn-danger btn-lg btn-block">Generate New Coupons</button></a>
+        <div class="card">
+          <br>
+          <% validCoupons.forEach(function(coupon,index){ %>
+          <ul <% if ((index) % 2 == 0) {%> class="with-shade" <%}%>>
+            <li>
+              <p><%=coupon.coupon%> | Discount: <%=coupon.discount%>% | Expiration: <%=coupon.expiration.toDateString() %> | <%=((coupon.expiration-(new Date()))/(1000*60*60*24)).toFixed(1)%> valid days left</p>
+            </li>
+          </ul>
+          <% }) %>
+        </div>
+        <br>
+      </div>
+      <!-- Record New Transactions -->
+      <div class="col-md-6">
+        <a href="/booking/transaction/create"><button type="button" class="btn btn-success btn-lg btn-block">Record New Transactions</button></a>
+        <div class="card">
+          <br>
+          <div class="wrapper">
+            <div class="small-console">
+              <%  sortedTransactions.forEach(function(transaction,index) {%>
+              <ul <% if ((index) % 2 == 0) {%> class="with-shade" <%}%>>
+            <li>
+              <p>Payer: <%=transaction.payer_info_first_name%> <%=transaction.payer_info_last_name%> | Email: <%=transaction.payer_info_email%> | <a class="edit-delete" href="/booking/check-payment-detail/<%=transaction.id%>">Check details</a></p>
+                <p>ID: <%=transaction.id%> | Order Date:
+                  <%=transaction.create_time.getFullYear()+ "-" + (transaction.create_time.getMonth() + 1) + "-" + transaction.create_time.getDate() + " " + transaction.create_time.getHours() + ":" + transaction.create_time.getMinutes() + ":" + transaction.create_time.getSeconds()%>
+                  | <%=transaction.payment_method%> </p>
+                <p>Total: €<%=transaction.transactions_amount_total%> | Subtotal: €<%=transaction.transactions_amount_subtotal%> | Discount: €<%=transaction.transactions_amount_shipping_discount%> | <a class="edit-delete" href="/booking/invoice/<%=transaction._id%>">Generate invoice: <%=transaction.transactions_invoice_number%></a> </p>
+                </li>
+              </ul>
+              <% })%>
+            </div>
+            <a class="btn btn-light btn-block" href="#">Show more</a>
+          </div>
+        </div>
+        <br>
+        <!-- Reply New Enquiries -->
+        <a href="https://outlook.live.com/mail/0/inbox"><button type="button" class="btn btn-primary btn-lg btn-block">Reply New Enquiries</button></a>
+        <div class="card">
+          <br>
+          <div class="wrapper">
+            <div class="small-console">
+              <%  enquiriesFound.reverse().forEach(function(enquiry,index) {%>
+              <ul <% if ((index) % 2 == 0) {%> class="with-shade" <%}%>>
+            <li>
+              <p>From: <%=enquiry.name%> | <%=enquiry.topic%> | Prefered date: <%=enquiry.date%> | No: <%=enquiry.quantity%> ppl</p>
+                <p>Enquiry: <%=enquiry.message%> | <a class="edit-delete" href="mailto:<%=enquiry.email%>">reply</a></p>
+                </li>
+              </ul>
+              <% })%>
+            </div>
+            <a class="btn btn-light btn-block" href="#">Show more</a>
+          </div>
+        </div>
+        <br>
+        <!-- Create New Course Profile -->
+        <a href="/courses/course-profile/create"><button type="button" class="btn btn-dark btn-lg btn-block">Create New Course Profile</button></a>
+        <div class="card">
+          <br>
+          <div class="wrapper">
+            <div class="small-console">
+              <%  profilesFound.forEach(function(profile,index) {%>
+              <ul <% if ((index) % 2 == 0) {%> class="with-shade" <%}%>>
+                <li>
+                  <p><%=profile.title%> | <%=profile.category%> | <%=profile.duration%> days | Price: €<%=profile.price%> | Max: <%=profile.capacity%></p>
+                <P>Course_profile_ID: <%=profile._id%> | <a class="edit-delete" href="/courses/course-profile/edit/<%=profile._id%>">Edit</a> | <a class="edit-delete" href="/courses/course-profile/edit/<%=profile._id%>">Delete</a></p>
+                </li>
+              </ul>
+              <% })%>
+            </div>
+            <a class="btn btn-light btn-block" href="#">Show more</a>
+          </div>
+        </div>
+        <br>
+        <!-- Publish New Posts -->
+        <a href="/blog/post/create"><button type="button" class="btn btn-info btn-lg btn-block">Publish New Posts</button></a>
+        <div class="card">
+          <br>
+          <div class="wrapper">
+            <div class="small-console">
+              <% sortedPostsFound.forEach(function(post,index){ %>
+              <ul <% if ((index) % 2 == 0) {%> class="with-shade" <%}%>>
+            <li>
+              <p><%=post.title%> | <%=post?.date?.toDateString()%> | by <%=post.author%> | #<%=post.category%></p>
+                <p>Post_ID: <%=post._id%> | <a class="edit-delete" href="/blog/<%=post._id%>">View</a> | <a class="edit-delete" href="/blog/post/edit/<%=post._id%>">Edit</a> | <a class="edit-delete" href="/blog/post/edit/<%=post._id%>">Delete</a></p>
+                </li>
+              </ul>
+              <% }) %>
+            </div>
+            <a class="btn btn-light btn-block" href="#">Show more</a>
+          </div>
+        </div>
+        <br>
+        <!-- View Images / Files -->
+        <a href="/images"><button type="button" class="btn btn-warning btn-lg btn-block">View Images / Files</button></a>
+        <br>
+        <!-- Upload Images / Files -->
+        <a href="/upload"><button type="button" class="btn btn-dark btn-lg btn-block">Upload Images / Files</button></a>
+        <br>
+        <!-- Logout -->
+        <a href="/logout"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">Logout</button></a>
+        <br>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+  // show more information
+  $('.wrapper').find('a[href="#"]').on('click', function(e) {
+    e.preventDefault();
+    this.expand = !this.expand;
+    $(this).text(this.expand ? "Show Less" : "Show more");
+    $(this).closest('.wrapper').find('.small-console, .big-console').toggleClass('small-console big-console');
+  });
+</script>
+
+<%-include("partials/footer")-%>

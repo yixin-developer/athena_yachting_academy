@@ -1,0 +1,188 @@
+<%- include("../partials/header"); -%>
+
+<section>
+
+  <!-- Cover image -->
+  <div>
+    <img src="/images/course-cover/course-cover-stcw-courses.jpg" width="100%" class="top-image" alt="course-cover-stcw-courses">
+  </div>
+
+  <div class="container-fluid course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>STCW Courses</b></h1>
+        <p class="lead course-subtitle"><em>There are 2 major benefits to obtaining your STCW certification, whether you need it or not. The first benefit is that you will become qualified to serve in many more advanced maritime professions. The second benefit is that the STCW training is practical knowledge that anyone on a vessel should have to help promote a safe work environment. </em></p>
+        <br><br>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>Due to changes in the IMO Model Course 1.21 regarding ‘Personal Safety and Social Responsibilty’ which is one of the elements of the STCW Basic Safety Training Combined Course, the authorities are now recommending a total course duration of 20 hours as opposed to the previous 14 hours.</b></p>
+                <p><b>The price of the STCW Basic Safety Training Combined Training is now reduced to €1000 including 18% VAT, with a class of maxmum of 7 students. Please contact us to arrange the course for you.‍</b></p>
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+              </div>
+            </div>
+          </div>
+
+          <!-- the map -->
+          <%- include("../partials/maps/ssm"); -%>
+
+              </div>
+            </div>
+
+            <!-- Course detail accordion -->
+            <div class="accordion" id="accordionExample">
+
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Course Overview
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      The STCW Basic course is an all inclusive package, consisting of the following modules:
+                    </p>
+                    <ul>
+                      <li><b>STCW Personal Survival Techniques</b></li>
+                      <br>
+                      <p>
+                        Realistic, practical, sea-based training. Have you had the opportunity to test yourself working in salt water, working with strangers to organise yourself in a liferaft with plumes of water beating down on you?
+                      </p>
+                      <p>
+                        Run by professional trainers who have really been there and done that, our training is a cut above other courses. Here you'll get the opportunity to jump into cold water, practice survival techniques in the sea and work with others to
+                        learn survival techniques. You will get the opportunity to test yourself in fully controlled, but more difficult conditions than those usually experienced in an indoor swimming pool.
+                      </p>
+                      <li><b>STCW Fire Fighting and Fire Prevention</b></li>
+                      <br>
+                      On completion of the training, the trainee will have knowledge of the ways in which fires are caused and the precautions to be taken to minimise the risk of fire in ships. They will be able to:
+                      <ul>
+                        <li>Maintain a state of readiness to respond to emergency situations involving fires aboard ship</li>
+
+                        <li>Fight and extinguish fires using fire fighting apparatus and appliances provided on board</li>
+                        <li>Act as a member of a fire party, including use of self-contained breathing apparatus</li>
+                      </ul>
+                      <br>
+                      <li><b>STCW Elementary First Aid</b></li>
+                      <br>
+                      <p>
+                        The following items are part of this course:
+                      </p>
+                      <p>
+                        Develop competence in:
+                      </p>
+                      <ul>
+                        <li>Taking immediate action upon encountering an accident or other medical emergency</li>
+                      </ul>
+
+                      <br>
+                      <p>Knowledge, Understanding and Proficiency:</p>
+
+                      <ul>
+                        <li>Assessment of needs of casualty and threats to own safety</li>
+                        <li>Appreciation of body structure and functions</li>
+                        <li>Understanding of immediate measures to be taken in cases of emergency, including the ability to</li>
+                        <ul>
+                          <li>Position casualty</li>
+                          <li>Apply resuscitation techniques</li>
+                          <li>Control bleeding</li>
+                          <li>Apply appropriate measures of basic shock management</li>
+                          <li>Apply appropriate measures in event of burns and scalds, including accidents caused by electrical current</li>
+                          <li>Rescue and transport a casualty</li>
+                          <li>Improvise bandages and use materials in emergency kit</li>
+                        </ul>
+                      </ul>
+                      <br>
+                      <li><b>STCW Personal Safety and Social Responsibility</b></li>
+                      <br>
+                      <p>To develop competence in:</p>
+
+                      <ul>
+                        <li>Complying with emergency procedures</li>
+                        <li>Taking precautions to prevent pollution of the marine environment</li>
+                        <li>Observing safe working practices</li>
+                        <li>Understanding orders and being understood in relation to shipboard duties</li>
+                        <li>Contributing to effective human relationships on board ship</li>
+                      </ul>
+
+                      <br>
+                      <p>Knowledge, Understanding and Proficiency:</p>
+
+                      <ul>
+                        <li>Types of emergency which may occur, such as collision, fire foundering</li>
+                        <li>Knowledge of shipboard contingency plans for responses to emergencies</li>
+                        <li>Emergency signals and specific duties allocated to crew members in the muster list; muster stations; correct use of personal safety equipment</li>
+                        <li>Action to take on discovering potential emergency, including fire, collision, foundering and ingress of water into the ship</li>
+                        <li>Action to take on gearing emergency alarm signals</li>
+                        <li>Value of training and drills</li>
+                        <li>Knowledge of escape routes and internal communication and alarm systems</li>
+                        <li>Effect of operational or accidental pollution of the marine environment</li>
+                        <li>Basic environmental protection procedures</li>
+                        <li>Importance of adhering to safe working practices at all times</li>
+                        <li>Safely and protective devices available to protect against potential hazards aboard ship</li>
+                        <li>Precautions to be taken prior to entering enclosed spaces</li>
+                        <li>Familiarisation with international measure concerning accident prevention and occupational health</li>
+                        <li>Importance of maintaining good human working relationships aboard ship</li>
+                        <li>Social responsibilities; employment conditions; individual rights and obligations; dangers of drug and alcohol abuse</li>
+                      </ul>
+
+                    </ul>
+                    <p>
+                      Full details can be found <a class="book-link" href="http://www.imo.org/en/OurWork/HumanElement/TrainingCertification/Pages/STCW-Convention.aspx"><em>here</em></a> | Easy reference guide <a class="book-link" href="https://web.archive.org/web/20130725164849/http://www.stcw.org/"><em>here</em></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <%- include("../partials/reviews"); -%>
+            <!-- Bottom buttons -->
+            <div class="course-bottom-buttons">
+              <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+              <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+              <% if(courseProfileFound.onlineLink != "") {%>
+              <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+              <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+              <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+              <%}%>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

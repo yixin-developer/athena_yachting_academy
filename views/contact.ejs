@@ -1,0 +1,310 @@
+<%-include("partials/header")-%>
+
+<section>
+  <div class="container-fluid contact-background">
+    <div class="contact-page">
+      <!-- Contact info -->
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="mb-4">Contact Details</h1>
+          <p class="lead text-justify footer-mail">
+            info@sailingschoolmalta.com (please use the enquiry form below)
+          </p>
+          <p class="lead text-justify footer-phone">
+            +356 9964 3706 / +356 7748 5409 (online booking)
+          </p>
+          <p class="lead text-justify footer-ubication">
+            Geoemms 3, Triq Hal Kaprat, Santa Venera, SVR 1671, Malta (Office
+            Address)
+          </p>
+          <p class="lead text-justify">
+            Please note the number above may not be answered while we are out
+            sailing, if so then please send an enquiry using the form below or
+            WhatsApp us.
+          </p>
+          <p class="lead text-justify" style="font-size: 15px">
+            Sailing School Malta is a trading name of Atalanta Sailing Ltd, a
+            Maltese company with Registration Number C56359, VAT Number MT
+            21079819, and registered address: Centris Business Gateway II, Level
+            3, Suite C, Triq is-Salib tal-Imriehel Central Business District,
+            Birkirkara. CBD3020.
+          </p>
+        </div>
+        <div class="col-md-4">
+          <img src="images/contact/contact-vitamin-sea.jpg" width="100%" height="auto" alt="contact-vitamin-sea" />
+        </div>
+      </div>
+      <hr />
+      <!-- Maps -->
+      <div id="map">
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Office & Theory Course Location 📟</h3>
+            <p class="lead">
+              Address: Geoemms 3, Triq Hal Kaprat, Santa Venera
+            </p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.288309126418!2d14.473327914231094!3d35.89095392605092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e5aa8f7400687%3A0xf3d62ad916e924c6!2sSailing%20School%20Malta!5e0!3m2!1sen!2smt!4v1588782850897!5m2!1sen!2smt" width="100%" height="300" frameborder="0" style="border: 0" allowfullscreen="" aria-hidden="false" tabindex="0">
+            </iframe><br /><br />
+          </div>
+          <div class="col-md-6">
+            <h3>Sail Cruising Course Location ⛵</h3>
+            <p class="lead">Address: Manoel Island Yacht Marina Ponton D</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3231.8238526684895!2d14.496734064231505!3d35.90232957542379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e4536111c7805%3A0x1104be9d74ae7945!2sManoel%20Island%20Yacht%20Marina!5e0!3m2!1sen!2smt!4v1588782440756!5m2!1sen!2smt" width="100%" height="300" frameborder="0" style="border: 0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe><br /><br />
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Motor Cruising Course Location 🛥</h3>
+            <p class="lead">Address: Portomaso Marina, St Julian</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3231.039003393157!2d14.49103831447635!3d35.921545324363585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e456b02791d23%3A0x4d6c318f9827a56b!2sPortomaso%20Marina!5e0!3m2!1sen!2smt!4v1592223372178!5m2!1sen!2smt" width="100%" height="300" frameborder="0" style="border: 0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe><br /><br />
+          </div>
+          <div class="col-md-6">
+            <h3>Powerboat Course Location 🚤</h3>
+            <p class="lead">Address: Kalkara Marina, Kalkara</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.296002112637!2d14.522063015264619!3d35.89076548014606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e5b2b84eb9679%3A0x60fb531f5eabcf53!2sKalkara%20Marina!5e0!3m2!1sen!2str!4v1661706136566!5m2!1sen!2str" width="100%" height="300" frameborder="0" style="border: 0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe><br /><br />
+          </div>
+        </div>
+      </div>
+      <hr />
+      <!-- Enquiry form -->
+      <div class="form-group" id="enquiry-form">
+        <form class="contact" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="recaptchaResponse" id="recaptchaResponse" />
+
+          <h2 class="text-center">Enquiry Form Sailing School Malta</h2>
+
+          <p class="lead text-center my-4"><b>
+              Please note this is not the actual booking form. You can book
+              directly through the specific course page.</b>
+          </p>
+          <p class="lead text-center my-4"><b>
+              You may find many of your questions already answered at
+              <a class="enquiry-faq" href="/faqs">Frequently Asked Questions.</b></a>
+          </p>
+          <br />
+
+          <div>
+            <div class="form-group course-selected-params">
+              <label>Name*</label>
+              <input class="form-control enquiry-form-name" name="name" type="text" placeholder="Name" required />
+            </div>
+
+            <div class="form-group course-selected-params">
+              <label>Email*</label>
+              <input class="form-control enquiry-form-email" name="email" type="email" placeholder="Email" required />
+            </div>
+
+            <div class="form-group course-selected-params">
+              <label>Interested Course / Topic</label>
+              <select required class="form-control enquiry-form-interest-course" name="topic">
+                <option disabled selected value>-- select an option --</option>
+                <option value="Transport Malta Nautical License">
+                  Transport Malta Nautical License
+                </option>
+                <option value="RYA Start Yachting">RYA Start Yachting</option>
+                <option value="RYA Competent Crew">RYA Competent Crew</option>
+                <option value="RYA Day Skipper Practical">
+                  RYA Day Skipper Practical
+                </option>
+                <option value="Day Skipper Plus Practical Course">
+                  Day Skipper Plus Practical Course
+                </option>
+                <option value="RYA Coastal Skipper Practical">
+                  RYA Coastal Skipper Practical
+                </option>
+                <option value="RYA Yachtmaster Preparation And Exam">
+                  RYA Yachtmaster Preparation And Exam
+                </option>
+                <option value="RYA Day Skipper Package">
+                  RYA Day Skipper Package
+                </option>
+                <option value="RYA Coastal Skipper Package">
+                  RYA Coastal Skipper Package
+                </option>
+                <option value="RYA Yachtmaster Package">
+                  RYA Yachtmaster Package
+                </option>
+                <option value="RYA Day Skipper Fast Track">
+                  RYA Day Skipper Fast Track
+                </option>
+                <option value="RYA Coastal Fast Track">
+                  RYA Coastal Fast Track
+                </option>
+                <option value="RYA Yachtmaster Fast Track">
+                  RYA Yachtmaster Fast Track
+                </option>
+                <option value="RYA Family Sailing Course">
+                  RYA Family Sailing Course
+                </option>
+                <option value="RYA Level 1 Powerboating">
+                  RYA Level 1 Powerboating
+                </option>
+                <option value="RYA Level 2 Powerboat Handling">
+                  RYA Level 2 Powerboat Handling
+                </option>
+                <option value="RYA Personal Watercraft Proficiency Course">
+                  RYA Personal Watercraft Proficiency Course
+                </option>
+                <option value="RYA Start Motor Cruising">
+                  RYA Start Motor Cruising
+                </option>
+                <option value="RYA Motor Cruising Helmsman">
+                  RYA Motor Cruising Helmsman
+                </option>
+                <option value="RYA Motor Cruising Day Skipper">
+                  RYA Motor Cruising Day Skipper
+                </option>
+                <option value="RYA Motor Cruising Coastal Skipper">
+                  RYA Motor Cruising Coastal Skipper
+                </option>
+                <option value="RYA Motor Cruising Advanced Pilotage">
+                  RYA Motor Cruising Advanced Pilotage
+                </option>
+                <option value="RYA Day Skipper Theory">
+                  RYA Day Skipper Theory
+                </option>
+                <option value="RYA Coastal Skipper Yachtmaster Offshore Theory">
+                  RYA Coastal Skipper Yachtmaster Offshore Theory
+                </option>
+                <option value="RYA Yacht Master Ocean Theory">
+                  RYA Yacht Master Ocean Theory
+                </option>
+                <option value="RYA Marine Radio Src">
+                  RYA Marine Radio Src
+                </option>
+                <option value="RYA Professional Practices And Responsibilities">
+                  RYA Professional Practices And Responsibilities
+                </option>
+                <option value="RYA Diesel Engine">RYA Diesel Engine</option>
+                <option value="RYA First Aid">RYA First Aid</option>
+                <option value="RYA Radar">RYA Radar</option>
+                <option value="RYA Sea Survival">RYA Sea Survival</option>
+                <option value="RYA Commercial Endorsements">
+                  RYA Commercial Endorsements
+                </option>
+                <option value="RYA Day Skipper Plus Course">
+                  RYA Day Skipper Plus Course
+                </option>
+                <option value="Boat Handling Course">
+                 Boat Handling Course
+                </option>
+                <option value="Sail Handling Course">
+                 Sail Handling Course
+                </option>
+                <option value="Mile Builder / Continuation Courses">
+                  Mile Builder / Continuation Courses
+                </option>
+                <option value="STCW Courses">STCW Courses</option>
+                <option value="Yatch Charter">Yatch Charter</option>
+                <option value="ICC Assessment">ICC Assessment</option>
+                <option value="Own Boat Tuition">Own Boat Tuition</option>
+                <option value="Flotilla Skipper Training">
+                  Flotilla Skipper Training
+                </option>
+                <option value="Corporate Team Building">
+                  Corporate Team Building
+                </option>
+                <option value="Advice On Course Selection">
+                  Advice On Course Selection
+                </option>
+                <option value="Boat Owners">
+                  Boat Owners
+                </option>
+                <option value="Join The Team">
+                  Join The Team
+                </option>
+                <option value="Sponsorship">
+                  Sponsorship
+                </option>
+                <option value="Other Topics">
+                  Other Topics
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group course-selected-params">
+              <label>Prefered date</label>
+              <input class="form-control enquiry-form-prefered-date" name="date" type="text" placeholder="DD-MM-YYYY" />
+            </div>
+
+            <div class="form-group course-selected-params">
+              <label>No. People</label>
+              <input class="form-control enquiry-form-number-poeple" name="quantity" type="text" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Message</label>
+            <textarea class="form-control" placeholder="Message... If possible, please tell us a bit about your previous sailing experience, or let us know if you are new to sailing." name="message" rows="8"></textarea>
+          </div>
+          <div>
+            <input type="hidden" id="subscribe" name="subscribe" value="no" />
+            <label for="exampleCheck"><input type="checkbox" id="exampleCheck" onclick="signUp();" />
+              Our courses promotion and specials offers appears from time to
+              time. Click to sign up and receive details on our latest offers
+              and sailing trips!
+            </label>
+          </div>
+          <button class="btn btn-warning btn-block" type="submit"><b>Submit Now</b></button>
+          <div id="alert" class="text-center"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+  function signUp() {
+    document.getElementById("subscribe").value = "Yes";
+  }
+</script>
+
+<script type="text/javascript">
+  const captchaKey = "<%= captchaKey %>";
+  window.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("#enquiry-form > form");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      if (form.reportValidity()) {
+        document.querySelector("#alert").innerText =
+          "Processing your submission, please wait...";
+        grecaptcha.ready(async () => {
+          const token = await grecaptcha.execute(captchaKey, {
+            action: "contact",
+          });
+          let recaptchaResponse = document.getElementById("recaptchaResponse");
+          recaptchaResponse.value = token;
+
+          let res = null;
+          try {
+            const response = await fetch("/enquiry", {
+              method: "POST",
+              body: new FormData(form),
+            });
+            res = await response.text();
+            if (response.status === 400) {
+              throw new Error('400');
+            }
+            document.write(res);
+            window.location.replace("/enquiry-success")
+            document.querySelector("#alert").innerText = res?.success;
+            document.querySelector("#alert").classList.add("success");
+          } catch (err) {
+            if (res) {
+              document.write(res);
+            }
+            console.log(err.toString());
+            document.querySelector("#alert").innerText =
+              "Error trying to handle your submission, please try sending an email to info@sailingschoolmalta.com";
+            // window.location.replace("/enquiry")
+          }
+        });
+      }
+    });
+  });
+</script>
+
+<%-include("partials/footer")-%>

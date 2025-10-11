@@ -1,0 +1,35 @@
+<% uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+<% const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; %>
+<% let n=1;let courseInfo=[];let coursesInfo=[];%>
+<% courses.sort((a,b) => a.date - b.date).forEach(function(course,indexPlus) {%>
+<% let date = monthNames[course.date.getMonth()] + "\xa0" + (course.date.getYear() + 1900);%>
+<% if (date === uniqueMonthYear) {
+        const courseDateStartParsed = new Date(course.date);
+        courseDateStartParsed.setDate(courseDateStartParsed.getDate() + course.duration-1);
+        const finalDate = courseDateStartParsed.toString();
+        const finalDateParsed = `${finalDate.substring(0,3)} ${finalDate.substring(7,10)} ${finalDate.substring(4,7)}`;
+        %>
+<% courseInfo = [n++,`${String(course.date).substring(0, 3)} ${String(course.date).substring(7, 10)} ${String(course.date).substring(3, 7)}`,course.duration,course.available,course.pricePerson,course.priceExclusive,course.capacity,course.comment, finalDateParsed, course.instructor, course.vessel]%>
+<% coursesInfo.push(courseInfo);}%>
+<%})%>
+
+<div class="tab-pane fade show <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>" role="tabpanel">
+  <% coursesInfo.forEach(function(courseInfo,i) {
+        let n = 0;
+        
+        const [courseNum, courseDateStart, courseDuration, courseAvailablePlaces, coursePrice, coursePriceExclusive, courseMaxCapacity, courseNote, courseDateStartParsed, courseInstructor, courseVessel] = courseInfo;
+        %>
+  <p class="mb-0"><b>Trip date <%=courseNum%></b>: <%=courseDateStart%> - <%= courseDateStartParsed %>
+    | <b style="color:blue"><%=courseDuration%></b> days |<b style="color:orange"><%if(courseAvailablePlaces){
+          %> <em><%=courseAvailablePlaces%></em><%
+        }else{
+         %> <%=`Fully Booked`%><%
+        }%></b> <%= courseAvailablePlaces ? 'boat available' : '' %> |
+    <%if(coursePriceExclusive){
+         %>€<%= coursePriceExclusive %> private group<%
+        }else{
+          %> Ask us for private course <%
+        }%> | Instructor: <%= courseInstructor %> | Yacht: <%= courseVessel %> </p>
+  <p class="mb-0"><b>Destination and more info:</b> <%=courseNote%></p><br> <%})%>
+</div>
+<%});%>

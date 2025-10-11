@@ -1,0 +1,818 @@
+<%- include("../partials/headers/header-family-sailing"); -%>
+
+<section>
+
+  <!-- Top image -->
+<div class="family-sailing-main-wrapper position-relative text-center">
+  <img src="/images/course-cover/rya-courses-family-sailing.webp" class="img-fluid w-100 d-block" alt="about-us-cover-child-sailing">
+  <div class="overlay-text">
+    <h1 class="text-white">Family Sailing Together On a Boat</h1>
+    <h4 class="text-white">What else can be better?</h4>
+  </div>
+</div>
+
+  <div class="container-fluid mile-builder-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>RYA Courses - Family Sailing</b></h1>
+        <h6>SAFE  |  FUN  |  PRIVATE  |  MIXED LEVEL |  BEGINNER FRIENDLY </h6>
+        <br>
+        <h6 class="text-center mb-4">⭐️⭐️⭐️⭐️⭐️ 5.0 based on 50+ Sailing Families</h6>
+        <br>
+        <!-- <%- include("../partials/summary-course"); -%> -->
+        <% var currentCourse = courseProfileFound;%>
+        <% if (currentCourse){ %>
+        <i class="social-media-icon far fa-calendar-alt"></i>
+        5-7 days
+        <i class="social-media-icon fas fa-euro-sign"></i>
+        from <%= currentCourse?.price%> euro 
+               <i class="social-media-icon fas fa-users"></i>
+        Max <%= currentCourse?.capacity%> students
+        <i class="social-media-icon fas fa-ship"></i>
+        <a  target="_blank" rel="noopener noreferrer" href="https://mastersailingmalta.com/yacht"><u>Bavaria 46 Cruiser</u></a> 
+        <%}%>
+        <br><br>
+        <p class="lead course-subtitle"><em>You are a couple, a group or a family wishing to have the yacht to yourselves.
+        This option offers flexibility in that the week can be dictated by you/your group.</em></p>        
+      </div>
+
+      <!-- family course charter tariff -->
+      <section>
+      <div class="container py-4 my-4">
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-8 text-center">
+            <h4 class="text-dark font-weight-bold">RYA Family / Private Sailing Course – Seasonal Pricing 2025</h4>
+          </div>
+        </div>
+
+        <div class="row text-center border bg-light rounded py-2 font-weight-bold text-dark" style="background-color: #3489d8;">
+          <div class="col text-left">Duration</div>
+          <div class="col">Dec–Mar</div>
+          <div class="col">Apr–Jun</div>
+          <div class="col">Jul–Sep</div>
+          <div class="col">Oct–Nov</div>  
+        </div>
+
+        <div class="row text-center py-2 border-bottom">
+          <div class="col text-left font-weight-bold">5-day Mon-Fri</div>
+          <div class="col">€3500</div>
+          <div class="col">€3800</div>
+          <div class="col">€4200</div>
+          <div class="col">€4000</div>
+        </div>
+
+        <div class="row text-center py-2 border-bottom">
+          <div class="col text-left font-weight-bold">7-day Mon-Sun</div>
+          <div class="col">€4200</div>
+          <div class="col">€4500</div>
+          <div class="col">€5000</div>
+          <div class="col">€4800</div>
+        </div>
+
+        <div class="row text-center py-2 border-bottom">
+          <div class="col text-left font-weight-bold">2-day Sat-Sun</div>
+          <div class="col">€1400</div>
+          <div class="col">€1500</div>
+          <div class="col">€1600</div>
+          <div class="col">€1500</div>
+        </div>
+        <br>
+        <p>Please note: Prices are per boat (max 5 people if for RYA course) on <a  target="_blank" rel="noopener noreferrer" href="https://mastersailingmalta.com/yacht"><u>Bavaria 46 Cruiser</u></a> (4 cabins 2 heads); 2-day course only available for weekends.</p>
+      </div>
+      </section>
+
+
+      <section>
+      <div class="text-center pb-5">
+      <a class="text-center" target="_blank" rel="noopener noreferrer" href="/files/3390d64b93f608cfbadba796d6789998.pdf"><h4 class="font-weight-bold">🌬️ <u>Download our typical 5-7-Day Family Sailing Course Itinerary</u> ⛵️</h4></a>
+      </div>
+      </section>
+      <!-- <div class="container world-towning mb-5"> -->
+      <!-- <h5 class="lead mb-4 text-center"><b>Find out one family's 5-day private sailing course experience ...</b></h5> -->
+      <!-- <div>
+        <div id="home-videos-carousel" class="carousel slide"  data-ride="false" data-interval="false">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselId" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselId" data-slide-to="1"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <iframe loading="lazy" width="560" height="315"  src="https://www.youtube.com/embed/dGGI1ZeO3ag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="carousel-item">
+              <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/0ahItAj4eOs?si=itJzDGm9NpmmR7_T" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#home-videos-carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon text-primary" aria-hidden="false"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next " href="#home-videos-carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon text-primary" aria-hidden="false"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div> -->
+
+      <h5 class="lead mb-4 text-center"><b>Find out one family's 5-day private sailing course experience ...</b></h5>
+      <div class="d-flex justify-content-center mb-5">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dGGI1ZeO3ag?si=B9Xi-vWXv_jYZUci" title="RYA Courses Family Sailing" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <!-- calendar pop-up -->
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up-family-sailing"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>Thanks to Malta’s fantastic year-round weather, we offer fun, safe, and family-friendly private sailing courses throughout all seasons. Families from all over the world come to Malta to sail and train together—whether you’re complete beginners or a mix of experience levels. It’s a perfect opportunity to discover if sailing could become part of your family’s lifestyle. Our instructors ensure a caring and supportive environment, making learning enjoyable for every family member. </b></p>
+                <p><b>The price displayed is the base rate for a 5-day course of the season. Final pricing may vary depending on your course length and customization. You can easily adjust any difference at the booking page by adding the applicable amount on top of the base price. </b></p>
+                </b></p>
+                <p><i> 📩 If you’re interested in this private family sailing course, welcome to contact us to confirm the price and availability. You can also booking directly online. After registration and payment, you will receive email confirmation and joining instructions.😊</i></p>
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+              </div>
+            </div>
+          </div>
+
+          <!-- the map -->
+          <%- include("../partials/maps/manoel"); -%>
+
+              </div>
+            </div>
+
+            <%- include("../partials/carousel"); -%>
+
+
+            <!-- Course detail accordion -->
+
+<div class="accordion" id="familySailingAccordion">
+
+  <!-- Course Description -->
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          🧭 Course Description
+        </button>
+      </h2>
+    </div>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#familySailingAccordion">
+      <div class="card-body">
+          <h4 class="mb-3">Learn to Sail Together with Our RYA Family Sailing Courses</h4>
+        <p>
+          Looking for a way to combine adventure, quality time, and practical learning at sea? Our 
+          <strong><a href="/courses/rya-courses-family-sailing" title="RYA Family Sailing Course in Malta">RYA family sailing courses</a></strong> 
+          are specially designed for families who want to 
+          <strong>learn to sail together</strong> in a safe, private, and inspiring setting.
+        </p>
+        <p>
+          Whether you're new to sailing or already have an 
+          <a href="/courses/rya-day-skipper-practical" title="RYA Day Skipper Course in Malta">RYA skipper qualification</a>, 
+          our courses offer the perfect opportunity to grow as a sailing team. You'll have 
+          <strong>your own yacht</strong> and a <strong>dedicated RYA-certified instructor</strong>, guiding 
+          you through hands-on sailing skills while allowing plenty of time for swimming, sightseeing, and 
+          relaxing in stunning locations.
+        </p>
+        <p>
+          Enjoy the freedom of <strong>private sailing tuition</strong> tailored to your family’s goals and 
+          comfort level. Children can earn beginner certificates, while teens and adults may work toward 
+          <a href="/courses/rya-competent-crew" title="RYA Competent Crew Course in Malta"><strong>RYA Competent Crew</strong></a>, 
+          <a href="/courses/rya-day-skipper-practical" title="RYA Day Skipper Practical Course in Malta"><strong>Day Skipper</strong></a>, 
+          or even 
+          <a href="/courses/rya-coastal-skipper" title="RYA Coastal Skipper Practical in Malta"><strong>Coastal Skipper</strong></a> 
+          certification.
+        </p>
+        <p>
+          For maximum comfort and privacy, there's also the option for your instructor to sleep ashore in the 
+          evenings, leaving your family to enjoy the yacht on your own overnight.
+        </p>
+        <p>
+          This is more than a course — it's an unforgettable 
+          <strong><a href="/courses/rya-courses-family-sailing" title="Private Family Sailing Courses in Malta">family sailing holiday</a></strong>, 
+          blending RYA-accredited training with Mediterranean exploration.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Who It's For -->
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          🎯 Who This Is For
+        </button>
+      </h2>
+    </div>
+    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#familySailingAccordion">
+      <div class="card-body">
+        
+      <h4 class="mb-3">Compare Your Family Sailing Options in Malta</h4>
+      <p class="lead ">
+        What’s the best way to combine <strong>sailing education</strong>, <strong>family bonding</strong>, and <strong>adventure on the water</strong>? Here's how our <a href="/courses/rya-family-sailing">RYA Family Sailing Courses</a> stack up against other options.
+      </p>
+
+      <div class="table-responsive">
+        <table class="table table-bordered ">
+          <thead class="thead-light">
+            <tr>
+              <th>Feature</th>
+              <th>RYA Family Sailing Course</th>
+              <th>Skippered Charter</th>
+              <th>Bareboat Charter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Instructor Onboard</strong></td>
+              <td class="table-info"><strong>✔ RYA-Certified Instructor</strong></td>
+              <td>✔ Skipper (not an instructor)</td>
+              <td>✖ None</td>
+            </tr>
+            <tr>
+              <td><strong>Learn & Get Certified</strong></td>
+              <td class="table-info"><strong>✔ RYA Day Skipper / Competent Crew certifications for adults & kids</strong></td>
+              <td>✖ Not a training trip</td>
+              <td>✖ No instruction</td>
+            </tr>
+            <tr>
+              <td><strong>Child-Friendly Education</strong></td>
+              <td class="table-info"><strong>✔ Kids can actively learn, steer, and earn real RYA certification</strong></td>
+              <td>✖ Kids are mostly passive passengers</td>
+              <td>✖ Kids are mostly passive passengers</td>
+            </tr>
+            <tr>
+              <td><strong>Skill Development</strong></td>
+              <td class="table-info"><strong>✔ Hands-on sailing, mooring, navigation & skippering — real growth</strong></td>
+              <td>✖ Minimal — focus on leisure, not learning</td>
+              <td>✖ Requires prior skill, no coaching onboard</td>
+            </tr>
+            <tr>
+              <td><strong>Custom Itinerary</strong></td>
+              <td class="table-info"><strong>✔ Tailored to your family’s interests & level</strong></td>
+              <td>✔ Limited — skipper leads</td>
+              <td>✔ You plan it — but no local insight or guidance</td>
+            </tr>
+            <tr>
+              <td><strong>Safety for Kids</strong></td>
+              <td class="table-info"><strong>✔ Child life jackets, guardrail netting, safety-first approach</strong></td>
+              <td>✔ Basic precautions</td>
+              <td>✖ Fully self-responsible</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <b><p>This course is for: </p></b>
+        <ul>
+          <li>Families who want to learn sailing together in a private, supportive setting</li>
+          <li>Those who like to become experienced in a new activity as a family.</li>
+          <li>Parents and teens (16+) working toward their Day Skipper certification</li>
+          <li>Younger children and teen over 12 years old can earn their Competent Crew Certificate</li>
+          <li>Anyone looking to combine sightseeing, leisure, swimming, and hands-on learning in beautiful Maltese waters.</li>          
+        </ul>
+        <b><p>Please note: Instructor must be onboard. A maximum of 5 people can take an RYA course on the same boat (can be mixed course levels).</p></b>
+      </div>
+  </div>
+  </div>
+
+<!-- where we go  -->
+  <div class="card">
+    <div class="card-header" id="headingRoute">
+      <h2 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseRoute" aria-expanded="true" aria-controls="collapseRoute">
+          🌬️ Where We Go & Route
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseRoute" class="collapse show" aria-labelledby="headingRoute" data-parent="#familySailingAccordion">
+      <div class="card-body">
+        <!-- Horizontal Scroll Gallery 2 -->
+                    <div class="my-3">
+                      <div class="horizontal-scroll-gallery d-flex flex-nowrap overflow-auto">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-0.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-0.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-1.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-1.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-2.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-2.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-3.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-3.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-4.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-4.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-5.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-5.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-6.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-6.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-7.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-7.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-8.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-8.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-9.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-9.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-10.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-10.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-11.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-11.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-12.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-12.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-13.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-13.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-14.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-14.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-15.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-15.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-16.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-16.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-17.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-17.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-18.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-18.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-19.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-19.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-20.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-20.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-21.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-21.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-22.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-22.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-23.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-23.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-24.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-24.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-25.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-25.png" alt="rya-courses-family-sailing">
+                        <img src="/images/rya-courses-family-sailing/rya-courses-family-sailing-26.png" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal2" data-src="/images/rya-courses-family-sailing/rya-courses-family-sailing-26.png" alt="rya-courses-family-sailing">
+                      </div>
+                    </div>
+
+                    <!-- Image Modal -->
+                    <div class="modal fade" id="imageModal2" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                        <div class="modal-content bg-transparent border-0">
+                          <div class="modal-body text-center">
+                            <img id="modalImage2" src="" class="img-fluid rounded" alt="Full Size">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <script>
+                      $(document).ready(function () {
+                        $('#imageModal2').on('show.bs.modal', function (event) {
+                          var img = $(event.relatedTarget);
+                          var src = img.data('src');
+                          $('#modalImage2').attr('src', src);
+                        });
+                      });
+                    </script>
+
+        <h4 class="mb-4"><h4>Download: <a class="pb-3" target="_blank" rel="noopener noreferrer" href="/files/3390d64b93f608cfbadba796d6789998.pdf"><u>A Typical 7-day Family Sailing Course Route in Malta</u></a></h4>
+        <p>Join us for a memorable <strong>RYA family sailing course around Malta, Gozo, and Comino</strong>, blending hands-on learning with adventure and relaxation.</p>
+        <h5>🌊 Day 1 – Valletta, Balluta Bay & The Three Cities (~5NM)</h5>
+        <ul>
+          <li>Meet your crew at Manoel Island Yacht Marina and complete a safety briefing</li>
+          <li>Sail to Balluta Bay for lunch and a swim stop</li>
+          <li>Practice docking and boat handling in Grand Harbour</li>
+          <li>Explore Valletta and The Three Cities; dinner at a traditional Maltese restaurant</li>
+        </ul>
+
+        <h5>🏝️ Day 2 – Valletta to St. Paul’s Bay (~15NM)</h5>
+        <ul>
+          <li>Sail past Sliema and anchor at the historic St. Paul’s Bay</li>
+          <li>Optional hike to Red Tower and visit to Malta National Aquarium</li>
+          <li>Dinner along Bugibba’s scenic seafront</li>
+        </ul>
+
+        <h5>🏖️ Day 3 – St. Paul’s Bay to Comino via Mellieha (~15NM)</h5>
+        <ul>
+          <li>Stop at Mellieha Bay for paddleboarding and swimming</li>
+          <li>Visit Ahrax Cave and cruise to Comino’s Blue Lagoon</li>
+          <li>Anchor overnight in Crystal Lagoon</li>
+        </ul>
+
+        <h5>🌞 Day 4 – Explore Gozo and Anchor at Ramla Bay (~10NM)</h5>
+        <ul>
+          <li>Moor at Mgarr Marina and explore Victoria and the Citadel</li>
+          <li>Optional Jeep or e-bike tour to salt pans and Dwejra Bay</li>
+          <li>Evening anchorage at Ramla Bay</li>
+        </ul>
+
+        <h5>⚓️ Day 5 – Round Gozo, Sail to Golden Bay (~20NM)</h5>
+        <ul>
+          <li>Sail Gozo’s coast, view Popeye Village from the sea</li>
+          <li>Anchor at Golden Bay for sunset and dinner ashore</li>
+        </ul>
+
+        <h5>🐟 Day 6 – Golden Bay to Marsaxlokk via Blue Grotto (~20NM)</h5>
+        <ul>
+          <li>Sail past Dingli Cliffs and Blue Grotto for optional dinghy cave tour</li>
+          <li>Dock at Marsaxlokk for a fresh seafood dinner</li>
+        </ul>
+
+        <h5>🏊 Day 7 – St. Peter’s Pool & Return to Valletta (~15NM)</h5>
+        <ul>
+          <li>Morning swim at St. Peter’s Pool or explore Marsaxlokk Market</li>
+          <li>Enjoy a relaxed sail back to Manoel Island Yacht Marina</li>
+          <li>Farewell dinner and course debrief</li>
+        </ul>
+        <p>This route may vary with weather and preferences, but it’s a great mix of skill-building, cultural discovery, and family bonding on the water.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- What You’ll Learn -->
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          🪢 What You’ll Learn
+        </button>
+      </h2>
+    </div>
+    <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#familySailingAccordion">
+      <div class="card-body">
+        <h4 class="mb-3">Learn Sailing as a Family – Practical, Fun & RYA-Certified</h3>
+        <p>
+          Our <a href="/courses/rya-courses-family-sailing" title="RYA Family Sailing Course">family sailing courses</a> are a unique opportunity for everyone onboard to learn practical sailing skills while enjoying time together on the water. Whether you're an adult ready to take on the challenge of skippering or a young sailor curious about ropes and steering, there’s something for every age and level.
+        </p>
+
+        <p>
+          Adults and teens aged 16+ can train for their 
+          <a href="/courses/rya-day-skipper-practical" title="RYA Day Skipper Practical Course"><b>RYA Day Skipper</b></a> qualification — mastering navigation, pilotage, passage planning, seamanship, and boat-handling skills, including techniques like ‘Med’-style mooring. It’s a course that empowers you to skipper a yacht with confidence on short coastal passages.
+        </p>
+
+        <p>
+          Children aged 12 and over can qualify for their 
+          <a href="/courses/rya-competent-crew" title="RYA Competent Crew Course"><b>RYA Competent Crew</b></a> certificate. They'll get hands-on with age-appropriate tasks such as steering the yacht, tying fenders, hoisting sails, and learning how life works onboard — all while having fun and building lifelong memories.
+        </p>
+
+        <p><strong>What you’ll learn as a crew:</strong></p>
+        <ul>
+          <li>Essential sailing techniques from basic to advanced, tailored to each family member’s experience</li>
+          <li>Navigation, seamanship, pilotage, and route planning based on the official <a href="/courses/rya-courses" title="All RYA Courses">RYA syllabus</a></li>
+          <li>Fun and safe hands-on activities for children — steering, sail trim, line handling and more</li>
+          <li>Opportunities to earn RYA <a href="/courses/rya-day-skipper-practical" title="Day Skipper">Day Skipper</a> or <a href="/courses/rya-competent-crew" title="Competent Crew">Competent Crew</a> certifications by the end of your sailing adventure</li>
+        </ul>
+
+        <p>
+          It’s not just a course — it’s a rewarding learning holiday on the water where your whole family becomes part of the crew!
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+                <!-- Vessel -->
+                <div class="card">
+                  <div class="card-header" id="headingFive">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                        ⛵ Our Family Sailing Course Yacht
+                      </button>
+                    </h2>
+                  </div>
+
+                  <div id="collapseFive" class="collapse show" aria-labelledby="headingFive" data-parent="#familySailingAccordion">
+                    <div class="card-body">
+                    <!-- Horizontal Scroll Gallery -->
+                        <div class=" my-3">
+                          <div class="horizontal-scroll-gallery d-flex flex-nowrap overflow-auto">
+                            <img src="/images/bavaria46c/mile-builder-vessel-bavaria46c-0.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/bavaria46c/mile-builder-vessel-bavaria46c-0.webp" alt="mile builder vessel bavaria 46c">
+                            <img src="/images/bavaria46c/mile-builder-vessel-bavaria46c-8.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/bavaria46c/mile-builder-vessel-bavaria46c-8.webp" alt="mile builder vessel bavaria 46c">
+                            <img src="/images/bavaria46c/mile-builder-vessel-bavaria46c-1.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/bavaria46c/mile-builder-vessel-bavaria46c-1.webp" alt="mile builder vessel bavaria 46c">
+                            <img src="/images/bavaria46c/mile-builder-vessel-bavaria46c-2.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/bavaria46c/mile-builder-vessel-bavaria46c-2.webp" alt="mile builder vessel bavaria 46c">
+                            <img src="/images/bavaria46c/mile-builder-vessel-bavaria46c-3.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/bavaria46c/mile-builder-vessel-bavaria46c-3.webp" alt="mile builder vessel bavaria 46c">
+                            <img src="/images/bavaria46c/mile-builder-vessel-bavaria46c-4.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/bavaria46c/mile-builder-vessel-bavaria46c-4.webp" alt="mile builder vessel bavaria 46c">
+                            <img src="/images/bavaria46c/mile-builder-vessel-bavaria46c-5.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/bavaria46c/mile-builder-vessel-bavaria46c-5.webp" alt="mile builder vessel bavaria 46c">
+                            <img src="/images/bavaria46c/mile-builder-vessel-bavaria46c-6.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/bavaria46c/mile-builder-vessel-bavaria46c-6.webp" alt="mile builder vessel bavaria 46c">
+                            <img src="/images/bavaria46c/mile-builder-vessel-bavaria46c-7.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/bavaria46c/mile-builder-vessel-bavaria46c-7.webp" alt="mile builder vessel bavaria 46c">
+                          </div>
+                        </div>
+
+                          <!-- Image Modal -->
+                        <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                            <div class="modal-content bg-transparent border-0">
+                              <div class="modal-body text-center">
+                                <img id="modalImage" src="" class="img-fluid rounded" alt="Full Size">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <script>
+                          $(document).ready(function () {
+                            $('#imageModal').on('show.bs.modal', function (event) {
+                              var img = $(event.relatedTarget);
+                              var src = img.data('src');
+                              $('#modalImage').attr('src', src);
+                            });
+                          });
+                        </script>
+                        <h4 class="mb-3">Bavaria 46 Cruiser - 4 cabin version</h4>
+                      <p>
+                        Set sail aboard our fully equipped <a href="https://mastersailingmalta.com/yacht"><strong>Bavaria 46 Cruiser</strong></a> — a modern 46-foot sailing yacht built for long passages, offshore training, and life at sea. With the perfect mix of comfort and performance, she's your home and classroom during the course.
+                      </p>
+                      <p>Designed to accommodate a wide range of sailors, it is an exceptional family cruiser, offering a perfect balance of seaworthiness, comfort, and value—often praised as "a lot of boat for the money." Spacious and intelligently designed, this yacht is ideal for couples, friends, and families alike. The layout ensures ample living space, smart storage solutions, and well-thought-out details that enhance both comfort and functionality. Onboard, you'll find all the essential equipment expected of a yacht in this class, making every voyage enjoyable and stress-free.</p>
+                      <ul>
+                        <li><strong>Designed for Sail Training:</strong> Autopilot, dual GPS plotters, AIS, radar, depth sounder, wind instruments, and a bow thruster make navigation and handling a real learning experience.</li>
+                        <li><strong>Comfort at Sea:</strong> Four double cabins, two bathrooms (electric toilets), cockpit cushions, teak deck, hot waters shower, and fresh linens make even night passages feel relaxing.</li>
+                        <li><strong>Well-Equipped Galley:</strong> Includes fridge, kitchenware, and a welcome basket to fuel your adventures — plus an inverter and solar panels for off-grid reliability.</li>
+                        <li><strong>Safety First:</strong> EPIRB, liferaft, self-inflating life vests, VHF, and full RYA-compliant safety equipment onboard for peace of mind.</li>
+                        <li><strong>Extras You’ll Love:</strong> Bluetooth sound system, StarLink, cockpit speakers, fans in each cabin, and a spacious cockpit for both learning and lounging.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Instructor -->
+                <div class="card">
+                <div class="card-header" id="headingSix">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      🧑‍✈️ Instructors
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseSix" class="collapse show" aria-labelledby="headingSix" data-parent="#familySailingAccordion">
+                  <div class="card-body">
+
+                    <!-- Instructor: Stephen -->
+                    <div class="media mb-4">
+                      <img src="/images/about-us/about-us-stephen-baynham.jpg" class="mr-3 rounded" style="width: 80px; height: 80px; object-fit: cover;" alt="Stephen Baynham">
+                      <div class="media-body">
+                        <h5 class="mt-0">Stephen Baynham – RYA Yachtmaster Examiner</h5>
+                        Stephen is the principal of our school and a veteran Yachtmaster Instructor & Examiner. With decades of experience and a calm, structured style, he’s guided countless sailors to their Yachtmaster certificates with confidence and skill.
+                      </div>
+                    </div>
+
+                    <!-- Instructor: Neil -->
+                    <div class="media mb-4">
+                      <img src="/images/about-us/about-us-neil-morris.jpeg" class="mr-3 rounded" style="width: 80px; height: 80px; object-fit: cover;" alt="Neil Morris">
+                      <div class="media-body">
+                        <h5 class="mt-0">Neil Morris – RYA Yachtmaster Sail & Power Instructor</h5>
+                        A lifelong sailor and passionate coach, Neil brings global sailing experience and a hands-on approach to teaching. Whether you're a beginner or brushing up for exams, he’ll support your learning every step of the way.
+                      </div>
+                    </div>
+
+                    <!-- Instructor: Andrew -->
+                    <div class="media">
+                      <img src="/images/about-us/about-us-andrew-pascoots.jpg" class="mr-3 rounded" style="width: 80px; height: 80px; object-fit: cover;" alt="Andrew Pascoots">
+                      <div class="media-body">
+                        <h5 class="mt-0">Andrew – Yachtmaster & Racing Instructor</h5>
+                        From building his first dinghy at age 6 to racing in nine Fastnet Races, Andrew’s passion runs deep. He’s an expert in both cruising and racing, offering a calm and encouraging learning environment — with a pot of tea always nearby.
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+                <!-- What’s Included -->
+  <div class="card">
+    <div class="card-header" id="headingFour">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          ☑️ What’s Included 
+        </button>
+      </h2>
+    </div>
+    <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#familySailingAccordion">
+      <div class="card-body">
+        <ul>
+          <li>Exclusive use of a 46-foot 4-cabin yacht </li>
+          <li>Course materials, and certification if your instructors approve your completion of the course</li>
+          <li>Safety gear, including colourful child life jackets</li>
+          <li>Bedding, towels, linens, and onboard essentials</li>
+          <li>Fuel, marina fees, end cleaning, gorceries, water</li>
+          <li>We can also provide extras for your comfort such as SUP boards, and snorkelling gears with addtional cost</li>
+          <li>Depending on the age of your children you may want us to arrange for netting around the guard-rails of the yacht. Safety is a key priority and your children will be expected to obey instructions about wearing their life jackets, not running on deck etc. Our skippers enjoy having children on board but they will be firm about safety rules!</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+                         <!-- Recommended to bring -->
+              <div class="card">
+                <div class="card-header" id="headingTen">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                      🎒 Recommended to bring
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#familySailingAccordion">
+                  <div class="card-body">
+                    <p>
+                      Full bedding is supplied, sheets, pillows and blankets. Also, we provide towels for use on the yacht
+                      but not beach towels. If you should require more than one towel during the week, please do bring
+                      your
+                      own additional towel.
+                    </p>
+                    <ul>
+                      <li>Sunglasses</li>
+                      <li>High factor sun cream</li>
+                      <li>Deck shoes if possible, otherwise soft shoes with a non marking sole, or just barefoot</li>
+                      <li>Shorts (Please be aware that these are liable to get dirty, so not your bestones!)</li>
+                      <li>T-Shirts</li>
+                      <li>Wash Kit</li>
+                      <li>Fleece or jumper for the evenings and windy days at sea</li>
+                      <li>Soft bag as opposed to a hard suitcase (we can store luggage if you are staying on)</li>
+                      <li>Light long sleeved shirt if you need to cover up in the sun</li>
+                      <li>Baseball/sun hat (preferably with a clip to stop it blowing overboard!)</li>
+                      <li>Sea sickness tablets should you need them</li>
+                      <li>Phone/ Ipod / lap top chargers – 12V (cigarette style chargers) if needed</li>
+                      <li>RYA log book, if you have one</li>
+                      <li>Travel Insurance recommended</li>
+                      <li>And above all, enthusiasm!</li>
+                    </ul>
+                    <p>
+                      Please note that the temperatures in Malta are normally very warm during the day
+                      but it can be cold in the evenings and windy days at sea. It is a good idea to bring a
+                      small light rain mac if you have one and also a pair of long trousers and a warm
+                      fleece, just in case.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingEleven">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                      ✈️ Flight and On-arrival
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven" data-parent="#familySailingAccordion">
+                  <div class="card-body">
+                    <p>If you need a flight to Malta International, the airport code is MLA. There is only one airport.
+                    </p>
+                    <p>
+                      Malta International Airport (MLA) is well connected to many European cities, especially major hubs. Low-cost carriers dominate many of the connections, especially from regional airports.
+                    </p>
+                    <p>On arrival at Malta airport, there is a kiosk at the exit from the airport where you can pre pay
+                      the taxi to the boat. The cost of this is usually 25 Euro.The taxi drivers speak good English.</p>
+                    <p>Cheaper transport option would be use taxi app such as: Bolt and Ecab. There are plenty of taxi
+                      connected to these apps.</p>
+                    <p>You will have a short safety brief on arrival to familiarise yourself with the boat and meet your
+                      crew mates!</p>
+                    <p >
+                      Still not clear how to live on a boat? Don't worry, we will send you
+                      joining instructions and explain everything the day you come aboard.
+                    </p>
+                    <p>
+                      <u><a href="/files/9fc7a1b357d3ba558c7a9710307903d4.pdf">⬇️Download the joining instruction here⬇️</a></u>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingTwelve">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                      🙋 Frequently Asked Question
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwelve" class="collapse" aria-labelledby="headingTwelve" data-parent="#familySailingAccordion">
+                  <div class="card-body">
+                    <p>For more details about course, logistics, accommodation, booking, and certificate, please refer to
+                      the <a href="/faqs"><em>FAQ's section.</em></a></p>
+                  </div>
+                </div>
+              </div>
+
+</div>
+
+            <!-- comparision chart -->
+            <div class="container my-5">
+              <h2 class="font-weight-bold text-center mb-4">Compare Your Family Sailing Options in Malta</h2>
+              <p class="lead text-center">
+                What’s the best way to combine <strong>sailing education</strong>, <strong>family bonding</strong>, and <strong>adventure on the water</strong>? Here's how our <a href="/courses/rya-family-sailing">RYA Family Sailing Courses</a> stack up against other options.
+              </p>
+
+              <div class="table-responsive">
+                <table class="table table-bordered text-center">
+                  <thead class="thead-light">
+                    <tr>
+                      <th>Feature</th>
+                      <th>RYA Family Sailing Course</th>
+                      <th>Skippered Charter</th>
+                      <th>Bareboat Charter</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Instructor Onboard</strong></td>
+                      <td class="table-info"><strong>✔ RYA-Certified Instructor</strong></td>
+                      <td>✔ Skipper (not an instructor)</td>
+                      <td>✖ None</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Learn & Get Certified</strong></td>
+                      <td class="table-info"><strong>✔ RYA Day Skipper / Competent Crew certifications for adults & kids</strong></td>
+                      <td>✖ Not a training trip</td>
+                      <td>✖ No instruction</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Child-Friendly Education</strong></td>
+                      <td class="table-info"><strong>✔ Kids can actively learn, steer, and earn real RYA certification</strong></td>
+                      <td>✖ Kids are mostly passive passengers</td>
+                      <td>✖ Kids are mostly passive passengers</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Skill Development</strong></td>
+                      <td class="table-info"><strong>✔ Hands-on sailing, mooring, navigation & skippering — real growth</strong></td>
+                      <td>✖ Minimal — focus on leisure, not learning</td>
+                      <td>✖ Requires prior skill, no coaching onboard</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Custom Itinerary</strong></td>
+                      <td class="table-info"><strong>✔ Tailored to your family’s interests & level</strong></td>
+                      <td>✔ Limited — skipper leads</td>
+                      <td>✔ You plan it — but no local insight or guidance</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Safety for Kids</strong></td>
+                      <td class="table-info"><strong>✔ Child life jackets, guardrail netting, safety-first approach</strong></td>
+                      <td>✔ Basic precautions</td>
+                      <td>✖ Fully self-responsible</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+
+                        <!-- Feature on -->
+            <section>
+            <div class="container py-5 text-center">
+              <h2 class="font-weight-bold mb-4">As Featured on</h2>
+              <div class="row justify-content-center">
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/times-malta-logo.jpg" class="img-fluid grayscale" alt="times-malta-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/visit-malta-logo.png" class="img-fluid grayscale" alt="visit-malta-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/RMYC-logo.webp" class="img-fluid grayscale" alt="RMYC-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/yachting-world-logo.png" class="img-fluid grayscale" alt="yachting-world-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/classic-boat-logo.jpeg" class="img-fluid grayscale" alt="classic-boat-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/CA-logo.png" class="img-fluid grayscale" alt="CA-logo">
+                  </div>
+                </div>
+              </div>
+            </div>
+            </section>
+
+            <%- include("../partials/reviews"); -%>
+            <!-- Bottom buttons -->
+            <div class="course-bottom-buttons">
+              <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+              <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+              <% if(courseProfileFound.onlineLink != "") {%>
+              <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+              <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+              <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+              <%}%>
+            </div>
+
+    </div>
+    <div class="videos-wrapper">
+      <h3>Recommended videos to watch before course:</h3>
+      <div class="videos-container">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/SWIX6SUh-nc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/pExM7u3fKoI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/3X8drKsdf5E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/By0y8O7AbZw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      
+    </div>
+
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

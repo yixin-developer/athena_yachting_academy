@@ -1,0 +1,47 @@
+<%-include("partials/header")-%>
+
+<section>
+
+  <!-- Cover image-->
+  <div>
+    <img src="/images/course-category-cover/course-category-cover-rya-practical-powerboat.jpg" width="100%" class="top-image" alt="course-category-cover-rya-practical-powerboat">
+  </div>
+
+  <div class="container-fluid">
+
+    <!-- Category title -->
+    <div class="text-center">
+      <h1 class="courses-category-title">RYA Practical Powerboat Courses</h1>
+      <h5 class="lead course-text-line">Ideal for short passages and exploring your local waters, make the most of your time afloat with our powerboat courses.</h5>
+      <br>
+      <a class="lead" href="/files/114b5097094b523a1e8d895a578b89d7.pdf">
+        <h6>Download RYA Powerboat Courses System</h6>
+      </a>
+      <br>
+    </div>
+
+    <!-- Course card -->
+    <div class="row">
+      <% coursesFound.forEach(function(course,index){ %>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card bg-light course-profile-card ">
+          <%- include("partials/course-card-info", {course: course}); -%>
+          <div class="card-body">
+            <a href=<%=course.courseLink%>> <h4 class="card-title"><%=course.title%></h4></a>
+            <p class="lead text-justify"><%=course.introduction%></p>
+            <a href=<%=course.courseLink%> class="btn btn-info btn-block">Course details</a>
+            <a href=/booking/courses/<%=course.title.replace(/ /g,"-").toLowerCase()%> class="btn btn-warning btn-block">Course booking</a>
+            <% if (course.ryaLink) { %>
+            <a href=<%=course.ryaLink%> class="btn btn-light btn-block"><img src="/images/RYA_logo.png" width="50px"></a>
+            <%}%>
+            </div>
+          </div>
+        </div>
+    <%})%>
+          </div>
+
+        </div>
+
+</section>
+
+<%-include("partials/footer")-%>

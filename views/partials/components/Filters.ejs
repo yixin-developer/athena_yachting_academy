@@ -1,0 +1,61 @@
+const FilterBtns = ({ filtersData, filterType, filters, handleSetFilter, className }) => {
+    // console.log(filtersData, filterType, filters, handleSetFilter);
+    return (
+        <div className={`filter ${className}`} style={{ "--animate-duration": ".7s" }}>
+            {Object.entries(filtersData).map(([title, value], id) => (
+                <React.Fragment key={id}>
+                    <button
+                        key={id}
+                        className={`filter-btn ${
+                            filters[filterType].includes(value) ? "filter-btn-active" : ""
+                        }`}
+                        onClick={() => handleSetFilter(filterType, value)}
+                    >
+                        {title}
+                    </button>
+                    {id < Object.entries(filtersData).length - 1 && (
+                        <hr className="vertical-lane" />
+                    )}
+                </React.Fragment>
+            ))}
+        </div>
+    );
+};
+
+const Filters = ({ setFilters, filters }) => {
+    const levels = JSON.parse(`<%-JSON.stringify(levels)%>`);
+    const categories = JSON.parse(`<%-JSON.stringify(categories)%>`);
+
+    const filterBtns = {
+        courseType: categories,
+        level: levels,
+    };
+    const handleSetFilter = (filterType, type) => {
+        setFilters((prevFilters) => {
+            if (prevFilters[filterType].includes(type))
+                return {
+                    ...prevFilters,
+                    [filterType]: prevFilters[filterType].filter((filter) => filter !== type),
+                };
+            prevFilters[filterType].push(type);
+            return { ...prevFilters };
+        });
+    };
+
+    return (
+        <div id="filters" className="filters">
+            {Object.entries(filterBtns).map(([filterType, filtersData], id) => (
+                <FilterBtns
+                    key={id}
+                    filtersData={filtersData}
+                    filterType={filterType}
+                    handleSetFilter={handleSetFilter}
+                    filters={filters}
+                    className={`animate__animated ${
+                        id % 2 === 0 ? "animate__fadeInLeft" : "animate__fadeInRight"
+                    }`}
+                />
+            ))}
+        </div>
+    );
+};

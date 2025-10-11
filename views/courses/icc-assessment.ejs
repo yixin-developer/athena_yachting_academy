@@ -1,0 +1,126 @@
+<%- include("../partials/header"); -%>
+
+<section>
+
+  <!-- Cover image -->
+  <div>
+    <img src="/images/course-cover/icc-assessment.jpeg" width="100%" class="top-image" alt="course-cover-rya-commercial-endorsements">
+  </div>
+
+  <div class="container-fluid course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>ICC Assessment</b></h1>
+        <p class="lead course-subtitle"><em>Sailing School Malta is an approved ICC test center for <b>ICC Powerboat 10m Test, ICC Sail Test, and ICC Motor 24m Test.</b></em></p>
+        <br><br>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>This assessment is organized on request. Please contact us or send us an enquiry if you're interested. 😉‍</b></p>
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning  course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <a href="https://www.rya.org.uk/knowledge/abroad/icc" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-12">
+            <iframe width="100%" height="250" src="https://www.youtube.com/embed/viAo7JEJO7o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Course detail accordion -->
+      <div class="accordion" id="accordionExample">
+
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button style="text-align: left" class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                ICC Assessment Overview
+              </button>
+            </h2>
+          </div>
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              <p>The International Certificate of Competence (ICC) is required by most European countries (excluding the UK) as evidence of a basic level of competence. </p>
+              <p>The ICC is a certificate which is intended to provide evidence of competence when requested by officials in foreign countries. </p>
+              <p> There is actually no internationaly agreed competence certificate and it is worth noting that the onus is on you to check the requirements of the state you are visiting. Member states are not obliged to accept the ICC however it is normally widely recognised. It can not be issued to nationals of UNECE Member countries unless they are British Nationals or Residents of the UK. See below for a full list of UNECE countries whose citizens are NOT able to apply for an ICC issued by the RYA.</p>
+              <p><b>If you are a national of one of these countries and are resident in that country or another country on this list the RYA is not authorised to issue you with an ICC:
+                  Austria, Belarus, Belgium, Bulgaria, Croatia, Czech Republic, Finland, France, Germany, Hungary, Ireland, Latvia, Lithuania, Luxembourg, Netherlands, Norway, Poland, Romania, Serbia, Slovakia, Switzerland, Ukraine.</b></p>
+              <p>Within the RYA scheme the ICC falls just below the level of Day Skipper practical. Holders of the RYA Day Skipper (Power or Sail) can apply for the ICC without any further tests. Simply complete the <a href="https://www.rya.org.uk/knowledge/abroad/icc/icc-apply">ICC forms here.</a></p>
+              <p>Powerboat Level 2 certificate holders will also be able to apply for the ICC without any further tests however this will only cover power vessels up to 10 metres.</p>
+              <p><strong>If you do not hold either of the above certificates you will need to carry out a test of basic boat handling, navigation ability and knowledge of the Collision Regulations to gain the ICC ticket. Please note this is not a substitute&nbsp;for the RYA Day Skipper and for all intent purposes the ICC will require the level of RYA Day Skipper to pass.</strong></p>
+              <p><strong>Option 1 -</strong> For students who have equivalent or higher knowledge of the Day Skipper course it is suggested you attend the test over a weekend to demonstrate their competence. We can run this every weekend of the year so please call the office to check availability. <strong>Prices upon request.</strong></p>
+              <p><strong>Option 2 -</strong> For students who have done some crewing, such as RYA Competent Crew or equivalent but have no or limited navigational experience or time in charge of a yacht we would suggest the following package:</p>
+              <p><strong>Step 1 -</strong>&nbsp;<a href="/courses/rya-day-skipper-theory">RYA Day Skipper theory</a>,&nbsp;this can be done in a classroom or online.</p>
+              <p><strong>Step 2 </strong>- <a href="/courses/rya-day-skipper-practical">RYA Day Skipper Practical course</a>, there are many ways you can complete the practical, such as 5 continuous days or split over a series of weekends. On successful completion of the Day Skipper you can apply for the ICC without taking any further tests.</p>
+              <p>Download a copy of the ICC application <a href="https://www.rya.org.uk/knowledge/abroad/icc">form here</a>. This will also give you an idea as to what's involved with the test itself and what fees are payable to the RYA for the issue of the certificate.</p>
+              <p>The syllabus for the ICC assessment is detailed on the ICC application form. Candidates can also purchase the <a href="https://www.rya.org.uk/shop/p/rya-icc-handbook-ebook">RYA ICC Handbook</a> to guide them through the requirements.</p>
+              <p><b>Remember you can also get an ICC direct from the RYA if you already hold one of the following RYA certificates:</b></p>
+              <ul>
+                <li>RYA Day Skipper</li>
+                <li>RYA Coastal Skipper</li>
+                <li>RYA/MCA Yachtmaster Coastal</li>
+                <li>RYA/MCA Yachtmaster Offshore</li>
+                <li>RYA/MCA Yachtmaster Ocean</li>
+              </ul>
+              <img src="/images/books/icc-handbook.jpeg" width="20%" alt="icc-handbook">
+
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingFour">
+            <h2 class="mb-0">
+              <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Frequently Asked Questions
+              </button>
+            </h2>
+          </div>
+          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+            <div class="card-body">
+              <p>For all ICC and ICC application related question, please refer to <a href="https://www.rya.org.uk/knowledge/abroad/icc"><em>UK ICC issued by RYA</em></a> for official and detailed answer.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <%- include("../partials/reviews"); -%>
+      <!-- Bottom buttons -->
+      <div class="course-bottom-buttons">
+        <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+        <a class="btn btn-warning  course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+        <a href="https://www.rya.org.uk/knowledge/abroad/icc" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

@@ -1,0 +1,63 @@
+<%- include("partials/header"); -%>
+
+<section>
+
+  <div class="container-fluid compose-background">
+    <div class="compose-page">
+      <h1>Post Updating Form</h1>
+      <br>
+
+      <form action="/blog/post/delete/<%=postFound._id%>" method="post">
+        <button class="btn btn-danger" type="submit" name="button">Delete This Post</button>
+      </form>
+
+      <br>
+
+      <form class="" action="/blog/post/edit/<%=postFound._id%>" method="post">
+        <div class="form-group">
+          <label>Images</label>
+          <input required class="form-control" type="text" name="image" placeholder="input uploaded image name here (required)" value="<%=postFound.image[0]%>">
+          <input class="form-control" type="text" name="image" placeholder="input uploaded image name here (optional)" value="<%=postFound.image[1]%>">
+          <input class="form-control" type="text" name="image" placeholder="input uploaded image name here (optional)" value="<%=postFound.image[2]%>">
+          <input class="form-control" type="text" name="image" placeholder="input uploaded image name here (optional)" value="<%=postFound.image[3]%>">
+          <input class="form-control" type="text" name="image" placeholder="input uploaded image name here (optional)" value="<%=postFound.image[4]%>">
+          <small><a href="/upload">Click to open upload page</a></small>
+          <br><br>
+
+          <br>
+          <label>Title</label>
+          <input required class="form-control" type="text" name="title" value="<%=postFound.title%>">
+          <br>
+          <label>Subtitle or Summary</label>
+          <input class="form-control" type="text" name="subtitle" value="<%=postFound.subtitle%>">
+          <br>
+          <label>Date</label>
+          <input required class="form-control" type="date" name="date" value="<%=postFound.date.getFullYear()+ "-" + ("0" + (postFound.date.getMonth() + 1)).slice(-2) + "-" + ("0" + postFound.date.getDate()).slice(-2)%>">
+          <br>
+          <label>Author</label>
+          <input required class="form-control" type="text" name="author" value="<%=postFound.author%>">
+          <br>
+          <label>Category</label>
+          <input required class="form-control" type="text" name="category" list="category-select" value="<%=postFound.category%>">
+          <datalist id="category-select" name="category" required>
+            <option value="Boats">Boats</option>
+            <option value="News and Events">News and Events</option>
+            <option value="Trips">Trips</option>
+            <option value="Crew's Log">Crew's Log</option>
+            <option value="Opinion">Opinion</option>
+            <option value="Business">Business</option>
+            <option value="School">School</option>
+          </datalist>
+          <br>
+          <label>Content</label>
+          <textarea required class="form-control" type="text" name="content" rows="5" cols="50"><%=postFound.content%></textarea>
+          <br>
+        </div>
+        <button class="btn btn-warning" type="submit">Update</button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<%- include("partials/footer"); -%>

@@ -1,0 +1,44 @@
+<%- include('partials/header') %>
+
+<section>
+
+  <div class="container-fluid shop-background">
+    <div class="row">
+      <% if(extraItemsFound.length>=0){ %>
+      <% extraItemsFound.forEach(function(extraItem, i) { %>
+      <div class="col-md-4">
+        <div class="card card-body-additional-items" style="width: 24rem;">
+          <div id="targetNonTripCarousel<%=i%>" class="carousel slide" interval="false">
+            <div class="carousel-inner">
+              <% extraItem.images.forEach(function(image,index){%>
+              <%if(image!=""){%>
+              <div class="carousel-item <% if(index===0){ %> active <% } %>">
+                <img class="d-block w-100" style="height: 260px !important" src="/images/<%=image%>">
+              </div>
+              <%}})%>
+            </div>
+            <a class="carousel-control-prev" href="#targetNonTripCarousel<%=i%>" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#targetNonTripCarousel<%=i%>" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <div class="card-body" id="<%=extraItem._id%>">
+            <h5 class="card-title extra-item-title shop-item-title"><%=extraItem.name%></h5>
+            <h5 class="extra-item-title extra-item-price-unit">/<%=extraItem.unit%></h5>
+            <h5 class="extra-item-title extra-item-price-unit shop-item-price">€<%=extraItem.price%></h5>
+          </div>
+        </div>
+      </div>
+      <%})} else {%>
+      <p>No items to show</p>
+      <% } %>
+    </div>
+  </div>
+
+</section>
+
+<%- include('partials/footer') %>

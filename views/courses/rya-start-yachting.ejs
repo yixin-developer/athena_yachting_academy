@@ -1,0 +1,512 @@
+<%- include("../partials/headers/header-start-yachting"); -%>
+
+<section>
+
+  <!-- Cover video -->
+  <div class="container-video">
+    <iframe class="video-top" src="https://www.youtube.com/embed/VfHP3fmYEYI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  
+
+  <div class="container-fluid video-course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>RYA Start Yachting</b></h1>
+        <h6>FUN | SAFE | CONFIDENCE | BEGINNER </h6>
+        <br>
+        <h6 class="text-center mb-4">⭐️⭐️⭐️⭐️⭐️ 5.0 based on 1000+ Happy Sailors</h6>
+        <br>        <%- include("../partials/summary-course"); -%>
+        <p class="lead course-subtitle"><em>A short introduction to sailing for complete beginners - the perfect way to experience Malta from the sea and discover the joy of yachting.</em></p>
+        <br><br>
+      </div>
+
+       <div class="d-flex justify-content-center mb-5">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/pExM7u3fKoI?si=YW8OXOWX0JZDBYvE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <!-- calendar pop-up -->
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>You can book the course directly online by clicking the yellow Book Now button. We can also offer Start Yachting course for private group with maximum 5 students onboard. Please contact us if you're interested in this option or on a different date 😉‍</b></p>
+                <a class="btn btn-primary course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a target="_blank" rel="noopener noreferrer"  href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <!-- <a class="btn btn-info course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/booking/courses/<%=courseName%>" role="button">Joining instructions &raquo;</a> -->
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a target="_blank" rel="noopener noreferrer"  href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+                
+              </div>
+            </div>
+          </div>
+
+          <!-- the map -->
+          <%- include("../partials/maps/manoel"); -%>
+
+              </div>
+            </div>
+            <%- include("../partials/carousel"); -%>
+
+            <!-- Course detail accordion -->
+            <div class="accordion" id="accordionExample">
+
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      🧭 Course Overview
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                  <p>
+                    <strong>Start Yachting with Confidence:</strong> The <em>RYA Start Yachting Sail Cruising Course</em> is a perfect introduction if you want to <strong>learn sailing beginner</strong>—and discover the joy of yacht handling from day one.
+                  </p>
+                  <p>
+                    Designed for complete novices, this two-day course gives you a hands-on experience before moving on to more advanced training like Competent Crew. It offers a relaxed schedule that will give you a taste of what yachting is about and whether you’d enjoy it. You’ll sail to another pretty ports and bays along Malta coast. You’ll anchor for lunch each day and enjoy the freedom of being able to swim from your own yacht in the crystal clear blue water. Children in particular love this. 
+                  </p>
+                  <p>
+                    Over a weekend (or weekday, typically Monday–Tuesday), our friendly RYA instructors guide you through fundamental skills—from steering to sail trim and ropework—while making sure you feel relaxed and confident.
+                  </p>
+                  <p>
+                    By the end of the course, you'll <strong>start yachting</strong> like a pro, having tried helm, sails, knots, and onboard safety practices.
+                  </p>
+                  <p>
+                    After earning your Start Yachting certificate, you can fast-track to the <em><a target="_blank" rel="noopener noreferrer"  href="/courses/rya-competent-crew">RYA Competent Crew</a></em> course in just three days or two weekends.
+                  </p>
+                  <p>
+                    <strong>Easy booking:</strong> Just click the <em><a target="_blank" rel="noopener noreferrer"  href="/booking/courses/<%=courseName%>"><u>Book Now</u></a></em> button, choose your dates and number of participants, pay securely via credit card, PayPal, or bank transfer—and you’ll receive a confirmation email with joining instructions.
+                  </p>
+                  <p>
+                    Prefer a private session? Charter the full yacht for your group (up to 5 people) and enjoy a more intimate, relaxed Start Yachting experience. Private session pricing is listed above.
+                  </p>
+                  <p>
+                    <strong>The perfect gift:</strong> Treat someone special to a unique sailing experience—gift vouchers available for all our courses!
+                  </p>                  
+                </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      🎯 Who Is This Course For?
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+
+                                <!-- Horizontal Scroll Gallery -->
+            <div class=" mb-5">
+              <div class="horizontal-scroll-gallery d-flex flex-nowrap overflow-auto">
+                   <img src="/images/yachts/malta-sailing-yachts-charter15.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/yachts/malta-sailing-yachts-charter15.webp" alt="malta-sailing-yachts-charter15">
+                  <!-- <img src="/images/yachts/malta-sailing-yachts-charter2.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/yachts/malta-sailing-yachts-charter2.webp" alt="malta-sailing-yachts-charter2"> -->
+                  <img src="/images/yachts/malta-sailing-yachts-charter3.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/yachts/malta-sailing-yachts-charter3.webp" alt="malta-sailing-yachts-charter3">
+                  <!-- <img src="/images/yachts/malta-sailing-yachts-charter4.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/yachts/malta-sailing-yachts-charter4.webp" alt="malta-sailing-yachts-charter4"> -->
+                  <!-- <img src="/images/yachts/malta-sailing-yachts-charter5.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/yachts/malta-sailing-yachts-charter5.webp" alt="malta-sailing-yachts-charter5"> -->
+                  <!-- <img src="/images/yachts/malta-sailing-yachts-charter6.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/yachts/malta-sailing-yachts-charter6.webp" alt="malta-sailing-yachts-charter6"> -->
+                  <!-- <img src="/images/yachts/malta-sailing-yachts-charter7.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/yachts/malta-sailing-yachts-charter7.webp" alt="malta-sailing-yachts-charter7"> -->
+                  <img src="/images/yachts/malta-sailing-yachts-charter1.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/yachts/malta-sailing-yachts-charter1.webp" alt="malta-sailing-yachts-charter1">
+                  <img src="/images/yachts/malta-sailing-yachts-charter8.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/yachts/malta-sailing-yachts-charter8.webp" alt="malta-sailing-yachts-charter8">
+                  <img src="/images/yachts/malta-sailing-yachts-charter9.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/yachts/malta-sailing-yachts-charter9.webp" alt="malta-sailing-yachts-charter9">
+                  <img src="/images/yachts/malta-sailing-yachts-charter10.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/yachts/malta-sailing-yachts-charter10.webp" alt="malta-sailing-yachts-charter10">
+                  <img src="/images/yachts/malta-sailing-yachts-charter11.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/yachts/malta-sailing-yachts-charter11.webp" alt="malta-sailing-yachts-charter11">
+                  <img src="/images/yachts/malta-sailing-yachts-charter12.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/yachts/malta-sailing-yachts-charter12.webp" alt="malta-sailing-yachts-charter12">
+                  <img src="/images/yachts/malta-sailing-yachts-charter13.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/yachts/malta-sailing-yachts-charter13.webp" alt="malta-sailing-yachts-charter13">
+                  <img src="/images/yachts/malta-sailing-yachts-charter14.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/yachts/malta-sailing-yachts-charter14.webp" alt="malta-sailing-yachts-charter14">
+                  <img src="/images/yachts/malta-sailing-yachts-charter16.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/yachts/malta-sailing-yachts-charter16.webp" alt="malta-sailing-yachts-charter16">
+                  <img src="/images/yachts/malta-sailing-yachts-charter17.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/yachts/malta-sailing-yachts-charter17.webp" alt="malta-sailing-yachts-charter17">
+                  <img src="/images/yachts/malta-sailing-yachts-charter18.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/yachts/malta-sailing-yachts-charter18.webp" alt="malta-sailing-yachts-charter18">
+                  <img src="/images/yachts/malta-sailing-yachts-charter19.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/yachts/malta-sailing-yachts-charter19.webp" alt="malta-sailing-yachts-charter19">
+                  <img src="/images/yachts/malta-sailing-yachts-charter20.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/yachts/malta-sailing-yachts-charter20.webp" alt="malta-sailing-yachts-charter20">
+                  <img src="/images/yachts/malta-sailing-yachts-charter21.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/yachts/malta-sailing-yachts-charter21.webp" alt="malta-sailing-yachts-charter21">              
+              </div>
+            </div> 
+
+              <!-- Image Modal -->
+            <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content bg-transparent border-0">
+                  <div class="modal-body text-center">
+                    <img id="modalImage" src="" class="img-fluid rounded" alt="Full Size">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script>
+              $(document).ready(function () {
+                $('#imageModal').on('show.bs.modal', function (event) {
+                  var img = $(event.relatedTarget);
+                  var src = img.data('src');
+                  $('#modalImage').attr('src', src);
+                });
+              });
+            </script>
+                  <p>This beginner-friendly <strong>Start Yachting course</strong> is perfect for anyone who has never set foot on a sailing yacht but wants to <strong>learn the basics of sailing</strong> in a relaxed, supportive environment.</p>
+
+                  <ul>
+                    <li>No experience required — just a curiosity to discover sailing!</li>
+                    <li>No minimum age — ideal for individuals, families, or children eager to try life at sea.</li>
+                    <li>Great for those who dream of feeling confident and comfortable aboard a cruising yacht.</li>
+                    <li>An ideal way to visit Malta if its your first time. Malta is more beautiful from the sea than you think.</li>
+                    <li>Perfect as your first step into the <strong>RYA sailing course pathway</strong>, before moving on to the <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-competent-crew"><strong><u>Competent Crew</u></strong></a> level.</li>
+                  </ul>
+                  <p>Whether you're looking for a new adventure, a unique family experience, or a stepping stone into more advanced courses, this <strong>2-day sailing course for beginners</strong> is a fun and memorable way to start your sailing journey.</p>                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      📑 Course Content
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                <div class="mb-2">
+                <div class="horizontal-scroll-gallery d-flex flex-nowrap overflow-auto">
+                  <!-- Start Yachting Course Gallery -->
+                  <img src="/images/start-yachting/rya-start-yachting-course-1.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/start-yachting/rya-start-yachting-course-1.webp" alt="RYA Start Yachting 1">
+                  <img src="/images/start-yachting/rya-start-yachting-course-2.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/start-yachting/rya-start-yachting-course-2.webp" alt="RYA Start Yachting 2">
+                  <img src="/images/start-yachting/rya-start-yachting-course-3.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/start-yachting/rya-start-yachting-course-3.webp" alt="RYA Start Yachting 3">
+                  <img src="/images/start-yachting/rya-start-yachting-course-4.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/start-yachting/rya-start-yachting-course-4.webp" alt="RYA Start Yachting 4">
+                  <img src="/images/start-yachting/rya-start-yachting-course-5.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/start-yachting/rya-start-yachting-course-5.webp" alt="RYA Start Yachting 5">
+                  <img src="/images/start-yachting/rya-start-yachting-course-6.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/start-yachting/rya-start-yachting-course-6.webp" alt="RYA Start Yachting 6">
+                  <img src="/images/start-yachting/rya-start-yachting-course-7.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/start-yachting/rya-start-yachting-course-7.webp" alt="RYA Start Yachting 7">
+                  <img src="/images/start-yachting/rya-start-yachting-course-8.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/start-yachting/rya-start-yachting-course-8.webp" alt="RYA Start Yachting 8">
+                  <img src="/images/start-yachting/rya-start-yachting-course-9.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/start-yachting/rya-start-yachting-course-9.webp" alt="RYA Start Yachting 9">
+                  <img src="/images/start-yachting/rya-start-yachting-course-10.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/start-yachting/rya-start-yachting-course-10.webp" alt="RYA Start Yachting 10">
+                  <img src="/images/start-yachting/rya-start-yachting-course-11.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/start-yachting/rya-start-yachting-course-11.webp" alt="RYA Start Yachting 11">
+                  <img src="/images/start-yachting/rya-start-yachting-course-12.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/start-yachting/rya-start-yachting-course-12.webp" alt="RYA Start Yachting 12">
+                </div>
+          </div>
+                    <p>The <strong>RYA Start Yachting course</strong> offers a fun and practical introduction to sailing for complete beginners. Over just two days, you’ll gain hands-on experience and build confidence aboard a cruising yacht. By the end of the course, you will have learned to steer, handle sails, tie basic knots, and understand key safety procedures.</p>
+
+                    <h4>What You'll Learn</h4>
+
+                    <p><strong>Yacht Familiarisation</strong></p>
+                    <ul>
+                      <li>Understand essential sea terms, boat parts, rigging, and sails</li>
+                    </ul>
+
+                    <p><strong>Ropework & Knots</strong></p>
+                    <ul>
+                      <li>Learn how to tie the figure-eight knot, round turn and two half hitches, and bowline</li>
+                    </ul>
+
+                    <p><strong>Sailing Skills Underway</strong></p>
+                    <ul>
+                      <li>Experience sailing on all points of sail</li>
+                      <li>Practice steering under sail and engine power</li>
+                    </ul>
+
+                    <p><strong>Rules of the Road</strong></p>
+                    <ul>
+                      <li>Maintain a safe and efficient lookout at sea</li>
+                    </ul>
+
+                    <p><strong>Weather Awareness</strong></p>
+                    <ul>
+                      <li>Learn where and how to obtain accurate weather forecasts</li>
+                    </ul>
+
+                    <p><strong>Man Overboard Recovery</strong></p>
+                    <ul>
+                      <li>Understand the essential steps for recovering someone who has fallen overboard</li>
+                    </ul>
+
+                    <p><strong>Clothing & Safety Equipment</strong></p>
+                    <ul>
+                      <li>Know the proper use of lifejackets, safety harnesses, and personal flotation devices</li>
+                    </ul>
+
+                    <p><strong>Emergency Procedures</strong></p>
+                    <ul>
+                      <li>Be aware of common onboard hazards</li>
+                      <li>Know what to do in various emergency situations</li>
+                    </ul>
+
+                    <p>Successful completion of this course will prepare you for the next step: the <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-competent-crew"><strong>RYA Competent Crew course</strong></a>. While this follow-up course typically takes 5 days, <strong>Start Yachting graduates can complete it in just 3 days or two weekends</strong>.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                      ⛵️ More Details
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <div class="crew-course-details my-4">
+                      <img src="/images/course-element/course-element-bavaria44.jpg" width="30%" alt="start-yachting-bavaria44" style="border-radius: 5px;">
+                      <img src="/images/course-element/course-element-bavaria44-galley.jpeg" width="30%" alt="start-yachting-bavaria44-galley" style="border-radius: 5px;">
+                      <img src="/images/course-element/lookfar-stern.jpg" width="30%" alt="start-yachting-bavaria44-stern" style="border-radius: 5px;">
+                    </div>
+                      <p>Spend two inspiring days aboard our RYA training yacht and <strong>learn to sail in Malta</strong> with a small group of fellow beginners or friends. This <strong>RYA Start Yachting course</strong> is designed to give you hands-on experience, teamwork skills, and a real sense of what it's like to sail with the wind.</p>
+
+                      <p>Your yacht, <strong><a target="_blank" rel="noopener noreferrer"  href="/yachts/lookfar"><u>“Lookfar”</u></a> – a spacious Bavaria 44</strong> or <strong>“Malena” – a Bavaria 46 cruiser</strong>, is moored at Manoel Island Marina (Pontoon D, near Paparazzi Restaurant). Boarding begins at <strong>9:00 AM on the first day</strong> of the course.</p>
+
+                      <p>Our experienced RYA-certified instructor will welcome you on board, guide you through a full <strong>yacht safety briefing</strong>, and ensure you're comfortable before heading out. Throughout the course, you'll learn key sailing techniques like steering, basic sail handling, ropework, and onboard safety practices. Even if it's your first time on a boat, you'll quickly feel empowered and part of the crew.</p>
+
+                      <p><strong>Course Highlights:</strong></p>
+                      <ul>
+                        <li>Hands-on sailing experience aboard a well-equipped training yacht</li>
+                        <li>Professional RYA instructors with a maximum of 5 students per boat</li>
+                        <li>Sail around the stunning <strong>Valletta coastline, Grand Harbour, Balluta Bay, Saint Pauls Bay</strong>, and beyond depending on conditions</li>
+                        <li>Enjoy Malta’s <strong>ideal sailing weather year-round</strong> — mild temperatures, great winds, and clear blue waters</li>
+                      </ul>
+
+                      <p>The course usually runs over a <strong>weekend (Saturday and Sunday)</strong> from 9:30 AM to around 16:30 PM daily. It is <strong>day-sailing only</strong>, with no overnight stays unless part of a longer package.</p>
+
+                      <p>Want to keep progressing? You can easily <strong>upgrade to the full <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-competent-crew">RYA Competent Crew</a></strong> course by extending your sailing to 5 days — a perfect way to deepen your skills and confidence on the water.</p>
+
+                      <p>Based at <strong>Manoel Island Yacht Marina</strong>, we enjoy one of the most picturesque sailing locations in Europe, with iconic views of Valletta and access to beautiful cruising grounds.</p>
+
+                      <p><strong>Discover the joy of sailing — join us for an unforgettable weekend at sea!</strong></p>
+
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="card">
+                <div class="card-header" id="headingSix">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">☑️ What is included</button>
+                  </h2>
+                </div>
+                <div id="collapseSix" class="collapse show" aria-labelledby="headingSix" data-parent="#accordionExample">
+                  <div class="card-body">
+                  <ul>
+                    <li>Start Yachting Course led by <strong>experienced, native English-speaking RYA instructors</strong>.</li>
+                    <li><strong>All essential fees included</strong>: port and mooring fees, fuel.</li>
+                    <li>Complimentary <strong>tea, coffee, and light refreshments</strong> provided on board. (Alcohol is not supplied.)</li>
+                    <li>We recommend enjoying a light breakfast at the nearby <strong>BusStop Lounge café</strong> (just 200m from the marina) and bringing a packed lunch for the day.</li>
+                    <li><strong>Modern marina facilities</strong> available onshore — including toilets and hot showers, located by the main gate.</li>
+                    <li><strong>Shops, restaurants, and convenience stores</strong> are just steps away — our marina is in Malta’s most vibrant tourist and business area.</li>
+                    <li>Receive your official <strong>RYA Start Yachting certificate</strong> upon successful course completion.</li>
+                  </ul>
+                  </div>
+                </div>
+              </div>
+
+                           <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      🎒 Recommended to bring
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul>
+                      <li>Packed lunch</li>
+                      <li>Sunglasses</li>
+                      <li>High factor sun cream</li>
+                      <li>Deck shoes if possible, otherwise soft shoes with a non marking sole, or just barefoot</li>
+                      <li>Shorts (Please be aware that these are liable to get dirty, so not your bestones!)</li>
+                      <li>T-Shirts</li>
+                      <li>Wash Kit</li>
+                      <li>Fleece or jumper for the evenings and windy days at sea</li>
+                      <li>Soft bag as opposed to a hard suitcase (we can store luggage if you are staying on)</li>
+                      <li>Light long sleeved shirt if you need to cover up in the sun</li>
+                      <li>Baseball/sun hat (preferably with a clip to stop it blowing overboard!)</li>
+                      <li>Sea sickness tablets should you need them</li>
+                      <li>Phone/ Ipod / lap top chargers – 12V (cigarette style chargers) if needed</li>
+                      <li>And above all, enthusiasm!</li>
+                    </ul>
+                    <p>Please note that the temperatures in Malta are normally very warm during the day
+                      but it can be cold in the evenings and windy days at sea. It is a good idea to bring a
+                      small light rain mac if you have one and also a pair of long trousers and a warm
+                      fleece, just in case. Please note that We don't provide wet weather gear onboard.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingTen">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                      💻 Supporting Courses
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>It's recommended to take <a target="_blank" rel="noopener noreferrer"  href="/courses/rya-essential-navigation-and-seamanship"><em><u>RYA Essential Navigation And Seamanship course</u></em></a> before you step into the RYA Competent Crew course. The course can be taken online, and is a basic introduction to navigation and safety for anyone new to boating: sailors, powerboaters, sea anglers, divers and boatmasters. Also useful for experienced dinghy and keelboat sailors and inshore racers. </p>
+                    <p>If you decide to take the course online, you will find many interactive exercises to help reinforce the information and lots of chances to try out what you've learned.</p>
+                    <p>To book this course, simply add it in the <a target="_blank" rel="noopener noreferrer"  href="/booking/courses/<%=courseName%>"><u>Course Booking Page</u></a>, and we will send you a log-in and instructions after receiving your booking.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingSeven">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                      ✈️ Flight and On-arrival
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>If you need a flight to Malta International, the airport code is MLA. There is only one airport. 
+                    </p>
+                    <p>
+                      Malta International Airport (MLA) is well connected to many European cities, especially major hubs. Low-cost carriers dominate many of the connections, especially from regional airports.
+                    </p>
+                    </p>
+                    <p>On arrival at Malta airport, there is a kiosk at the exit from the airport where you can pre pay
+                      the taxi to the boat. Destination: <a target="_blank" rel="noopener noreferrer"  href="https://www.google.com/maps?ll=35.902325,14.498923&z=15&t=m&hl=en&gl=MT&mapclient=embed&q=Manoel+Island+Yacht+Marina"><u>Manoel Island Yacht Marina Pontoon D.</u></a>
+                      </p>
+                    <p>The cost of this is usually 25 Euro. It only takes about 20 minutes to arrive our marina fron the airport. The taxi drivers speak good English.
+                    </p>
+                    <p>Cheaper transport option would be use taxi app such as: Bolt and Ecab. There are plenty of taxi
+                      connected to these apps.
+                    </p>
+                    <p>You will have a short safety brief on arrival to familiarise yourself with the boat and meet your
+                      crew mates!
+                    </p>                  
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingNine">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                      🙋 Frequently Asked Question
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>For more details about RYA Start Yachting course, logistics, accommodation, weather, booking, and certificate, please refer to the <a target="_blank" rel="noopener noreferrer"  href="/faqs"><em>FAQ's section.</em></a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingEight">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                      RYA Sail Cruising Course System and Next Step
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <img src="/images/course-element/course-element-sail-course-system.jpeg" width="100%" alt="RYA-sail-course-system">
+                    <a class="btn btn-light btn-block" target="_blank" rel="noopener noreferrer"  href="/courses/rya-essential-navigation-and-seamanship" role="button">Next step theory: RYA Essential Navigation (recommend but not neccesary) & Seamanship &raquo</a>
+                    <a class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer"  href="/courses/rya-competent-crew" role="button">Next step practical: RYA Competent Crew &raquo</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <%- include("../partials/reviews"); -%>
+                        <div class="container my-5 text-center">
+            <iframe width="100%" height="415" src="https://www.youtube.com/embed/jLiUnEvHXy4?si=kvVVc5gEF27WGbxa" title="Mile builder drone video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <!-- Feature on -->
+            <section>
+            <div class="container py-5 text-center">
+              <h2 class="font-weight-bold mb-4">As Featured on</h2>
+              <div class="row justify-content-center">
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/times-malta-logo.jpg" class="img-fluid grayscale" alt="times-malta-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/visit-malta-logo.png" class="img-fluid grayscale" alt="visit-malta-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/RMYC-logo.webp" class="img-fluid grayscale" alt="RMYC-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/yachting-world-logo.png" class="img-fluid grayscale" alt="yachting-world-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/classic-boat-logo.jpeg" class="img-fluid grayscale" alt="classic-boat-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/CA-logo.png" class="img-fluid grayscale" alt="CA-logo">
+                  </div>
+                </div>
+              </div>
+            </div>
+            </section>
+            <!-- Bottom buttons -->
+            <div class="course-bottom-buttons">
+              <a class="btn btn-primary course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+              <a class="btn btn-warning course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+              <% if(courseProfileFound.onlineLink != "") {%>
+              <a target="_blank" rel="noopener noreferrer"  href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+              <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+              <a target="_blank" rel="noopener noreferrer"  href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+              <%}%>
+      </div>
+
+    </div>
+
+    <div class="videos-wrapper">
+      <h3>Recommended videos to understand the course better:</h3>
+      <div class="videos-container">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/pExM7u3fKoI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/wpy0uhNovTE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/SWIX6SUh-nc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/3X8drKsdf5E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      
+    </div>
+
+
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

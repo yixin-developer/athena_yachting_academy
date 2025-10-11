@@ -1,0 +1,48 @@
+<%- include("partials/header"); -%>
+
+<section>
+
+  <!-- Cover image-->
+  <div>
+    <img src="/images/course-category-cover/course-category-cover-rya-shorebased-courses.jpg" width="100%" class="top-image" alt="course-category-cover-rya-shorebased-courses">
+  </div>
+
+  <div class="container-fluid">
+
+    <!-- Category title -->
+    <div class="text-center">
+      <h1 class="courses-category-title">RYA Shorebased Courses</h1>
+      <h5 class="lead">We offer a myriad of shorebased courses to complement the skill sets of skippers. This includes Day Skipper Theory, Coastal Skipper / YM Theory, VHF, First Aid, and much more...</h5>
+      <br>
+      <a class="lead" href="/files/018424b3e33d0c530c889758990c8d66.pdf">
+        <h6>Download RYA Shorebased Courses System</h6>
+      </a>
+      <br>
+
+    </div>
+
+    <!-- Course card -->
+    <div class="row">
+      <% coursesFound.forEach(function(course,index){ %>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card bg-light course-profile-card">
+          <%- include("partials/course-card-info", {course: course}); -%>
+          <div class="card-body">
+            <a href=<%=course.courseLink%>> <a href=<%=course.courseLink%>> <h4 class="card-title"><%=course.title%></h4></a></a>
+            <p class="lead text-justify"><%=course.introduction%></p>
+            <a href=<%=course.courseLink%> class="btn btn-info btn-block">Course details</a>
+            <a href=/booking/courses/<%=course.title.replace(/ /g,"-").toLowerCase()%> class="btn btn-warning btn-block">Course booking</a>
+            <% if (course.ryaLink) { %>
+            <a href=<%=course.ryaLink%> class="btn btn-light btn-block"><img src="/images/RYA_logo.png" width="50px"></a>
+            <%}%>
+            </div>
+          </div>
+        </div>
+    <%})%>
+          </div>
+
+        </div>
+
+</section>
+
+<%-include("partials/footer")-%>

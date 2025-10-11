@@ -1,0 +1,149 @@
+<%- include("partials/header"); -%>
+
+<section>
+  <div class="container-fluid create-booking-background">
+    <div class="create-booking-page">
+      <h1>Booking Creating Form</h1>
+      <br>
+      <form action="/booking/booking/create" method="post">
+        <div class="form-group">
+
+          <div class="row">
+            <div class="col-md-2">
+              <label>Invoice number</label>
+              <input readonly class="form-control" type="text" id="invoiceNumber" name="invoiceNumber">
+            </div>
+            <div class="col-md-2">
+              <label>First Name</label>
+              <input Required class="form-control" type="text" name="firstName" placeholder="required">
+            </div>
+            <div class="col-md-2">
+              <label>Last Name</label>
+              <input Required class="form-control" type="text" name="lastName" placeholder="required">
+            </div>
+            <div class="col-md-3">
+              <label>Email</label>
+              <input Required class="form-control" type="email" name="email" placeholder="required">
+            </div>
+            <div class="col-md-3">
+              <label>Phone</label>
+              <input class="form-control" type="text" name="phone">
+            </div>
+          </div>
+          <br>
+
+          <div class="row">
+            <div class="col-md-4">
+              <label>Address</label>
+              <input class="form-control" type="text" name="address">
+            </div>
+            <div class="col-md-2">
+              <label>City</label>
+              <input class="form-control" type="text" name="city">
+            </div>
+            <div class="col-md-2">
+              <label>State</label>
+              <input class="form-control" type="text" name="state">
+            </div>
+            <div class="col-md-2">
+              <label>Country</label>
+              <input class="form-control" type="text" name="country">
+            </div>
+            <div class="col-md-2">
+              <label>Zip Code</label>
+              <input class="form-control" type="text" name="zip">
+            </div>
+          </div>
+          <br>
+
+          <div class="row">
+            <div class="col-md-5">
+              <label>Course title</label>
+              <select required class="form-control" name="selectedCourseTitle">
+                <option disabled selected value> -- required -- </option>
+                <% var uniqueCourseTitlesList = [...new Set(soretedfutureCourses.map(a=>a.title))]%>
+                <% uniqueCourseTitlesList.forEach(function(courseTitle,index){%>
+                <option value="<%=courseTitle%>"><%=courseTitle%></option>
+                <%})%>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label>Course date</label>
+              <select required class="form-control" name="selectedCourseDate">
+                <option disabled selected value> -- required -- </option>
+                <% var uniqueCourseDatesList = [...new Set(soretedfutureCourses.map(a=>a.date.toDateString()))]%>
+                <% uniqueCourseDatesList.forEach(function(courseDate,index){%>
+                <option value="<%=courseDate%>"><%=courseDate%></option>
+                <%})%>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label>Course price</label>
+              <input required class="form-control" type="number" name="selectedCourseUnitPrice" min="0" placeholder="required">
+            </div>
+            <div class="col-md-2">
+              <label>Number of places</label>
+              <input required class="form-control" type="number" name="numberOfPeople" min="1" placeholder="required">
+            </div>
+            <input type="hidden" name="preferedCourseDate" value="">
+          </div>
+          <br>
+
+          <div class="row">
+            <div class="col-md-12">
+              <label>Extra items purchased</label>
+              <textarea class="form-control" name="extraItems" rows="2" placeholder="extra item: price x quantity; or leave it blank if not applicable"></textarea>
+            </div>
+          </div>
+          <br>
+
+          <div class="row">
+            <input type="hidden" class="form-control" name="signUp" value="Yes">
+            <input type="hidden" name="legalNotice" value="on">
+            <div class="col-md-2">
+              <label>Subtotal</label>
+              <input class="form-control" type="number" name="totalBeforeDiscount" min="0">
+            </div>
+            <div class="col-md-1">
+              <label>Discount</label>
+              <input class="form-control" type="text" name="totalPriceDiscount" placeholder="-x%">
+            </div>
+            <div class="col-md-2">
+              <label>Discount amount</label>
+              <input class="form-control" type="number" name="discountAmount" placeholder="-x" max="0">
+            </div>
+            <div class="col-md-2">
+              <label>Final price</label>
+              <input required class="form-control" type="number" id="paymentAmount" name="paymentAmount" placeholder="required" min="0">
+            </div>
+            <div class="col-md-3">
+              <label>Created time</label>
+              <input readonly class="form-control" id="timeCreated" name="timeCreated">
+            </div>
+            <div class="col-md-2">
+              <label>Created by</label>
+              <select required class="form-control" name="creator">
+                <option disabled selected value> - required - </option>
+                <option value="Stephen Baynham">Stephen Baynham</option>
+                <option value="Yixin Qi">Yixin Qi</option>
+                <option value="Admin">Admin</option>
+              </select>
+            </div>
+
+          </div>
+          <br>
+        </div>
+        <button class="btn btn-warning btn-block" type="submit">Create</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<script type="text/javascript">
+  document.getElementById("invoiceNumber").value = "SSM" + (Math.floor(Math.random() * 90000000) + 10000000)
+  document.getElementById("timeCreated").value = new Date();
+  document.getElementById("discountAmount").value = document.getElementById("totalBeforeDiscount").value * document.getElementById("totalPriceDiscount").value
+</script>
+
+<%- include("partials/footer"); -%>

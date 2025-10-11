@@ -1,0 +1,467 @@
+<%- include("../partials/headers/header-coastal-skipper-practical"); -%>
+
+<section>
+
+  <!-- Cover image -->
+  <div>
+    <img src="/images/course-cover/course-cover-rya-coastal-skipper-practical.jpg" width="100%" class="top-image" alt="course-cover-rya-coastal-skipper-practical">
+  </div>
+
+  <div class="container-fluid course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>RYA Coastal Skipper Practical</b></h1>
+        <h6>EXPERIENCE | PROGRESSION | CONFIDENCE | COASTAL PASSAGES </h6>
+        <br>
+        <h6 class="text-center mb-4">⭐️⭐️⭐️⭐️⭐️ 5.0 based on 1000+ Happy Sailors</h6>
+        <br>
+        <%- include("../partials/summary-course"); -%>
+        <p class="lead course-subtitle"><em>A course for those with considerable knowledge of sailing and navigation, wanting to undertake coastal passages by day and night.</em></p>
+        <br><br>
+      </div>
+
+      <div class="d-flex justify-content-center mb-5"> 
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Jl682TCh04Q?si=NhPBlizk5n4BzrHp" title="RYA Coastal Skipper Practical course" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>Please contact us if you're interested in private course (up to 5 students) or on a different date 😉‍</b></p>
+                <a class="btn btn-primary course-four-bottom" target="_blank" rel="noopener noreferrer" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" target="_blank" rel="noopener noreferrer" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" target="_blank" rel="noopener noreferrer" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" target="_blank" rel="noopener noreferrer" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+                <a class="btn btn-info course-four-bottom" target="_blank" rel="noopener noreferrer" href="/courses/rya-coastal-skipper-yachtmaster-offshore-theory" role="button">CS/YM Theory &raquo;</a>
+                <a class="btn btn-info course-four-bottom" target="_blank" rel="noopener noreferrer" href="/courses/rya-coastal-skipper-package" role="button">CS Package &raquo;</a>      
+                <a class="btn btn-info course-four-bottom" target="_blank" rel="noopener noreferrer" href="/courses/rya-coastal-skipper-fast-track" role="button">CS Fast Track &raquo;</a>        
+  
+              </div>
+            </div>
+          </div>
+
+          <!-- the map -->
+          <%- include("../partials/maps/manoel"); -%>
+
+              </div>
+            </div>
+            <%- include("../partials/carousel"); -%>
+
+            <!-- Course detail accordion -->
+            <div class="accordion" id="accordionExample">
+
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      🧭 Course Description
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <div>
+                      <p><strong>RYA Coastal Skipper</strong> is the next major step in your sailing journey after completing the <strong>RYA Day Skipper</strong> courses. If you're aiming for a <strong>professional sailing career</strong> or looking to <strong>advance your skippering skills</strong>, this is the essential course that bridges the gap to the prestigious <strong>RYA Yachtmaster™ qualification</strong>.</p>
+
+                      <p>Designed for experienced <strong>RYA Day Skippers</strong>, the <strong>Coastal Skipper Practical course</strong> builds the skills and confidence needed to plan and skipper <strong>longer and more challenging coastal passages</strong>, including <strong>night sailing</strong> and <strong>watch-keeping systems</strong>.</p>
+
+                      <p>You will learn to take full command of a yacht, managing both the boat and the crew over extended passages. With your <strong>RYA instructor</strong> on board for support and guidance, you'll gain hands-on experience in real-world scenarios.</p>
+
+                      <p>Like the Day Skipper course, this practical training is based on a series of <strong>skippered passages</strong>, but at a significantly higher level. You'll develop advanced skills in <strong>passage planning</strong>, <strong>pilotage by day and night</strong>, <strong>yacht handling</strong>, and managing <strong>emergency situations</strong>.</p>
+
+                      <p>This is an <strong>intensive but rewarding week</strong>, with each trainee expected to take full responsibility under various conditions. Upon successful completion, you will be awarded the <strong>RYA Coastal Skipper Practical Certificate</strong> — an <strong>internationally recognised qualification</strong> used for <strong>yacht chartering</strong> and a critical milestone toward your <strong>Yachtmaster™ Certificate of Competence</strong>.</p>
+
+                      <p>It is <strong>highly recommended</strong> that you complete the <a href="/courses/rya-coastal-skipper-yachtmaster-offshore-theory" target="_blank" rel="noopener noreferrer"><strong><u>RYA Coastal Skipper/Yachtmaster™ Offshore Theory course</u></strong></a> before joining the practical week, as there is not enough time to cover theory during the training.</p>
+
+                      <p>By the end of this course, you’ll be capable of handling <strong>coastal passages by day and night</strong>, navigating in reduced visibility, executing <strong>advanced boat handling under sail and power</strong>, and anchoring in more demanding conditions. You’ll have the <strong>knowledge and confidence to skipper a yacht safely</strong> in coastal waters — and be well on your way to becoming a <strong>Yachtmaster™</strong>.</p>
+
+                      <p>This certification can also be <strong>MCA-endorsed</strong> for <strong>commercial sailing purposes</strong>.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      ☑️ Course Requirements
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+
+                  <h6>Pre-course Requirements and Recommendations</h6>
+                  <ul>
+                    <li><strong>Minimum experience:</strong> 15 days at sea, including 2 days as skipper, 300 miles logged, and 8 night hours.</li>
+                    <li><strong>Assumed knowledge:</strong> Boat handling to the standard of <a target="_blank" rel="noopener noreferrer" href="/courses/rya-day-skipper_practical">RYA Day Skipper</a> and navigation skills equivalent to the <a target="_blank" rel="noopener noreferrer" href="/courses/rya-coastal-skipper-yachtmaster-offshore-theory">RYA Coastal Skipper/Yachtmaster™ Offshore Theory</a> course.</li>
+                    <li>We strongly recommend completing the theory course before attending the practical week.</li>
+                    <li>If you haven’t completed the theory yet, you can join our <a target="_blank" rel="noopener noreferrer"  href="/courses/coastal-skipper-package">10-day Coastal Skipper Combination Course</a>:
+                      <ul>
+                        <li>5 days of theory (in our classroom)</li>
+                        <li>Followed by 5 days of practical training onboard our yacht</li>
+                      </ul>
+                    </li>
+                    <li>You don’t need the theory certificate to attend the practical course, but the course will be significantly more challenging without it.</li>
+                  </ul>
+                  <p><strong>Course Duration:</strong> 5 days (Monday to Friday)</p>
+                  <p><strong>Minimum Age:</strong> 17</p>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      📑 Course Content
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      The aim of this course is to teach the skills and techniques required to skipper a cruising yacht safely on coastal passages by day and night.
+                    </p>
+                    <p>Planning the passages</p>
+                    <ul>
+                      <li>Can plan a coastal passage including a consideration of the capability of the yacht, navigation, victualling, weather, ports of refuge, tidal heights, and tidal streams, publications required and strategy.</li>
+                      <li>Customs procedures</li>
+                    </ul>
+                    <p>Preparation</p>
+                    <ul>
+                      <li>Is aware of safety equipment required for offshore passages</li>
+                      <li>Can prepare a yacht for sea including stowage, safety briefing, watch keeping, delegating responsibilities and equipment and engine checks </li>
+                    </ul>
+                    <p>Pilotage planning</p>
+                    <ul>
+                      <li>Can prepare a pilotage plan, with consideration of surroundings, transits, clearing bearings, buoyage, port or harbour regulations and tidal considerationsb.</li>
+                      <li>Can pilot a yacht by day and night</li>
+                    </ul>
+                    <p>Making passages and skipper ability</p>
+                    <ul>
+                      <li>Can take charge of a yacht and direct the crew</li>
+                      <li>Can organise the navigation, deckwork, and domestic duties of a yacht on passage Is aware of the significance of meteorological trends</li>
+                      <li>Is aware of crew welfare on passage</li>
+                      <li>Can use electronic navigational equipment for planning and undertaking a passage, including the use of waypoints and routes </li>
+                    </ul>
+                    <p>Handle a yacht under power in wind</p>
+                    <ul>
+                      <li>Can control the yacht effectively in a confined space under power</li>
+                      <li>All berthing and unberthing situations in various conditions of wind and tide
+                      </li>
+                    </ul>
+                    <p>Handle a yacht under sail in wind</p>
+                    <ul>
+                      <li>Can use the sails to control the yacht in a confined space</li>
+                      <li>Anchoring and mooring in various conditions of wind and tide</li>
+                      <li>Can sail efficiently on all points of sailing </li>
+                    </ul>
+                    <p>Tough weather conditions</p>
+                    <ul>
+                      <li>Preparation for heavy weather and yacht handling in strong winds</li>
+                      <li>Navigation and general conduct in restricted visibility – without electronics!</li>
+                    </ul>
+                    <p>Emergency procedures simulated</p>
+                    <ul>
+                      <li>Recovery of man overboard under power and sail</li>
+                      <li>Understands action to be taken when abandoning to the liferaft and during helicopter and lifeboat rescues</li>
+                    </ul>
+                    <p>
+                      Supporting course books:
+                    </p>
+                    
+                    <a class="book-link" target="_blank" rel="noopener noreferrer" href="https://www.rya.org.uk/shop/p/rya-yachtmaster-handbook-ebook"><em>RYA Yachtmaster Handbook</em></a>
+                    <br>
+                    <a class="book-link" target="_blank" rel="noopener noreferrer" href="https://www.rya.org.uk/training/courses/coastal-skipper-practical-sailing-course-css"><em>RYA Navigation Handbook</em></a>
+                    <br>
+                    <a class="book-link" target="_blank" rel="noopener noreferrer" href="https://www.rya.org.uk/shop/p/rya-passage-planning-ebook"><em>Passage Planning</em></a>
+                    <br>
+                    <img src="/images/books/yachtmaster-handbook.jpeg" height="250" alt="yachtmaster-handbok">
+                    <img src="/images/books/navigation-handbook.jpeg" height="250" alt="navigation-handbok">
+                    <img src="/images/books/passage-planning.jpeg" height="250" alt="passage-planning">
+
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                      ⛵️ Course Details
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                                        <div class="crew-course-details mb-4">
+                      <img src="/images/course-element/course-element-bavaria44.jpg" width="30%" alt="bavaria44" style="border-radius: 5px;">
+                      <img src="/images/course-element/course-element-bavaria44-galley.jpeg" width="30%" alt="bavaria44-galley" style="border-radius: 5px;">
+                      <img src="/images/course-element/course-element-clean-cabin.jpeg" width="30%" alt="bavaria44-cabin" style="border-radius: 5px;">
+                    </div>
+                    <p><strong>Skippering a yacht</strong> on longer coastal or offshore passages demands more than just basic skills—it requires advanced navigation, confident seamanship, and strong leadership. The <strong>RYA Coastal Skipper Practical Course</strong> is designed for experienced sailors looking to take command of a yacht on extended journeys, both by day and night.</p>
+
+                    <p>Under the guidance of your <strong>RYA-certified instructor</strong>, you’ll refine your offshore navigation techniques (including in limited visibility), improve your weather forecasting and passage planning, and develop effective watch-keeping routines and heavy-weather preparation. Each student will take full responsibility for planning and skippering real passages—putting theory into practice while managing the crew and yacht safely and efficiently.</p>
+
+                    <p>You’ll sharpen your boat-handling skills with frequent mooring practice and complete a minimum of <strong>4 hours of night sailing</strong>. Weather permitting, we’ll undertake a longer coastal passage around Malta’s stunning coastline.</p>
+
+                    <p>Our training yacht is <strong>“Lookfar”</strong>, a <em>Bavaria 44 Cruiser</em>, moored in <strong>Manoel Island Marina</strong> (Pontoon D, near Paparazzi restaurant). Your course begins at <strong>09:30 on Day 1</strong>, and <strong>onboard accommodation is included</strong> (Monday to Friday). Sunday evening boarding or staying aboard Friday night can also be arranged.</p>
+
+                    <p>Based in the heart of the Mediterranean, we sail throughout the <strong>Maltese Archipelago</strong>, often visiting the spectacular islands of <strong>Comino</strong> and <strong>Gozo</strong>, with time to relax ashore in the evenings and enjoy local food and culture.</p>
+
+                    <p>With steady winds and sunny conditions <strong>year-round</strong>, Malta is the perfect place to build confidence and earn your <strong>RYA Coastal Skipper Certificate</strong>—a recognised step towards the <strong>RYA Yachtmaster™</strong>. Join us and take command of your sailing journey!</p>
+
+                  </div>
+                </div>
+              </div>
+
+
+                            <div class="card">
+                <div class="card-header" id="headingSix">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      🛏️ What is included
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseSix" class="collapse show" aria-labelledby="headingSix" data-parent="#accordionExample">
+                  <div class="card-body">
+                  <p>Our <strong>RYA Coastal Skipper Practical course</strong> is taught by expert instructors who are native English speakers, highly experienced, and committed to helping you take the next big step in your sailing journey. Instruction is clear, supportive, and tailored to help you master advanced coastal and offshore skippering skills with confidence.</p>
+
+                  <p>The course fee includes all essential expenses—<strong>port fees, mooring fees, fuel, tourist tax, and general yacht maintenance</strong>—so you can focus on learning without worrying about hidden costs.</p>
+
+                  <p>Students stay onboard our comfortable, well-equipped training yacht, <a target="_blank" rel="noopener noreferrer" href="/yachts/lookfar"><u>Lookfar</u></a>, which features <strong>three double cabins and one bunk bed cabin</strong> for accommodation during the course. You’ll live and learn aboard from Monday to Friday, with Sunday evening boarding and Friday night stays available by agreement.</p>
+
+                  <p>We provide <strong>tea and coffee daily onboard</strong> (alcohol not included). For breakfast, we recommend the nearby <em>Bus Stop Lounge</em>, just 200 meters from the marina. You’re also welcome to bring a packed lunch or make use of the yacht’s fully equipped galley to prepare your own meals onboard.</p>
+
+                  <p>When ashore, you'll have access to <strong>clean shower and toilet facilities</strong> located just by the marina gate. Our base at <strong>Manoel Island Yacht Marina</strong> is in one of Malta’s most vibrant and picturesque areas, surrounded by shops, cafes, and restaurants—all within easy walking distance.</p>
+
+                  <p>Upon successfully completing the course, you’ll be awarded the internationally recognised <strong>RYA Coastal Skipper Certificate</strong>. This qualification proves you’re capable of skippering longer passages by day and night in coastal waters—bringing you one step closer to becoming an <strong>RYA Yachtmaster™</strong> and opening the door to more advanced sailing opportunities and professional endorsements.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      🎒 Recommended to bring
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      If you choose for accommodation onboard, full bedding is supplied, sheets, pillows and blankets. Also, we provide towels for use on the yacht but not beach towels. If you should require more than one towel during the week, please do bring your own additional towel.
+                    </p>
+                    <ul>
+                      <li>Packed lunch</li>
+                      <li>Sunglasses</li>
+                      <li>High factor sun cream</li>
+                      <li>Deck shoes if possible, otherwise soft shoes with a non marking sole, or just barefoot</li>
+                      <li>Shorts (Please be aware that these are liable to get dirty, so not your bestones!)</li>
+                      <li>T-Shirts</li>
+                      <li>Wash Kit</li>
+                      <li>Fleece or jumper for the evenings and windy days at sea</li>
+                      <li>Soft bag as opposed to a hard suitcase (we can store luggage if you are staying on)</li>
+                      <li>Light long sleeved shirt if you need to cover up in the sun</li>
+                      <li>Baseball/sun hat (preferably with a clip to stop it blowing overboard!)</li>
+                      <li>Sea sickness tablets should you need them</li>
+                      <li>Phone/ Ipod / lap top chargers – 12V (cigarette style chargers) if needed</li>
+                      <li>RYA Log book if you have one</li>
+                      <li>And above all, enthusiasm!</li>
+                    </ul>
+                    <p>
+                      Please note that the temperatures in Malta are normally very warm during the day
+                      but it can be cold in the evenings and windy days at sea. It is a good idea to bring a
+                      small light rain mac if you have one and also a pair of long trousers and a warm
+                      fleece, just in case. Please note that We don't provide wet weather gear onboard.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingTen">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                      📡 Supporting Courses
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>It highly recommended to take <a target="_blank" rel="noopener noreferrer" href="/courses/rya-marine-radio"><em>RYA Marine Radio VHF course</em></a>. VHF course will be useful if you want to do chartering in the future, because you are required to hold a VHF certificate for that purpose. The course is designed and created by RYA, and it will be given online. Once you complete the online course, you will have a 30 minutes exam with us during your stay in Malta. Usually it takes 1-2 days to complete. You can do it before, during, or after CSP course.
+                    <p>We also recommend you to take
+                      <a target="_blank" rel="noopener noreferrer" href="/courses/rya-first-aid">RYA First Aid course</a>. The RYA First Aid course is designed to teach you exactly what to do in these situations. From the minor ailments such as headaches, sunburn and small lesions through to the immediate response to serious medical emergencies. This course covers the situations that a yachtsman is likely to encounter. This course is a must for all who sail, and skippers should encourage their crews to attend. Remember it may be you who needs attention! At the completion of the course you will be issued with the RYA Small Craft First Aid Certificate. This certificate is valid for 3 years from the time of issue and is a prerequisite for those taking the Coastal Skipper / Yachtmaster Offshore Examinations.
+                    </p>
+                    <p>To book VHF course and First Aid course, simply add it in the <a target="_blank" rel="noopener noreferrer" href="/booking/courses/<%=courseName%>"><em>Course Booking Page</em></a>, and we will send you a log-in and joining instructions after receiving your booking.</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="card">
+                <div class="card-header" id="headingSeven">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                      ✈️ Flight and On-arrival
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>If you need a flight to Malta International, the airport code is MLA. There is only one airport. 
+                    </p>
+                    <p>
+                      Malta International Airport (MLA) is well connected to many European cities, especially major hubs. Low-cost carriers dominate many of the connections, especially from regional airports.
+                    </p>
+                    </p>
+                    <p>On arrival at Malta airport, there is a kiosk at the exit from the airport where you can pre pay
+                      the taxi to the boat. Destination: <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps?ll=35.902325,14.498923&z=15&t=m&hl=en&gl=MT&mapclient=embed&q=Manoel+Island+Yacht+Marina"><u>Manoel Island Yacht Marina Pontoon D.</u></a>
+                      </p>
+                    <p>The cost of this is usually 25 Euro. It only takes about 20 minutes to arrive our marina fron the airport. The taxi drivers speak good English.
+                    </p>
+                    <p>Cheaper transport option would be use taxi app such as: Bolt and Ecab. There are plenty of taxi
+                      connected to these apps.
+                    </p>
+                    <p>You will have a short safety brief on arrival to familiarise yourself with the boat and meet your
+                      crew mates!
+                    </p>                               </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingNine">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                      🙋 Frequently Asked Question
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>For more details about course, logistics, accommodation, booking, and certificate, please refer to the <a target="_blank" rel="noopener noreferrer" href="/faqs"><em>FAQ's section.</em></a></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingEight">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                      RYA Sail Cruising Course System and Next Step
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p><b>At this stage of the RYA scheme it is really worthwhile consolidating what you have learnt by completing more sea miles. </b> This could be achieved by joining our <a target="_blank" rel="noopener noreferrer" href="/courses/mile-builder"><em>Malta-Sicily Mile Building Trip</em></a>, or just coming along for another week or weekend of refresher/consolidation training. Following this you should look to join the <a href="/courses/rya-yachtmaster-preparation-and-exam"><em> RYA/MCA Yachtmaster Coastal Preparation week followed by the RYA/MCA Yachtmaster Coastal Skipper examination.</em></a></p>
+                    <img src="/images/course-element/course-element-sail-course-system.jpeg" width="100%" alt="RYA-sail-course-system">
+                    <a class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer" href="/courses/rya-yachtmaster-preparation-and-exam" role="button">Next step: RYA Yachtmaster Preparation And Exam &raquo</a>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+            <%- include("../partials/reviews"); -%>
+                                    <!-- Feature on -->
+            <section>
+            <div class="container py-5 text-center">
+              <h2 class="font-weight-bold mb-4">As Featured on</h2>
+              <div class="row justify-content-center">
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/times-malta-logo.jpg" class="img-fluid grayscale" alt="times-malta-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/visit-malta-logo.png" class="img-fluid grayscale" alt="visit-malta-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/RMYC-logo.webp" class="img-fluid grayscale" alt="RMYC-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/yachting-world-logo.png" class="img-fluid grayscale" alt="yachting-world-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/classic-boat-logo.jpeg" class="img-fluid grayscale" alt="classic-boat-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/CA-logo.png" class="img-fluid grayscale" alt="CA-logo">
+                  </div>
+                </div>
+              </div>
+            </div>
+            </section>
+            <!-- Bottom buttons -->
+            <div class="course-bottom-buttons">
+              <a class="btn btn-primary course-four-bottom" target="_blank" rel="noopener noreferrer" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+              <a class="btn btn-warning course-four-bottom" target="_blank" rel="noopener noreferrer" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+              <% if(courseProfileFound.onlineLink != "") {%>
+              <a href="<%=courseProfileFound.onlineLink%>" target="_blank" rel="noopener noreferrer" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+              <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+              <a href="<%=courseProfileFound.ryaLink%>" target="_blank" rel="noopener noreferrer" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+              <%}%>
+        <a class="btn btn-info course-four-bottom" target="_blank" rel="noopener noreferrer" href="/courses/rya-coastal-skipper-yachtmaster-offshore-theory" role="button">CS/YM Theory &raquo;</a>
+        <a class="btn btn-info course-four-bottom" target="_blank" rel="noopener noreferrer" href="/courses/rya-coastal-skipper-package" role="button">CS Package &raquo;</a>      
+        <a class="btn btn-info course-four-bottom" target="_blank" rel="noopener noreferrer" href="/courses/rya-coastal-skipper-fast-track" role="button">CS Fast Track &raquo;</a>          
+
+      </div>
+
+    </div>
+    <div class="videos-wrapper">
+      <h3>Recommended videos:</h3>
+      <div class="videos-container">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/21ZSE7y_164" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/U99q38RHDTY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/wc0UnFNMFSY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/lfNr7s4GHRI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

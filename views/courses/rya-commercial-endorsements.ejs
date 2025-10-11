@@ -1,0 +1,187 @@
+<%- include("../partials/header"); -%>
+
+<section>
+
+  <!-- Cover image -->
+  <div>
+    <img src="/images/course-cover/commercial-endorsement.png" width="100%" class="top-image" alt="course-cover-rya-commercial-endorsements">
+  </div>
+
+  <div class="container-fluid course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>RYA Commercial Endorsements</b></h1> <%- include("../partials/summary-course"); -%>
+        <p class="lead course-subtitle"><em>A commercial endorsement is required for work on board British flagged vessels subject to the MCA's codes of practice for small commercial vessels. A number of additional training courses and medical
+            fitness certificates are required to be eligible for a commercial endorsement.</em></p>
+        <br><br>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>We charege an administration and processing fees of €150. Please contact us if you need further information on commerical endorsement. ‍</b></p>
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+              </div>
+            </div>
+          </div>
+
+          <!-- the map -->
+          <%- include("../partials/maps/ssm"); -%>
+
+              </div>
+            </div>
+
+            <!-- Course detail accordion -->
+            <div class="accordion" id="accordionExample">
+
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      RYA Commercial Endorsement Overview
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      A commercial endorsement is required to add onto the RYA qualifications when acting professionally as skipper or crew.
+                    </p>
+                    <p>
+                      Whatever your job is on board, in the commercial world you are a professional seafarer. As such, you are no different from the captain of a cruise liner – you have a duty of care to crew, passengers, and other water users, and you will
+                      be held to account if things go wrong.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Which Certificates can be endorsed?
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      Course completion certificates:
+                    </p>
+                    <ul>
+                      <li>RYA Level 2 Powerboat Handling Certificate</li>
+                      <li>RYA Advanced Powerboat Certificate (only if issued before 1 January 2005) </li>
+                      <li>RYA Day Skipper practical course completion certificate supported by a Day Skipper shorebased course completion certificate. The Day Skipper shorebased course may be undertaken online or in the classroom. In either case, the exams must be invigilated.</li>
+                    </ul>
+                    <p>
+                      Certificates of competence:
+                    </p>
+                    <ul>
+                      <li>RYA Advanced Powerboat Certificate of Competence</li>
+                      <li>RYA Yachtmaster Coastal Certificate of Competence</li>
+                      <li>RYA Yachtmaster Offshore Certificate of Competence</li>
+                      <li>RYA Yachtmaster Ocean Certificate of Competence </li>
+                    </ul>
+                    In addition, the RYA Yachtmaster Offshore and Yachtmaster Ocean Certificates of Competence can receive the STCW endorsement.
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                      How do I apply for a standard commercial endorsement?
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      Send the following items to RYA Certification, RYA House, Ensign Way, Hamble, Hampshire SO31 4YA:
+                    </p>
+                    <ul>
+                      <li>Your original certificate - see list above</li>
+                      <li>Your Professional Practices and Responsibilities certificate</li>
+                      <li>A commercial endorsement application form</li>
+                      <li>Your original, completed ML5 or ENG1 medical fitness form</li>
+                      <li>A copy of your RYA Basic Sea Survival certificate or STCW Personal Survival Techniques</li>
+                      <li>A copy of your RYA Marine Radio SRC Certificate or other acceptable GMDSS Marine Radio Operator's Certificate.</li>
+                      <li>A passport sized photo with your name on the back</li>
+                      <li>The application fee</li>
+                    </ul>
+                    <p>
+                      Processing takes approximately six weeks and you may choose to have your newly endorsed certificate posted to your own address or you may have it posted back to us, to pick up at your own convenience.
+                    </p>
+                    <p>
+                      Please contact us for the endorsement. For more relevant information, please click the RYA button above.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      Does Sailing School Malta run these extra courses?
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      Yes we do, some online, others in a classroom environment.
+                    </p>
+                    <p>
+                      See sections on <a class="book-link" href="/courses/rya-professional-practices-and-responsibilities">PPR</a>, <a class="book-link" href="/courses/rya-sea-survival">Sea Survival</a>, <a class="book-link" href="/courses/rya-marine-radio">VHF</a>, <a class="book-link" href="/courses/stcw-courses">STCW</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <%- include("../partials/reviews"); -%>
+            <!-- Bottom buttons -->
+            <div class="course-bottom-buttons">
+              <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+              <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+              <% if(courseProfileFound.onlineLink != "") {%>
+              <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+              <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+              <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+              <%}%>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

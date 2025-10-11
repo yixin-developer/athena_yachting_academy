@@ -1,0 +1,404 @@
+<%- include("../partials/headers/header-tmnl"); -%>
+
+<section>
+
+  <!-- Cover carousel -->
+
+  <div id="carouselExampleCaptions" class="carousel nautical-carousel slide carousel-fade carousel-homepage" data-ride="">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="5"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="6"></li>
+    </ol>
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <%- include("../partials/carousel-nautical-text"); -%>
+        <img src="/images/course-cover/course-cover-transport-malta-nautical-license-0.jpeg" class="d-block w-100" alt="transport-malta-nautical-licence">
+      </div>
+      <div class="carousel-item">
+        <%- include("../partials/carousel-nautical-text"); -%>
+        <img src="/images/course-cover/course-cover-transport-malta-nautical-license-1.jpeg" class="d-block w-100" alt="transport-malta-nautical-licence">
+      </div>
+      <div class="carousel-item">
+        <%- include("../partials/carousel-nautical-text"); -%>
+        <img src="/images/course-cover/course-cover-transport-malta-nautical-license-2.jpeg" class="d-block w-100" alt="transport-malta-nautical-licence">
+      </div>
+      <div class="carousel-item">
+        <%- include("../partials/carousel-nautical-text"); -%>
+        <img src="/images/course-cover/course-cover-transport-malta-nautical-license-5.jpeg" class="d-block w-100" alt="transport-malta-nautical-licence">
+      </div>
+      <div class="carousel-item">
+        <%- include("../partials/carousel-nautical-text"); -%>
+        <img src="/images/course-cover/course-cover-transport-malta-nautical-license-6.jpeg" class="d-block w-100" alt="transport-malta-nautical-licence">
+      </div>
+      <div class="carousel-item">
+        <%- include("../partials/carousel-nautical-text"); -%>
+        <img src="/images/course-cover/course-cover-transport-malta-nautical-license-3.jpg" class="d-block w-100" alt="course-cover-transport-malta-nautical-licence">
+      </div>
+      <div class="carousel-item">
+        <%- include("../partials/carousel-nautical-text"); -%>
+        <img src="/images/course-cover/course-cover-transport-malta-nautical-license-4.png" class="d-block w-100" alt="transport-malta-nautical-licence">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <!-- <div class="container-video">
+          <iframe class="video-top" src="https://www.youtube.com/embed/YfB0OI6tElg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  </div>
+        </div> -->
+
+  <div class="container-fluid course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>Transport Malta Nautical Licence</b></h1>
+        <a href="https://www.transport.gov.mt/maritime/nautical-training-certification/syllabus-basic-seamanship-and-boat-handling-3663">
+          <p>(Syllabus - Basic Seamanship and Boat Handling)</p>
+        </a>
+        <br>
+        <h6 class="text-center mb-4">⭐️⭐️⭐️⭐️⭐️ 5.0 based on 1000+ TM Nautical Licence candidates</h6>
+        <br>
+        <% var currentCourse = courseProfileFound;%>
+        <% if (currentCourse){ %>
+        <i class="social-media-icon far fa-calendar-alt"></i>
+        2 weekends
+        <i class="social-media-icon fas fa-euro-sign"></i>
+        <%= currentCourse?.price%>
+        <i class="social-media-icon fas fa-ship"></i>
+        Both practical and theory session
+        <%}%>
+        <p class="lead course-subtitle"><b>Do you love the sea? If you want to sail or cruise around Malta, then you need Transport Malta Nautical Licence. Sailing School Malta is an approved training establishment by Transport Malta. We deliver this course to over 250 students a year. We make it easy for you to get certified. This course is eligible for the Get Qualified Scheme.</b></p><br>
+        <a href="/booking/courses/<%=courseName%>"><h3 style="color: #f58125;"><b>Get Licensed Today to Thrill!</b></h3></a>
+        <a href="https://www.transport.gov.mt/maritime/nautical-licence/nautical-licence-training-facilities-3534"><img class="TM" src="/images/TM_Logo.png" alt="TM_Logo"></a>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <!-- calendar pop-up -->
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <% uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <% const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; %>
+              <% let n=1;let courseInfo=[];let coursesInfo=[];%>
+              <% courses.sort((a,b) => a.date - b.date).forEach(function(course,indexPlus) {%>
+              <% let date = monthNames[course.date.getMonth()] + "\xa0" + (course.date.getYear() + 1900);%>
+              <% if (date === uniqueMonthYear) {
+                    const courseDateStartParsed = new Date(course.date);
+                    courseDateStartParsed.setDate(courseDateStartParsed.getDate() + course.duration -1);
+                    const finalDate = courseDateStartParsed.toString();
+                    const finalDateParsed = `${finalDate.substring(0,3)} ${finalDate.substring(7,10)} ${finalDate.substring(4,7)}`;
+                    %>
+              <% courseInfo = [n++,`${String(course.date).substring(0, 3)} ${String(course.date).substring(7, 10)} ${String(course.date).substring(3, 7)}`,course.duration,course.available,course.pricePerson,course.priceExclusive,course.capacity,course.comment, finalDateParsed]%>
+              <% coursesInfo.push(courseInfo);}%>
+              <%})%>
+
+              <div class="tab-pane fade show <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>" role="tabpanel">
+                <% coursesInfo.forEach(function(courseInfo,i) {
+                    let n = 0;
+                    
+                    const [courseNum, courseDateStart, courseDuration, courseAvailablePlaces, coursePrice, coursePriceExclusive, courseMaxCapacity, courseNote, courseDateStartParsed] = courseInfo;
+                    %>
+                <p class="mb-0"><b>Course date <%=courseNum%></b>: <%=courseDateStart%> - <%= courseDateStartParsed %>
+                  | <b style="color:orange"><%if(courseAvailablePlaces){
+                      %> <em><%=courseAvailablePlaces%></em><%
+                    }else{
+                     %> <%=`Fully Booked`%><%
+                    }%></b> <%= courseAvailablePlaces ? 'places left' : '' %> | €<%=coursePrice%> per person | Max 12 students </p>
+                <p class="mb-0"><b>Note:</b> <%=courseNote%></p><br> <%})%>
+              </div>
+              <%});%>
+
+              <div class="calendar-buttons">
+                <p><b>The course is run over two consecutive weekends. The course dates shown above only refers to the first weekend. The first theory session on Saturday will be online via Zoom, and covers most of the content. The practical session is usually the next day. The following weekend finishes the course, with Sunday being used as a confirmation of learning or individual tuition. We provides all our theory tuition online via Zoom. The course price includes examination fee of €40. There is a requirement for pre reading and home study, such as learning some of the flags, knots, revising Colregs etc. Full notes will be sent to you when close to the course date, as well as revision / mock exam questions after the sessions. This course is eligible for the Get Qualified Scheme.</b></p>
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+                <a href="https://www.transport.gov.mt/Nautical-Licence-Exam-Application-NTC.pdf-f9012" class="btn btn-info course-four-bottom" role="button">Application Form &raquo;</a>
+                <a href="https://www.sailingschoolmalta.com/files/c1332a4aab55e1d55c0382bb16ec910e.pdf" class="btn btn-info course-four-bottom" role="button">Medical Fitness Form &raquo;</a>
+                <a href="https://getqualified.maltaenterprise.com/Account/Login?returnUrl=%2FHome%2FIndex" class="btn btn-light course-four-bottom" role="button"><img src="/images/get_qualified_thumbnail.jpg" width="50"></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- License example -->
+          <div class="col-xl-3 col-lg-12">            
+            <!-- <img src="/images/course-element/course-element-transport-malta-nautical-licence-example.jpg" width="100%" alt="course-element-transport-malta-nautical-licence-example">
+            <br><br> -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.296002112637!2d14.522063015264619!3d35.89076548014606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e5b2b84eb9679%3A0x60fb531f5eabcf53!2sKalkara%20Marina!5e0!3m2!1sen!2str!4v1661706136566!5m2!1sen!2str"
+              width="100%" height="247" frameborder="0" style="border:0;" class="calendar-map" allowfullscreen="" aria-hidden="false" tabindex="0">
+           </iframe>          
+           <span class="boarding-location">Practical session boarding location</span>
+           <br><br>
+          </div>
+
+        </div>
+      </div>
+
+       <%- include("../partials/carousel"); -%>
+
+
+                <!-- Course detail accordion -->
+                <div class="accordion" id="accordionExample">
+
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Course Overview
+                        </button>
+                      </h2>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <p><b>The Transport Malta Nautical Licence is required by Maltese citizens and foreign residents living on the island. It allows the holder to operate a vessel (powerboat, sailing vessel, or Jetski) with a combined horsepower of 30Hp or over and up to 24m in length, for pleasure, or for towing any person for the purpose of water skiing within the territorial waters of Malta.</b>
+                        </p>
+                        <p>
+                          The course has two parts: Theory and Practical (The Basic Seamanship and Safe Boat Handling Course). It provides students with all the required information to undergo the Transport Malta examination and be awarded a nautical licence.
+                        </p>
+                        Since Covid-19, we are now providing all our theory tuition online via Zoom on Saturday. We also provide handouts for the course. As well as the theory online session, there is home study needed from the written material we send out.
+                        <p>
+                          The location and time for the practical session will be advised few days before the course and it usually hold on the Sunday at Karkara Marina. Both theory and practical course will be given in English.
+                        </p>
+                        <p>
+                          Following the successful completion of your course, the school will submit your application to Transport Malta for your oral exam (approx. 30 mins long). Please send the following to <a href="mailto:stephen@sailingschoolmalta.com">stephen@sailingschoolmalta.com</a>
+                        </p>
+                        <ul>
+                          <a href="https://www.sailingschoolmalta.com/files/b747687bc863aa9ac31890c9de9f8ad9.pdf"><em>
+                              <li>The Nautical Licence application form, filled in and signed</li>
+                            </em></a>
+                          <a href="https://www.sailingschoolmalta.com/files/c1332a4aab55e1d55c0382bb16ec910e.pdf"><em>
+                              <li>A Medical Fitness Certificate to be filled in by your doctor / medical practioner in local pharmacies </li>
+                            </em></a>
+                          <em>
+                            <li>A copy of the front and back of your ID card</li>
+                          </em>
+                        </ul>
+                        <p>
+                          Transport Malta will provide us with an examination date which we will notify you by email. Usually it takes 7-10 days between application of exam and oral exam. Once the date for the TM exam is known, we organise refresher sessions to confirm learning.
+                        </p>
+                        <p>
+                          On the successful completion of your exam from Transport Malta, you can then present your stamped certificate at <em><a href="https://www.transport.gov.mt/Contact-61#customercarehallija">Transport Malta offices Lija</a></em> along with two passport-sized photos and €23.29. You should receive your licence at your preferred address. (within approx. two weeks.)
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header" id="headingTwo">
+                      <h2 class="mb-0">
+                        <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Licence Requirements and Validity
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <p>
+                          Minimum Age: 18
+                        </p>
+                        <p>
+                          No previous experience and knowledge is required. If, after this, you would like to further your knowledge you may follow one of the numerous practical or theory based courses we offer.
+                        </p>
+                        <p>
+                          Individual who intends to follow the course and sit for the Nautical Licence examination must present and submit a Medical Fitness certificate (see above link) before the exam.
+                        </p>
+                        <p>
+                          Permitted Vessel Length & Power: Can crew any vessel up to 24 metres of length, to be driven for pleasure, or tow any person for the purpose of water skiing.
+                        </p>
+                        <p>
+                          Operating Limits: Within the territorial waters of Malta (12 Nautical Miles). Not Valid in other EU Countires.
+                        </p>
+                        <p>
+                          Not valid for commercial use. Renewed at Transport Malta every 10 years.
+                        </p>
+                        <p>
+                          Minimum Training required: Completion of an approved training course followed by an oral and practical examination.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header" id="headingThree">
+                      <h2 class="mb-0">
+                        <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          Course Content and Syllabus
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <p>
+                          Course content is to be based on a minimum of 24 hours tuition covering both classroom and practical training (seamanship and boat handling). Practical boat handling session is mandatory for students and is usually held on a powerboat from Kalkara Marina.
+                        </p>
+                        <p>
+                          It is up to the training centre to manage and stream students undertaking the training course according to their abilities and knowledge. Tuition hours may be adjusted accordingly. Practical boat handling session is mandatory for all students.
+                        </p>
+                        <p>
+                          The theory part covers the laws and regulations that govern boating and yachting in Maltese territorial waters, basic coastal navigation, operating vessels at high speeds, the use of safety equipment, fire prevention, and engine maintenance.
+                        </p>
+                        <p>
+                          The practical part covers: launching & recovery of craft, boat handling, securing to a buoy, anchoring, leaving and coming alongside, and man overboard.
+                        </p>
+                        <p>
+                          The syllabus for the course can be found here:
+                        </p>
+                        <em><a class="book-link" href="https://www.transport.gov.mt/include/filestreaming.asp?fileid=4855">Nautical Licence Syllabus</a></em>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header" id="headingFour">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                          Course Booking and Payment
+                        </button>
+                      </h2>
+                    </div>
+
+                    <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <p>
+                          The cost of the course is being kept to €300 per person total, including the €40 for the oral exam run by Transport Malta.
+                        </p>
+                        <p>
+                          We accept online credit cards payment, PayPal, bank transfer via BOV, Revolut. Or else, you can pay in cash in our office.
+                        </p>
+                        <p>
+                          We recommend to book the course online by clicking the yellow <a href="/booking/courses/<%=courseName%>">Book Now button</a> above or below. Then you can choose the course date that best fits your personal schedule. <b>We would prefer that you book the course directly through our course booking page using credit card.</b>
+                        </p>
+                        <p>
+                          On receipt of the booking and payment of the full course fee, we will send you by email a confirmation and guidance for online tutorial (This will contain a link to the video session), and a pdf copy of the course notes for you to read. These are the notes we use in the classroom later.
+                        </p>
+                        <p>
+                          Your place will only be guaranteed upon receipt of funds.
+                        </p>
+                        <p>
+                          Please note: If applying for our course dates, payment and application forms should be sent to Sailing School Malta and NOT to Transport Malta.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header" id="headingFive">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                          Frequently Asked Questions
+                        </button>
+                      </h2>
+                    </div>
+
+                    <div id="collapseFive" class="collapse show" aria-labelledby="headingFive" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <p>Q: I just arrive Malta and not have a residence card yet, can I apply for the course and exam?</p>
+                        <p>A: Yes, you can apply the coure and exam with your passport.</p>
+                        <br>
+                        <p>Q: When will the practical session be? Is it always hold on Sunday of the same weekend?</p>
+                        <p>A: The practical session most of time (80% of time) will be given on Sunday of the same weekend. Sometimes we do practical session on Saturday, and theory part on Sunday due to weather and availability of the instructor. If we are not able to carry out practical session in one weekend, we will send a notice in advance, and will offer the practical session in the following weekends. Since we run this course almost every week or every another week, there shouldn't be a problem.</p>
+                        <br>
+                        <p>Q: What are the differences between RYA Course/Certificate and Transport Malta course?</p>
+                        <p>A: Transport Malta Nautical Licence (TMNL) and the RYA courses are two different systems. TMNL for people who would like to charter and drive a boat up to 24 meter in Maltese water. It is like a local driving licence that allows you to legally drive boat in the local water. If you are Maltese or foreigner with Maltese residence, you need TMNL to sail or cruise. TMNL is NOT valid outside Malta and in other EU countries. While RYA certificates are more internationally recognized sailing qualifications that can be applied/valid to the majority of the waters around the globe. With the <a href="https://www.sailingschoolmalta.com/courses/rya-level-2-powerboat-handling"><em>RYA Level 2 Powerboat Handling certification</em></a>, you qualify to apply for the International Certificate of Competence (ICC) for power vessels of up to 10 metres.</p>
+                        <br>
+                        <p>Q: What if I want to have an internationally recognized powerboat licence, instead of only Transport Malta Nautical Licence that is only valid in Malta?</p>
+                        <p>A: In this case, you shall choose to book <a href="https://www.sailingschoolmalta.com/courses/rya-level-2-powerboat-handling"><em>RYA Level 2 Powerboat Handling</em></a> course. We run TMNL and RYA L2 PB Hanlding course at same weekend. If you are maltese resident, you will also be eligible to sit in the Transport Malta Nautical Licence exam after complete the PB L2 Handling course. You will need to pay an extra 140 euro TMNL exam fee and additional training for that. This also means you will have 2 licences (RYA and TMNL) by the end of completion of course and by successfully passing the TMNL exam, one internationally recognised, one locally required.</p>
+                        <br>
+                        <p>Q: I am foreigner visitng Malta. Do I need Transport Malta Nautical Licence to rent and drive a boat for pleasure?</p>
+                        <p>A: No, you dont need TMNL, but you will need RYA L2 Powerboat Handling licence, preferably with VHF licence. You can charter powerboat less than 10 meters. Sometimes, Powerboat handling ICC is needed depending on who you rent boat from. Please note Transport Malta has stated that the ICC certificate does not automatically entitle the holder to a Nautical License issued by the Authority, even if the ICC is issued by a training institution in Malta.</p>
+                        <br>
+                        <p>Q: I already booked and paid for the course, but why I have not received joining instruction for the theory session or practical session yet?</p>
+                        <p>A: We send confirmation email manually. Most of the time, the joining instructions are sent 1/2 days before the course starts, as many students prefer to book close to course starting time. If you dont receive it one day before course starts, please check your spam/junk mail box, sometimes it will reach there. Still not received? send us an email to info@sailingschoolmalta.com or call +356 9964 3706</p>
+                        <br>
+                        <p>Q: I have doubts and some questions regarding the course content. Can I ask after the theory session finishes? </p>
+                        <p>A: Sure, you are welcome. Please send your question to stephen@sailingschoolmalta.com or call +356 9964 3706</p>
+                        <br>
+                        <p>Q: Can you offer course to a group of people? Can you offer private course? Do you provide discount for group booking? </p>
+                        <p>A: Yes, we do. Many companies send us request to offer training to their employee. 5% discount for a group over 4 people. Please contact us should you wish to book private course dates or for a quote on private courses.</p>
+                        <br>
+                        <p>Q: What should I wear during practical session?</p>
+                        <p>A: Nothing special, just keep yourself warm and comfortable. Maybe also sunglass and a hat.</p>
+                        <br>
+                        <p>Q: Can you send me an invoice for the course?</p>
+                        <p>A: Yes, please send a request to info@sailingschoolmalta.com and provide invoice details.</p>
+                        <br>
+                        <p>Q: I still don't feel confident and competent to take a powerboat or sailboat in reasonable conditions on my own, can you provide further training? How can I sail outside outside Maltese water and in other EU countries?</p>
+                        <p>A: Sure, we would love to. We provide widest range of practical sailing and powerboat course in Malta. Please check our RYA sailing courses of all levels</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <iframe class="d-none d-md-block video-tmnl-desktop" width="100%" src="https://www.youtube.com/embed/YfB0OI6tElg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe class="d-block d-md-none video-tmnl-mobile" width="100%" src="https://www.youtube.com/embed/Pqz1BZ-FFBU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <%- include("../partials/reviews"); -%>
+
+                <!-- Bottom buttons -->
+                <div class="course-bottom-buttons">
+                  <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                  <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                  <% if(courseProfileFound.onlineLink != "") {%>
+                  <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                  <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+                  <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                  <%}%>
+        <a href="https://www.transport.gov.mt/Nautical-Licence-Exam-Application.pdf-f7647" class="btn btn-info course-four-bottom" role="button">Application Form &raquo;</a>
+        <a href="https://www.transport.gov.mt/Certificate-of-Medical-Fitness-form-nl.pdf-f7511" class="btn btn-info course-four-bottom" role="button">Medical Fitness Form &raquo;</a>
+                <a href="https://getqualified.maltaenterprise.com/Account/Login?returnUrl=%2FHome%2FIndex" class="btn btn-light course-four-bottom" role="button"><img src="/images/get_qualified_thumbnail.jpg" width="50"></a>
+
+      </div>
+
+    </div>
+
+    <div class="videos-wrapper">
+      <h3>Recommended videos:</h3>
+      <div class="videos-container">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/B_Sq3Py2nQw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/rI5bVAukFlE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/0tBXsgJmnm4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/3ixSWt1927U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      
+    </div>
+
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

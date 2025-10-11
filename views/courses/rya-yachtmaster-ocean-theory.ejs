@@ -1,0 +1,235 @@
+<%- include("../partials/header"); -%>
+
+<section>
+
+  <!-- Cover image -->
+  <div>
+    <img src="https://www.hamble.co.uk/content/S635840510901745127/th_Main635890517890106053_ban7.jpg" width="100%" class="top-image" alt="course-cover-rya-yachtmaster-ocean- theory">
+  </div>
+
+  <div class="container-fluid course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>RYA Yachtmaster Ocean Theory</b></h1> <%- include("../partials/summary-course"); -%>
+        <p class="lead course-subtitle"><em>Unravel the mysteries of astro navigation, using a sextant, ocean passage making, worldwide meteorology and electronic navigation aids.</em></p>
+        <br><br>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>Please contact us if you're interested in private class or on a different date 😉‍</b></p>
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+              </div>
+            </div>
+          </div>
+
+          <!-- the map -->
+          <%- include("../partials/maps/ssm"); -%>
+
+              </div>
+            </div>
+
+            <!-- Course detail accordion -->
+            <div class="accordion" id="accordionExample">
+
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Course Overview
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      This course is for those aspiring to blue water cruising and is ideal for holders of the Yachtmaster Offshore certificate who are preparing for their first ocean passage.
+                    </p>
+                    <p>
+                      If you are working towards your Yachtmaster Ocean Certificate of Competence, completion of this shorebased course exempts you from the written exam.
+                    </p>
+                    <p>
+                      The course is taught over 40 hours with one exam paper. It can be covered as a series of short sessions, as an intensive week-long course, or by online/distance learning.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Course Requirements
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      Prior to the course your navigation skills should be at the standard of the <em><a href="/courses/rya-coastal-skipper-yachtmaster-offshore-theory">RYA Coastal Skipper/Yachtmaster Offshore shorebased</a></em> course.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Course Content
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p><strong>Course topics include</strong>&#58;</p>
+                    <ul>
+                      <li>The earth and the celestial sphere</li>
+                      <li>Practical guide to use and care of sextant at sea</li>
+                      <li>Meridian altitudes</li>
+                      <li>Sun, star and other sights</li>
+                      <li>Ocean passage planning</li>
+                    </ul>
+                    <p>
+                      Course books links: <a class="book-link" href="https://www.rya.org.uk/shop/p/rya-yachtmaster-shorebased-notes"><em>RYA Yachtmaster Shorebased Notes</em></a>
+                    </p>
+                    <img src="/images/course-element/course-element-yachtmaster-shorebased-notes.jpg" width="20%" alt="yachtmaster-shorebased-notes">
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                      Course Details
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      Our classroom taught RYA Day Skipper Theory Course is available in a choice of formats. The first being run over 5 consecutive days, the second being 2 weekends including a Friday making up the 5 days. Available at our Southampton training centre classrooms within Shamrock Quay marina with free accommodation ( we recommend pre-booking to avoid disappointment ) on board one of yachts.
+                    </p>
+                    <p>
+                      Our course fee includes all the equipment and tools needed to successfully complete the course. Unlimited tea and coffee is included, as well as a free parking permit within Shamrock Quay for the duration of the course. Also included within the course fee is the RYA Day Skipper Shorebased Notes book.
+                    </p>
+                    <p>
+                      During the 5 days of the course you will work from 9am to 5pm each day ( we do stop for lunch & coffee breaks ! ) with sessions of instructor lead tuition followed by exercises to consolidate the new knowledge. Starting with safety and seamanship, then moving onto navigation and more. A small amount of homework will be given each night as we need to meet a 40 hours of tuition guideline.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      Recommended to bring
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul>
+                      <li>Note book</li>
+                      <li>Pen</li>
+                      <li>2B pencil</li>
+                      <li>Eraser</li>
+                      <li>Course Plotter (we have one for you during the class and they are available for sale)</li>
+                      <li>Dividers (we have one for you during the class and they are available for sale)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingSeven">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                      Flight and On-arrival
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      If you need a flight to Malta International, airport code MLA, we are happy to help you
+                      find a flight if you would like us to.
+                    </p>
+                    <p>
+                      On arrival at Malta airport, there is a kiosk at the exit from the airport where you
+                      can pre pay the taxi to the boat, or we can arrange for you to be collected by a local
+                      taxi firm. The cost of this is usually 25 Euro.The taxi drivers speak good English.
+                    </p>
+                    <p>
+                      You will then have a short “live aboard” safety brief and then hopefully join us for a
+                      drink to celebrate your arrival and meet your crew mates!
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingEight">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                      RYA Sail Cruising Course System and Next Step
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <img src="/images/course-element/course-element-sail-course-system.jpeg" width="100%" alt="RYA-sail-course-system">
+                    <a class="btn btn-dark btn-block" href="#" role="button">Next step: RYA Yachtmaster Ocean &raquo</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <%- include("../partials/reviews"); -%>
+            <!-- Bottom buttons -->
+            <div class="course-bottom-buttons">
+              <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+              <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+              <% if(courseProfileFound.onlineLink != "") {%>
+              <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+              <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+              <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+              <%}%>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

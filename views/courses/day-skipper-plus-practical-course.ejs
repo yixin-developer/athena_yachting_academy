@@ -1,0 +1,307 @@
+<%- include("../partials/header"); -%>
+
+<section>
+
+  <!-- Cover image -->
+  <div class="container-video">
+    <iframe class="video-top" src="https://www.youtube.com/embed/Pld2Ok7qRzY?si=Yn4mxiONscYI5uP3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+
+  <div class="container-fluid course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>Day Skipper "Plus" Practical Course</b></h1> <%- include("../partials/summary-course"); -%>
+        <p class="lead course-subtitle"><em>Your handling skills and/or theory are a little rusty or you just wish to practice and learn more advanced techniques. Your instructor will hone in on specific tasks of your choosing and clear up any confusion on any aspects you may have relating to theory and navigation. </em></p>
+        <br><br>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3  calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>Please be noticed that this is not an RYA Day Skipper course. You will NOT get Day Skipper certificate after completing this course. This course is for students who have already passed Day Skipper but still feel hesitant taking the lead and for those who want to have a refresher day skipper course. The course provides a supportive, confidence-building sailing experience to turn newly certified Day Skippers into competent, calm leaders at sea, over the course of 7 days. You can book the course directly online by clicking the Course Booking Button. Please contact us if you're interested in private class or on a different date 😉‍</b></p> 
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+              </div>
+            </div>
+          </div>
+
+          <!-- the map -->
+          <%- include("../partials/maps/ssm"); -%>
+
+              </div>
+            </div>
+
+<div class="accordion" id="accordionExample">
+
+  <!-- Course Overview -->
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+          aria-expanded="true" aria-controls="collapseOne">
+          Course Overview
+        </button>
+      </h2>
+    </div>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        <p>
+          The Day Skipper Plus course is designed for those who already hold their RYA Day Skipper certificate and wish to bridge the gap between Day Skipper and Coastal Skipper level.
+        </p>
+        <p>
+          Whether you've been away from sailing for a while, feel unsure about certain skills, or simply want more real-world skippering experience — this course will boost your confidence, sharpen your decision-making, and help you feel truly in command on the water.
+        </p>
+        <p>
+          With expert coaching and plenty of hands-on practice, you’ll refine core skills such as maneuvering, navigation, sail trim, and watchkeeping — all in a relaxed and supportive setting.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Course Content -->
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+          aria-expanded="true" aria-controls="collapseThree">
+          Course Content
+        </button>
+      </h2>
+    </div>
+    <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        <ul>
+          <li>Passage planning and skippering short passages</li>
+          <li>Advanced berthing and close-quarters maneuvering</li>
+          <li>Night sailing and watchkeeping drills</li>
+          <li>MOB drills, anchoring practice, and sail handling refresh</li>
+          <li>Pilotage using charts, compass, and electronic nav aids</li>
+          <li>Improved helm confidence and crew communication</li>
+          <li>Weather interpretation and contingency planning</li>
+          <li>Practical exercises tailored to your development goals</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+ <!-- Typical Itinerary -->
+  <div class="card">
+  <div class="card-header" id="headingItineraryMaltaGozo">
+    <h2 class="mb-0">
+      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseItineraryMaltaGozo" aria-expanded="true" aria-controls="collapseItineraryMaltaGozo">
+        Typical Itinerary – Round Malta & Gozo (7 Days)
+      </button>
+    </h2>
+  </div>
+
+  <div id="collapseItineraryMaltaGozo" class="collapse show" aria-labelledby="headingItineraryMaltaGozo" data-parent="#accordionExample">
+    <div class="card-body">
+      <p>This 7-day circular sailing route around Malta and Gozo offers an ideal platform to build real skippering confidence, refine navigation and sail-handling skills, and experience a mix of anchorages and marinas.</p>
+
+      <ul>
+        <li><strong>Day 1:</strong> Embark in Valletta or Marsamxett. Safety brief, yacht familiarisation, and short sail to Comino or St. Paul’s Bay. Ideal for <em>Competent Crew</em> joining as first experience or refresher.</li>
+        <li><strong>Day 2:</strong> Sail along Gozo’s north coast. Moor in Xwejni or Ramla Bay. Practice helming, tacking, gybing, and navigation by landmarks.</li>
+        <li><strong>Day 3:</strong> Continue to Mgarr Marina in Gozo. Pilotage into port and evening passage planning. Opportunity for <em>Day Skipper</em> level students to lead.</li>
+        <li><strong>Day 4:</strong> Offshore leg south of Gozo to Dingli or Blue Grotto. Longer coastal passage — perfect for <em>Coastal Skipper</em> candidates to plan and execute skippering.</li>
+        <li><strong>Day 5:</strong> Southern coast of Malta to Marsaxlokk or St. Thomas Bay. Focus on engine handling, tight-quarters manoeuvres, and berthing skills.</li>
+        <li><strong>Day 6:</strong> Round southeast tip of Malta. Optional night sailing leg to Kalkara/Valletta. Involves watchkeeping, plotting, and passage execution.</li>
+        <li><strong>Day 7:</strong> Light training or review sail. Final feedback and individual skills evaluation. Disembark late morning.</li>
+      </ul>
+
+      <p>This route is flexible depending on wind conditions and course goals, but always prioritises real sailing, learning, and confidence-building with RYA instructors onboard.</p>
+    </div>
+  </div>
+</div>
+
+  <!-- Course Requirement -->
+  <div class="card">
+    <div class="card-header" id="headingFour">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour"
+          aria-expanded="false" aria-controls="collapseFour">
+          Course Requirement
+        </button>
+      </h2>
+    </div>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+      <div class="card-body">
+        <ul>
+          <li><strong>Recommended Experience:</strong>
+            <ul>
+              <li>RYA Day Skipper Practical certification or equivalent experience</li>
+              <li>Minimum 100NM and 5 days logged sailing</li>
+            </ul>
+          </li>
+          <li><strong>Who This Course Is For:</strong>
+            <ul>
+              <li>Sailors looking to gain confidence and independence post-Day Skipper</li>
+              <li>Students preparing for RYA Coastal Skipper or Yachtmaster assessments</li>
+              <li>Refresher course for those who already done Day Skipper but has not sailed for a while</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Course Details -->
+  <div class="card">
+    <div class="card-header" id="headingEight">
+      <h2 class="mb-0">
+        <button style="text-align: left" class="btn btn-link collapsed" type="button"
+          data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+          Course Details
+        </button>
+      </h2>
+    </div>
+    <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+      <div class="card-body">
+        <ul>
+          <li><strong>Duration:</strong> 7 full days, Monday-Sunday</li>
+          <li><strong>Accommodation:</strong> Onboard a 46ft Bavaria yacht</li>
+          <li><strong>Group Size:</strong> Max 5 students per instructor</li>
+          <li><strong>Meals:</strong> Food provisioned onboard; cook together as a crew</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+<div class="card">
+                <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      Recommended to bring
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      If you choose for accommodation onboard, full bedding is supplied, sheets, pillows and blankets. Also, we provide towels for use on the yacht but not beach towels. If you should require more than one towel during the week, please do bring your own additional towel.
+                    </p>
+                    <ul>
+                      <li>Packed lunch</li>
+                      <li>Sunglasses</li>
+                      <li>High factor sun cream</li>
+                      <li>Deck shoes if possible, otherwise soft shoes with a non marking sole, or just barefoot</li>
+                      <li>Shorts (Please be aware that these are liable to get dirty, so not your bestones!)</li>
+                      <li>T-Shirts</li>
+                      <li>Wash Kit</li>
+                      <li>Fleece or jumper for the evenings and windy days at sea</li>
+                      <li>Soft bag as opposed to a hard suitcase (we can store luggage if you are staying on)</li>
+                      <li>Light long sleeved shirt if you need to cover up in the sun</li>
+                      <li>Baseball/sun hat (preferably with a clip to stop it blowing overboard!)</li>
+                      <li>Sea sickness tablets should you need them</li>
+                      <li>Sailing Gloves (if available)</li>
+                      <li>Phone/ Ipod / lap top chargers – 12V (cigarette style chargers) if needed</li>
+                      <li>And above all, enthusiasm!</li>
+                    </ul>
+                    <p>
+                      Please note that the temperatures in Malta are normally very warm during the day
+                      but it can be cold in the evenings and windy days at sea. It is a good idea to bring a
+                      small light rain mac if you have one and also a pair of long trousers and a warm
+                      fleece, just in case. Please note that We don't provide wet weather gear onboard.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+  <!-- Support Courses -->
+  <div class="card">
+    <div class="card-header" id="headingNine">
+      <h2 class="mb-0">
+        <button style="text-align: left" class="btn btn-link collapsed" type="button"
+          data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+          Support Courses
+        </button>
+      </h2>
+    </div>
+    <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+      <div class="card-body">
+        <a href="/courses/rya-day-skipper-theory">RYA Day Skipper Theory Course</a><br>
+        <a href="/courses/rya-day-skipper-practical">RYA Day Skipper Practical Course</a><br>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+                <div class="card-header" id="headingSeven">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                      Flight and On-arrival
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>If you need a flight to Malta International, the airport code is MLA. There is only one airport in Malta.</p>
+                    <p>On arrival at Malta airport, there is a kiosk at the exit from the airport where you can pre pay the taxi to the boat. The cost of this is usually 25 Euro.The taxi drivers speak good English.</p>
+                    <p>Cheaper transport option would be use taxi app such as: Bolt, Ecab, Cool. There are plenty of taxi connected to these apps.</p>
+                    <p>You will have a short safety brief on arrival to familiarise yourself with the boat and meet your crew mates!</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingNine">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                      Frequently Asked Question
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>For more details about course, logistics, accommodation, booking, and certificate, please refer to the <a href="/faqs"><em>FAQ's section.</em></a></p>
+                  </div>
+                </div>
+              </div>
+
+
+</div>
+
+            <%- include("../partials/reviews"); -%>
+            <!-- Bottom buttons -->
+            <div class="course-bottom-buttons">
+              <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+              <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+              <% if(courseProfileFound.onlineLink != "") {%>
+              <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+              <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+              <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+              <%}%>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

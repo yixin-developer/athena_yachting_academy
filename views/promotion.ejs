@@ -1,0 +1,65 @@
+<%-include("partials/header")-%>
+
+<section>
+  <div class="container-fluid Promotion-background">
+    <div class="Promotion-page">
+      <div class="text-center my-4">
+        <img class="mb-5 promotion-page-img" width="50%" src="/images/19976dabca737d062f9fa63577c68c4f.jpg" alt="" />
+        <h1><b>Look Out for the Upcoming Offers</b></h1>
+        <br />
+        <p class="lead text-center promotions-below">
+          Please find below the promotions available:
+        </p>
+        <br />
+      </div>
+      <div class="promotion">
+        <ul>
+          <% promotionsFound.forEach(function(promotion,index) {%>
+          <li>
+            <a href="<%=promotion.link%>"><u>
+                <h3 class="text-left my-4"><%=promotion.title%>:</h3>
+              </u></a>
+            <p class="lead text-left" style="text-align: justify">
+              <b><%=promotion.content%></b>
+            </p>
+            <p class="lead text-left">
+              <em><b>*This promotion ends on:
+                  <%=promotion.expiration.toDateString()%></b></em>
+            </p>
+          </li>
+          <br />
+          <%})%>
+        </ul>
+      </div>
+      <div>
+        <p class="lead text-center mt-4">
+          * Note: Sailing School Malta reserves all the rights regarding the
+          promotions.
+        </p>
+      </div>
+      <br />
+      <div class="text-center my-4">
+        <h2 class="h1-seo-replace"><b>Sign Up Here!</b></h2>
+        <br />
+        <p class="lead mb-4">
+          Our last minute deals will appear from time to time. You can sign up
+          to our newsletter to keep informed of special offers and our trip
+          plans!
+        </p>
+        <div class="submission-form">
+          <form class="" action="/sign-up" method="post">
+            <input type="email" name="email" class="form-control sign-up-box-email" placeholder="Email address" required />
+            <input type="name" name="firstName" class="form-control sign-up-box-name" placeholder="First name" required />
+            <input type="surname" name="lastName" class="form-control sign-up-box-surname" placeholder="Last name" required />
+            <br />
+            <button class="btn btn-md btn-warning btn-block" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%-include("partials/footer")-%>

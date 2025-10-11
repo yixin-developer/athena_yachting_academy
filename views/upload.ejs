@@ -1,0 +1,83 @@
+<%- include('partials/header') %>
+
+<section>
+  <br><br><br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 m-auto">
+        <div class="card-body">
+          <h1 class="console-emoji"><a href="/images">🖼</a></h1>
+          <br>
+          <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="custom-file mb-3">
+              <input type="file" name="files" id="inputGroupFile" class="custom-file-input select-file" multiple>
+              <label for="inputGroupFile" class="custom-file-label">Choose one file (max. size 10mb)</label>
+              <input class="form-control select-category" type="text" name="category" list="category-select" placeholder="Select an category">
+              <datalist id="category-select" name="category" required>
+                <option disabled selected value>Select an category</option>
+                <option value="Blog">Blog</option>
+                <option value="Course">Course</option>
+                <option value="CourseProfile">CourseProfile</option>
+                <option value="Trip">Trip</option>
+                <option value="Cruise">Cruise</option>
+                <option value="Boats">Boats</option>
+                <option value="News&Event">News&Event</option>
+                <option value="Charter">Charter</option>
+                <option value="School">School</option>
+                <option value="School">Business</option>
+                <option value="Documents">Documents</option>
+                <option value="Presentations">Presentations</option>
+                <option value="Other">Other</option>
+              </datalist>
+              <textarea class="form-control file-description" name="description" placeholder="Description..." row="3" maxlength="250"></textarea>
+              <br>
+            </div>
+            <button class="btn btn-warning btn-block" type="submit">Submit</button>
+          </form>
+          <hr>
+
+          <% if(files) { %>
+          <% console.log(files) %>
+          <% files.map(file => {%>
+          <% console.log(file, 'ejs2') %>
+
+          <div class="card card-body mb-3 img-uploaded">
+            <% if(file.isImage) { %>
+            <img width="100%" src="/images/<%= file.filename %>" alt="uploaded image">
+            <a href="/files/<%= file.filename %>"><%= file.filename %></a>
+            <% } else {%>
+            <img width="100%" src="/images/document_icon.jpg">
+            <a href="/files/<%= file.filename %>"><%= file.filename %></a>
+            <%}%>
+                    <form method="POST" class="delete-img-form" action="/files/<%= file._id %>?_method=DELETE">
+            <a class="btn btn-primary btn-block mt-4" href="/files/<%=file.filename%>">Open this file</a>
+            <button class="btn btn-danger btn-block mt-4">Delete this file</button>
+            </form>
+          </div>
+
+          <% }) %>
+          <% } %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  $('#inputGroupFile').on('change', function() {
+    //get the file name
+    var fileName = $(this).val();
+    //replace the "Choose a file" label
+    $(this).next('.custom-file-label').html(fileName);
+  })
+  $('.delete-img-form').on('submit', function(e) {
+    e.preventDefault();
+    console.log(e);
+    e.target.parentElement.remove();
+    $('.img-uploaded').last()[0].scrollIntoView();
+    // Array.from(document.querySelectorAll('.img-uploaded')).at(-1).scrollIntoView();
+  })
+</script>
+
+<%- include('partials/footer') %>

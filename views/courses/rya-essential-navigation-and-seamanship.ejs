@@ -1,0 +1,224 @@
+<%- include("../partials/header"); -%>
+
+<section>
+
+  <!-- Cover image -->
+  <div class="container-video">
+    <iframe class="video-top" src="https://www.youtube.com/embed/rAENIh39Pdc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="container-fluid video-course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>RYA Essential Navigation And Seamanship</b></h1>
+        <h6>BEGINNERS | ONLINE COURSE | NAVIGATION </h6>
+        <br>
+        <%- include("../partials/summary-course"); -%>
+
+        <p class="lead course-subtitle"><em>A basic introduction to navigation and safety for anyone new to boating: sailors, powerboaters, sea anglers, divers and boatmasters. </em></p>
+        <br><br>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>Course Pack which includes a chart, plotter, dividers, training almanac, course handbook and exercises.
+                    Email and phone assistance by qualified instructors. 😉‍</b></p>
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning  course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+  <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+</div>
+            </div>
+          </div>
+
+          <!-- the map -->
+          <%- include("../partials/maps/ssm"); -%>
+
+              </div>
+            </div>
+
+            <!-- Course detail accordion -->
+            <div class="accordion" id="accordionExample">
+
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Course Overivew
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      The RYA Online Essential Navigation and Seamanship Course is an inspiring online course for anyone interested in sailing, motor boating, jetskiing, sea angling or diving - or pretty much anything else on the water!
+                    </p>
+                    <p>
+                      No previous knowledge is required. The course is a basic introduction to navigation, seamanship and safety and falls below Day Skipper Theory within the RYA training scheme.
+                    </p>
+                    <p>
+                      It is ideal for users of small boats such as RIBs and dayboats such as those used by anglers. Its also a great course for those who are currently crewing on yachts and want to learn a little more before eventually progressing to the full Day Skipper courses.
+                    </p>
+                    <div id="phContent">
+                      <p><b>Top 10 reasons to take the online course</b></p>
+                      <p><b>1. Flexibility - </b>anytime, anywhere, at your own speed<br><b>2. Suitable for all -</b> new crews through to budding skippers;<br><b>3. Safety Essentials -</b> all the essential knowledge for going afloat<br><b>4. Simplicity -</b> easy to use, interactive and full of great graphics<br><b>5. Supporting your knowledge -</b> an ideal accompaniment to your practical course<br><b>6. Stepping stone -</b> a great starting point for more advanced courses<br><b>7. Real skills -</b> use real skills alongside online technology<br><b>8. Best advice -</b> written by top RYA instructors, created by award winning designers<br><b>9. Learn it, try it, test it -</b> practice what you’ve learnt before taking the test<br><b>10. Be part of it -</b> the RYA’s 1st fully interactive online course</p>
+                      <p>The RYA Essential Navigation and Seamanship Course aims to introduce the basic concepts of inshore navigation and safety in an easy to understand and enjoyable format. </p>
+                      <p>During the course you will be introduced to the basics of navigation including tidal awareness, charts, almanacs and the use of electronic navigation aids such as GPS. You will be taught about harbour entry and departure pilotage including knowledge of buoyage and a basic understanding of the Collision Regulations so you know who has right of way! </p>
+                      <p>Time will also be spent looking at sources of weather information and what impact this could have on your passage. </p>
+                      <p>Towards the end of the course you will put all this information together to plan an actual passage. You will also learn more about what safety equipment you should carry and how it is used.</p>
+                      <p> See below for details of how to register for the online course.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header" id="headingSeven">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                        Course Booking
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <p>Accessing the online course is simple! The course is run by Sailing School Malta through the RYA eLearning website<a href="http://www.ryainteractive.org" target="_blank"> ryainteractive.org</a>. An instructor will be on hand to help with queries during the course via email <a href="mailto:stephen@sailingschoolmalta.com?subject=RYA Online Essential Navigation and Seamanship Course">stephen@sailingschoolmalta.com</a> or phone +356 9964 3706. </p>
+                      <p>You can book the course directly on our website and make the course fee payment by credit card, PayPal, or bank transfer. Just click <a href="/booking/courses/<%=courseName%>"><em>Book Now</em></a> button and you will be lead to a page where you can choose dates, number of participants, and fill other necessary information. </p>
+                      <p>After receiving the booking and payment, we will set up an online account for you and register the course on <a href="http://www.ryainteractive.org" target="_blank">ryainteractive.org</a>. Please note that we have to set up the account for you. When this is done you will be able to access the course here or from the email we send you. </p>
+                      <p>That's it and you are up and running! You will also receive the course pack with training charts, almanac, plotter, dividers, course handbook and exercises to help you get hands on experience.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Course Syllubus
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <div>
+                        <p>The Essential Navigation and Seamanship course provides an introduction to the basic skills required before taking a small boat to sea or taking an active part in running a boat. </p>
+                        <p>1. Charts, publications and terms </p>
+                        <ul>
+                          <li>Basic terms </li>
+                          <li>Chart overview </li>
+                          <li>Introduction to chart datum and depths </li>
+                        </ul>
+                        <p>2. Buoyage </p>
+                        <ul>
+                          <li>Lateral buoys </li>
+                          <li>Cardinal buoys </li>
+                          <li>Where to find information </li>
+                        </ul>
+                        <p>3. Navigation </p>
+                        <ul>
+                          <li>Plotting a position </li>
+                          <li>Measuring distance and bearing </li>
+                          <li>Position fix </li>
+                          <li>Heading </li>
+                        </ul>
+                        <p>4. Safety </p>
+                        <ul>
+                          <li>Personal and boat safety equipment </li>
+                          <li>Safety procedures and briefing </li>
+                          <li>Communications </li>
+                          <li>Engine checks </li>
+                          <li>Rescue procedures </li>
+                        </ul>
+                        <p>5. Anchoring </p>
+                        <ul>
+                          <li>Where to anchor </li>
+                          <li>How to anchor </li>
+                        </ul>
+                        <p>6. Tides </p>
+                        <ul>
+                          <li>Tidal streams </li>
+                          <li>Tidal heights </li>
+                        </ul>
+                        <p>7. Electronic navigation </p>
+                        <ul>
+                          <li>GPS terms </li>
+                          <li>GPS use </li>
+                          <li>Using waypoints </li>
+                        </ul>
+                        <p>8. Rules of the road </p>
+                        <ul>
+                          <li>Risk of collision </li>
+                          <li>Who gives way </li>
+                        </ul>
+                        <p>9. Weather forecasts </p>
+                        <ul>
+                          <li>Sources of forecast </li>
+                          <li>Terms used in forecasts </li>
+                        </ul>
+                        <p>10. Pilotage </p>
+                        <ul>
+                          <li>Harbour information </li>
+                          <li>Transits </li>
+                          <li>Pilotage plan </li>
+                        </ul>
+                        <p>11. Passage planning </p>
+                        <ul>
+                          <li>SOLAS V requirements </li>
+                          <li>Pre planning </li>
+                          <li>Chart choice</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header" id="headingEight">
+                    <h2 class="mb-0">
+                      <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                        Course System and Next Step
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <img src="/images/course-element/course-element-sail-course-system.jpeg" width="100%" alt="RYA-sail-course-system">
+                      <a class="btn btn-primary btn-block" href="/courses/rya-competent-crew" role="button">Next step: RYA Competent Crew &raquo</a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <%- include("../partials/reviews"); -%>
+              <!-- Bottom buttons -->
+
+            </div>
+
+          </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

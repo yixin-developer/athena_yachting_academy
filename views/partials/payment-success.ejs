@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Success</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- Descargar joining isntructions link -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180261214-1"></script>
+  <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "UA-180261214-1");
+  </script>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+</head>
+
+<body>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Payment Successful!</h1>
+      <br />
+      <p class="lead">
+        Your online payment was successful. You will receive a confirmation email
+        shortly, together with link to download Booking Form and Joining Instruction. <span id="invoice-help"> Should you need an
+          invoice please request by replying our email.</span>
+      </p>
+      <p class="lead">
+        Thanks for choosing Sailing School Malta. We look forward to seeing you onboard!
+      </p>
+      <a id="download-invoice" target="_blank" class="d-none">Download invoice</a>
+      <a href="/course-dates">
+        <p>Select and book the right course >></p>
+      </a>
+      <a href="/shop/promotion">
+        <p>Check the available promotions >></p>
+      </a>
+      <a href="/accommodation">
+        <p>Check onboard accommodation >></p>
+      </a>
+      <a href="/images">
+        <p>Go to gallery >></p>
+      </a>
+      <a href="/faqs">
+        <p>Check FAQs >></p>
+      </a>
+      <a href="/">
+        <p>Return to the home page >></p>
+      </a>
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    //   var stripePublicKey = 'pk_test_BrrGz7LLRf5t48XIX2Ty5PNJ00ZZlQ4ima'
+    const invoiceMessageEl = document.querySelector('#invoice-help');
+    var stripePublicKey = '<%= process.env.STRIPE_PUBLIC_KEY %>';
+    let stripe;
+    if (stripePublicKey) {
+      stripe = Stripe(stripePublicKey);
+      invoiceMessageEl.textContent = 'Please use the link below to download.'
+    }
+    // 3. Check if the website has payment_intent_client_secret in the url.
+    // If yes, retrieve the paymentIntent and call the back-end to create everything in the database.
+    async function checkStatus() {
+      if (stripe) {
+        const clientSecret = new URLSearchParams(window.location.search).get(
+          "payment_intent_client_secret"
+        );
+        if (!clientSecret) {
+          return;
+        }
+        const {
+          paymentIntent: payment
+        } = await stripe.retrievePaymentIntent(clientSecret);
+        //Confirm the payment using clientSecret in the back end, create transaction and booking.
+        if (payment) {
+          const res = await fetch("/booking/confirm-payment-intent", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify({
+              paymentSecret: payment.id,
+            }),
+          });
+          const data = await res.json();
+          // clean-up cart after checkout
+          const downloadInvoice = document.querySelector('#download-invoice');
+          downloadInvoice.href = data?.paymentIntent ? data?.paymentIntent?.charges?.data?.[0]?.receipt_url : data?.charge?.receipt_url;
+
+          downloadInvoice.className = 'd-block';
+        }
+        // send payment info to server and return payment result and cleanup the cart if successful
+      }
+    }
+    checkStatus();
+  });
+</script>
+
+</html>

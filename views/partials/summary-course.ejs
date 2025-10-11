@@ -1,0 +1,11 @@
+<% var currentCourse = courseProfileFound;%>
+<% if (currentCourse){ %>
+<i class="social-media-icon far fa-calendar-alt"></i>
+<%= currentCourse?.duration%> days
+
+<i class="social-media-icon fas fa-euro-sign"></i>
+<%= currentCourse?.price%>
+
+<i class="social-media-icon fas fa-users"></i>
+Max <%= currentCourse?.capacity%> students
+<%}%>

@@ -1,0 +1,50 @@
+<%-include("partials/header")-%>
+
+<section>
+
+  <!-- Cover image -->
+  <div>
+    <img src="/images/course-category-cover/course-category-cover-rya-practical-sail-cruising.jpg" width="100%" class="top-image" alt="course-category-cover-rya-practical-sail-cruising">
+  </div>
+
+  <div class="container-fluid">
+
+    <!-- Category title -->
+    <div class="text-center">
+      <h1 class="courses-category-title">RYA Practical Sail Cruising Courses in Malta</h1>
+      <h5 class="lead">If your dream is to learn sailing while exploring the stunning Mediterranean, then you’re in the right place. Welcome to Sailing School Malta — where we’ll take you across crystal-clear waters, uncover coastal gems around Malta, Sicily, and beyond, and teach you the skills and joy of life at sea.</h5>
+      <br>
+      <a class="lead" href="/files/f7859ffb324609e8a5581ff7bcb393d2.pdf">
+        <h6>Download RYA Sail Cruising Courses System</h6>
+      </a>
+      <br>
+    </div>
+
+    <!-- Course card -->
+    <div class="row">
+      <% coursesFound.forEach(function(course,index){ %>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card bg-light course-profile-card">
+          <%- include("partials/course-card-info", {course: course}); -%>
+          <div class="card-body">
+            <a href=<%=course.courseLink%>> <h4 class="card-title"><%=course.title%></h4></a>
+            <p class="lead text-justify"><%=course.introduction%></p>
+            <a href=<%=course.courseLink%> class="btn btn-info btn-block">Course details</a>
+            <a href=/booking/courses/<%=course.title.replace(/ /g,"-").toLowerCase()%> class="btn btn-warning btn-block">Course booking</a>
+            <% if (course.ryaLink) { %>
+            <a href=<%=course.ryaLink%> class="btn btn-light btn-block"><img src="/images/RYA_logo.png" width="50px"></a>
+            <%}%>
+            </div>
+          </div>
+        </div>
+    <%})%>
+          </div>
+          <h5 class="lead text-center my-3"><i>We offer you a variety of unique courses and experiences to learn how to sail. Our goal is to tailor our courses to your needs as everyone has different wishes. Yet, we all have the same final target: making sure your receive the best training you could ask for and in great conditions. Sun, sand, swim, you name it and we will make our best for it to happen. What will suit you best? <a href="/course-dates"><u>Let's find out together</u>.</a></i></h5>
+
+    </div>
+
+<br>
+
+</section>
+
+<%-include("partials/footer")-%>

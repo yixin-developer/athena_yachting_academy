@@ -1,0 +1,219 @@
+const CourseDate = ({ courseDateData: { title, info, data }, filters }) => {
+  const {
+    category,
+    comment,
+    location,
+    instructor,
+    vessel,
+    capacity,
+    courseLink,
+    priceExclusive,
+    pricePerson,
+    duration,
+  } = info;
+  console.log(info, 'info');
+  console.log(data, 'data');
+  const cardRef = useRef(null);
+  const [showDatesData, setShowDatesData] = useState({
+    show: false,
+    data: [],
+  });
+
+  const buttons = [
+    {
+      title: 'Book Now',
+      onClick: (e) => {
+        e.preventDefault();
+        window.open(`${window.location.origin}/booking${courseLink}`);
+        return false;
+      },
+    },
+  ];
+  // if (data) {
+  buttons.push({
+    title: 'Show dates',
+    onClick: () => {
+      console.log(data);
+      if (data) {
+        setShowDatesData({
+          show: true,
+          data: data,
+        });
+      } else {
+        setShowDatesData({
+          show: true,
+          data: [],
+        });
+      }
+    },
+  });
+  // }
+  const showMore = showDatesData.show;
+
+  useEffect(() => {
+    const isMobile = window.innerWidth <= 480;
+    let observer;
+    if (!isMobile) {
+      observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            // If the entry is not in the viewport, do nothing
+            if (!entry.isIntersecting) {
+              entry.target.classList.remove('animate__animated', 'animate__fadeIn');
+              return;
+            }
+
+            // Add text
+            entry.target.classList.add('animate__animated', 'animate__fadeIn');
+          });
+        },
+        { threshold: 0, rootMargin: isMobile ? '800px' : '100px' },
+      );
+      if (cardRef.current) {
+        observer.observe(cardRef.current);
+      }
+    }
+
+    return () => {
+      if (cardRef.current) {
+        if (observer) {
+          observer.unobserve(cardRef.current);
+        }
+        cardRef.current.classList.remove('animate__animated', 'animate__fadeIn');
+      }
+    };
+  }, [filters]);
+
+  // Create a new observer
+
+  return (
+    <div
+      ref={cardRef}
+      className="course-date-card animate__animated animate__fadeIn"
+      style={{
+        backgroundImage: info.image && `url(/images/course-profiles/${info.image})`,
+        '--animate-duration': '1.2s',
+      }}
+    >
+      <div
+        className={`course-date-show-more ${
+          showMore
+            ? 'course-date-show-more--expand  animate__animated animate__fadeIn'
+            : 'animate__animated animate__fadeOut'
+        }`}
+      >
+        {showMore && (
+          <button
+            className={`course-date-show-more-close`}
+            onClick={() => {
+              setShowDatesData({
+                show: false,
+                data: [],
+              });
+            }}
+          >
+            <i className="fas fa fa-close"></i>
+          </button>
+        )}
+        {showDatesData.show && (
+          <div className="course-date-show-more-content">
+            {showDatesData.data.length > 0 ? (
+              showDatesData.data.map((date, i) => <ShowMoreContent key={i} data={{ ...date, duration, courseLink }} />)
+            ) : (
+              <a href={courseLink} target="_blank" className="course-date-show-more-content-item">
+                Please contact us for course date.
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+      <a href={courseLink} target="_blank">
+        <h4 className="course-date-card-title">
+          {title} <span>»</span>
+        </h4>
+      </a>
+
+      <div className="course-date-data">
+        {duration && (
+          <p>
+            <i className="course-data-card-calendar-icon social-media-icon far fa-calendar-alt" aria-hidden="true"></i>
+            {duration} days
+          </p>
+        )}
+        {pricePerson && <p>€ {pricePerson}</p>}
+        {capacity >= 0 && (
+          <p>
+            <i className="fas fa-solid fa-users"></i> Max {capacity}
+          </p>
+        )}
+      </div>
+      <div className="course-date-buttons">
+        {buttons.map((data, id) => (
+          <CourseDateBtn key={id} data={data} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const CourseDateBtn = ({ data: { title, onClick } }) => {
+  return (
+    <button className="course-date-btn" onClick={onClick}>
+      {title}
+    </button>
+  );
+};
+
+const ShowMoreContent = ({ data: { date, available, duration, courseLink } }) => {
+  const courseDateStart = new Date(date);
+  const weekStart = courseDateStart.toLocaleDateString('en-US', { weekday: 'short', timeZone: 'UTC' });
+  const dayStart = courseDateStart.getUTCDate();
+  const monthStart = courseDateStart.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' });
+  const parsedStartDate = `${weekStart} ${dayStart} ${monthStart} `;
+  courseDateStart.setDate(courseDateStart.getDate() + duration - 1);
+  const weekEnd = courseDateStart.toLocaleDateString('en-US', { weekday: 'short', timeZone: 'UTC' });
+  const dayEnd = courseDateStart.getDate();
+  const monthEnd = courseDateStart.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' });
+
+  const parsedEndDate = `${weekEnd} ${dayEnd} ${monthEnd} `;
+  return (
+    <a href={courseLink} target="_blank" className="course-date-show-more-content-item">
+      {parsedStartDate} - {parsedEndDate} |
+      {available > 0 ? ` ${available} places left` : <b style={{ color: 'orange' }}> Fully Booked</b>}
+      {' »'}
+    </a>
+  );
+};
+
+const CourseDates = ({ filters }) => {
+  const courseList = JSON.parse(`<%-JSON.stringify(courseList)%>`);
+  console.log(courseList);
+  return (
+    <div id="course-dates-cards" className="course-dates-cards">
+      {courseList
+        .filter((course) => {
+          if (filters) {
+            const noLevelSelected = filters.level.length === 0;
+            const noTypeSelected = filters.courseType.length === 0;
+            const nothingSelected = noLevelSelected && noTypeSelected;
+            if (nothingSelected) return true;
+
+            const levelSelected = filters.level.includes(course.info.level);
+            const categorySelected = filters.courseType.some((courseType) => course.info.category === courseType);
+            if (levelSelected && noTypeSelected) {
+              return true;
+            }
+            if (categorySelected && noLevelSelected) {
+              return true;
+            }
+            if (levelSelected && categorySelected) {
+              return true;
+            }
+          }
+        })
+        .map((courseDateData, id) => (
+          <CourseDate key={id} courseDateData={courseDateData} filters={filters} />
+        ))}
+    </div>
+  );
+};

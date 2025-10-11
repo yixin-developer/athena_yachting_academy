@@ -1,0 +1,38 @@
+<script type="text/javascript">
+  const captchaKey = '<%= captchaKey %>';
+  window.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("#enquiry-form > form")
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault()
+
+      if (form.reportValidity()) {
+        document.querySelector("#alert").innerText = "Processing your submission, please wait..."
+        grecaptcha.ready(async () => {
+          const token = await grecaptcha.execute(captchaKey, {
+            action: "contact"
+          });
+          let recaptchaResponse = document.getElementById("recaptchaResponse")
+          recaptchaResponse.value = token;
+          const response = await fetch("/enquiry", {
+            method: "POST",
+            body: new FormData(form)
+          })
+          try {
+            const res = await response.text();
+            document.write(res);
+            window.location.replace("/enquiry-success")
+            document.querySelector("#alert").innerText = res?.success
+            document.querySelector("#alert").classList.add("success")
+          } catch (err) {
+            console.log(err.toString());
+            document.querySelector("#alert").innerText = 'Error trying to handle your submission, please try sending an email to info@sailingschoolmalta.com';
+            // window.location.replace("/enquiry")
+          }
+        });
+
+
+      }
+    })
+  });
+</script>

@@ -1,0 +1,200 @@
+<%- include("../partials/header"); -%>
+
+<section>
+
+  <!-- Cover video -->
+  <div class="container-video">
+    <iframe class="video-top" src="https://www.youtube.com/embed/EjOarcAo8K8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="container-fluid video-course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>RYA Professional Practices and Responsibilities</b></h1> <%- include("../partials/summary-course"); -%>
+        <p class="lead course-subtitle"><em>A compulsory online course for RYA Commercial Endorsement holders.</em></p>
+        <br><br>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <!-- the map -->
+              <div class="calendar-buttons">
+                <p><b>This course is given online only. Please refer to the Course Booking section below.‍</b></p>
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-12">
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Course detail accordion -->
+      <div class="accordion" id="accordionExample">
+
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Course Overview
+              </button>
+            </h2>
+          </div>
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              <p>
+              All new applicants for a commercially endorsed RYA Certificate of Competence must first pass the PPR course. <br><br>
+              Anyone renewing a commercially endorsed RYA Certificate of Competence must pass the PPR course prior to their next renewal date, if they haven't already done so. <br><br>
+              Each year approximately 4,500 people apply to the RYA for a commercial endorsement in order to use their RYA qualifications professionally as skipper or crew. You could be doing anything from delivering a new 35’ yacht or driving a
+              workboat with lifting and towing gear, to running a superyacht in the Med. Whatever your job is on board, in the commercial world you are a professional seafarer. As such, you are no different from the captain of a cruise liner – you
+              have a duty of care to crew, passengers, and other water users, and you will be held to account if things go wrong.
+            </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Course Content
+              </button>
+            </h2>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              <p>
+              The course is broken down into four modules:
+            </p>
+              <ul>
+                <li>Commercial environment - how you fit into the professional maritime world.</li>
+                <li>People – the importance of correct manning, keeping your skills up to date and the safe management of commercial vessels.</li>
+                <li>Vessel – the compulsory carriage and maintenance of safety equipment and how to create and implement risk control and operating procedures.</li>
+                <li>Purpose – making sure your vessel is suitable and legal for the work you are carrying out, your obligations in protecting the environment, appropriate planning and situational awareness.</li>
+              </ul>
+              <p>
+              Following the modules there is a mock assessment so you can check you are ready before moving on to the final graded online assessment.
+            </p>  
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingFour">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                Course Duration
+              </button>
+            </h2>
+          </div>
+          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+            <div class="card-body">
+              <p>
+              We estimate users will take around 6 to 8 hours to work through the four course modules. The graded end of course assessment is split into two sections, totaling 2 ½ hours. </div>
+            </p>
+            </div>
+        </div>
+
+        <div class="card">
+                  <div class="card-header" id="headingSix">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        Course booking
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <p>
+                    You can book the course directly on our website and make the course fee payment by credit card, PayPal, or bank transfer. Just click Book Now button and you will be lead to a page where you can choose dates, number of participants, and fill other necessary information.              <br><br>
+                    After receiving the booking and payment, we will set up an online account for you and register the course on ryainteractive.org. Please note that we have to set up the account for you. When this is done you will be able to access the course here or from the email we send you. 
+                  </p>        
+                  </div>
+                    </div>
+                  </div>
+
+
+        <div class="card">
+          <div class="card-header" id="headingFive">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Exemptions from this course
+              </button>
+            </h2>
+          </div>
+          <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+            <div class="card-body">
+              <p>
+              If you hold an MCA Deck Officer's Certificate of Competence as Officer of the Watch or above, Master 200* or Master 500 you do not need to take the PPR course. Please send a copy of your MCA certificate with your application or renewal
+              form for your commercial endorsement.
+            </p>
+            <p>
+              * Please note the 'Master 200' referred to here is the MCA Master 200gt STCW qualification. This is not the RYA/MCA Yachtmaster™ qualification.
+            </p>         
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingEight">
+            <h2 class="mb-0">
+              <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                RYA Shorebased Course System
+              </button>
+            </h2>
+          </div>
+          <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+            <div class="card-body">
+              <img src="/images/course-element/course-element-shorebased-course-system.png" width="100%" alt="RYA-shorebased-course-system">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+<%- include("../partials/reviews"); -%>
+                <!-- Bottom buttons -->
+                <div class="course-bottom-buttons">
+                  <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                  <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                  <% if(courseProfileFound.onlineLink != "") {%>
+                  <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                  <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+                  <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                  <%}%>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

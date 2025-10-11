@@ -1,0 +1,1263 @@
+<%-include("partials/header")-%>
+
+<section>
+
+  <div class="container-fluid booking-form-background">
+
+    <div class="booking-form">
+
+      <!-- title and subtitle -->
+      <div class="py-5 text-center">
+        <h1>Course Booking Form</h1><br>
+        <p class="lead">Upon successful booking and payment using PayPal or credit/debit card, you will be sent a confirmation email and a receipt. </p>
+        <p class="lead">Alternatively, if you wish to pay by bank transfer, <a id="bank-transfer-link" data-toggle="collapse" data-target="#collapseOne">our bank account detail is below.</a></p>
+      </div>
+
+      <!-- course selection form -->
+      <div class="course-application-form">
+        <form id="courseForm">
+          <h3 class="mb-5 text-center">Select a course date</h3>
+          <!-- selected course -->
+          <div class="form-group course-selected-params ">
+            <label>Selected course</label>
+            <select required class="form-control course-selected shop-item-title">
+              <% coursesFound.forEach(courseFound => {
+              %> <option value="<%=courseFound.courseLink%>"><%=courseFound.title%></option>
+              <%})%>
+            </select>
+          </div>
+          <!-- choose a date -->
+          <div class="form-group course-selected-params">
+            <label>Please choose a date</label>
+            <select required id="date-selected" class="form-control" onchange="display();">
+              <option disabled selected value> -- select an option -- </option>
+              <% sortedFutureCourseDates.sort((date1, date2) => date1.date - date2.date).forEach(function(futureCourseDate,index){%>
+              <option class="date-options" value="<%=futureCourseDate.date.toDateString()%>" title="<%=futureCourseDate.pricePerson%>" id="<%=futureCourseDate.available%>">
+                <%=futureCourseDate.date.toDateString()%>
+              </option>
+              <%})%>
+              <option value="Prefer another date">Prefer another date</option>
+            </select>
+          </div>
+          <!-- write a prefered date -->
+          <div class="form-group course-selected-params">
+            <label>Prefered date</label>
+            <input readonly class="form-control prefered-date" id="prefered-date" type="text" placeholder="DD-MM-YYYY">
+            <small>Choose a date from offered, or offer your prefered date</small>
+          </div>
+          <!-- automatic price -->
+          <div class="form-group course-selected-params">
+            <label>Price EUR </label>
+            <p readonly id="price" class="form-control price shop-item-price"></p>
+          </div>
+          <!-- number of people join in the clase -->
+          <div class="form-group course-selected-params">
+            <label>No. of people</label>
+            <input required id="NoOfPeople" class="form-control quantity" type="number" min="1" value="1">
+            <small id="placesLeft"></small>
+          </div>
+          <!-- add to cart -->
+          <div class="form-group course-selected-params">
+            <button class="btn btn-warning add-course-to-cart-button" type="button" id="add-course-to-cart-button">Add to cart</button>
+            <small id="course-added-below-tag" class="course-added-below-tag"></small>
+          </div>
+        </form>
+        <hr>
+      </div>
+
+      <!-- additional items to add part 1-->
+      <div>
+        <% for(i=0; i<extraItemsFound.length;i++) { %>
+        <% if ((extraItemsFound[i].applicableCourses.includes(courseTitle)) && (extraItemsFound[i].category === "non-trip")) {%>
+        <h3 class="my-4 text-center">Optional extras</h3>
+        <% break}}%>
+        <div class="row">
+          <% extraItemsFound.forEach(function(extraItem, i) { %>
+          <% if( extraItem.category === "non-trip" && extraItem.applicableCourses.includes(courseTitle)) {%>
+          <div class="col-md-4 col-sm-12 additional-items">
+            <div class="card card-body-additional-items">
+              <div id="targetNonTripCarousel<%=i%>" class="carousel slide" interval="false">
+                <div class="carousel-inner">
+                  <% extraItem.images.forEach(function(image,index){%>
+                  <%if(image!=""){%>
+                  <div class="carousel-item <% if(index===0){ %> active <% } %>">
+                    <img class="d-block w-100" style="height: 260px !important" src="/images/<%=image%>">
+                  </div>
+                  <%}})%>
+                </div>
+                <a class="carousel-control-prev" href="#targetNonTripCarousel<%=i%>" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#targetNonTripCarousel<%=i%>" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+              <div class="card-body" id="<%=extraItem._id%>">
+                <h5 class="card-title shop-item-title"><%=extraItem.name%></h5>
+                <h5 class="extra-item-title shop-item-price">€<%=extraItem.price%></h5>
+                <h5 class="extra-item-title">/ <%=extraItem.unit%></h5>
+                <div class="wrapper">
+                  <div class="small">
+                    <p class="text-justify mb-2"><%=extraItem.description%></p>
+                  </div>
+                  <a class="btn btn-info btn-block" href="#">Read more</a>
+                </div>
+                <a class="btn btn-warning btn-block shop-item-button">Add to cart</a>
+              </div>
+            </div>
+          </div>
+          <%}});%>
+        </div>
+
+        <% for(i=0; i<extraItemsFound.length;i++) { %>
+        <% if ((extraItemsFound[i].applicableCourses.includes(courseTitle)) && (extraItemsFound[i].category === "non-trip")) {%>
+        <hr>
+        <% break}}%>
+      </div>
+
+      <!-- additional items to add part 2-->
+      <div>
+        <% for(i=0; i<extraItemsFound.length;i++) { %>
+        <% if ((extraItemsFound[i].applicableCourses.includes(courseTitle)) && (extraItemsFound[i].category === "trip")) {%>
+        <h3 class="my-4 text-center">Want an extra training day?</h3>
+        <% break}}%>
+        <div class="row">
+          <% extraItemsFound.forEach(function(extraItem, i) { %>
+          <% if( extraItem.category === "trip" && extraItem.applicableCourses.includes(courseTitle)) {%>
+          <div class="col-md-4 col-sm-12 additional-items">
+            <div class="card card-body-additional-items">
+              <div id="targetTripCarousel<%=i%>" class="carousel slide" interval="false">
+                <div class="carousel-inner">
+                  <% extraItem.images.forEach(function(image,index){%>
+                  <%if(image!=""){%>
+                  <div class="carousel-item <% if(index===0){ %> active <% } %>">
+                    <img class="d-block w-100" style="height: auto; width: 100%; object-fit: contain" src="/images/<%=image%>">
+                  </div>
+                  <%}})%>
+                </div>
+                <a class="carousel-control-prev" href="#targetTripCarousel<%=i%>" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#targetTripCarousel<%=i%>" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+              <div class="card-body" id="<%=extraItem._id%>">
+                <h5 class="card-title shop-item-title"><%=extraItem.name%></h5>
+                <h5 class="extra-item-title shop-item-price">€<%=extraItem.price%></h5>
+                <h5 class="extra-item-title">/ <%=extraItem.unit%></h5>
+                <div class="wrapper">
+                  <div class="small">
+                    <p class="text-justify mb-2"><%=extraItem.description%></p>
+                  </div>
+                  <a class="btn btn-info btn-block" href="#">Read more</a>
+                </div>
+                <a class="btn btn-warning btn-block shop-item-button">Add to cart</a>
+              </div>
+            </div>
+          </div>
+          <%}});%>
+        </div>
+
+        <% for(i=0; i<extraItemsFound.length;i++) { %>
+        <% if ((extraItemsFound[i].applicableCourses.includes(courseTitle)) && (extraItemsFound[i].category === "trip")) {%>
+        <hr>
+        <% break}}%>
+      </div>
+
+      <!-- cart and checkout -->
+      <div class="cart-and-check-out">
+
+        <div class="row">
+
+          <!-- your cart -->
+          <div class="col-md-4 order-md-2 mb-4">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-muted">Your cart</span>
+              <span class="badge badge-secondary badge-pill" id="numberOfItemsPurchased"></span>
+            </h4>
+            <ul class="list-group mb-3 cart-items" id="cart-items">
+
+              <!-- cart items inserted here -->
+
+            </ul>
+
+            <ul class="code-and-total">
+              <li class="list-group-item d-flex justify-content-between bg-light">
+                <div class="text-success">
+                  <h6 class="my-0">Promotion code</h6>
+                  <small id="promotion-code-result"></small>
+                </div>
+                <span class="text-success" id="discount-applied">0%</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Total (EUR)</span>
+                <strong class="cart-total-price"></strong>
+              </li>
+            </ul>
+
+            <form class="card p-2">
+              <div class="input-group">
+                <input type="text" class="form-control promotion-code" placeholder="Promotion code">
+                <div class="input-group-append">
+                  <a type="submit" class="btn btn-success text-white">Apply</a>
+                </div>
+              </div>
+            </form>
+
+
+          </div>
+
+          <!-- Billing form-->
+          <div class="col-md-8 order-md-1">
+            <h4 class="mb-4">Application and billing information</h4>
+            <form class="needs-validation" id="billing_form" action="/booking/paypal-pay" method="post">
+
+              <!-- name and surname -->
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="firstName">First name <span class="text-muted">(Required)</span></label>
+                  <input type="text" class="form-control" id="firstName" name="firstName" style="text-transform:uppercase" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="lastName">Last name <span class="text-muted">(Required)</span></label>
+                  <input type="text" class="form-control" id="lastName" name="lastName" style="text-transform:uppercase" required>
+                </div>
+              </div>
+
+              <!-- email -->
+              <div class="mb-3">
+                <label for="email">Email <span class="text-muted">(Required)</span></label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+
+              <!-- phone and birthday -->
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="phone">Phone</label>
+                  <input type="text" class="form-control" id="phone" name="phone" placeholder="please add country code. e.g. +xxx-xxxxxxxxx">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="birthday">Birthday</label>
+                  <input type="date" class="form-control" id="birthday" name="birthday" placeholder="please add yours birthday">
+                </div>
+              </div>
+
+
+              <!-- address -->
+              <div class="mb-3">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" name="address">
+              </div>
+
+              <!-- country-state-zipcode -->
+              <div class="row">
+                <div class="col-md-5 mb-3">
+                  <label for="country">Country</label>
+                  <select class="custom-select d-block w-100" id="country" name="country">
+                    <option value="">Choose...</option>
+                    <option value="Afganistan">Afghanistan</option>
+                    <option value="Albania">Albania</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="American Samoa">American Samoa</option>
+                    <option value="Andorra">Andorra</option>
+                    <option value="Angola">Angola</option>
+                    <option value="Anguilla">Anguilla</option>
+                    <option value="Antigua & Barbuda">Antigua & Barbuda</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Armenia">Armenia</option>
+                    <option value="Aruba">Aruba</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Austria">Austria</option>
+                    <option value="Azerbaijan">Azerbaijan</option>
+                    <option value="Bahamas">Bahamas</option>
+                    <option value="Bahrain">Bahrain</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="Barbados">Barbados</option>
+                    <option value="Belarus">Belarus</option>
+                    <option value="Belgium">Belgium</option>
+                    <option value="Belize">Belize</option>
+                    <option value="Benin">Benin</option>
+                    <option value="Bermuda">Bermuda</option>
+                    <option value="Bhutan">Bhutan</option>
+                    <option value="Bolivia">Bolivia</option>
+                    <option value="Bonaire">Bonaire</option>
+                    <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
+                    <option value="Botswana">Botswana</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
+                    <option value="Brunei">Brunei</option>
+                    <option value="Bulgaria">Bulgaria</option>
+                    <option value="Burkina Faso">Burkina Faso</option>
+                    <option value="Burundi">Burundi</option>
+                    <option value="Cambodia">Cambodia</option>
+                    <option value="Cameroon">Cameroon</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Canary Islands">Canary Islands</option>
+                    <option value="Cape Verde">Cape Verde</option>
+                    <option value="Cayman Islands">Cayman Islands</option>
+                    <option value="Central African Republic">Central African Republic</option>
+                    <option value="Chad">Chad</option>
+                    <option value="Channel Islands">Channel Islands</option>
+                    <option value="Chile">Chile</option>
+                    <option value="China">China</option>
+                    <option value="Christmas Island">Christmas Island</option>
+                    <option value="Cocos Island">Cocos Island</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Comoros">Comoros</option>
+                    <option value="Congo">Congo</option>
+                    <option value="Cook Islands">Cook Islands</option>
+                    <option value="Costa Rica">Costa Rica</option>
+                    <option value="Cote DIvoire">Cote DIvoire</option>
+                    <option value="Croatia">Croatia</option>
+                    <option value="Cuba">Cuba</option>
+                    <option value="Curaco">Curacao</option>
+                    <option value="Cyprus">Cyprus</option>
+                    <option value="Czech Republic">Czech Republic</option>
+                    <option value="Denmark">Denmark</option>
+                    <option value="Djibouti">Djibouti</option>
+                    <option value="Dominica">Dominica</option>
+                    <option value="Dominican Republic">Dominican Republic</option>
+                    <option value="East Timor">East Timor</option>
+                    <option value="Ecuador">Ecuador</option>
+                    <option value="Egypt">Egypt</option>
+                    <option value="El Salvador">El Salvador</option>
+                    <option value="Equatorial Guinea">Equatorial Guinea</option>
+                    <option value="Eritrea">Eritrea</option>
+                    <option value="Estonia">Estonia</option>
+                    <option value="Ethiopia">Ethiopia</option>
+                    <option value="Falkland Islands">Falkland Islands</option>
+                    <option value="Faroe Islands">Faroe Islands</option>
+                    <option value="Fiji">Fiji</option>
+                    <option value="Finland">Finland</option>
+                    <option value="France">France</option>
+                    <option value="French Guiana">French Guiana</option>
+                    <option value="French Polynesia">French Polynesia</option>
+                    <option value="French Southern Ter">French Southern Ter</option>
+                    <option value="Gabon">Gabon</option>
+                    <option value="Gambia">Gambia</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Ghana">Ghana</option>
+                    <option value="Gibraltar">Gibraltar</option>
+                    <option value="Great Britain">Great Britain</option>
+                    <option value="Greece">Greece</option>
+                    <option value="Greenland">Greenland</option>
+                    <option value="Grenada">Grenada</option>
+                    <option value="Guadeloupe">Guadeloupe</option>
+                    <option value="Guam">Guam</option>
+                    <option value="Guatemala">Guatemala</option>
+                    <option value="Guinea">Guinea</option>
+                    <option value="Guyana">Guyana</option>
+                    <option value="Haiti">Haiti</option>
+                    <option value="Hawaii">Hawaii</option>
+                    <option value="Honduras">Honduras</option>
+                    <option value="Hong Kong">Hong Kong</option>
+                    <option value="Hungary">Hungary</option>
+                    <option value="Iceland">Iceland</option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="India">India</option>
+                    <option value="Iran">Iran</option>
+                    <option value="Iraq">Iraq</option>
+                    <option value="Ireland">Ireland</option>
+                    <option value="Isle of Man">Isle of Man</option>
+                    <option value="Israel">Israel</option>
+                    <option value="Italy">Italy</option>
+                    <option value="Jamaica">Jamaica</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Jordan">Jordan</option>
+                    <option value="Kazakhstan">Kazakhstan</option>
+                    <option value="Kenya">Kenya</option>
+                    <option value="Kiribati">Kiribati</option>
+                    <option value="Korea North">Korea North</option>
+                    <option value="Korea Sout">Korea South</option>
+                    <option value="Kuwait">Kuwait</option>
+                    <option value="Kyrgyzstan">Kyrgyzstan</option>
+                    <option value="Laos">Laos</option>
+                    <option value="Latvia">Latvia</option>
+                    <option value="Lebanon">Lebanon</option>
+                    <option value="Lesotho">Lesotho</option>
+                    <option value="Liberia">Liberia</option>
+                    <option value="Libya">Libya</option>
+                    <option value="Liechtenstein">Liechtenstein</option>
+                    <option value="Lithuania">Lithuania</option>
+                    <option value="Luxembourg">Luxembourg</option>
+                    <option value="Macau">Macau</option>
+                    <option value="Macedonia">Macedonia</option>
+                    <option value="Madagascar">Madagascar</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="Malawi">Malawi</option>
+                    <option value="Maldives">Maldives</option>
+                    <option value="Mali">Mali</option>
+                    <option value="Malta">Malta</option>
+                    <option value="Marshall Islands">Marshall Islands</option>
+                    <option value="Martinique">Martinique</option>
+                    <option value="Mauritania">Mauritania</option>
+                    <option value="Mauritius">Mauritius</option>
+                    <option value="Mayotte">Mayotte</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="Midway Islands">Midway Islands</option>
+                    <option value="Moldova">Moldova</option>
+                    <option value="Monaco">Monaco</option>
+                    <option value="Mongolia">Mongolia</option>
+                    <option value="Montserrat">Montserrat</option>
+                    <option value="Morocco">Morocco</option>
+                    <option value="Mozambique">Mozambique</option>
+                    <option value="Myanmar">Myanmar</option>
+                    <option value="Nambia">Nambia</option>
+                    <option value="Nauru">Nauru</option>
+                    <option value="Nepal">Nepal</option>
+                    <option value="Netherland Antilles">Netherland Antilles</option>
+                    <option value="Netherlands">Netherlands (Holland, Europe)</option>
+                    <option value="Nevis">Nevis</option>
+                    <option value="New Caledonia">New Caledonia</option>
+                    <option value="New Zealand">New Zealand</option>
+                    <option value="Nicaragua">Nicaragua</option>
+                    <option value="Niger">Niger</option>
+                    <option value="Nigeria">Nigeria</option>
+                    <option value="Niue">Niue</option>
+                    <option value="Norfolk Island">Norfolk Island</option>
+                    <option value="Norway">Norway</option>
+                    <option value="Oman">Oman</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="Palau Island">Palau Island</option>
+                    <option value="Palestine">Palestine</option>
+                    <option value="Panama">Panama</option>
+                    <option value="Papua New Guinea">Papua New Guinea</option>
+                    <option value="Paraguay">Paraguay</option>
+                    <option value="Peru">Peru</option>
+                    <option value="Phillipines">Philippines</option>
+                    <option value="Pitcairn Island">Pitcairn Island</option>
+                    <option value="Poland">Poland</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Puerto Rico">Puerto Rico</option>
+                    <option value="Qatar">Qatar</option>
+                    <option value="Republic of Montenegro">Republic of Montenegro</option>
+                    <option value="Republic of Serbia">Republic of Serbia</option>
+                    <option value="Reunion">Reunion</option>
+                    <option value="Romania">Romania</option>
+                    <option value="Russia">Russia</option>
+                    <option value="Rwanda">Rwanda</option>
+                    <option value="St Barthelemy">St Barthelemy</option>
+                    <option value="St Eustatius">St Eustatius</option>
+                    <option value="St Helena">St Helena</option>
+                    <option value="St Kitts-Nevis">St Kitts-Nevis</option>
+                    <option value="St Lucia">St Lucia</option>
+                    <option value="St Maarten">St Maarten</option>
+                    <option value="St Pierre & Miquelon">St Pierre & Miquelon</option>
+                    <option value="St Vincent & Grenadines">St Vincent & Grenadines</option>
+                    <option value="Saipan">Saipan</option>
+                    <option value="Samoa">Samoa</option>
+                    <option value="Samoa American">Samoa American</option>
+                    <option value="San Marino">San Marino</option>
+                    <option value="Sao Tome & Principe">Sao Tome & Principe</option>
+                    <option value="Saudi Arabia">Saudi Arabia</option>
+                    <option value="Senegal">Senegal</option>
+                    <option value="Seychelles">Seychelles</option>
+                    <option value="Sierra Leone">Sierra Leone</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Slovakia">Slovakia</option>
+                    <option value="Slovenia">Slovenia</option>
+                    <option value="Solomon Islands">Solomon Islands</option>
+                    <option value="Somalia">Somalia</option>
+                    <option value="South Africa">South Africa</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Sri Lanka">Sri Lanka</option>
+                    <option value="Sudan">Sudan</option>
+                    <option value="Suriname">Suriname</option>
+                    <option value="Swaziland">Swaziland</option>
+                    <option value="Sweden">Sweden</option>
+                    <option value="Switzerland">Switzerland</option>
+                    <option value="Syria">Syria</option>
+                    <option value="Tahiti">Tahiti</option>
+                    <option value="Taiwan">Taiwan</option>
+                    <option value="Tajikistan">Tajikistan</option>
+                    <option value="Tanzania">Tanzania</option>
+                    <option value="Thailand">Thailand</option>
+                    <option value="Togo">Togo</option>
+                    <option value="Tokelau">Tokelau</option>
+                    <option value="Tonga">Tonga</option>
+                    <option value="Trinidad & Tobago">Trinidad & Tobago</option>
+                    <option value="Tunisia">Tunisia</option>
+                    <option value="Turkey">Turkey</option>
+                    <option value="Turkmenistan">Turkmenistan</option>
+                    <option value="Turks & Caicos Is">Turks & Caicos Is</option>
+                    <option value="Tuvalu">Tuvalu</option>
+                    <option value="Uganda">Uganda</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Ukraine">Ukraine</option>
+                    <option value="United Arab Erimates">United Arab Emirates</option>
+                    <option value="United States of America">United States of America</option>
+                    <option value="Uraguay">Uruguay</option>
+                    <option value="Uzbekistan">Uzbekistan</option>
+                    <option value="Vanuatu">Vanuatu</option>
+                    <option value="Vatican City State">Vatican City State</option>
+                    <option value="Venezuela">Venezuela</option>
+                    <option value="Vietnam">Vietnam</option>
+                    <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
+                    <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
+                    <option value="Wake Island">Wake Island</option>
+                    <option value="Wallis & Futana Is">Wallis & Futana Is</option>
+                    <option value="Yemen">Yemen</option>
+                    <option value="Zaire">Zaire</option>
+                    <option value="Zambia">Zambia</option>
+                    <option value="Zimbabwe">Zimbabwe</option>
+                  </select>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="state">State/Province</label>
+                  <input type="text" class="form-control d-block w-100" id="state" name="state">
+                </div>
+                <div class="col-md-2 mb-3">
+                  <label for="city">City</label>
+                  <input type="text" class="form-control d-block w-100" id="city" name="city">
+                </div>
+                <div class="col-md-2 mb-3">
+                  <label for="zip">Postal code</label>
+                  <input type="text" class="form-control" id="zip" name="zip">
+                </div>
+              </div>
+
+              <!-- term-condition & sign-up -->
+              <div class="mb-3">
+                <input type="checkbox" id="legalNotice" name="legalNotice" required>
+                <label for="legalNotice">I agree to the <a style="text-decoration:underline" href="/legal-notice">Terms and Conditions, as well as the GDPR</a> as shown on the website.<span class="text-muted"> (Required)</span></label><br>
+                <input type="checkbox" id="newsletters" >
+                <label for="newsletters">Tick this checkbox if you wish to sign up to our newsletters about special course offers and trips info.</label><br>
+                <input type='hidden' id='newslettersConsent' value='No' name='signUp'>
+                <hr class="mb-4">
+              </div>
+
+              <!-- checkout -->
+              <h4 class="mb-4">Choose a payment</h4>
+
+              <!-- hidden input of course-in-cart info -->
+              <div name="hidden-course-info" id="hidden-course-info">
+                <input type="hidden" name="selectedCourseTitle" id="selectedCourseTitle">
+                <input type="hidden" name="selectedCourseDate" id="selectedCourseDate">
+                <input type="hidden" name="preferedCourseDate" id="preferedCourseDate">
+                <input type="hidden" name="selectedCourseUnitPrice" id="selectedCourseUnitPrice">
+                <input type="hidden" name="numberOfPeople" id="numberOfPeople">
+              </div>
+
+              <!-- hidden input of extra-items-in-cart info -->
+              <div name="hidden-extra-item-info" id="hidden-extra-item-info">
+              </div>
+
+              <!-- hidden info of discount -->
+              <div name="hidden-discount-info" id="hidden-discount-info">
+                <input type="hidden" name="totalPriceDiscount" id="totalPriceDiscount">
+              </div>
+
+              <!-- hidden info of order created time -->
+              <div name="hiddenTime" id="hiddenTime">
+                <input type="hidden" name="timeCreated" id="timeCreated">
+              </div>
+              <h2 id="payment-message" class="h1 hidden text-danger"></h2>
+              <!-- pyament options -->
+              <div id="payment-options" class="payment-options">
+                <!-- payment Stripe -->
+                <button type="button" class="btn payment-button-stripe" id="stripe-purchase-button"><img src="/images/checkout_by_stripe_payment_logo.png" width="230" alt="checkout_by_stripe_payment_logo" /></button>
+                <!-- payment Paypal -->
+                <button class="btn payment-button-paypal" id="purchase-button" type="submit"><img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-large.png" alt="Chec_ out_with_PayPal" /></button>
+
+                <div id="accordion" class="bank-accordion">
+
+                  <div class="card">
+
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      <div class="card-header" id="headingOne">
+                        Pay by bank transfer
+                      </div>
+                    </button>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                      <div class="card-body">
+                        <p><b>If you have Revolut our account is +356 9964 3706</b></p>
+                        <p>Bank of Valletta (BOV)</p>
+                        <p>Atalanta Sailing Ltd</p>
+                        <p>IBAN: MT48VALL22013000000040023021709</p>
+                        <p>BIC/SWIFT: VALLMTMT</p>
+                        <p>Account no: 40023021709</p>
+                        <p>Address: Bank of Valleta p.l.c. 58 Triq San Zakkarija, II-Belt Valletta VLT 1130 Malta</p>
+                        <p><b>If you have made a booking by bank transfer, please send an email
+                            with the proof of payment, as well as the <a class="info" href="https://www.sailingschoolmalta.com/files/28e396d36e683f8b6ed5a2b04cfa0320.pdf">Course Booking Form</a> filled to
+                            <a class="info" href="mailto:info@sailingschoolmalta.com">info@sailingschoolmalta.com</a> </b></p>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- payment amounts -->
+              <div class="row payment-amounts">
+                <div class="col-md-3 my-3">
+                  <label for="paymentAmount">Payment amount in EUR</label>
+                  <input type="hidden" class="form-control" id="totalBeforeDiscount" name="totalBeforeDiscount" readonly required>
+                  <input type="hidden" class="form-control" id="discountAmount" name="discountAmount" readonly required>
+                  <input type="number" class="form-control" id="paymentAmount" name="paymentAmount" min="1" readonly required>
+                </div>
+              </div>
+
+            </form>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="stripe-payment modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-stripe modal-body">
+
+                    <form id="payment-form" class="d-none">
+                      <div id="payment-element">
+                        <!--Stripe.js injects the Payment Element-->
+                      </div>
+                      <button id="submit" class="stripe-pay-btn">
+                        <div class="spinner hidden" id="spinner"></div>
+                        <span id="button-text">Pay now</span>
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+<script type="text/javascript">
+  //stripe public key
+  var stripePublicKey = '<%= stripePublicKey %>';
+
+  // update total price
+  function updateCartTotal() {
+    var total = 0;
+    var totalAdditonal = 0;
+    var courseSubtotal = 0;
+    var subTotals = document.getElementsByClassName("subtotal")
+    for (var i = 0; i < subTotals.length; i++) {
+      var subTotal = subTotals[i]
+      var priceElement = subTotal.innerText
+      var price = parseFloat(priceElement.replace('€', '').replace(/,/g, ''))
+      totalAdditonal = totalAdditonal + price
+    }
+    if (document.getElementById("course-subtotal") != null) {
+      courseSubtotal = parseFloat(document.getElementById("course-subtotal").innerText.replace('€', '').replace(/,/g, ''))
+    } else {
+      courseSubtotal = 0;
+    }
+    var discount = parseFloat(document.getElementById("discount-applied").innerHTML) / 100
+    total = ((totalAdditonal + courseSubtotal) * (1 + discount)).toFixed(2)
+    document.getElementsByClassName('cart-total-price')[0].innerText = "€" + total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    document.getElementById('totalBeforeDiscount').value = (totalAdditonal + courseSubtotal)
+    document.getElementById('discountAmount').value = (totalAdditonal + courseSubtotal) * discount
+    document.getElementById('paymentAmount').value = total
+  }
+
+  // update subtotal
+  function updateSubtotal() {
+    var subTotals = document.getElementsByClassName('subtotal')
+    for (var i = 0; i < subTotals.length; i++) {
+      var priceElement = subTotals[i].parentElement.getElementsByClassName('cart-item-price')[0]
+      var quantityElement = subTotals[i].parentElement.getElementsByClassName('cart-quantity-input')[0]
+      var price = parseFloat(priceElement.innerText.replace('Unit Price: €', ''))
+      var quantity = parseFloat(quantityElement.value)
+      subTotals[i].innerText = "€" + (price * quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      updateCartTotal()
+    }
+    updateCartTotal()
+  }
+
+
+  function display() {
+    var dateOptions = document.getElementsByClassName("date-options");
+    var pricesList = [];
+    var datesList = [];
+    var availablePlacesList = [];
+    for (var i = 0; i < dateOptions.length; i++) {
+      datesList.push(dateOptions[i].value);
+      pricesList.push(dateOptions[i].title);
+      availablePlacesList.push(dateOptions[i].id);
+    }
+    for (var i = 0; i <= dateOptions.length; i++) {
+      if (document.getElementById("date-selected").value === datesList[i]) {
+        var coursePrice = pricesList[i];
+        document.getElementById("price").innerText = coursePrice;
+        document.getElementById("NoOfPeople").max = availablePlacesList[i];
+        document.getElementById("placesLeft").innerHTML = availablePlacesList[i] + " places left";
+        document.getElementById("prefered-date").readOnly = true;
+      }
+      if (document.getElementById("date-selected").value === "Prefer another date") {
+        document.getElementById("price").innerHTML = "<%=profileFound.price%>";
+        document.getElementById("NoOfPeople").max = "<%=profileFound.capacity%>";
+        document.getElementById("placesLeft").innerHTML = "Max." + "<%=profileFound.capacity%>" + "students";
+        document.getElementById("prefered-date").readOnly = false;
+      }
+    }
+  }
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    $('.course-selected').change((event) => window.location.href = `/booking${event.target.value}`);
+    document.querySelector(`.course-selected option[value="/courses/${window.location.href.split('/').at(-1)}"]`).selected = true;
+    const myModal = document.getElementById('myModal');
+    try {
+      document.querySelector('#bank-transfer-link').addEventListener('click', () => document.querySelector('#payment-options').scrollIntoView({
+        behavior: 'smooth'
+      }))
+    } catch (err) {
+      console.log(err);
+    }
+    document.querySelector('#newsletters').addEventListener('click', newslettersToggle)
+    //display corresponding price and NoOfPeople places accroding to course dates, using title and id to represent price and availble places
+
+    // show more extra item information
+    $('.wrapper').find('a[href="#"]').on('click', function(e) {
+      e.preventDefault();
+      this.expand = !this.expand;
+      $(this).text(this.expand ? "Show Less" : "Read more");
+      $(this).closest('.wrapper').find('.small, .big').toggleClass('small big');
+    });
+
+
+    //remove selected item
+    var removeCartItemButtons = document.getElementsByClassName('btn-secondary');
+    for (var i = 0; i < removeCartItemButtons.length; i++) {
+      var button = removeCartItemButtons[i]
+      button.addEventListener('click', removeCartItem)
+    }
+
+    function removeCartItem(event) {
+      var buttonClicked = event.target
+      buttonClicked.parentElement.parentElement.remove()
+      document.getElementById("course-added-below-tag").innerHTML = ""
+      renewCheckOutBill()
+      updateSubtotal()
+      updateNumberOfItems()
+    }
+
+    //add course to cart
+    var addCourseToCartButtons = document.getElementById('add-course-to-cart-button')
+    addCourseToCartButtons.addEventListener('click', addCourseToCartClicked)
+
+    function addCourseToCartClicked(event) {
+      if (document.getElementById("price").innerText === "") {
+        alert('Price not popped-in, please reselect a date');
+        return
+      }
+      if (document.getElementById("date-selected").value === "Prefer another date" && document.getElementById("prefered-date").value === "") {
+        alert('Please let us know your prefered date');
+        return
+      }
+      if (parseFloat(document.getElementById("NoOfPeople").value) <= 0) {
+        alert('We dont give course to nobody, please select at least one person');
+        return
+      }
+      if (parseFloat(document.getElementById("NoOfPeople").value) > parseFloat(document.getElementById("NoOfPeople").max)) {
+        alert('Sorry! We do not have enough places left');
+        return
+      }
+      if (document.getElementById("prefered-date").value != "" && document.getElementById("date-selected").value != "Prefer another date") {
+        alert('Sorry, you can not select two different dates');
+        return
+      }
+      var cartItemNames = document.getElementsByClassName('cart-item-title')
+      var title = document.querySelector(`.course-selected option[value="/courses/${window.location.href.split('/').at(-1)}"]`).textContent;
+      for (var i = 0; i < cartItemNames.length; i++) {
+        if (cartItemNames[i].innerText == title) {
+          alert('This item is already added to the cart')
+          return
+        }
+      }
+
+      var button = event.target
+      var shopItem = button.parentElement.parentElement
+      var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
+      var date = document.getElementById("date-selected").value
+      var preferedDate = document.getElementById("prefered-date").value
+      var quantity = shopItem.getElementsByClassName('quantity')[0].value
+      var subtotal = price * quantity
+      addCourseItemToCart(title, price, quantity, date, preferedDate, subtotal)
+      updateSubtotal()
+    }
+
+    function addCourseItemToCart(title, price, quantity, date, preferedDate, subtotal) {
+      var cartRow = document.createElement('div')
+      cartRow.classList.add('cart-row')
+      cartRow.classList.add('cart-row-course')
+      var cartItems = document.getElementsByClassName('cart-items')[0]
+      //check if already added to cart
+      var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+      for (var i = 0; i < cartItemNames.length; i++) {
+        if (cartItemNames[i].innerText == title) {
+          alert('This item is already added to the cart')
+          return
+        }
+      }
+      var cartRowContents = `
+    <li class="list-group-item d-flex justify-content-between lh-condensed bg-light">
+      <div>
+        <h6 class="my-1 cart-item-title" id="cart-course-title">${title}</h6>
+        <small class="text-muted" id="cart-course-date">Course date: ${date}</small><br>
+        <small class="text-muted" id="cart-course-prefered-date">Prefered date: ${preferedDate}</small><br>
+        <small class="text-muted" id="cart-course-price">Price per person: €${price}</small><br>
+        <small class="text-muted" id="cart-course-quantity">Number of people: ${quantity}</small>
+      </div>
+      <button class="btn btn-circle btn-sm btn-secondary" type="button">X</button>
+      <span class="text-muted" id="course-subtotal">€${subtotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
+    </li>
+    `
+      cartRow.innerHTML = cartRowContents
+      cartItems.append(cartRow)
+      document.getElementById("course-added-below-tag").innerHTML = "Added below"
+      cartRow.getElementsByClassName('btn-secondary')[0].addEventListener('click', removeCartItem)
+      updateNumberOfItems()
+      renewCheckOutBill()
+    }
+
+    //add addtional items to cart
+    var addToCartButtons = document.getElementsByClassName('shop-item-button')
+    for (var i = 0; i < addToCartButtons.length; i++) {
+      var button = addToCartButtons[i]
+      button.addEventListener('click', addToCartClicked)
+    }
+
+    function addToCartClicked(event) {
+      var button = event.target
+      var shopItem = button.parentElement
+      var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
+      var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
+      var subtotal = price
+      addItemToCart(title, price, subtotal)
+      updateSubtotal()
+    }
+
+    function addItemToCart(title, price, subtotal) {
+      var cartRow = document.createElement('div')
+      cartRow.classList.add('cart-row')
+      cartRow.classList.add('cart-row-non-course')
+      var cartItems = document.getElementsByClassName('cart-items')[0]
+      //check if is already added to the cart
+      var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+      for (var i = 0; i < cartItemNames.length; i++) {
+        if (cartItemNames[i].innerText == title) {
+          alert('This item is already added to the cart')
+          return
+        }
+      }
+      var cartRowContents = `
+    <li class="list-group-item d-flex justify-content-between lh-condensed">
+      <div>
+        <h6 class="my-1 cart-item-title">${title}</h6>
+        <small class="text-muted cart-item-price">Unit Price: ${price}</small><br>
+        <small class="text-muted"> Quantity:
+           <input class="form-control input-sm cart-quantity-input" type="number" value=1 min=1 onchange="updateSubtotal(this);" >
+        </small>
+      </div>
+      <button class="btn btn-circle btn-sm btn-secondary" type="button">X</button>
+      <span class="text-muted subtotal">${subtotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
+    </li>
+    `
+      cartRow.innerHTML = cartRowContents
+      cartItems.append(cartRow)
+      cartRow.getElementsByClassName('btn-secondary')[0].addEventListener('click', removeCartItem)
+      cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
+      updateNumberOfItems()
+      renewCheckOutBill()
+    }
+
+    // update number of items in cart
+    function updateNumberOfItems() {
+      document.getElementById("numberOfItemsPurchased").innerHTML = $("#cart-items li").length
+    }
+
+    // check and change quantity of additional items in cart
+    var quantityInputs = document.getElementsByClassName('cart-quantity-input')
+    for (var i = 0; i < quantityInputs.length; i++) {
+      var input = quantityInputs[i]
+      input.addEventListener('change', quantityChanged)
+    }
+
+    function quantityChanged(event) {
+      var input = event.target
+      if (isNaN(input.value) || input.value <= 0) {
+        input.value = 1
+      }
+      updateSubtotal()
+      renewCheckOutBill()
+    }
+
+
+    //check and apply promotion code
+    var coupons = <%- JSON.stringify(validCoupons) %>;
+    var applyPromotionCodeButton = document.getElementsByClassName("btn-success")[0]
+    applyPromotionCodeButton.addEventListener('click', applyPromotion)
+
+    function applyPromotion() {
+      var inputCode = document.getElementsByClassName("promotion-code")[0].value
+      for (i = 0; i < coupons.length; i++) {
+        if (inputCode === coupons[i].coupon) {
+          document.getElementById("promotion-code-result").innerHTML = "Valid promotion code"
+          document.getElementById("promotion-code-result").style.color = "#5cb85c"
+          document.getElementById("discount-applied").innerHTML = "-" + coupons[i].discount + "%"
+          updateCartTotal()
+          renewCheckOutBill()
+          return
+        } else {
+          document.getElementById("promotion-code-result").innerHTML = "Invalid promotion code"
+          document.getElementById("promotion-code-result").style.color = "#d9534f"
+          document.getElementById("discount-applied").innerHTML = "0%"
+        }
+      }
+    }
+
+    //update check-out bill to HTML
+    function renewCheckOutBill() {
+      var checkIfCourseIsAdded = document.getElementById("cart-course-title");
+      if (checkIfCourseIsAdded != null) {
+        document.getElementById("selectedCourseTitle").value = document.getElementById("cart-course-title").innerText
+        document.getElementById("selectedCourseDate").value = document.getElementById("cart-course-date").innerText.replace('Course date: ', '')
+        document.getElementById("preferedCourseDate").value = document.getElementById("cart-course-prefered-date").innerText.replace('Prefered date:', '')
+        document.getElementById("selectedCourseUnitPrice").value = document.getElementById("cart-course-price").innerText.replace('Price per person: €', '')
+        document.getElementById("numberOfPeople").value = document.getElementById("cart-course-quantity").innerText.replace('Number of people: ', '')
+      } else {
+        document.getElementById("selectedCourseTitle").value = null
+        document.getElementById("selectedCourseDate").value = null
+        document.getElementById("preferedCourseDate").value = null
+        document.getElementById("selectedCourseUnitPrice").value = null
+        document.getElementById("numberOfPeople").value = null
+      }
+      //add addtional items info to HTML
+      var placeToAddExtraItems = document.getElementById("hidden-extra-item-info")
+      placeToAddExtraItems.innerHTML = null
+      var checkIfExtraItemIsAdded = document.getElementsByClassName("cart-row-non-course").length
+      if (checkIfExtraItemIsAdded > 0) {
+        var extraItemsInCart = document.getElementsByClassName("cart-row-non-course")
+        for (var i = 0; i < checkIfExtraItemIsAdded; i++) {
+          var extraItem = extraItemsInCart[i];
+          var extraItemTitle = extraItem.getElementsByClassName("cart-item-title")[0].innerText
+          var extraItemPrice = extraItem.getElementsByClassName("cart-item-price")[0].innerText.replace('Unit Price: €', '')
+          var extraItemVolumn = extraItem.getElementsByClassName("cart-quantity-input")[0].value
+          var extraItemRow = document.createElement('div')
+          var extraItemRowContents = `
+        <input type="hidden" name="extraItem${i+1}Title" value="${extraItemTitle}">
+        <input type="hidden" name="extraItem${i+1}Price" value="${extraItemPrice}">
+        <input type="hidden" name="extraItem${i+1}Volumn" value="${extraItemVolumn}">
+      `
+          extraItemRow.innerHTML = extraItemRowContents
+          placeToAddExtraItems.append(extraItemRow)
+        }
+      } else {
+        return
+      }
+      // update discount information to HTML
+      document.getElementById("totalPriceDiscount").value = document.getElementById("discount-applied").innerText
+    }
+
+    //sign up to newsletter hidden consent
+    function newslettersToggle() {
+      const el = document.getElementById("newslettersConsent");
+      if (el.value === "Yes") {
+        el.value = "No"
+      }else{
+        el.value = "Yes"
+      }
+    }
+
+    //check if total price is zero before form submit
+    document.querySelector('#purchase-button').addEventListener('click', onSubmit)
+
+    function onSubmit(event) {
+      document.getElementById('timeCreated').value = new Date();
+      if (document.getElementById('paymentAmount').value === "") {
+        alert('Sorry, your cart is empty.');
+        return false
+      }
+    };
+
+
+    const stripe = Stripe(stripePublicKey);
+    var elements;
+
+    document
+      .querySelector("#payment-form")
+      .addEventListener("submit", handleSubmit);
+
+    //1. Click on stripe button and create a paymentIntent where all the booking information is stored.
+    async function stripePurchaseClicked() {
+      if (!$("#billing_form")[0].checkValidity()) {
+        $("#billing_form")[0].reportValidity();
+        return;
+      }
+      if (document.getElementById("firstName").value === "" ||
+        document.getElementById("lastName").value === "" ||
+        document.getElementById("email").value === "") {
+        alert("please fill in the required blanks");
+        return
+      } else if (document.getElementById("paymentAmount").value === "") {
+        alert('Sorry, your cart is empty.');
+        return
+      }
+      $(myModal).modal('show');
+      setLoading(true);
+      const price = (parseFloat(document.getElementById('paymentAmount').value))
+
+      const form = document.querySelector('#payment-form').className = 'd-block';
+
+      try {
+        const bookingInfo = getBookingInfo();
+        console.log(bookingInfo);
+        const response = await fetch("/booking/create-payment-intent", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            price,
+            ...bookingInfo
+          }),
+        });
+
+        const {
+          clientSecret
+        } = await response.json();
+
+        const appearance = {
+          theme: 'stripe',
+        };
+        elements = stripe.elements({
+          appearance,
+          clientSecret
+        });
+        const paymentElement = elements.create("payment");
+        paymentElement.mount("#payment-element");
+        setLoading(false);
+      } catch (err) {
+        console.log(err);
+      }
+
+    }
+
+    document.querySelector('.payment-button-stripe').addEventListener('click', stripePurchaseClicked);
+
+
+    function getBookingInfo() {
+      // key payment info
+      var subtotal = document.getElementById('totalBeforeDiscount').value
+      var discount = document.getElementById("discount-applied").innerText
+      var discountAmount = document.getElementById("discountAmount").value
+      var total = (parseFloat(document.getElementById('paymentAmount').value))
+      var invoiceNumber = "SSM" + (Math.floor(Math.random() * 9000000000) + 10000000);
+      var timeCreated = new Date();
+      //create course item
+      var courseItem = {
+        title: "",
+        date: "",
+        preferedDate: "",
+        price: "",
+        quantity: ""
+      };
+      var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+      var checkIfCourseIsAdded = document.getElementById("cart-course-title");
+      if (checkIfCourseIsAdded != null) {
+        var cartRowCourse = cartItemContainer.getElementsByClassName('cart-row-course')[0]
+        var title = document.getElementById("cart-course-title").innerText
+        var date = document.getElementById("cart-course-date").innerText.replace('Course date: ', '')
+        var preferedDate = document.getElementById("cart-course-prefered-date").innerText.replace('Prefered date:', '')
+        var price = document.getElementById("cart-course-price").innerText.replace('Price per person: €', '')
+        var quantity = document.getElementById('cart-course-quantity').innerHTML.replace('Number of people: ', '')
+        var courseItem = {
+          title: title,
+          date: date,
+          preferedDate: preferedDate,
+          price: price,
+          quantity: quantity
+        }
+      }
+      // create non-course items
+      var extraItems = [];
+      var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+      var cartRowsNonCourse = cartItemContainer.getElementsByClassName('cart-row-non-course')
+      for (var i = 0; i < cartRowsNonCourse.length; i++) {
+        var cartRowNonCourse = cartRowsNonCourse[i]
+        var name = cartRowNonCourse.getElementsByClassName('cart-item-title')[0].innerText
+        var price = cartRowNonCourse.getElementsByClassName('cart-item-price')[0].innerText.replace('Unit Price: €', '')
+        var quantity = cartRowNonCourse.getElementsByClassName('cart-quantity-input')[0].value
+        extraItems.push({
+          name: name,
+          price: price,
+          quantity: quantity
+        })
+      }
+      //applicant and billing info
+      var applicantInfo = {
+        firstName: document.getElementById("firstName").value,
+        lastName: document.getElementById("lastName").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        birthday: document.getElementById("birthday").value,
+        address: document.getElementById("address").value,
+        country: document.getElementById("country").value,
+        state: document.getElementById("state").value,
+        city: document.getElementById("city").value,
+        zip: document.getElementById("zip").value,
+        legalNotice: document.getElementById("legalNotice").value,
+        signUp: document.getElementById("newslettersConsent").value
+      }
+      return {
+        applicantInfo: applicantInfo,
+        courseItem: courseItem,
+        extraItems: extraItems,
+        subtotal: subtotal,
+        discount: discount,
+        discountAmount: discountAmount,
+        total: total,
+        invoiceNumber: invoiceNumber,
+        timeCreated: timeCreated,
+      };
+    }
+
+
+    //2. Click on "Pay now" to confirm the payment and redirect to our website when payment is completed.
+    async function handleSubmit(e) {
+      e.preventDefault();
+      setLoading(true);
+      updateNumberOfItems();
+      updateCartTotal();
+      renewCheckOutBill();
+      try {
+        const stripeRes = await stripe.confirmPayment({
+          elements,
+          confirmParams: {
+            // Make sure to change this to your payment completion page
+            return_url: `${window.location.origin}/booking/stripe/success?stripePublicKey=${stripePublicKey}`,
+          },
+        });
+
+        // This point will only be reached if there is an immediate error when
+        // confirming the payment. Otherwise, your customer will be redirected to
+        // your `return_url`. For some payment methods like iDEAL, your customer will
+        // be redirected to an intermediate site first to authorize the payment, then
+        // redirected to the `return_url`.
+        if (stripeRes?.error) {
+          const {
+            message,
+            type
+          } = stripeRes.error;
+          const res = await fetch("/booking/stripe/error", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify({
+              paymentSecret: stripeRes?.error?.payment_intent?.id,
+            }),
+          });
+          const data = await res.json();
+
+          if (type !== "validation_error") {
+            $(myModal).modal('hide');
+            showMessage(message);
+          }
+        } else {
+          showMessage("An unexpected error occurred.");
+        }
+        console.log(stripeRes?.error);
+
+
+      } catch (err) {
+        console.log(err);
+        $(myModal).modal('hide');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+
+    //3. Check if the website has payment_intent_client_secret in the url.
+    // If yes, retrieve the paymentIntent and call the back-end to create everything in the database.
+    async function checkStatus() {
+      const clientSecret = new URLSearchParams(window.location.search).get(
+        "payment_intent_client_secret"
+      );
+
+      if (!clientSecret) {
+        return;
+      }
+      const {
+        paymentIntent: payment
+      } = await stripe.retrievePaymentIntent(clientSecret);
+
+      //Confirm the payment using clientSecret in the back end, create transaction and booking.
+      if (payment.status === "succeeded") {
+        const res = await fetch('/booking/confirm-payment-intent', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            paymentSecret: payment.id,
+          })
+        });
+        const data = await res.json();
+        showMessage("Payment successful!");
+
+        // clean-up cart after checkout
+        var cartItems = document.getElementsByClassName('cart-items')[0]
+        while (cartItems.hasChildNodes()) {
+          cartItems.removeChild(cartItems.firstChild)
+        }
+        updateNumberOfItems();
+        updateCartTotal();
+        renewCheckOutBill();
+      }
+      // send payment info to server and return payment result and cleanup the cart if successful
+
+
+    }
+
+    checkStatus();
+
+    // ------- UI helpers -------
+
+    function showMessage(messageText) {
+      const messageContainer = document.querySelector("#payment-message");
+
+      messageContainer.classList.remove("hidden");
+      messageContainer.textContent = messageText;
+    }
+
+    // Show a spinner on payment submission
+    function setLoading(isLoading) {
+      if (isLoading) {
+        // Disable the button and show a spinner
+        document.querySelector("#submit").disabled = true;
+        document.querySelector("#spinner").classList.remove("hidden");
+        document.querySelector("#button-text").classList.add("hidden");
+      } else {
+        document.querySelector("#submit").disabled = false;
+        document.querySelector("#spinner").classList.add("hidden");
+        document.querySelector("#button-text").classList.remove("hidden");
+      }
+    }
+
+  })
+</script>
+
+<%-include("partials/footer")-%>

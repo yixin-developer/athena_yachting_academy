@@ -1,0 +1,204 @@
+  <%- include("../partials/header"); -%>
+
+  <section>
+
+    <!-- Cover image -->
+    <div>
+      <img src="/images/course-cover/course-cover-rya-marine-radio-src.jpg" width="100%" class="top-image" alt="course-cover-rya-marine-radio-src">
+    </div>
+
+    <div class="container-fluid course-background">
+      <div class="course-sheet">
+
+        <!-- Course title -->
+        <div class="course-title">
+          <h1><b>RYA Marine Radio (SRC/VHF)</b></h1> <%- include("../partials/summary-course"); -%>
+          <p class="lead course-subtitle"><em>The RYA Marine Radio Short Range Certificate (SRC) is the minimum qualification required to operate marine VHF radio equipment on a UK flagged vessel. </em></p>
+          <br><br>
+        </div>
+
+        <!-- Course calendar section: dont change below -->
+        <div class="course-calendar">
+          <h3><b>Upcoming Course Dates</b></h3>
+          <div class="row">
+
+            <!-- months tabs -->
+            <div class="col-xl-3 col-lg-3 calendar-month">
+              <div class="list-group" id="list-tab" role="tablist">
+                <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+                <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+                <%})%>
+              </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-9">
+              <div class="tab-content" id="nav-tabContent">
+                <%- include("../partials/calendar-pop-up"); -%>
+
+                <div class="calendar-buttons">
+                  <p><b>This is an online Marine Radio VHF course. You can book directly online and we will send you a log-in and joining instruction. Please check the Course Booking section for more info 😉‍</b></p>
+                  <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                  <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                  <% if(courseProfileFound.onlineLink != "") {%>
+                  <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                  <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                  <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                  <%}%>
+              </div>
+            </div>
+          </div>
+
+          <!-- the map -->
+          <%- include("../partials/maps/ssm"); -%>
+
+                </div>
+              </div>
+
+              <!-- Course detail accordion -->
+              <div class="accordion" id="accordionExample">
+
+                <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Course Overview
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <p>
+                        RYA Marine Radio SRC/VHF course (VHF course in short) and licence is a must for those who would like to charter a yacht, because you are required to hold a VHF certificate for that purpose..
+                      </p>
+                      <p>
+                        The RYA Marine Radio Short Range Certificate (SRC) is also the minimum qualification required to operate marine VHF radio equipment on a UK flagged vessel. This includes both fixed and handheld equipment with and without Digital Selective
+                        Calling (DSC). It is obtained by successfully completing an SRC exam conducted at an RYA Recognised Training Centre.
+                      </p>
+                      <p>
+                        You VHF course will be able to completed by online training modules. Once you have completed this online learning you will be issued with a unique number, which will allow you to sit the practical exam with us in our office or onboard.
+                      </p>
+                      <p>
+                        Most candidates are required to complete an VHF course prior to taking the exam, therefore the majority of exams take place after VHF courses. After booking a VHF course, we will give you details of
+                        how to access the online course. We will also arrange with your for the exam date and place.
+                      </p>
+                      <p>
+                        There is no age limit for taking the SRC course although exam candidates must be 16 years old on the day of the exam.
+                      </p>
+                      <p>
+                        NOTE: The SRC exam fee is £76 and covers the cost of the examiner and the administration of processing and issuing the certificate. This fee is payable to the <a href="https://www.rya.org.uk/exams"></a>RYA</a> and is separate to the fee that you pay for the training course.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Course Content
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <p>
+                        Course subjects include:
+                      </p>
+                      <ul>
+                        <li>Routine operation of marine VHF radio including Digital Selective Calling</li>
+                        <li>The correct VHF channels (frequencies) to be used for each type of communication</li>
+                        <li>Distress, emergency and medical assistance procedures</li>
+                        <li>Ship to shore communication</li>
+                        <li>Practical use of Marine VHF DSC radios</li>
+                        <li>Global Maritime Distress and Safety System (GMDSS)</li>
+                        <li>Emergency Position Indicating Radio Beacons (EPIRB)</li>
+                        <li>Search and Rescue Transponders (SART)</li>
+                        <ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header" id="headingFour">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                        Course Duration
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <p>
+                        Usually students complete the online course and final questionaire in one day. The minimum duration for the course is anticipated to be five hours of learning plus the practical exam.
+                      </p>
+                      <p>
+                        Following the course there is an exam which is a combination of a written theory test and practical assessment in the use of Marine VHF DSC radios.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header" id="headingFive">
+                    <h2 class="mb-0">
+                      <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Course Booking
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <p>
+                        You can book the course directly on our website and make the course fee payment by credit card, PayPal, or bank transfer. Just click Book Now button and you will be lead to a page where you can choose dates, number of participants, and fill other necessary information.
+                      </p>
+                      <p>
+                        After receiving the booking and payment, we will set up an online account for you and register the course on ryainteractive.org. Please note that we have to set up the account for you. When this is done you will be able to access the course here or from the email we send you.
+                      </p>
+                      <p>
+                        After completing the course, we can arrange a time for your exam at our office in Malta. The exam is around 30 minutes of both written and practical assessment.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="card">
+                  <div class="card-header" id="headingEight">
+                    <h2 class="mb-0">
+                      <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                        RYA Shorebased Course System
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <img src="/images/course-element/course-element-shorebased-course-system.png" width="100%" alt="RYA-shorebased-course-system">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+              <%- include("../partials/reviews"); -%>
+
+
+              <!-- Bottom buttons -->
+              <div class="course-bottom-buttons">
+                <a class="btn btn-primary course-four-bottom" href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+                <a href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

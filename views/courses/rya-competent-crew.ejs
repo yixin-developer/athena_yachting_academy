@@ -1,0 +1,563 @@
+<%- include("../partials/headers/header-competent-crew"); -%>
+
+<section>
+
+  <!-- Cover video -->
+  <div class="container-video">
+    <iframe class="video-top" src="https://www.youtube.com/embed/jcoNcpoKnQ8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="container-fluid video-course-background">
+    <div class="course-sheet">
+
+      <!-- Course title -->
+      <div class="course-title">
+        <h1><b>RYA Competent Crew</b></h1>
+        <h6>FUN | SAFE | CONFIDENCE | BEGINNER </h6>
+        <br>
+        <h6 class="text-center mb-4">⭐️⭐️⭐️⭐️⭐️ 5.0 based on 1000+ Happy Sailors</h6>
+        <br>
+        <%- include("../partials/summary-course"); -%>
+        <p class="lead course-subtitle"><em>For beginners and those who would like to become active crew members rather than just passengers.</em></p>
+        <br>
+      </div>
+
+
+      <div class="d-flex justify-content-center mb-5">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/F6mc2ajAZnA?si=eMZmfRf9Pe9svGVf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+      <!-- Course calendar section: dont change below -->
+      <div class="course-calendar">
+        <h3><b>Upcoming Course Dates</b></h3>
+        <div class="row">
+
+          <!-- months tabs -->
+          <div class="col-xl-3 col-lg-3 calendar-month">
+            <div class="list-group" id="list-tab" role="tablist">
+              <%  uniqueMonthsYears.forEach(function(uniqueMonthYear,index) {%>
+              <a class="list-group-item list-group-item-action <% if(index===0) {%> <%="active"%> <%}%>" id="list-<%=uniqueMonthYear%>-list" data-toggle="list" href="#list-<%=uniqueMonthYear%>" role="tab"><%=uniqueMonthYear%></a>
+              <%})%>
+            </div>
+          </div>
+
+          <!-- calendar pop-up -->
+          <div class="col-xl-6 col-lg-9">
+            <div class="tab-content" id="nav-tabContent">
+              <%- include("../partials/calendar-pop-up"); -%>
+
+              <div class="calendar-buttons">
+                <p><b>You can book the course directly online by clicking the yellow Book Now button. We can also offer Competent Crew course for private group with max. 5 students onboard. Please contact us if you're interested in this option or on a different date 😉‍</b></p>
+                <a class="btn btn-primary course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+                <a class="btn btn-warning course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+                <% if(courseProfileFound.onlineLink != "") {%>
+                <a target="_blank" rel="noopener noreferrer"  href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+                <%}%>
+                <% if(courseProfileFound.ryaLink != "") {%>
+                <a target="_blank" rel="noopener noreferrer"  href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+                <%}%>
+              </div>
+            </div>
+          </div>
+
+          <!-- the map -->
+          <%- include("../partials/maps/manoel"); -%>
+
+              </div>
+            </div>
+
+            <%- include("../partials/carousel"); -%>
+
+
+            <!-- Course detail accordion -->
+            <div class="accordion" id="accordionExample">
+
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      🧭 Course Overview
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      Discover the perfect way to kickstart your sailing journey with our <strong>RYA Competent Crew course</strong> in Malta. This hands-on, 5-day sailing course is designed to turn complete beginners into active, confident crew members aboard a cruising yacht. It’s the ideal introduction to life at sea, combining practical training with an unforgettable Malta sailing experience.
+                    </p>
+
+                    <p>
+                      Whether you're new to sailing, transitioning from dinghies, or want to learn how to crew properly and safely, this course offers the knowledge and skills needed to become a valuable team member on any yacht. You’ll experience life on board, build real <strong>crew experience</strong>, and enjoy the thrill of sailing Malta’s beautiful coastline.
+                    </p>
+
+                    <p>
+                      This is a fully immersive course — you are the crew. You’ll raise sails, take the helm, assist with mooring, keep watch, and take part in every aspect of daily yacht operations. You'll also practice <strong>Man Overboard (MOB)</strong> drills, anchoring, ropework, and even row a dinghy.
+                    </p>
+
+                    <p>
+                      By the end of the <strong>RYA Competent Crew course</strong>, you’ll know how to prepare a yacht for sea, steer under sail and power, handle sails and lines, understand safety procedures, and keep a logbook — all essential skills for any sailor.
+                    </p>
+
+                    <p>
+                      You'll also enjoy exploring Malta’s stunning sailing areas, with stops at scenic anchorages, marinas, and historic harbours — making the experience both educational and memorable.
+                    </p>
+
+                    <p>
+                      The course runs over 5 consecutive days, typically Monday to Friday from 09:30 to 17:00. Alternatively, we offer flexible options over three weekends or a long weekend (3 days + 2 days).
+                    </p>
+
+                    <p>
+                      Ready to set sail? You can book the <a target="_blank" rel="noopener noreferrer"  href="/booking/courses/<%=courseName%>"><u>Competent Crew </u></a> course directly through our website. Secure your place and pay online by credit card — choose your dates, number of participants, and fill in a few quick details.
+                    </p>
+
+                    <p>
+                      Want a more private experience? You can also charter the entire yacht with your group (up to 5 participants) and enjoy the <strong>RYA Competent Crew course</strong> in a relaxed, customized setting with your own friends or family.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      🎯 Who is this course for?
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>This beginner-level <strong>RYA Competent Crew course</strong> is the perfect entry point for anyone ready to dive into the world of sailing — no prior experience needed. Whether you're completely new to yachting or simply want to build a solid foundation, this course offers a hands-on and immersive introduction to <strong>cruise sailing</strong>.</p>
+
+                    <ul>
+                      <li><strong>No experience required</strong> — just enthusiasm! Ideal for complete beginners looking to become confident, useful crew members on any cruising yacht.</li>
+                      <li>Minimum recommended age is 12 — a great fit for adventurous individuals, couples, or families ready for their first taste of life at sea.</li>
+                      <li>Perfect for those who dream of building real <strong>crew experience</strong> and feeling at home on a cruising yacht.</li>
+                      <li>An exciting way to explore Malta from a new perspective — the coastline is even more stunning from the water.</li>
+                      <li>Your official first step on the <strong>RYA sailing course pathway</strong>, leading to more advanced qualifications like Day Skipper and beyond.</li>
+                    </ul>
+                    <p>Whether you're seeking a new adventure, preparing for a sailing holiday, or planning to progress through the RYA syllabus, the <strong>RYA Competent Crew course in Malta</strong> gives you the skills, confidence, and unforgettable memories to begin your sailing journey the right way.</p>
+    
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      📑 Course Content
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <div class="mb-3">
+                    <div class="horizontal-scroll-gallery d-flex flex-nowrap overflow-auto">
+                    <!-- RYA Competent Crew Course Gallery -->
+                    <img src="/images/competent-crew/rya-competent-crew-course-1.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-1.webp" alt="RYA Competent Crew 1">
+                    <img src="/images/competent-crew/rya-competent-crew-course-2.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-2.webp" alt="RYA Competent Crew 2">
+                    <img src="/images/competent-crew/rya-competent-crew-course-3.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-3.webp" alt="RYA Competent Crew 3">
+                    <!-- <img src="/images/competent-crew/rya-competent-crew-course-4.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-4.webp" alt="RYA Competent Crew 4"> -->
+                    <img src="/images/competent-crew/rya-competent-crew-course-5.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-5.webp" alt="RYA Competent Crew 5">
+                    <img src="/images/competent-crew/rya-competent-crew-course-6.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-6.webp" alt="RYA Competent Crew 6">
+                    <img src="/images/competent-crew/rya-competent-crew-course-7.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-7.webp" alt="RYA Competent Crew 7">
+                    <!-- <img src="/images/competent-crew/rya-competent-crew-course-8.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-8.webp" alt="RYA Competent Crew 8"> -->
+                    <img src="/images/competent-crew/rya-competent-crew-course-9.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-9.webp" alt="RYA Competent Crew 9">
+                    <img src="/images/competent-crew/rya-competent-crew-course-10.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-10.webp" alt="RYA Competent Crew 10">
+                    <img src="/images/competent-crew/rya-competent-crew-course-11.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-11.webp" alt="RYA Competent Crew 1">
+                    <img src="/images/competent-crew/rya-competent-crew-course-12.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-12.webp" alt="RYA Competent Crew 2">
+                    <img src="/images/competent-crew/rya-competent-crew-course-13.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-13.webp" alt="RYA Competent Crew 3">
+                    <img src="/images/competent-crew/rya-competent-crew-course-14.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-14.webp" alt="RYA Competent Crew 4">
+                    <img src="/images/competent-crew/rya-competent-crew-course-15.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-15.webp" alt="RYA Competent Crew 5">
+                    <img src="/images/competent-crew/rya-competent-crew-course-16.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-16.webp" alt="RYA Competent Crew 6">
+                    <img src="/images/competent-crew/rya-competent-crew-course-17.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-17.webp" alt="RYA Competent Crew 7">
+                    <img src="/images/competent-crew/rya-competent-crew-course-18.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-18.webp" alt="RYA Competent Crew 8">
+                    <img src="/images/competent-crew/rya-competent-crew-course-19.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-19.webp" alt="RYA Competent Crew 9">
+                    <img src="/images/competent-crew/rya-competent-crew-course-20.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-20.webp" alt="RYA Competent Crew 10">
+                    <img src="/images/competent-crew/rya-competent-crew-course-21.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-21.webp" alt="RYA Competent Crew 1">
+                    <img src="/images/competent-crew/rya-competent-crew-course-22.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-22.webp" alt="RYA Competent Crew 2">
+                    <img src="/images/competent-crew/rya-competent-crew-course-23.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-23.webp" alt="RYA Competent Crew 3">
+                    <img src="/images/competent-crew/rya-competent-crew-course-24.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-24.webp" alt="RYA Competent Crew 4">
+                    <img src="/images/competent-crew/rya-competent-crew-course-25.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-25.webp" alt="RYA Competent Crew 5">
+                    <img src="/images/competent-crew/rya-competent-crew-course-26.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-26.webp" alt="RYA Competent Crew 6">
+                    </div>
+                    </div>
+
+            <div class="mb-3">
+            <div class="horizontal-scroll-gallery d-flex flex-nowrap overflow-auto">
+              <img src="/images/competent-crew/rya-competent-crew-course-27.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-27.webp" alt="RYA Competent Crew 7">
+              <img src="/images/competent-crew/rya-competent-crew-course-28.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-28.webp" alt="RYA Competent Crew 8">
+              <img src="/images/competent-crew/rya-competent-crew-course-29.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-29.webp" alt="RYA Competent Crew 9">
+              <img src="/images/competent-crew/rya-competent-crew-course-30.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-30.webp" alt="RYA Competent Crew 10">
+              <img src="/images/competent-crew/rya-competent-crew-course-31.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-31.webp" alt="RYA Competent Crew 1">
+              <img src="/images/competent-crew/rya-competent-crew-course-32.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-32.webp" alt="RYA Competent Crew 2">
+              <img src="/images/competent-crew/rya-competent-crew-course-33.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-33.webp" alt="RYA Competent Crew 3">
+              <img src="/images/competent-crew/rya-competent-crew-course-34.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-34.webp" alt="RYA Competent Crew 4">
+              <img src="/images/competent-crew/rya-competent-crew-course-35.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-35.webp" alt="RYA Competent Crew 5">
+              <img src="/images/competent-crew/rya-competent-crew-course-36.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-36.webp" alt="RYA Competent Crew 6">
+              <img src="/images/competent-crew/rya-competent-crew-course-37.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-37.webp" alt="RYA Competent Crew 7">
+              <img src="/images/competent-crew/rya-competent-crew-course-38.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-38.webp" alt="RYA Competent Crew 8">
+              <img src="/images/competent-crew/rya-competent-crew-course-39.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-39.webp" alt="RYA Competent Crew 9">
+              <img src="/images/competent-crew/rya-competent-crew-course-40.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-40.webp" alt="RYA Competent Crew 10">
+              <img src="/images/competent-crew/rya-competent-crew-course-41.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-41.webp" alt="RYA Competent Crew 1">
+              <img src="/images/competent-crew/rya-competent-crew-course-42.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-42.webp" alt="RYA Competent Crew 2">
+              <img src="/images/competent-crew/rya-competent-crew-course-43.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-43.webp" alt="RYA Competent Crew 3">
+              <img src="/images/competent-crew/rya-competent-crew-course-44.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-44.webp" alt="RYA Competent Crew 4">
+              <img src="/images/competent-crew/rya-competent-crew-course-45.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-45.webp" alt="RYA Competent Crew 5">
+              <img src="/images/competent-crew/rya-competent-crew-course-46.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-46.webp" alt="RYA Competent Crew 6">
+              <img src="/images/competent-crew/rya-competent-crew-course-47.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-47.webp" alt="RYA Competent Crew 7">
+              <img src="/images/competent-crew/rya-competent-crew-course-48.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-48.webp" alt="RYA Competent Crew 8">
+              <img src="/images/competent-crew/rya-competent-crew-course-49.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-49.webp" alt="RYA Competent Crew 9">
+              <img src="/images/competent-crew/rya-competent-crew-course-50.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-50.webp" alt="RYA Competent Crew 10">
+              <img src="/images/competent-crew/rya-competent-crew-course-51.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-51.webp" alt="RYA Competent Crew 1">
+              <img src="/images/competent-crew/rya-competent-crew-course-52.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-52.webp" alt="RYA Competent Crew 2">
+              <img src="/images/competent-crew/rya-competent-crew-course-53.webp" class="gallery-img mx-2" data-toggle="modal" data-target="#imageModal" data-src="/images/competent-crew/rya-competent-crew-course-53.webp" alt="RYA Competent Crew 3">
+            </div> 
+            </div>
+
+              <!-- Image Modal -->
+            <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content bg-transparent border-0">
+                  <div class="modal-body text-center">
+                    <img id="modalImage" src="" class="img-fluid rounded" alt="Full Size">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script>
+              $(document).ready(function () {
+                $('#imageModal').on('show.bs.modal', function (event) {
+                  var img = $(event.relatedTarget);
+                  var src = img.data('src');
+                  $('#modalImage').attr('src', src);
+                });
+              });
+            </script>
+                    <p>
+                      Course Syllubus includes: knowledge of sea terms and parts of a boat, her rigging and sails, sail handling, ropework, fire precautions and fighting, personal safety equipment, man overboard, emergency equipment, meteorology, seasickness, helmsmanship, general
+                      duties, manners and customs, rules of the road, dinghies:
+                    </p>
+                    <p>Terminology</p>
+                    <ul>
+                      <li>Yacht parts and sea terms &#8211; So you know where to be when asked!</li>
+                      <li>Terms of sails and rigging.</li>
+                    </ul>
+                    <p>Handling Sails</p>
+                    <ul>
+                      <li>Set and learn to reef sails &#8211; Reefing the sail stops the boat healing over too far!</li>
+                      <li>Use of ropes that adjust sails.</li>
+                    </ul>
+                    <p>Other ropes that do other things</p>
+                    <ul>
+                      <li>To hold the boat, tie knots and tidy or coil the lines afterwards.</li>
+                    </ul>
+                    <p>FIRE!</p>
+                    <ul>
+                      <li>Prevention &amp; Hazards &#8211; Learn what to do if it happens!</li>
+                    </ul>
+                    <p>Life jackets etc</p>
+                    <ul>
+                      <li>How they work, how to check they work &#8211; the rules.</li>
+                    </ul>
+                    <p>MOB</p>
+                    <ul>
+                      <li>How to prevent a man over board is the key. If it happens, how to get them back on board.</li>
+                    </ul>
+                    <p>Emergency</p>
+                    <ul>
+                      <li>How to use distress equipment and (in the unlikely event of) to abandon ship.</li>
+                    </ul>
+                    <p>Customs &amp; Manners</p>
+                    <ul>
+                      <li>Environmental issues plus what to do with your ensign and when!</li>
+                      <li>How to arrive into harbour when late &#8211; as quietly as possible!</li>
+                    </ul>
+                    <p>General Duties</p>
+                    <ul>
+                      <li>Keep the yacht in order and share the duties with your fellow crew &#8211; always!</li>
+                    </ul>
+                    <p>Weather</p>
+                    <ul>
+                      <li>Where to find the forecast and to learn your Beaufort scale!</li>
+                    </ul>
+                    <p>Rules of the sea</p>
+                    <ul>
+                      <li>How to keep a look out at sea &#8211; at all times!</li>
+                    </ul>
+                    <p>Dinghies</p>
+                    <ul>
+                      <li>How to get in and out without getting wet.</li>
+                      <li>How to row in a straight line. Great photo opportunity!</li>
+                    </ul>
+                    <p>Sea Sickness</p>
+                    <ul>
+                      <li>Some of us are, some of us are lucky &#8211; Stay with us if you are, give it a couple of days and you will have great fun!</li>
+                    </ul>
+                    <p>Steering &amp; Sailing</p>
+                    <ul>
+                      <li>Learn to steer in a straight line and to handle the yacht under sail and power.</li>
+                    </ul>
+                    <p>Basic Plotting</p>
+                    <ul>
+                      <li>Plot your position on the chart</li>
+                      <li>Take bearing on objects and approaching shipping</li>
+                      <li>Improve your knowledge of ships lights and buoys and other lights</li>
+                      <li>Keep a ships log</li>
+                      <li>Understand weather forecasts in more detail</li>
+                    </ul>
+                    <p>Learning more advanced boat crewing skills, such as:</p>
+                    <ul>
+                      <li>Boat handling skills</li>
+                      <li>Use the knots you have mastered</li>
+                      <li>More anchoring and picking up a buoy</li>
+                      <li>Set and trim sail effectively</li>
+                      <li>“Man – Over Board” practice</li>
+                    </ul>
+                    <p>
+                      Recomended course book links: <a class="book-link" target="_blank" rel="noopener noreferrer"  href="https://www.rya.org.uk/shop/p/rya-competent-crew-skills"><em>RYA Competent Crew Skills</em></a>
+                    </p>
+                    <img src="/images/course-element/course-element-competent-crew-skills.jpg" width="20%" alt="Rya competent crew skill book">
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                      ⛵️ More Details
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                                        <div class="crew-course-details my-4">
+                      <img src="/images/course-element/course-element-bavaria44.jpg" width="30%" alt="start-yachting-bavaria44" style="border-radius: 5px;">
+                      <img src="/images/course-element/course-element-bavaria44-galley.jpeg" width="30%" alt="start-yachting-bavaria44-galley" style="border-radius: 5px;">
+                      <img src="/images/course-element/lookfar-stern.jpg" width="30%" alt="start-yachting-bavaria44-stern" style="border-radius: 5px;">
+                    </div>
+                    <p>
+                      Your <strong>RYA Competent Crew Course</strong> takes place aboard our comfortable and well-equipped Bavaria 44 Cruiser yacht, “Lookfar”. She is moored at Manoel Island Marina (Pontoon D), conveniently located near the Paparazzi restaurant in Gżira, Malta. Boarding begins at <strong>9:00 AM on the first day</strong> of your course.
+                    </p>
+
+                    <p>
+                      <strong>Onboard accommodation</strong> during the course (typically Monday to Friday) is included in the course fee. Early boarding on Sunday evening or staying aboard Friday night may be arranged upon request — just let us know in advance!
+                    </p>
+
+                    <p>
+                      While most training days return to the marina each evening, the <strong>RYA Competent Crew syllabus</strong> may include some <strong>night sailing experience</strong>, depending on weather conditions. This offers a fantastic opportunity to gain real-world crew experience in a safe and supportive setting.
+                    </p>
+
+                    <p>
+                      As part of your <strong>Competent Crew course in Malta</strong>, we’ll sail around the beautiful Maltese Islands, including Gozo and Comino (weather permitting). The journey includes scenic anchorages, peaceful bays, and charming harbours — with plenty of time to go ashore, relax, explore historical sites, or enjoy delicious local cuisine.
+                    </p>
+
+                    <p>
+                      Malta offers consistent winds and sunny weather <strong>year-round</strong>, making it the perfect place to learn to sail and develop your <strong>competent crew skills</strong>. Whether you're a beginner or looking to build hands-on <strong>crew experience</strong>, this course is the ideal foundation. On successful completion, you’ll be awarded the official <strong>RYA Competent Crew Certificate</strong> — a recognised credential worldwide and a valuable step in your sailing journey.
+                    </p>
+
+                  </div>
+                </div>
+              </div>
+
+                <div class="card">
+                <div class="card-header" id="headingSix">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">🛏️ What is included</button>
+                  </h2>
+                </div>
+                <div id="collapseSix" class="collapse show" aria-labelledby="headingSix" data-parent="#accordionExample">
+                  <div class="card-body">
+                  <p>Our RYA Competent Crew course is led by highly experienced instructors who are native English speakers and passionate about teaching sailing in a clear, friendly, and practical way. The course fee covers everything essential for a seamless learning experience, including port and mooring fees, fuel, tourist tax, and general yacht maintenance—so there are no hidden extras.
+                  </p>
+                  <p>You’ll stay onboard a well-equipped yacht, with three double cabins and one bunk bed cabin available for student accommodation. More details on <a target="_blank" rel="noopener noreferrer"  href="/yachts/lookfar"><u>accommodation onboard click here</u></a>. 
+                    </p>
+                    <p>
+                      Tea and coffee are provided daily onboard (alcohol is not included), and we recommend grabbing a light breakfast at the nearby Bus Stop Lounge (just 200 meters from the marina) and bringing along a packed lunch each day. You are also welcome to cook your own meals onboard in our fully equipped gally (kitchen).
+                  </p>                  </p>
+                  <p>While not sailing, you’ll have access to shore-based marina facilities including clean toilets and showers conveniently located by the marina gate. Our base at Manoel Island Yacht Marina is ideally situated in one of Malta’s most lively and scenic areas—full of shops, restaurants, and cafes all within walking distance.
+                  </p>
+                  <p>Upon successful completion of your RYA Competent Crew course, you’ll receive an official RYA Competent Crew Certificate—a recognised qualification and your first big step toward becoming a capable, confident, and reliable crew member on any sailing yacht.
+                  </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      🎒 Recommended to bring
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>
+                      If you choose for accommodation onboard, full bedding is supplied, sheets, pillows and blankets. Also, we provide towels for use on the yacht but not beach towels. If you should require more than one towel during the week, please do bring your own additional towel.
+                    </p>
+                    <ul>
+                      <li>Packed lunch</li>
+                      <li>Sunglasses</li>
+                      <li>High factor sun cream</li>
+                      <li>Deck shoes if possible, otherwise soft shoes with a non marking sole, or just barefoot</li>
+                      <li>Shorts (Please be aware that these are liable to get dirty, so not your bestones!)</li>
+                      <li>T-Shirts</li>
+                      <li>Wash Kit</li>
+                      <li>Fleece or jumper for the evenings and windy days at sea</li>
+                      <li>Soft bag as opposed to a hard suitcase (we can store luggage if you are staying on)</li>
+                      <li>Light long sleeved shirt if you need to cover up in the sun</li>
+                      <li>Baseball/sun hat (preferably with a clip to stop it blowing overboard!)</li>
+                      <li>Sea sickness tablets should you need them</li>
+                      <li>Phone/ Ipod / lap top chargers – 12V (cigarette style chargers) if needed</li>
+                      <li>Travel Insurance recommended</li>
+                      <li>And above all, enthusiasm!</li>
+                    </ul>
+                    <p>
+                      Please note that the temperatures in Malta are normally very warm during the day
+                      but it can be cold in the evenings and windy days at sea. It is a good idea to bring a
+                      small light rain mac if you have one and also a pair of long trousers and a warm
+                      fleece, just in case. Please note that We don't provide wet weather gear onboard.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="card">
+                <div class="card-header" id="headingSeven">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                      ✈️ Flight and On-arrival
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>If you need a flight to Malta International, the airport code is MLA. There is only one airport. 
+                    </p>
+                    <p>
+                      Malta International Airport (MLA) is well connected to many European cities, especially major hubs. Low-cost carriers dominate many of the connections, especially from regional airports.
+                    </p>
+                    </p>
+                    <p>On arrival at Malta airport, there is a kiosk at the exit from the airport where you can pre pay
+                      the taxi to the boat. Destination: <a target="_blank" rel="noopener noreferrer"  href="https://www.google.com/maps?ll=35.902325,14.498923&z=15&t=m&hl=en&gl=MT&mapclient=embed&q=Manoel+Island+Yacht+Marina"><u>Manoel Island Yacht Marina Pontoon D.</u></a>
+                      </p>
+                    <p>The cost of this is usually 25 Euro. It only takes about 20 minutes to arrive our marina fron the airport. The taxi drivers speak good English.
+                    </p>
+                    <p>Cheaper transport option would be use taxi app such as: Bolt and Ecab. There are plenty of taxi
+                      connected to these apps.
+                    </p>
+                    <p>You will have a short safety brief on arrival to familiarise yourself with the boat and meet your
+                      crew mates!
+                    </p>                  
+                                    </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingNine">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                      🙋 Frequently Asked Question
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>For more details about courses, logistics, accommodation, booking, and certificate, please refer to the <a target="_blank" rel="noopener noreferrer"  href="/faqs"><em>FAQ's section.</em></a></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingEight">
+                  <h2 class="mb-0">
+                    <button style="text-align: left" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                      RYA Sail Cruising Course System and Next Step
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <img src="/images/course-element/course-element-sail-course-system.jpeg" width="100%" alt="RYA-sail-course-system">
+                    <a class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer"  href="/courses/rya-day-skipper-theory" role="button">Next step: RYA Day Skipper Theory &raquo</a>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+            <%- include("../partials/reviews"); -%>
+                        <!-- Feature on -->
+            <section>
+            <div class="container py-5 text-center">
+              <h2 class="font-weight-bold mb-4">As Featured on</h2>
+              <div class="row justify-content-center">
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/times-malta-logo.jpg" class="img-fluid grayscale" alt="times-malta-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/visit-malta-logo.png" class="img-fluid grayscale" alt="visit-malta-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/RMYC-logo.webp" class="img-fluid grayscale" alt="RMYC-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/yachting-world-logo.png" class="img-fluid grayscale" alt="yachting-world-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/classic-boat-logo.jpeg" class="img-fluid grayscale" alt="classic-boat-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/CA-logo.png" class="img-fluid grayscale" alt="CA-logo">
+                  </div>
+                </div>
+              </div>
+            </div>
+            </section>
+            <!-- Bottom buttons -->
+            <div class="course-bottom-buttons">
+              <a class="btn btn-primary course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/contact#enquiry-form" role="button">Send us an enquiry &raquo;</a>
+              <a class="btn btn-warning course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
+              <% if(courseProfileFound.onlineLink != "") {%>
+              <a target="_blank" rel="noopener noreferrer"  href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
+              <%}%>
+        <% if(courseProfileFound.ryaLink != "") {%>
+              <a target="_blank" rel="noopener noreferrer"  href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
+              <%}%>
+      </div>
+
+    </div>
+    <div class="videos-wrapper">
+      <h3>Recommended videos to watch before course:</h3>
+      <div class="videos-container">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/SWIX6SUh-nc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/pExM7u3fKoI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/3X8drKsdf5E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/By0y8O7AbZw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      
+    </div>
+
+  </div>
+
+</section>
+
+<%- include("../partials/footer"); -%>

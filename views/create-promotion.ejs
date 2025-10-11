@@ -1,0 +1,45 @@
+<%- include("partials/header"); -%>
+
+<section>
+  <div class="container-fluid create-promotion-background">
+    <div class="create-promotion-page">
+      <h1>Launch New Promotion</h1>
+      <br />
+      <form action="/shop/promotion/create" method="post">
+        <div class="form-group">
+          <label>Main title</label>
+          <input required class="form-control" type="text" name="title" placeholder="Promotion title" />
+          <br />
+          <label>Promotion content</label>
+          <textarea required name="content" class="form-control" rows="5" placeholder="write something more detail about the promotion"></textarea>
+          <br />
+          <label>Link</label>
+          <input class="form-control" type="text" name="link" placeholder="Promotion link" />
+          <br />
+          <label>Launched Time</label>
+          <input required readonly name="launchedTime" id="launchedTime" class="form-control" />
+          <br />
+          <label>Expiration</label>
+          <input required class="form-control" type="date" name="expiration" />
+          <br />
+          <label>Launched by</label>
+          <select required class="form-control" name="launchedBy">
+            <option disabled selected value>- required -</option>
+            <option value="Stephen Baynham">Stephen Baynham</option>
+            <option value="Yixin Qi">Yixin Qi</option>
+            <option value="Admin">Admin</option>
+            <option value="Admin">Management</option>
+          </select>
+        </div>
+        <br />
+        <button class="btn btn-warning btn-block" type="submit">Launch</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+  document.getElementById("launchedTime").value = new Date();
+</script>
+
+<%- include("partials/footer"); -%>

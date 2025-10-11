@@ -1,0 +1,151 @@
+<%- include("partials/header"); -%>
+
+<section>
+  <div class="container-fluid create-transaction-background">
+    <div class="create-transaction-page">
+      <h1>Transaction Record Form</h1>
+      <br>
+
+      <form action="/booking/transaction/create" method="post">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-4">
+              <label>Payment ID</label>
+              <input class="form-control" type="text" name="id" id="paymentId" placeholder="click to auto-generate" onclick="generateRandomCoupon(25);">
+            </div>
+            <div class="col-md-2">
+              <label>State</label>
+              <select required class="form-control" name="state">
+                <option disabled selected value> - required - </option>
+                <option value="Paid">Paid</option>
+                <option value="Receivable">Receivable</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label>Payment Method</label>
+              <select required class="form-control" name="payment_method">
+                <option disabled selected value> - required - </option>
+                <option value="Bank Transfer">Bank Transfer</option>
+                <option value="Cash">Cash</option>
+                <option value="Paypal">Paypal</option>
+                <option value="Stripe">Stripe</option>
+                <option value="POS">POS</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <input type="hidden" name="cart" value="n.a.">
+            <div class="col-md-3">
+              <label>Invoice number</label>
+              <input required class="form-control" type="text" name="transactions_invoice_number" placeholder="required, same as booking">
+            </div>
+          </div>
+          <br>
+
+          <div class="row">
+            <div class="col-md-3">
+              <label>First Name</label>
+              <input Required class="form-control" type="text" name="payer_info_first_name" placeholder="required">
+            </div>
+            <div class="col-md-3">
+              <label>Last Name</label>
+              <input Required class="form-control" type="text" name="payer_info_last_name" placeholder="required">
+            </div>
+            <div class="col-md-3">
+              <label>Email</label>
+              <input class="form-control" type="email" name="payer_info_email">
+            </div>
+            <div class="col-md-3">
+              <label>Passport/ID</label>
+              <input class="form-control" type="text" name="payer_info_id">
+            </div>
+          </div>
+          <br>
+
+          <div class="row">
+            <div class="col-md-4">
+              <label>Address</label>
+              <input class="form-control" type="text" name="payer_info_address">
+            </div>
+            <div class="col-md-2">
+              <label>City</label>
+              <input class="form-control" type="text" name="payer_info_city">
+            </div>
+            <div class="col-md-2">
+              <label>State</label>
+              <input class="form-control" type="text" name="payer_info_state">
+            </div>
+            <div class="col-md-2">
+              <label>Country</label>
+              <input class="form-control" type="text" name="payer_info_country_code">
+            </div>
+            <div class="col-md-2">
+              <label>Zip Code</label>
+              <input class="form-control" type="text" name="payer_info_postal_code">
+            </div>
+          </div>
+          <br>
+
+          <div class="row">
+            <div class="col-md-6">
+              <label>Course purchased</label>
+              <textarea class="form-control" name="transactions_item_list_items" rows="2" placeholder="course: price x quantity;"></textarea>
+            </div>
+            <div class="col-md-6">
+              <label>Extra items purchased</label>
+              <textarea class="form-control" name="transactions_item_list_items" rows="2" placeholder="extra item: price x quantity;"></textarea>
+            </div>
+          </div>
+          <br>
+
+          <div class="row">
+            <div class="col-md-2">
+              <label>Subtotal (EUR)</label>
+              <input class="form-control" type="text" name="transactions_amount_subtotal" min="0">
+            </div>
+            <div class="col-md-2">
+              <label>Discount (EUR)</label>
+              <input class="form-control" type="text" name="transactions_amount_shipping_discount" placeholder="-xx">
+            </div>
+            <div class="col-md-2">
+              <label>Final price</label>
+              <input required class="form-control" type="text" id="paymentAmount" name="transactions_amount_total" placeholder="required" min="0">
+            </div>
+            <div class="col-md-3">
+              <label>Created time</label>
+              <input readonly class="form-control" id="create_time" name="create_time">
+            </div>
+            <div class="col-md-3">
+              <label>Created by</label>
+              <select required class="form-control" name="created_by">
+                <option disabled selected value> -- required -- </option>
+                <option value="Stephen Baynham">Stephen Baynham</option>
+                <option value="Yixin Qi">Yixin Qi</option>
+                <option value="Admin">Admin</option>
+              </select>
+            </div>
+          </div>
+          <br>
+
+        </div>
+        <button class="btn btn-warning btn-block" type="submit">Save</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<script type="text/javascript">
+  document.getElementById("create_time").value = new Date();
+
+  function generateRandomCoupon(length) {
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    };
+    document.getElementById("paymentId").value = result
+  }
+</script>
+
+<%- include("partials/footer"); -%>

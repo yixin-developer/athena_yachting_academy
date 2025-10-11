@@ -1,0 +1,184 @@
+<%- include("partials/header"); -%>
+
+<section>
+  <div class="container-fluid create-course-profile-background">
+    <div class="create-course-profile-page">
+      <h1>Course Profile Creating Form</h1>
+      <br />
+
+      <form action="/courses/course-profile/create" method="post">
+        <div class="form-group">
+          <label>Course title</label>
+          <input class="form-control" type="text" name="title" id="title" onchange="myChangeFunction(this)" list="course-select" />
+          <datalist required id="course-select" name="title">
+            <option value="RYA Start Yachting">RYA Start Yachting</option>
+            <option value="RYA Competent Crew">RYA Competent Crew</option>
+            <option value="RYA Day Skipper Practical">
+              RYA Day Skipper Practical
+            </option>
+            <option value="Day Skipper Plus Practical Course">
+                  Day Skipper Plus Practical Course
+            </option>
+            <option value="RYA Coastal Skipper Practical">
+              RYA Coastal Skipper Practical
+            </option>
+            <option value="RYA Yachtmaster Preparation And Exam">
+              RYA Yachtmaster Preparation And Exam
+            </option>
+            <option value="RYA Yachtmaster Fast Track">
+              RYA Yachtmaster Fast Track
+            </option>
+            <option value="RYA Level 1 Powerboating">
+              RYA Level 1 Powerboating
+            </option>
+            <option value="RYA Level 2 Powerboat Handling">
+              RYA Level 2 Powerboat Handling
+            </option>
+            <option value="RYA Personal Watercraft Proficiency Course">
+              RYA Personal Watercraft Proficiency Course
+            </option>
+            <option value="RYA Start Motor Cruising">
+              RYA Start Motor Cruising
+            </option>
+            <option value="RYA Motor Cruising Helmsman">
+              RYA Motor Cruising Helmsman
+            </option>
+            <option value="RYA Motor Cruising Day Skipper">
+              RYA Motor Cruising Day Skipper
+            </option>
+            <option value="RYA Motor Cruising Coastal Skipper">
+              RYA Motor Cruising Coastal Skipper
+            </option>
+            <option value="RYA Motor Cruising Advanced Pilotage">
+              RYA Motor Cruising Advanced Pilotage
+            </option>
+            <option value="RYA Day Skipper Theory">
+              RYA Day Skipper Theory
+            </option>
+            <option value="RYA Coastal Skipper Yachtmaster Offshore Theory">
+              RYA Coastal Skipper Yachtmaster Offshore Theory
+            </option>
+            <option value="RYA Yachtmaster Ocean Theory">
+              RYA Yachtmaster Ocean Theory
+            </option>
+            <option value="RYA Marine Radio">RYA Marine Radio</option>
+            <option value="RYA Professional Practices And Responsibilities">
+              RYA Professional Practices And Responsibilities
+            </option>
+            <option value="RYA Diesel Engine">RYA Diesel Engine</option>
+            <option value="RYA First Aid">RYA First Aid</option>
+            <option value="RYA Radar">RYA Radar</option>
+            <option value="RYA Sea Survival">RYA Sea Survival</option>
+            <option value="RYA Commercial Endorsements">
+              RYA Commercial Endorsements
+            </option>
+            <option value="Transport Malta Nautical License">
+              Transport Malta Nautical License
+            </option>
+            <option value="Transport Malta Commercial Vessel Operations License">
+              Transport Malta Commercial Vessel Operations License
+            </option>
+            <option value="Mile Builder">Mile Builder</option>
+            <option value="Flotilla Skipper Training">
+              Flotilla Skipper Training
+            </option>
+            <option value="Corporate Team Building">
+              Corporate Team Building
+            </option>
+          </datalist>
+          <br />
+
+          <label>Course category</label>
+          <input class="form-control" type="text" name="category" id="category" list="category-select" />
+          <datalist required id="category-select" name="category">
+            <option value="RYA Shorebased Courses">
+              RYA Shorebased Courses
+            </option>
+            <option value="RYA Practical Sail Cruising">
+              RYA Practical Sail Cruising
+            </option>
+            <option value="RYA Practical Motor Cruising">
+              RYA Practical Motor Cruising
+            </option>
+            <option value="RYA Practical Powerboat">
+              RYA Practical Powerboat
+            </option>
+            <option value="Transport Malta">Transport Malta</option>
+            <option value="STCW Courses">STCW Courses</option>
+            <option value="Online Courses">Online Courses</option>
+            <option value="Other Courses">Other Courses</option>
+          </datalist>
+          <br />
+
+          <label>Profile image</label>
+          <input class="form-control" type="text" name="image" id="image" />
+          <br />
+
+          <label>Brief introduction</label>
+          <textarea required class="form-control" type="text" name="introduction" rows="3"></textarea>
+          <br />
+
+          <label>Course duration in days</label>
+          <input required class="form-control" type="number" name="duration" min="1" />
+          <br />
+
+          <label>Standard price per person</label>
+          <input required class="form-control" type="number" name="price" min="1" />
+          <br />
+
+          <label>Maximum Capacity</label>
+          <input required class="form-control" type="number" name="capacity" min="1" />
+          <br />
+
+          <label>Course detail link</label>
+          <input required readonly class="form-control" type="text" name="courseLink" id="courseLink" value="" />
+          <br />
+
+          <label>RYA link (leave it empty if not an rya course)</label>
+          <input class="form-control" type="text" name="ryaLink" />
+          <br />
+
+          <label>Online course link (leave it empty if no online option)</label>
+          <input class="form-control" type="text" name="onlineLink" id="onlineLink" />
+          <br />
+
+          <label>Previous experience or knowledge</label>
+          <select required class="form-control" id="course-select" name="experience">
+            <option value="Required">Required</option>
+            <option value="Not required">Not required</option>
+            <option value="Recommended to have">Recommended to have</option>
+          </select>
+          <br />
+
+          <label>Course Level</label>
+          <select required class="form-control" id="course-select" name="level">
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="Professional">Professional</option>
+          </select>
+          <br />
+
+          <label>Course available at moment</label>
+          <select required class="form-control" id="course-select" name="availability">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+          <br />
+        </div>
+        <button class="btn btn-warning" type="submit" name="button">
+          Create
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+  function myChangeFunction(input1) {
+    var newCourseTitle = document.getElementById("title");
+    document.getElementById("courseLink").value =
+      "/courses/" + newCourseTitle.value.toLowerCase().replace(/ /g, "-");
+  }
+</script>
+<%- include("partials/footer"); -%>
