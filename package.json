@@ -14,11 +14,11 @@
   },
   "dependencies": {
     "async": "^3.2.0",
-    "body-parser": "^1.19.0",
-    "compression": "^1.7.4",
+    "body-parser": "^1.20.3",
+    "compression": "^1.8.1",
     "ejs": "^3.1.2",
-    "express": "^4.17.1",
-    "express-session": "^1.17.1",
+    "express": "^4.21.2",
+    "express-session": "^1.18.2",
     "googleapis": "^52.1.0",
     "gridfs-stream": "^1.1.1",
     "lodash": "^4.17.15",
@@ -26,8 +26,8 @@
     "mongoose": "^5.9.13",
     "mongoose-encryption": "^2.0.2",
     "multer": "^1.4.5-lts.1",
-    "multer-gridfs-storage": "^4.1.0",
-    "nodemailer": "^6.4.8",
+    "multer-gridfs-storage": "^5.0.2",
+    "nodemailer": "^6.10.1",
     "nodemon": "^2.0.4",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
@@ -39,7 +39,7 @@
     "stripe": "^9.14.0"
   },
   "devDependencies": {
-    "dotenv": "^8.6.0",
+    "dotenv": "^16.6.1",
     "sharp-cli": "^3.0.0"
   }
 }

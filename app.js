@@ -40,7 +40,7 @@ const passportLocalMongoose = require('passport-local-mongoose');
 const paypal = require('paypal-rest-sdk');
 const stripe = require('stripe')(stripeSecretKey);
 const nodemailer = require('nodemailer');
-const GridFsStorage = require('multer-gridfs-storage');
+const { GridFsStorage } = require('multer-gridfs-storage');
 const Grid = require('gridfs-stream');
 const requestIp = require('request-ip');
 const { google } = require('googleapis');
@@ -94,10 +94,11 @@ paypal.configure({
 });
 
 // connect to MongoDB
-const mongoURI = 'mongodb+srv://admin_yixin:' + mongoDBAtlasPassword + '@cluster0-jmiqr.mongodb.net/ssmDB';
-// const mongoURI = 'mongodb+srv://jesus:lookfar@cluster0.paq40nb.mongodb.net/SSMDB3';
+// const mongoURI = 'mongodb+srv://admin_yixin:' + mongoDBAtlasPassword + '@cluster0-jmiqr.mongodb.net/ssmDB';
+const mongoURI = 'mongodb+srv://aya_admin:z6MSyRiMxUdw2Dx7@cluster0.aynkvcs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 mongoose.connect(mongoURI, {
+  dbName:"ayaDB",
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -731,18 +732,18 @@ app.get('/logout', function (req, res) {
 
 // 4. user registration (not in use)
 app.post('/register', function (req, res) {
-  // User.register({
-  //   username: req.body.username
-  // }, req.body.password, function(err, user) {
-  //   if (err) {
-  //     console.log(err);
-  //     res.redirect("/register");
-  //   } else {
-  //     passport.authenticate("local")(req, res, function() {
-  //       res.redirect("/console");
-  //     });
-  //   }
-  // });
+  User.register({
+    username: req.body.username
+  }, req.body.password, function(err, user) {
+    if (err) {
+      console.log(err);
+      res.redirect("/register");
+    } else {
+      passport.authenticate("local")(req, res, function() {
+        res.redirect("/console");
+      });
+    }
+  });
 });
 
 //////////////////////////////////////Console//////////////////////////////////
