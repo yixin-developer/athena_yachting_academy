@@ -95,7 +95,8 @@ paypal.configure({
 
 // connect to MongoDB
 // const mongoURI = 'mongodb+srv://admin_yixin:' + mongoDBAtlasPassword + '@cluster0-jmiqr.mongodb.net/ssmDB';
-const mongoURI = 'mongodb+srv://aya_admin:z6MSyRiMxUdw2Dx7@cluster0.aynkvcs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+// const mongoURI = 'mongodb+srv://aya_admin:z6MSyRiMxUdw2Dx7@cluster0.aynkvcs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const mongoURI= 'mongodb://aya_admin:z6MSyRiMxUdw2Dx7@ac-xunka1c-shard-00-00.aynkvcs.mongodb.net:27017,ac-xunka1c-shard-00-01.aynkvcs.mongodb.net:27017,ac-xunka1c-shard-00-02.aynkvcs.mongodb.net:27017/ayaDB?ssl=true&replicaSet=atlas-1mzag4-shard-0&authSource=admin&retryWrites=true&w=majority';
 
 mongoose.connect(mongoURI, {
   dbName:"ayaDB",

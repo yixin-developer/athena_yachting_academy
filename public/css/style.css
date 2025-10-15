@@ -33,13 +33,42 @@
   }
 }
 
+/* === GLOBAL FONTS === */
+p {
+  font-family: 'Montserrat', sans-serif;
+  color: #003366; /* your AYA brand navy text color */
+}
+
+/* Hero / Logo titles */
+.hero-title,
+.logo-text,
+h1 {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Section / Small titles */
+h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  /* font-weight: 600; */
+  color: #003366;
+}
+
+/* Optional: make buttons and nav readable */
+button, .btn, .navbar {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
 a,
 a:active {
   color: inherit;
 }
 
 a:hover {
-  color: #f0ad4e;
+  color: #f0ad4e !important;
   text-decoration: none;
 }
 
@@ -106,7 +135,7 @@ body {
   }
 }
 
-/* header */
+/* navbar */
 .navbar-wrapper {
   position: fixed;
   top: 0;
@@ -118,17 +147,36 @@ body {
   justify-content: flex-start;
 }
 
+.navbar {
+  background-color: #003366;
+}
+
+
 .navbar-logo {
-  width: 40px;
   height: 40px;
   margin-right: 5px;
   margin-left: 5px;
   transform: translateY(-5px);
+  display: block;
+}
+
+.navbar-logo-mobile {
+  display: none;
+  width: 210px;
+}
+
+/* When screen is smaller than 768px (Bootstrap's mobile breakpoint) */
+@media (max-width: 640px) {
+  .navbar-logo {
+    display: none;
+  }
+  .navbar-logo-mobile {
+    display: block;
+  }
 }
 
 .navbar-rya {
-  filter: contrast(2000%);
-  height: 50px;
+  height: 45px;
   padding: 0;
 }
 
@@ -183,7 +231,8 @@ body {
 }
 
 .navbar-book-now-button-text {
-  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  /* color: #003366; */
 }
 
 .navbar-book-now-button,
@@ -292,15 +341,22 @@ body {
   margin-right: 0 !important
 }
 
-@media (max-width:575px) {
+/* @media (max-width:575px) {
   .navbar-brand {
     margin-left: -10px
   }
-}
+} */
 
 .nav-item {
-  font-family: "DM Serif Text", serif;
-  font-size: 1.2rem
+  /* font-family: "DM Serif Text", serif; */
+  font-size: 1rem
+}
+
+.dropdown-item {
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: none;
+
 }
 
 /* footer */
@@ -337,7 +393,7 @@ body {
 
 @media (min-width:768px) {
   .carousel-homepage .social-media-icon {
-    font-size: 30px
+    font-size: 25px
   }
 }
 
@@ -418,8 +474,13 @@ body {
   text-align: center;
   border-bottom-left-radius: .25rem;
   border-bottom-right-radius: .25rem;
-  position: absolute
+  position: absolute;
+  color: #003366;
 }
+.home-page-promotion .btn {
+  color: #003366 ;  /* text color */
+}
+
 .home-page-promotion a{
   border-radius: 0 0 0.5rem 0.5rem;
 }
@@ -456,7 +517,7 @@ body {
   z-index: 100;
   bottom: 0;
   right: 14px;
-  background: #17a2b8;
+  background: #003366;
   border-radius: 5px 5px 0 0;
   color: #fff
 }
@@ -482,14 +543,35 @@ body {
   margin-top: 59px
 }
 
+.carousel-item {
+  position: relative;
+  overflow: hidden; /* keeps overlay confined to image area */
+}
+
+/* dark overlay layer on all slides */
+/* .carousel-item::after {
+  content: "";
+  position: absolute;
+  inset: 0; 
+  background-color: rgba(7, 18, 47, 0.0); 
+  z-index: 1;
+} */
+
+/* keep carousel captions above overlay */
+.carousel-caption {
+  position: absolute;
+  z-index: 2;
+}
+
 .main-img-carousel {
-  transform: scale(1.25)
+  transform: scale(1.25);
+
 }
 
 .carousel-homepage .carousel-item img {
-  animation-fill-mode: forwards;
+  /* animation-fill-mode: forwards;
   animation-duration: 15s;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out; */
   object-fit: cover;
   max-height: 780px;
   height: 86vh
@@ -525,6 +607,7 @@ body {
 }
 
 .carousel-item-text__title {
+  font-family: 'Cinzel', serif;
   display: block;
   line-height: 1.3;
   letter-spacing: 0;
@@ -557,11 +640,12 @@ body {
 }
 
 .carousel-item-text__subtitle {
+  font-family: 'Montserrat', sans-serif;
   font-size: 17px;
   max-width: 500px;
   line-height: 1.4;
   margin: 0 auto;
-  font-weight: 400;
+  font-weight:lighter !important;
   transform: translateY(78px)
 }
 
@@ -594,7 +678,10 @@ body {
 }
 
 .view-all-courses {
-  transform: translateY(25px)
+  transform: translateY(25px);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 @media screen and (max-width:375px) {
@@ -659,7 +746,7 @@ body {
   position: relative;
   z-index: 99;
   width: 100%;
-  background-color: #f5f5f6
+  background-color: #E6F0FA
 }
 
 .hero-section__boxes-container {
@@ -711,7 +798,7 @@ body {
 
 .hero-section__box-title {
   font-size: 15px;
-  color: #4a4e4c;
+  color: #003366;
   letter-spacing: 0;
   line-height: 22px;
   font-weight: 600;
@@ -722,7 +809,7 @@ body {
 .hero-section__box-description {
   display: none;
   font-size: 13px;
-  color: #4a4e4c;
+  color: #003366;
   letter-spacing: 0;
   line-height: 22px;
   margin: 0
@@ -769,12 +856,18 @@ body {
 .home-description {
   max-width: 527px;
   padding-top: 60px;
-  padding-bottom: 0
+  padding-bottom: 0;
+
 }
 
-.home-description h5 {
-  color: #656565;
-  font-size: 15px
+.home-description h2 {
+  color: #003366;
+}
+
+.home-description h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+  color: #003366;
 }
 
 .carousel-text {
@@ -859,13 +952,45 @@ body {
   text-align: justify
 }
 
+.activity-link {
+  position: relative;
+  display: block;
+  border-radius: 5px;
+  overflow: hidden; /* ensures overlay matches the image corners */
+}
+
+/* Gray overlay */
+.activity-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(7, 18, 47, 0.1); /* translucent navy-gray */
+  transition: opacity 0.4s ease;
+}
+
+/* Fade out overlay on hover */
+.activity-link:hover::after {
+  opacity: 0;
+}
+
+
 .activity-image {
   width: 100%;
   border-radius: 5px;
   margin: auto;
   max-height: 250px;
   min-height: 250px;
-  object-fit: cover
+  object-fit: cover;
+    transition: all 0.4s ease;
+}
+
+.next-mile-builder {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+  color: #003366;
 }
 
 .TM,
@@ -880,7 +1005,7 @@ body {
 }
 
 .rya-banner {
-  background-color: #eee;
+  background-color: #E6F0FA;
   color: #222831;
   padding: 45px;
   margin: 30px auto 20px;
@@ -893,6 +1018,38 @@ body {
   margin: 0 auto
 }
 
+.btn-deep-blue {
+  background-color: #003366;
+  color: #fff;
+  border: none
+}
+
+.btn-outline-deep-blue {
+  background-color: transparent;
+  color: #003366;
+  border: 1px solid #003366;
+}
+
+.bg-deep-blue {
+  background-color: #003366 !important;
+}
+
+.bg-deep-blue h2,
+.bg-deep-bactivity-linklue p {
+  color: #fff ;
+}
+
+.go-to-blog {
+font-family: 'Playfair Display', serif;
+  color: #B23A48 
+
+}
+
+.date-author-category {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+
 .why-ssm {
   margin-top: 40px
 }
@@ -903,9 +1060,31 @@ body {
   height: auto
 }
 
-.home-page-map {
-  margin: 80px auto;
+.inline-container {
+  display: flex;
+  align-items: center;   /* vertically center the logo and text */
+  gap: 15px;             /* space between logo and text */
+  flex-wrap: wrap;       /* optional, allows wrap on smaller screens */
 }
+
+.home-page-map {
+  margin: 80px auto 60px auto;
+}
+
+.fixed-carousel {
+  height: 300px; /* or any height that fits your layout */
+  overflow: hidden;
+}
+
+.fixed-carousel img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* keeps size consistent and crops if needed */
+}
+
+.sailing-area-card-body {
+ background-color: #E6F0FA;
+} 
 
 .instructor {
   text-align: center;
@@ -914,7 +1093,8 @@ body {
 
 .instructor-image {
   border-radius: 80%;
-  margin: 30px
+  margin: 30px;
+  width: 200px;
 }
 
 .language-icon {
@@ -956,13 +1136,26 @@ body {
 }
 
 .testimonials {
+  position: relative; /* needed so ::before stays positioned correctly */
   margin-top: 90px;
-  background-image: url(/images/home/home-testimonial-background.webp);
+  background-image: url(/images/home/123.png);
   color: #fff;
   padding: 20px;
   text-align: center;
   background-repeat: no-repeat;
-  background-size: cover
+  background-size: cover;
+  z-index: 0;
+}
+
+.testimonials::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* change opacity for lighter/darker effect */
+  z-index: -1; /* keeps it behind the text */
 }
 
 .testimonial-image {
@@ -973,10 +1166,15 @@ body {
 }
 
 .testimonial-text {
+  font-family: 'Montserrat', sans-serif;
   color: #fff;
-  font-weight: 700;
   font-size: 2rem;
   line-height: 1.5
+}
+
+.testimonial-writer-text {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
 }
 
 @media (max-width:550px) {
@@ -1017,8 +1215,16 @@ body {
   margin: auto
 }
 
+.card-img-top {
+  width: 100%;
+  height: 300px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  display: block;
+}
+
 .rya-logo {
-  width: 50px;
+  width: 60px;
   margin-top: 20px
 }
 
@@ -3232,6 +3438,7 @@ boat-ownersboat-owners .tm-nautical-bottom-image {
 
 .h1-seo-replace{
   font-size: 2.5rem !important;
+  font-weight:lighter;
 }
 @media screen and (max-width: 375px){
   .carousel-item-text__title {
