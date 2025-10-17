@@ -358,7 +358,7 @@ app.get('/', async function (req, res) {
 
 // 1. sign-up to newsletter
 app.post('/sign-up', function (req, res) {
-  // console.log(req.body, 'sign-up body')
+  console.log(req.body, 'sign-up body')
   const { email, firstName, lastName, status = 'subscribed', address, course, phone, birthday } = req.body || {};
   console.log(req.body, 'req.body mailchimp');
   let parsedBirthday = '';
@@ -404,14 +404,18 @@ app.post('/sign-up', function (req, res) {
     if (response.statusCode === 200) {
       Coupon.findOne(
         {
-          discount: 10,
+           discount: 10, // you can pick the discount here.
+           expiration: { $gt: new Date() },
         },
         function (err, couponFound) {
-          res.redirect(`/signup-success?couponFound=${couponFound}`);
+          console.log(couponFound)
+            res.render('partials/signup-success', {
+            couponFound: couponFound,
+          });
         },
       );
     } else {
-      // console.log(response);
+      console.log(response);
       res.render('partials/signup-failure');
     }
 

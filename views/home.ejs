@@ -3,15 +3,22 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Athena Yachting Academy | RYA Sailing School in Greece</title>
-
-  <!-- website description SEO -->
-  <meta name="description" content="The leading RYA sailing school in Greece, offering quality sailing, powerboat, motorboat courses at all levels, both practical and theory">
-  <meta name="keywords" content="Greece sailing, sailing Greece, RYA Greece, sailing courses Greece, learn sailing Greece, mile builder, adventures, family sailing, yachtmaster, transport Greece nautical licence, skipper training, Mediterranean sailing, start yachting, day skipper, competent crew, coastal skipper, VHF, charter, cruise">
-  <meta name="geo.region" content="GR">
-  <meta name="geo.placename" content="Athens">
-  <meta name="author" content="Athena Yachting Academy">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Athena Yachting Academy | RYA Sailing School in Greece</title>
+  <!-- website description SEO -->
+  <meta name="description" content="The leading RYA sailing school in Greece. Located at Athens, we offer quality sailing, powerboat, and motorboat courses at all levels.">
+  <meta name="keywords" content="Greece sailing, sailing Greece, RYA Greece, sailing course Greece, sailing school Athens, learn sailing in Greece, Saronic sailing, Cyclades sailing, Ionian Sailing, mile builder, family sailing, yachtmaster, skipper training, day skipper, competent crew, coastal skipper, VHF, charter, sailing holiday">
+  <meta name="geo.region" content="GR-A1">
+  <meta name="geo.placename" content="Attica, Lavrion, Saronic Gulf, Cyclades, Ionian Sea, Greece">
+  <meta name="author" content="Athena Yachting Academy">
+  <!-- social share tags -->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Athena Yachting Academy | RYA Sailing School in Greece">
+  <meta property="og:description" content="The leading RYA sailing school in Greece, offering quality sailing, powerboat, and motorboat courses at all levels, both practical and theory">
+  <meta property="og:url" content="https://www.athenayachtingacademy.com">
+  <meta property="og:site_name" content="Athena Yachting Academy">
+  
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6CJ1SXEDZF"></script>
@@ -30,7 +37,6 @@
 
   <!-- Google Font cdn -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet"> -->
 
   <!-- customary css -->
   <link rel="stylesheet" href="/css/style.css">
@@ -38,98 +44,31 @@
   <!-- load jQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
-  <!-- bootstrap multi-level navbar js setting -->
-  <script type="text/javascript">
-    // jquery ready start
-    $(document).ready(function() {
-      // jQuery code
-
-      //////////////////////// Prevent closing from click inside dropdown
-      $(document).on('click', '.dropdown-menu', function(e) {
-        e.stopPropagation();
-      });
-
-    }); // jquery end
-  </script>
-
-  <!-- bootstrap multi-level navbar css setting -->
-  <style type="text/css">
-    @media (min-width: 992px) {
-      .dropdown-menu .dropdown-toggle:after {
-        border-top: .3em solid transparent;
-        border-right: 0;
-        border-bottom: .3em solid transparent;
-        border-left: .3em solid;
-      }
-
-      .dropdown-menu .dropdown-menu {
-        margin-left: 0;
-        margin-right: 0;
-      }
-
-      .dropdown-menu li {
-        position: relative;
-      }
-
-      .nav-item .submenu {
-        display: none;
-        position: absolute;
-        left: 100%;
-        top: -7px;
-      }
-
-      .nav-item .submenu-left {
-        right: 100%;
-        left: auto;
-      }
-
-      .dropdown-menu>li:hover {
-        background-color: #f1f1f1
-      }
-
-      .dropdown-menu>li:hover>.submenu {
-        display: block;
-      }
-    }
-  </style>
-
   <!-- Font awesome-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" crossorigin="anonymous"></script>
 
-    <%- include("./partials/cookie-consent")-%>
+  <%- include("./partials/cookie-consent")-%>
 
   <!-- Meta Pixel Code -->
   <script>
-    ! function(f, b, e, v, n, t, s) {
-      if (f.fbq) return;
-      n = f.fbq = function() {
-        n.callMethod ?
-          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      };
-      if (!f._fbq) f._fbq = n;
-      n.push = n;
-      n.loaded = !0;
-      n.version = '2.0';
-      n.queue = [];
-      t = b.createElement(e);
-      t.async = !0;
-      t.src = v;
-      s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1333391880895430');
-    fbq('track', 'PageView');
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2191486771341071');
+  fbq('track', 'PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1333391880895430&ev=PageView&noscript=1" /></noscript>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2191486771341071&ev=PageView&noscript=1"
+  /></noscript>
   <!-- End Meta Pixel Code -->
 
   <!-- mailchimp pop-up sign-up form -->
-  <script id="mcjs">
-    ! function(c, h, i, m, p) {
-      m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p)
-    }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/c582f51a665874607fb54b78b/4f8554c1e95a3871a669df5d4.js");
-  </script>
+  <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/e2b5c693cc3bfd7e22c9927ed/42793bc19298e45fd244e3c97.js");</script>
 
 </head>
 
@@ -153,7 +92,8 @@
 
     <!-- not shown at moment -->
     <div class="signboard">
-      <h1 class="signboard-text font-italic">SAILING, MOTOR CRUISING & POWERBOAT COURSES IN Greece</h1>
+      <h1 class="signboard-text font-italic">RYA SAILING AND POWERBOAT COURSES IN GREECE: <br>
+      ATHENS, SARONIC, CYCLADES, IONIAN, AEGEAN SEA</h1>
     </div>
 
     <div id="carouselExampleCaptions" class="carousel slide carousel-fade carousel-homepage" data-ride="">
@@ -170,7 +110,7 @@
         <li data-target="#carouselExampleCaptions" data-slide-to="9"></li>
         <li data-target="#carouselExampleCaptions" data-slide-to="10"></li>
         <li data-target="#carouselExampleCaptions" data-slide-to="11"></li>
-        <!-- <li data-target="#carouselExampleCaptions" data-slide-to="12"></li> -->
+        <li data-target="#carouselExampleCaptions" data-slide-to="12"></li>
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -189,77 +129,116 @@
             </div>
           </div>
         </div>
-        <!-- <div class="carousel-item">
+        <div class="carousel-item image-wrapper">
           <%- include("partials/carousel-landing-text")-%>
-          <img src="images/home/home-carousel-2-malta-sailing-gozo.webp" class="d-block w-100" alt="home-carousel-2-malta-sailing-gozo">
+          <img src="images/home/zakynthos-1678785479-581677-ImageGalleryX2.jpg" class="d-block w-100 main-img-carousel" alt="home-carousel-2-malta-sailing-gozo">
+          <div class="gray-overlay"></div>
           <div class="carousel-caption d-none d-md-block">
-            <h5>Sailing toward Gozo!</h5>
-            <p class="carousel-text">Off to Gozo Island at dawn while the air is still fresh.</p>
+            <!-- <h5>Sailing around Zakynthos Island</h5> -->
+            <p class="carousel-text">Explore the most iconic islands and bays by boat in Greece</p>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item image-wrapper">
           <%- include("partials/carousel-landing-text")-%>
-          <img src="images/home/home-carousel-2-malta-sailing-powerboat.webp" class="d-block w-100" alt="home-carousel-2-malta-sailing-powerboat">
+          <img src="images/home/sailing-6.jpg" class="d-block w-100" alt="home-carousel-2-malta-sailing-powerboat">
+          <div class="gray-overlay"></div>
           <div class="carousel-caption d-none d-md-block">
-            <h5>Leading Greece Nautical Licence Training Center!</h5>
-            <p class="carousel-text">We train more than 250 students a year for their Greecel Nautical Licences.</p>
+            <h5>Ready for your next adventure in Greece?</h5>
+            <p class="carousel-text">Sail around Zakynthos Island exploring the beaches of Zante</p>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item image-wrapper">
           <%- include("partials/carousel-landing-text")-%>
-          <img src="images/home/home-carousel-3-malta-sailing-training.webp" class="d-block w-100" alt="home-carousel-2-malta-sailing-training">
+          <img src="images/home/home-mile-builder-adventure.webp" class="d-block w-100" alt="home-carousel-2-malta-sailing-training">
+          <div class="gray-overlay"></div>
           <div class="carousel-caption d-none d-md-block">
-            <h5>Skippers in training</h5>
-            <p class="carousel-text">Sometimes the sea condition in Greece can be tough ... too.</p>
+            <h5>Join our mile builders</h5>
+            <p class="carousel-text">How about sail toward Sicily and Aeolian volcano?</p>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item image-wrapper">
           <%- include("partials/carousel-landing-text")-%>
-          <img src="images/home/home-carousel-4-malta-skipper-training.webp" class="d-block w-100" alt="home-carousel-4-malta-skipper-training">
+          <div class="gray-overlay"></div>
+          <img src="images/home/imgi_14_cyclades-odyssey-destinations-2-.jpg" class="d-block w-100" alt="home-carousel-4-malta-skipper-training">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Sailing requires good team work</h5>
-            <!-- <p class="carousel-text">Less tourists during winter in Malta, better time to sail!</p> 
+            <h5></h5>
+             <p class="carousel-text">Isnt it the pefect spot for anchorage and swimming?</p> 
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item image-wrapper">
           <%- include("partials/carousel-landing-text")-%>
-          <img src="images/home/home-carousel-5-malta-sailing-lunch-break.webp" class="d-block w-100" alt="home-carousel-5-malta-sailing-lunch-break">
+          <div class="gray-overlay"></div>
+          <img src="images/home/imgi_25_Cyclades-Odyssey-3-5062.jpg" class="d-block w-100" alt="home-carousel-5-malta-sailing-lunch-break">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Lunch break</h5>
-            <!-- <p class="carousel-text">We usually anchor and have lunch break at Balluta Bay.</p> 
+            <h5>Sail cruising</h5>
+            <p class="carousel-text">nice, elegant, and gentle ...</p> 
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item image-wrapper">
           <%- include("partials/carousel-landing-text")-%>
-          <img src="images/home/home-carousel-6-malta-sailing-comino.webp" class="d-block w-100" alt="home-carousel-6-malta-sailing-comino">
+          <div class="gray-overlay"></div>
+          <img src="images/home/imgi_28_Cyclades-Odyssey-2-0583.jpg" class="d-block w-100" alt="home-carousel-6-malta-sailing-comino">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Crystal Clear Water at St Paul's Bay</h5>
-            <p class="carousel-text">Our last summer, memory that remains ....</p>
+            <h5></h5>
+            <p class="carousel-text"></p>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item image-wrapper">
+          <div class="gray-overlay"></div>
           <%- include("partials/carousel-landing-text")-%>
-          <img src="images/home/home-carousel-7-malta-sailing-blue-lagoon.webp" class="d-block w-100" alt="home-carousel-7-malta-sailing-blue-lagoon">
+          <div class="gray-overlay"></div>
+          <img src="images/home/imgi_11_iStock-1919482667.jpg" class="d-block w-100" alt="home-carousel-7-malta-sailing-blue-lagoon">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Blue Lagoon winter time</h5>
-            <!-- <p class="carousel-text">Less tourists during winter in Malta, better time to sail!</p>
+            <h5>Our base</h5>
+            <p class="carousel-text">Less tourists during winter in Greece, better time to sail!</p> 
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item image-wrapper">
           <%- include("partials/carousel-landing-text")-%>
-          <img src="images/home/home-carousel-8-malta-sailing-galley-trimmed.webp" class="d-block w-100" alt="home-carousel-8-malta-sailing-galley-trimmed">
+          <div class="gray-overlay"></div>
+          <img src="images/home/imgi_31_Cyclades-Odyssey-7-.jpg" class="d-block w-100" alt="home-carousel-8-malta-sailing-galley-trimmed">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Under the deck</h5>
-            <!-- <p class="carousel-text">We value good food, especially after a intensive day of training!</p> 
+            <h5></h5>
+            <p class="carousel-text"></p> 
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item image-wrapper">
+          <%- include("partials/carousel-landing-text")-%>
+          <div class="gray-overlay"></div>
+          <img loading="lazy" src="images/home/imgi_43_Cyclades-Odyssey-1-0579.jpg" class="d-block w-100" alt="home-carousel-9-malta-sailing-night-grand-habour">
+          <div class="carousel-caption d-none d-md-block">
+            <h5></h5>
+            <p class="carousel-text"></p>
+          </div>
+        </div> 
+        <div class="carousel-item image-wrapper">
+          <%- include("partials/carousel-landing-text")-%>
+          <div class="gray-overlay"></div>
+          <img loading="lazy" src="images/home/imgi_34_Cyclades-Odyssey-10-.jpg" class="d-block w-100" alt="home-carousel-10-malta-sailing-night-grand-habour">
+          <div class="carousel-caption d-none d-md-block">
+            <h5></h5>
+            <p class="carousel-text"></p>
+          </div>
+        </div>
+        <div class="carousel-item image-wrapper">
+          <div class="d-md-none d-block">
+          <%- include("partials/carousel-landing-text")-%>
+          </div>
+          <img loading="lazy" src="images/home/imgi_30_Cyclades-Odyssey-East-2.jpg" class="d-block w-100" alt="home-carousel-11-malta-sailing-mile-building-trip-etna">
+          <div class="gray-overlay"></div>
+          <div class="carousel-caption d-none d-md-block">
+            <p class="carousel-text">In some Greek harbours, enjoying dinner at a taverna often comes with a bonus:</p>
+            <p class="carousel-text">free mooring right in front. A great way to end the sailing day, right? </p>
+          </div>
+        </div>           
+        <div class="carousel-item image-wrapper">
           <div class="d-md-none d-block">
             <%- include("partials/carousel-landing-text")-%>
           </div>
-          <img src="images/home/home-carousel-9-malta-sailing-valleta.webp" class="d-block w-100" alt="home-carousel-9-malta-sailing-valleta-sunset-trimmed">
+          <div class="gray-overlay"></div>
+          <img src="images/home/imgi_29_Cyclades-Odyssey-4-0590.jpg" class="d-block w-100" alt="home-carousel-12-malta-sailing-valleta-sunset-trimmed">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Sailing is fun!</h5>
+            <h5><b>"Sailing is fun!"</b></h5>
             <p class="carousel-text">"Is it so nice as all that?" asked the mole, shyly...</p>
             <p class="carousel-text">"Nice? It's the only thing," said the Water Rat solemnly, as he leaned forward for
               his stroke. "Believe me, my young friend, there is nothing, absolutely nothing, half so much worth doing
@@ -276,26 +255,6 @@
             <p class="carousel-text">(Ode to Boats from Wind in the Willows by Kenneth Grahame)</p>
           </div>
         </div>
-        <div class="carousel-item">
-          <%- include("partials/carousel-landing-text")-%>
-          <img loading="lazy" src="images/home/home-carousel-10-malta-sailing-mile-building-trip-etna.webp" class="d-block w-100" alt="home-carousel-10-malta-sailing-mile-building-trip-etna">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Mount Etna spoted on a mild building trip to Sicily</h5>
-            <p class="carousel-text">We organize monthly mile building trip between Greece and
-              Sicily.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <%- include("partials/carousel-landing-text")-%>
-          <img loading="lazy" src="images/home/home-carousel-11-malta-sailing-night-grand-habour.webp" class="d-block w-100" alt="home-carousel-11-malta-sailing-night-grand-habour">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Back to the Grand Habour at night</h5>
-            <p class="carousel-text">All our instructors sign up to this philosophy, so everyone gets maximum enjoyment from our courses.</p>
-          <p class="carousel-text">Come to the Athena Yachting Academy for sunshine and combine theory and practical courses.</p>
-          <p class="carousel-text">Enjoy the mix of living on a boat practising your boating skills, or in classrooms, in the historic and scenic beauty of Malta.</p>
-          <p class="carousel-text">Bring the family, and we can help arrange extra accommodation.</p>
-          </div>
-        </div> -->
 
       </div>
       <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
@@ -369,16 +328,14 @@
 
   <!-- business lines -->
   <section>
-    <div class="container-fluid  key-activities">
+    <div class="container-fluid key-activities">
       <div class="row">
 
         <div class="col-lg-4 col-md-6 col-sm-12 feature-box">
           <a href="/courses/rya-practical-sail-cruising" class="activity-link">
             <img loading="lazy" src="images/home/imgi_2_cyclades-odyssey-1-5.jpg" class="activity-image" alt="home-practial-sailing-course">
           </a>
-          <a href="/courses/rya-practical-sail-cruising">
-            <h3 class="my-4">RYA Sail Cruising Courses</h3>
-          </a>
+            <h3 class="my-4"><a href="/courses/rya-practical-sail-cruising">RYA Sail Cruising Courses</a></h3>
           <p class="lead activities-text">We offer the widest range of RYA practical sailing courses at all levels, from
             Competent Crew through Day Skipper and Coastal Skipper up to Yachtmaster, all
             internationally recognised qualifications. Fast-track and combo courses available too.</p>
@@ -389,9 +346,7 @@
           <a href="/courses/rya-shorebased-courses" class="activity-link">
             <img loading="lazy" src="images/home/course-cover-rya-day-skipper-theory.jpg" class="activity-image" alt="home-shorebased-course">
           </a>
-          <a href="/courses/rya-shorebased-courses">
-            <h3 class="my-4">RYA Shore-based Courses</h3>
-          </a>
+            <h3 class="my-4"><a href="/courses/rya-shorebased-courses">RYA Shore-based Courses</a></h3>
           <p class="lead activities-text">We offer a myriad of shorebased courses to complement the skill sets of
             skippers. This includes Day Skipper and Coastal Skipper/YM Theory, Marine Radio VHF, First Aid, Diesel Engine, the PPR for
             commercial skippers, and much more.</p>
@@ -402,9 +357,7 @@
           <a href="/courses/mile-builder" class="activity-link">
             <img loading="lazy" src="images/home/159a8aef-4e15-4455-bf37-882df781e259.jpg" class="activity-image" alt="mile-builder-sailing-and-adventures">
           </a>
-          <a href="/courses/mile-builder">
-            <h3 class="my-4">Mile Builers - Adventure Sails</h3>
-          </a>
+            <h3 class="my-4"><a href="/courses/mile-builder">Mile Builers - Adventure Sails</a></h3>
           <p class="lead activities-text">We organize mile-building voyages for aspiring skippers and passionate sailors — from the tranquil turquoise waters of the Saronic Gulf and Ionian Sea to the wind-swept challenges of the Cyclades, and onward across the Aegean and Mediterranean to Italy, Turkey, and Malta.</p>
           <div class="text-left my-2">   
           <a class="lead next-mile-builder" target="_blank" rel="noopener noreferrer" href="https://mastersailingmalta.com/destinations/malta-west-sicily-mile-builder">
@@ -413,17 +366,14 @@
           <a class="lead next-mile-builder" target="_blank" rel="noopener noreferrer" href="https://mastersailingmalta.com/destinations/malta-east-sicily-mile-builder">
             <h6>🇬🇷🇮🇹 1-8 Nov: 8-Day Saronia Sea Mile Builder</h6>
           </a>
-        
-        </div>
+          </div>
         </div>
 
         <div class="col-lg-4 col-md-6 col-sm-12 feature-box">
           <a href="/courses/rya-practical-motor-cruising" class="activity-link">
             <img loading="lazy" src="images/home/DJI_0271-scaled-r1eujlmqqh7ebkk6puzqpn4knv2ar5gnyqkycbed3c.jpg" class="activity-image" alt="home-motor-cruising-and-powerboat-courses">
           </a>
-          <a href="/courses/rya-practical-motor-cruising">
-            <h3 class="my-4">Motor Cruising Courses</h3>
-          </a>
+          <h3 class="my-4"><a href="/courses/rya-practical-motor-cruising">Motor Cruising Courses</a></h3>
           <p class="lead activities-text">Whether your looking to work as a Superyacht Deckhand, Yacht Captain or even
             if it is for your own yacht, we have the right course for you. Greece's ideal weather conditions make it the
             ideal place for learning Motor cruising.</p>
@@ -434,9 +384,7 @@
           <a href="/courses/transport-malta-nautical-license" class="activity-link">
             <img loading="lazy" src="images/home/6 (11).jpg" class="activity-image" alt="home-transport-malta-nautical-license">
           </a>
-          <a href="/courses/transport-malta-nautical-license">
-            <h3 class="my-4">Charter and Sailing Holiday</h3>
-          </a>
+            <h3 class="my-4"><a href="/courses/transport-malta-nautical-license">Charter and Sailing Holiday</a></h3>
           <p class="lead activities-text mb-5">We offer bespoke sailing holidays for those who seek comfort, freedom, and discovery at sea — from quiet anchorages and sunset dinners in the Saronic Gulf to the crystal-clear bays and charming harbours of the Ionian and Cyclades islands.</p>
           <a href=""><img loading="lazy" width="40px" src="images\aya_logo.png" alt="aya_logo"></a>
         </div>
@@ -445,9 +393,7 @@
           <a href="/courses/rya-level-2-powerboat-handling" class="activity-link">
             <img loading="lazy" src="images/home/cygnet-750x324.jpg" class="activity-image" alt="home-rya-powerboat-courses">
           </a>
-          <a href="/courses/rya-practical-powerboat">
-            <h3 class="my-4">Powerboat and Jetski Courses</h3>
-          </a>
+            <h3 class="my-4"><a href="/courses/rya-practical-powerboat">Powerboat and Jetski Courses</a></h3>
           <p class="lead activities-text">Powerboating offers the best of both worlds, the leisurely pace of a gentle
             cruise and the thrill of zipping across the open water. We will give you the confidence and skills to handle
             the boat safely and make the most of your time on the water, whatever your pace.</p>
@@ -501,7 +447,7 @@
             </div>
           <div class="my-3 py-3">
             <h2 class="display-5"><a href="/courses/rya-yachtmaster-preparation-and-exam">RYA Yachtmaster Preparation Course and Exam</a></h2>
-            <p class="lead" style="color: #ffffff;">running every month together with YM Theory course for both Sail and Power</p>
+            <p class="lead" style="color: #ffffff;">Running every month together with YM Theory course for both Sail and Power</p>
           </div>
             <a href="/courses/rya-yachtmaster-preparation-and-exam">
               <div class="bg-light box-shadow mx-auto activity-link"
@@ -606,7 +552,7 @@
                 </a></strong>
             </div>
             <div class="col-auto d-none d-xl-block">
-              <img loading="lazy" class="h-100" src="images/home/1aec0bdb-bf09-412c-8339-316a1fe851d9 (1).jpg" width="340" height="755" alt="home-upcoming-courses">
+              <img loading="lazy" class="h-100" src="images/home/imgi_33_Cyclades-Odyssey-East-1406.jpg" width="340" height="755" alt="home-upcoming-courses">
             </div>
           </div>
         </div>
@@ -670,8 +616,8 @@
   <section>
     <div class="container-fluid home-page-map" id="sailing-area">
       <h2 class="h1-seo-replace album-title mb-4">Our Main Sailing Areas</h2>
+      <p class="lead text-center">Our training voyages explore the most beautiful parts of Greece. </p>
       <p class="lead text-center">From the calm turquoise waters of the Saronic Gulf and Ionian Sea to the wind-swept Cyclades...</p>
-      <p class="lead text-center">Our training voyages explore the most beautiful parts of Greece. For those seeking greater horizons, our mile-building adventures extend across the Mediterranean — towards Italy, Turkey, and beyond.</p>
       <div class="album py-3 bg-white">
         <div class="container-fluid">
           <div class="row">
@@ -689,6 +635,11 @@
                   <div class="carousel-item">
                     <img loading="lazy" src="images/home/imgi_131_iStock-1436672557.jpg" class="d-block w-100" alt="saronic-3">
                   </div>
+                  <div class="carousel-item">
+                    <img loading="lazy" src="images/home/imgi_10_iStock-1391637314__1_.jpg" class="d-block w-100" alt="saronic-3">
+                  </div>
+
+                  
                 </div>
                 <!-- Optional controls -->
                 <a class="carousel-control-prev" href="#saronicCarousel" role="button" data-slide="prev">
@@ -731,10 +682,13 @@
                     <img loading="lazy" src="images/home/imgi_13_iStock-1419626160.jpg" class="d-block w-100" alt="saronic-1">
                   </div>
                   <div class="carousel-item">
-                    <img loading="lazy" src="images/home/mile-builder-sailing-340.png" class="d-block w-100" alt="saronic-2">
+                    <img loading="lazy" src="images/home/imgi_11_cyclades-odyssey-destinations-8-.jpg" class="d-block w-100" alt="saronic-2">
                   </div>
                   <div class="carousel-item">
-                    <img loading="lazy" src="images/home/mile-builder-sailing-333.png" class="d-block w-100" alt="saronic-3">
+                    <img loading="lazy" src="images/home/imgi_33_Odyssey-sailing-cyclades-sailing-area-Milow-island-scaled.webp" class="d-block w-100" alt="saronic-3">
+                  </div>
+                  <div class="carousel-item">
+                    <img loading="lazy" src="images/home/imgi_34_Odyssey-sailing-cyclades-sailing-area-Mykonos-islands-scaled.webp" class="d-block w-100" alt="saronic-3">
                   </div>
                 </div>
                 <!-- Optional controls -->
@@ -777,11 +731,15 @@
                     <img loading="lazy" src="images/home/imgi_14_iStock-1764694622.jpg" class="d-block w-100" alt="saronic-1">
                   </div>
                   <div class="carousel-item">
-                    <img loading="lazy" src="images/home/sailing-6.jpg" class="d-block w-100" alt="saronic-2">
+                    <img loading="lazy" src="images/home/imgi_120_iStock-1398255029.jpg" class="d-block w-100" alt="saronic-2">
                   </div>
                   <div class="carousel-item">
                     <img loading="lazy" src="images/home/imgi_122_iStock-1995492487.jpg" class="d-block w-100" alt="saronic-3">
                   </div>
+                  <div class="carousel-item">
+                    <img loading="lazy" src="images/home/Zakynthos-2023-Blue-Cave-Shutterstock-1997500946-Hybris.jpg" class="d-block w-100" alt="saronic-3">
+                  </div>
+                  
                 </div>
                 <!-- Optional controls -->
                 <a class="carousel-control-prev" href="#ionianCarousel" role="button" data-slide="prev">
@@ -833,7 +791,7 @@
   <!-- Video -->
   <section>
 
-    <div class="container world-towning pt-5">
+    <div class="container world-towning pt-3">
       <p class="lead">Sailing the Cyclades Islands and Saronic Gulf Greece ...</p>
       <div>
         <div id="home-videos-carousel" class="carousel slide"  data-ride="false" data-interval="false">
@@ -885,7 +843,7 @@
           </div>
 
           <div class="carousel-item container-fluid">
-            <h3 class="lead testimonial-text">“It's super fast to obtain the Powerboat L2 Hanlding License with Athena Yachting Academy. In addition, the school helped apply the exam and handle the paper, make the entire process much
+            <h3 class="lead testimonial-text">“It's super fast to obtain the Powerboat L2 License with Athena Yachting Academy. In addition, the school helped apply the exam and handle the paper, make the entire process much
               easier. ” </h3>
             <img loading="lazy" class="testimonial-image" src="images/home/home-testimonial-person-Vladimiro.webp" alt="home-testimonial-person-Beverly">
             <p class="testimonial-writer-text">Vladimir, Ukraine</p>
@@ -895,7 +853,7 @@
             <h3 class="lead testimonial-text">“It's so much fun over the sea! We found some dolphins in the last trip. I
               want to go sailing again with Athena! Perhaps we can sail to Croatia or Turkey</h3>
             <img loading="lazy" class="testimonial-image" src="images/home/home-testimonial-person-Nino.webp" alt="home-testimonial-person-Nino">
-            <p class="testimonial-writer-text">Mark, Malta</p>
+            <p class="testimonial-writer-text">Mark, UK</p>
           </div>
 
           <div class="carousel-item container-fluid">
@@ -907,9 +865,15 @@
 
           <div class="carousel-item container-fluid">
             <h3 class="lead testimonial-text">“Had my Yachtmaster exam preparation with Athena Yachting Academy and
-              successfully obtained my YM qualifacion. Athena is beautiful and wise at the same time.”🏆</h3>
+              successfully obtained my YM qualifacion. Athena is beautiful and wise at the same time.” 🏆</h3>
             <img loading="lazy" class="testimonial-image" src="images/home/home-testimonial-person-Matia.webp" alt="home-testimonial-person-Mattia">
             <p class="testimonial-writer-text">Mattia, Italy</p>
+          </div>
+
+          <div class="carousel-item container-fluid">
+            <h3 class="lead testimonial-text">“We had the BEST week sailing with the AYA. Or whole family took part — and even our teens really learned how to handle a boat. Athena was a fantastic instructor.” ❤️</h3>
+            <img loading="lazy" class="testimonial-image" src="images/home/imgi_28_Cyclades-Odyssey-West-5.jpg" alt="home-testimonial-person-Mattia">
+            <p class="testimonial-writer-text">Angeliki, Greece</p>
           </div>
 
         </div>
@@ -939,14 +903,15 @@
     <div class="container-fluid">
 
 
-      <div class="pricing-header my-5 px-3 py-3 pt-md-4 pb-md-4 mx-auto text-center">
+      <div class="pricing-header mt-5 px-3 py-3 pt-md-4 pb-md-4 mx-auto text-center">
         <a href="/courses">
           <h2 class="h1-seo-replace featurette-heading my-4">Learning to Sail in Greece</h2>
         </a>
         <p class="lead my-3">Below shows the features for some of most popular courses. We have also private courses
           available and discount for groups. Contact us for more details. </p>
-        <p class="lead"><a href="/courses/choosing-the-right-course">Not sure which course to take? For brief details
-            click here.</a></p>
+        <p class="lead">Not sure which course to take? For brief details
+            <a href="/courses/choosing-the-right-course"><u>click here</u>.</a>
+        </p>
       </div>
 
       <div class="container-fluid pricing-cards">
@@ -956,13 +921,15 @@
             <li data-target="#pricing-carousel" data-slide-to="1"></li>
           </ol>
           <div class="carousel-inner">
+
             <div class="carousel-item active">
               <div class="container-fluid pricing-cards">
-
                 <div class="card-deck mb-3 text-center">
 
                   <div class="card mb-3 shadow-sm">
+                    <a href="" class="activity-link">
                     <img loading="lazy"  src="images/home/home-practial-sailing-course.webp"  class="card-img-top">
+                    </a>
                     <div class="card-body">
                       <h3 class="my-3">
                         <a href="/courses/rya-start-yachting"><b>
@@ -975,76 +942,93 @@
                         <p>No experience required, a short introduction to sailing for complete beginners over 2 days, usually on weekends. 
                           By the end of the course you will have experienced steering a yacht, sail handling, ropework and be aware of safety on board.</p>
                       </ul>
-                      <a href="/courses/rya-start-yachting" role="button" class="btn btn-deep-blue" target="_blank" rel="noopener noreferrer">More info</a>
-                      <a href="/courses/rya-start-yachting" role="button" class="btn btn-md btn-outline-deep-blue" target="_blank" rel="noopener noreferrer">Enquiry now</a>
+                      <a href="/courses/rya-start-yachting" role="button" class="btn btn-deep-blue course-four-bottom" target="_blank" rel="noopener noreferrer">More info</a>
+                      <a href="/courses/rya-start-yachting" role="button" class="btn btn-md btn-outline-deep-blue course-four-bottom" target="_blank" rel="noopener noreferrer">Enquiry now</a>
+                      <br>
+                      <img loading="lazy" src="images/RYALogo.png" class="rya-logo" alt="RYA_logo">
+                    </div>
+                  </div>
+
+                   <div class="card mb-3 shadow-sm">
+                    <a href="" class="activity-link">
+                    <img loading="lazy"  src="images/home/home-choosing-the-right-sailing-course.webp"  class="card-img-top">
+                    </a>
+                    <div class="card-body">
+                      <h3 class="my-3">
+                        <a href="/courses/rya-start-yachting"><b>
+                          RYA Competent Crew
+                        </b></a>
+                        <br>
+                      </h3>
+                      <h3 class="card-title pricing-card-title">€1000 <small class="text-muted"></small></h3>
+                      <ul class="list-unstyled mt-3 mb-4">
+                        <p>No previous sailing experience needed. A professional introduction for beginners and those who would like to become active crew members rather than just passengers.
+                          Its a 5-day course with accommodation onboard included.
+                        </p>
+                      </ul>
+                      <a href="/courses/rya-competent-crew" role="button" class="btn btn-deep-blue course-four-bottom" target="_blank" rel="noopener noreferrer">More info</a>
+                      <a href="/courses/rya-competent-crew" role="button" class="btn btn-md btn-outline-deep-blue course-four-bottom" target="_blank" rel="noopener noreferrer">Enquiry now</a>
+                      <br>
+                      <img loading="lazy" src="images/RYALogo.png" class="rya-logo" alt="RYA_logo">
+                    </div>
+                  </div>
+
+                  <div class="card mb-3 shadow-sm">
+                    <a href="" class="activity-link">
+                    <img loading="lazy"  src="images/home/a70817f1b39f622b7477dcca9d0a8a38.webp"  class="card-img-top">
+                    </a>
+                    <div class="card-body">
+                      <h3 class="my-3">
+                        <a href="/courses/rya-start-yachting"><b>
+                          RYA Day Skipper 
+                        </b></a>
+                        <br>
+                      </h3>
+                      <h3 class="card-title pricing-card-title">€1000 <small class="text-muted"></small></h3>
+                      <ul class="list-unstyled mt-3 mb-4">
+                        <p>A course for those with some yachting experience, basic navigation and sailing skills to developing the practical skills and confidence to take command of a sailing yacht. The course lasts 5 days and includes accommodation onboard.
+                        </p>
+                      </ul>
+                      <a href="/courses/rya-competent-crew" role="button" class="btn btn-deep-blue course-four-bottom" target="_blank" rel="noopener noreferrer">More info</a>
+                      <a href="/courses/rya-competent-crew" role="button" class="btn btn-md btn-outline-deep-blue course-four-bottom" target="_blank" rel="noopener noreferrer">Enquiry now</a>
+                      <br>
+                      <img loading="lazy" src="images/RYALogo.png" class="rya-logo" alt="RYA_logo">
+                    </div>
+                  </div>
+
+                  <div class="w-100 d-none d-sm-block d-md-none">
+                    <!-- wrap every 2 on sm-->
+                  </div>
+
+
+                  <div class="w-100 d-none d-md-block d-lg-none">
+                    <!-- wrap every 3 on md-->
+                  </div>
+
+                  <div class="card mb-3 shadow-sm">
+                    <a href="" class="activity-link">
+                    <img loading="lazy"  src="images/home/bbbebf516dab68a7e1fcccc9fce1d3f1.webp"  class="card-img-top">
+                    </a>
+                    <div class="card-body">
+                      <h3 class="my-3">
+                        <a href="/courses/rya-start-yachting"><b>
+                           2-Week RYA Day Skipper Fast Track
+                        </b></a>
+                        <br>
+                      </h3>
+                      <h3 class="card-title pricing-card-title">€1900 <small class="text-muted"></small></h3>
+                      <ul class="list-unstyled mt-3 mb-4">
+                        <p>Combo course of Competent Crew and Day Skipper Practical over 12 days of practical training. Students shall have already done Day Skipper Theory course. This combo course is the fastest way to get skipper licence.
+                        </p>
+                      </ul>
+                      <a href="/courses/rya-competent-crew" role="button" class="btn btn-deep-blue course-four-bottom" target="_blank" rel="noopener noreferrer">More info</a>
+                      <a href="/courses/rya-competent-crew" role="button" class="btn btn-md btn-outline-deep-blue course-four-bottom" target="_blank" rel="noopener noreferrer">Enquiry now</a>
                       <br>
                       <img loading="lazy" src="images/RYALogo.png" class="rya-logo" alt="RYA_logo">
                     </div>
                   </div>
 
 
-                  <div class="card mb-3 shadow-sm">
-                    <div class="card-header">
-                      <h4 class="my-0 font-weight-normal"><a href="/courses/rya-competent-crew"><b>Competent
-                            Crew</b></a></h4>
-                    </div>
-                    <div class="card-body">
-                      <h3 class="card-title pricing-card-title">€950 <small class="text-muted"></small></h3>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>No previous sailing experience needed;</li>
-                        <li>Duration – 5 Days;</li>
-                        <li>Accommodation included;</li>
-                        <li>Professional introduction to sailing and crewing on a cruising yacht.</li>
-                      </ul>
-                      <a href="/courses/rya-competent-crew"><button type="button" class="btn btn-md btn-block btn-warning">More info</button></a>
-                      <img loading="lazy" src="images/RYA_logo.png" class="rya-logo" alt="RYA_logo">
-                    </div>
-                  </div>
-
-                  <div class="w-100 d-none d-sm-block d-md-none">
-                    <!-- wrap every 2 on sm-->
-                  </div>
-
-                  <div class="card mb-3 shadow-sm">
-                    <div class="card-header">
-                      <h4 class="my-0 font-weight-normal"><a href="/courses/rya-day-skipper-practical"><b>Day Skipper
-                            Practical</b></a></h4>
-                    </div>
-                    <div class="card-body">
-                      <h3 class="card-title pricing-card-title">€950 <small class="text-muted"></small></h3>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>Duration – 5 Days;</li>
-                        <li>Maximum 4 skipper students;</li>
-                        <li>DS theory certificate needed before course;</li>
-                        <li>Accommodation in the cabin can be included.</li>
-                      </ul>
-                      <a href="/courses/rya-day-skipper-practical"><button type="button" class="btn btn-md btn-block btn-warning">More info</button></a>
-                      <img loading="lazy" src="images/RYA_logo.png" class="rya-logo" alt="RYA_logo">
-                    </div>
-                  </div>
-
-                  <div class="w-100 d-none d-md-block d-lg-none">
-                    <!-- wrap every 3 on md-->
-                  </div>
-                  <div class="card mb-3 shadow-sm">
-                    <div class="card-header">
-                      <h4 class="my-0 font-weight-normal"><a href="/courses/rya-level-2-powerboat-handling"><b>Powerboat
-                            Handling Level 2</b></a></h4>
-                    </div>
-                    <div class="card-body">
-                      <h3 class="card-title pricing-card-title">€450 <small class="text-muted"></small></h3>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>Entry level powerboat course;</li>
-                        <li>Both theory and practical sessions;</li>
-                        <li>Widely accpeted for boat rental;</li>
-                        <li>Eligible to sit in TMNL exam with extra exam fee.</li>
-                      </ul>
-                      <a href="/courses/rya-level-2-powerboat-handling"><button type="button" class="btn btn-md btn-block btn-warning">More info</button></a>
-                      <img loading="lazy" src="images/RYA_logo.png" class="rya-logo" alt="RYA_logo">
-                    </div>
-                  </div>
-
-
                   <div class="w-100 d-none d-sm-block d-md-none">
                     <!-- wrap every 2 on sm-->
                   </div>
@@ -1052,145 +1036,12 @@
                     <!-- wrap every 4 on lg-->
                   </div>
 
-                  <!-- <div class="card mb-3 shadow-sm">
-                    <div class="card-header">
-                      <h4 class="my-0 font-weight-normal"><a href="/courses/transport-malta-nautical-license"><b>Transport Greece Nautical License</b></a>
-                      </h4>
-                    </div>
-                    <div class="card-body">
-                      <h3 class="card-title pricing-card-title">€300 <small class="text-muted"></small></h3>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>Minimum Age: 18;</li>
-                        <li>Can crew any vessel under 24 meters of length;</li>
-                        <li>Valid only within the territorial waters of Greece;</li>
-                        <li>Price including examination fee.</li>
-                      </ul>
-                      <a href="/courses/transport-malta-nautical-license"><button type="button" class="btn btn-md btn-block btn-warning">More info</button></a>
-                      <img loading="lazy" src="images/TM_Logo.png" class="rya-logo" alt="TM_Logo">
-                    </div>
-                  </div> -->
-
                 </div>
               </div>
             </div>
 
-            <div class="carousel-item">
-              <div class="container-fluid pricing-cards">
-
-                <div class="card-deck mb-3 text-center">
-
-                  <div class="card mb-3 shadow-sm">
-                    <div class="card-header">
-                      
-                      <h4 class="my-0 font-weight-normal"><a href="/courses/rya-day-skipper-theory"><b>Day Skipper
-                            Theory</b></a></h4>
-                    </div>
-                    <div class="card-body">
-                      <h3 class="card-title pricing-card-title">€650 <small class="text-muted"></small></h3>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>Duration – 5 Days;</li>
-                        <li>Each session - 5 Hours;</li>
-                        <li>In classroom environment;</li>
-                        <li>Plotter and divider available;</li>
-                        <li>This course can be combined with the Day Skipper Practical.</li>
-                      </ul>
-                      <a href="/courses/rya-day-skipper-theory"><button type="button" class="btn btn-md btn-block btn-warning">More info</button></a>
-                      <img loading="lazy" src="images/RYA_logo.png" class="rya-logo" alt="RYA_logo">
-                    </div>
-                  </div>
-
-                  <div class="card mb-3 shadow-sm">
-                    <div class="card-header">
-                      <h4 class="my-0 font-weight-normal"><a href="/courses/rya-coastal-skipper-yachtmaster-offshore-theory"><b>Coastal Skipper / YM
-                            Offshore Theory</b></a></h4>
-                    </div>
-                    <div class="card-body">
-                      <h3 class="card-title pricing-card-title">€750 <small class="text-muted"></small></h3>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>Duration – 5 Days;</li>
-                        <li>Each session - 5 Hours;</li>
-                        <li>In classroom environment;</li>
-                        <li>Plotter and divider available;</li>
-                        <li>This course can be combined with Coastal Skipper Practical.</li>
-                      </ul>
-                      <a href="/courses/rya-coastal-skipper-yachtmaster-offshore-theory"><button type="button" class="btn btn-md btn-block btn-warning">More info</button></a>
-                      <img loading="lazy" src="images/RYA_logo.png" class="rya-logo" alt="RYA_logo">
-                    </div>
-                  </div>
-
-                  <div class="w-100 d-none d-sm-block d-md-none">
-                    <!-- wrap every 2 on sm-->
-                  </div>
-
-                  <div class="card mb-3 shadow-sm">
-                    <div class="card-header">
-                      <h4 class="my-0 font-weight-normal"><a href="/courses/rya-coastal-skipper-practical"><b>Coastal
-                            Skipper Practical</b></a></h4>
-                    </div>
-                    <div class="card-body">
-                      <h3 class="card-title pricing-card-title">€1000 <small class="text-muted"></small></h3>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>5 Days with night sailing;</li>
-                        <li>Maximum 3 skipper students;</li>
-                        <li>CS theory certificate needed before course;</li>
-                        <li>Accommodation in the cabin can be included.</li>
-                      </ul>
-                      <a href="/courses/rya-coastal-skipper-practical"><button type="button" class="btn btn-md btn-block btn-warning">More info</button></a>
-                      <img loading="lazy" src="images/RYA_logo.png" class="rya-logo" alt="RYA_logo">
-                    </div>
-                  </div>
-
-                  <div class="w-100 d-none d-md-block d-lg-none">
-                    <!-- wrap every 3 on md-->
-                  </div>
-
-                  <div class="card mb-3 shadow-sm">
-                    <div class="card-header">
-                      <h4 class="my-0 font-weight-normal"><a href="/courses/rya-marine-radio"><b>RYA Marine Radio
-                            (VHF)</b></a></h4>
-                    </div>
-                    <div class="card-body">
-                      <h3 class="card-title pricing-card-title">€180 <small class="text-muted"></small></h3>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>Online Course created by RYA;</li>
-                        <li>Usually take 1-2 days;</li>
-                        <li>Very useful if you want to do chartering in the future;</li>
-                        <li>In person exam of 30 min at the end of the course</li>
-                      </ul>
-                      <a href="/courses/rya-marine-radio"><button type="button" class="btn btn-md btn-block btn-warning">More info</button></a>
-                      <img loading="lazy" src="images/RYA_logo.png" class="rya-logo" alt="RYA_logo">
-                    </div>
-                  </div>
-
-                  <div class="w-100 d-none d-sm-block d-md-none">
-                    <!-- wrap every 2 on sm-->
-                  </div>
-                  <div class="w-100 d-none d-lg-block d-xl-none">
-                    <!-- wrap every 4 on lg-->
-                  </div>
-
-                  <div class="card mb-3 shadow-sm">
-                    <div class="card-header">
-                      <h4 class="my-0 font-weight-normal"><a href="/courses/rya-personal-watercraft-proficiency-course"><b>Personal Watercraft Proficiency
-                            (Jet Ski) Course</b></a></h4>
-                    </div>
-                    <div class="card-body">
-                      <h3 class="card-title pricing-card-title">€450<small class="text-muted"></small></h3>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>Fast, fun and easy to handle;</li>
-                        <li>Go from beginner to confident rider in just one day;</li>
-                        <li>Teaches the rider to act responsibly as well as enjoying the thrill of speed on the water.
-                        </li>
-                        <!-- <li>...</li> -->
-                      </ul>
-                      <a href="/courses/rya-personal-watercraft-proficiency-course"><button type="button" class="btn btn-md btn-block btn-warning">More info</button></a>
-                      <img loading="lazy" src="images/RYA_logo.png" class="rya-logo" alt="RYA_logo">
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
+            
+            
           </div>
           <a class="carousel-control-prev" href="#pricing-carousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -1210,7 +1061,7 @@
   <section>
     <div class="container-fluid my-5 pt-5 pb-0 pl-4 pr-4">
       <div class="text-center">
-        <h1><b>Our Yachts</b></h1>
+        <h2 class="h1-seo-replace featurette-heading">Our Yachts</h2>
         <br />
         <p class="lead text-center">
           We have different yachts, for different purposes. Click on each name for more info about the yachts!
@@ -1222,7 +1073,7 @@
 
       <!-- First widget -->
       <div class="col-lg-4 col-md-6 mb-4">
-        <div class="bg-light pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="border-radius: 5px 5px 0 0;">
+        <div class="bg-light pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="border-radius: 5px 5px 5px 5px;">
             <!-- Tags -->
             <div style="position: absolute; top: 15px; left: 30px; background-color: #ffc107; color: black; 
                         border-radius: 12px; padding: 4px 10px; font-size: 0.8rem; font-weight: 600;">
@@ -1237,13 +1088,13 @@
               Advanced
             </div> -->
           <div class="my-3 py-3">
-            <h2 class="display-5" ><a href="/accommodation">Look Far</a></h2>
+            <h2 class="display-5" ><a href="/accommodation">Aphrodite</a></h2>
             <p class="lead">Bavaria 44 Cruiser (2004)</p>
           </div>
             <div class="bg-light box-shadow mx-auto">
               <img src="/images/yachts/yachts-bavaria44c.jpeg"
                     alt="yachts bavaria 44c"
-                    style="width: 100%; max-width: 420px; height: 250px; border-radius: 5px 5px 0 0   ; box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);"
+                    style="width: 100%; max-width: 420px; height: 250px; border-radius: 5px 5px 5px 5px   ; box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);"
                     class="mx-auto d-block">  
             </div> 
         </div>
@@ -1251,7 +1102,7 @@
 
       <!-- Second widget -->
       <div class=" col-lg-4 col-md-6 mb-4">
-        <div class="bg-light pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="border-radius: 5px 5px 0 0;">
+        <div class="bg-light pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="border-radius: 5px 5px 5px 5px;">
                         <div style="position: absolute; top: 15px; left: 30px; background-color: #ffc107; color: black; 
                         border-radius: 12px; padding: 4px 10px; font-size: 0.8rem; font-weight: 600;">
               Training 
@@ -1267,13 +1118,13 @@
  
 
           <div class="my-3 p-3">
-            <h2 class="display-5"><a href="https://mastersailingmalta.com/yacht">Ocean Caresser</a></h2>
+            <h2 class="display-5"><a href="https://mastersailingmalta.com/yacht">Athena</a></h2>
             <p class="lead">Bavaria 46 Cruiser (2007)</p>
           </div>
             <div class="bg-light box-shadow mx-auto">
               <img src="/images/yachts/yachts-bavaria46c.png"
                     alt="yachts bavaria 46c"
-                    style="width: 100%; max-width: 420px; height: 250px; border-radius: 5px 5px 0 0   ; box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);"
+                    style="width: 100%; max-width: 420px; height: 250px; border-radius: 5px 5px 5px 5px   ; box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);"
                     class="mx-auto d-block">  
             </div>       
         </div>
@@ -1281,7 +1132,7 @@
 
       <!-- third widget -->
       <div class=" col-lg-4 col-md-6 mb-4">
-        <div class="bg-light pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="border-radius: 5px 5px 0 0;">
+        <div class="bg-light pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="border-radius: 5px 5px 5px 5px;">
             <div style="position: absolute; top: 15px; left: 30px; background-color: #5871ff; color: white; 
                 border-radius: 12px; padding: 4px 10px; font-size: 0.8rem; font-weight: 600;">
               Charter
@@ -1295,13 +1146,13 @@
               Fun 
             </div> -->
           <div class="my-3 p-3">
-            <h2 class="display-5"><a href="/charter-and-cruises">Xanax</a></h2>
-            <p class="lead">Jeanneau Sun Odyssey 54 (2005)</p>
+            <h2 class="display-5"><a href="/charter-and-cruises">Artemis</a></h2>
+            <p class="lead">Lagoon 450F (2015) </p>
           </div>
             <div class="bg-light box-shadow mx-auto">
-              <img src="/images/yachts/yachts-jeanneau-sun-odyssey-54.webp"
+              <img src="/images/home/mgyachts_lagoon450F_2014-18-1.jpg"
                     alt="Jeanneau Sun Odyssey 54"
-                    style="width: 100%; max-width: 400px; height: 250px; border-radius: 5px 5px 0 0   ; box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);"
+                    style="width: 100%; max-width: 400px; height: 250px; border-radius: 5px 5px 5px 5px   ; box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);"
                     class="mx-auto d-block">  
             </div>      
         </div>
@@ -1317,7 +1168,7 @@
   <section>
     <div class="container-fluid bg-light subscription">
       <a href="/shop/promotion">
-        <h2 class="h1-seo-replace">Check Out Our Latest Promotion!</h2>
+        <h2 class="h1-seo-replace">Stay Tuned of Our Speical Offers!</h2>
       </a>
       <br>
       <p class="lead">Our last minute deals will appear from time to time. You can subscribe to keep informed of special
@@ -1329,76 +1180,67 @@
           <input type="name" name="firstName" class="form-control sign-up-box-name" placeholder="First name" required>
           <input type="surname" name="lastName" class="form-control sign-up-box-surname" placeholder="Last name" required>
           <br>
-          <button class="btn btn-md btn-warning btn-block" type="submit">Submit</button>
+          <button class="btn btn-md btn-deep-blue btn-block" type="submit">Submit</button>
         </form>
       </div>
     </div>
   </section>
 
+
   <!-- Albums -->
   <section>
-    <div class="container-fluid home-page-albums">
+    <div class="container-fluid my-5">
+    <h2 class="h1-seo-replace album-title mb-5"><a href="/images">Memories of Our Past Courses and Trips</a></h2>
+    <p class="lead text-center mb-5">Follow our Instagram <a href="https://www.instagram.com/athenayachtingacademy/">@athenayachtingacademy</a></p>
 
-      <h2 class="h1-seo-replace album-title mb-4"><a href="/images">Memories of Our Past Courses and Trips</a></h2>
-      <p class="lead text-center"><a href="/upload">Upload and share your photos</a></p>
-      <div class="album py-3 bg-white">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <img loading="lazy" src="images/home/home-album-malta-learn-sailing.webp" class="album-cover-photo" alt="home-album-malta-learn-sailing">
-                <div class="card-body">
-                  <p class="card-text">The sea, it could be supposed, is made for poetry (or the other way around). The
-                    rhythm of waves lapping at the shore, of a boat rocking to and fro. </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <a href="/images/category/rya-day-skipper-practical"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                      <!-- <a href="/images"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a> -->
-                    </div>
-                    <small class="text-muted">Courses</small>
+    <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div class="elfsight-app-fb59b120-c0da-4bcc-a576-ea8eaa1637af" data-elfsight-app-lazy></div>
+</section>
+                          
+<!-- Feature on -->
+            <section>
+            <div class="container py-5 text-center">
+              <h3 class="h1-seo-replace mb-5">AYA Featured on</h3>
+              <div class="row justify-content-center">
+                                <div class="col-6 col-sm-4 col-md-2 mb-5">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/home/greece-copie.jpg" class="img-fluid grayscale" alt="greece-club-of-yachting-logo">
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <img loading="lazy" src="images/home/home-album-malta-sail-cruising.webp" class="album-cover-photo" alt="home-album-malta-sail-cruising">
-                <div class="card-body">
-                  <p class="card-text">The drifting of free verse, the mooring of form. Add the epic nature of the ocean
-                    or the simple romantic essence of water, and the sea is just waiting for poetry to sail in. </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <a href="/images/category/mile-builder"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                      <!-- <a href="/images"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a> -->
-                    </div>
-                    <small class="text-muted">Trips</small>
+                <div class="col-6 col-sm-4 col-md-2 mb-5">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/home/social.png" class="img-fluid grayscale" alt="boat-around-logo">
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <img loading="lazy" src="images/home/home-album-malta-sail-chartering.webp" class="album-cover-photo" alt="home-album-malta-sail-chartering">
-                <div class="card-body">
-                  <p class="card-text">The sails unfurl
-                    the cries ring in the air,
-                    the ship is on the waves of curls.Ship rides o’er seas of pearl
-                    while dragon rests in lair,
-                    the sails unfurl.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <a href="/images/category/rya-coastal-skipper-practical"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                      <!-- <a href="/images"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a> -->
-                    </div>
-                    <small class="text-muted">Cruises</small>
+                <div class="col-6 col-sm-4 col-md-2 mb-5">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/yachting-world-logo.png" class="img-fluid grayscale" alt="yachting-world-logo">
                   </div>
                 </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-5">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/classic-boat-logo.jpeg" class="img-fluid grayscale" alt="classic-boat-logo">
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-5">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/mile-builder/CA-logo.png" class="img-fluid grayscale" alt="CA-logo">
+                  </div>
+                </div>
+                 <div class="col-6 col-sm-4 col-md-2 mb-5">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/home/mmksystems.com_Logo.jpg" class="img-fluid grayscale" alt="mmksystems-logo">
+                  </div>
+                </div>
+                               <!-- <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div class="border rounded p-3 h-100 d-flex align-items-center justify-content-center">
+                    <img src="/images/home/400639525_842396737887683_7448615791191455866_n.png" class="img-fluid grayscale" alt="nausys-logo">
+                  </div>
+                </div> -->
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-  </section>
+            </section>
 
   <!-- Google Review Widget Style and Script -->
   <style>

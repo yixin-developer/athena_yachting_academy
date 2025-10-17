@@ -34,8 +34,10 @@
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" href="/about-us">About Us</a></li>
           <li><a class="dropdown-item" href="/about-us#team">The Team</a></li>
-          <li><a class="dropdown-item" href="/">Fleet & Bases</a></li>
+          <li><a class="dropdown-item" href="/">The Fleet</a></li>
+          <li><a class="dropdown-item" href="/">Our Bases</a></li>
           <li><a class="dropdown-item" href="/about-us#boatowners">Boat Owners</a></li>
+          <li><a class="dropdown-item" href="/">Career</a></li>
           <li><a class="dropdown-item" href="/images">Gallery</a></li>
           <li><a class="dropdown-item" href="/blog">Blog</a></li>
         </ul>
@@ -192,12 +194,24 @@
       <li class="nav-item">
         <a class="nav-link" href="/blog">Blog</a>
       </li> -->
-      <li class="nav-item">
-        <a class="nav-link" href="/faqs">FAQs</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/faqs" role="button" >FAQs</a>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" target="_blank" rel="noopener noreferrer" href="/">Download more information</a>
+          </li>
+          <li>
+            <a class="dropdown-item" target="_blank" rel="noopener noreferrer" href="/">Hotel and Accommodation</a>
+          </li>
+        </ul>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/contact">Contact</a>
       </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact</a>
+      </li> -->
+
       <!-- <li class="nav-item">
         <a class="nav-link" href="/contact">EN</a>
       </li>
@@ -218,6 +232,61 @@
   </div>
 </nav>
 
+  <!-- bootstrap multi-level navbar js setting -->
+  <script type="text/javascript">
+    // jquery ready start
+    $(document).ready(function() {
+      // jQuery code
+
+      //////////////////////// Prevent closing from click inside dropdown
+      $(document).on('click', '.dropdown-menu', function(e) {
+        e.stopPropagation();
+      });
+
+    }); // jquery end
+  </script>
+
+  <!-- bootstrap multi-level navbar css setting -->
+  <style type="text/css">
+    @media (min-width: 992px) {
+      .dropdown-menu .dropdown-toggle:after {
+        border-top: .3em solid transparent;
+        border-right: 0;
+        border-bottom: .3em solid transparent;
+        border-left: .3em solid;
+      }
+
+      .dropdown-menu .dropdown-menu {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .dropdown-menu li {
+        position: relative;
+      }
+
+      .nav-item .submenu {
+        display: none;
+        position: absolute;
+        left: 100%;
+        top: -7px;
+      }
+
+      .nav-item .submenu-left {
+        right: 100%;
+        left: auto;
+      }
+
+      .dropdown-menu>li:hover {
+        background-color: #f1f1f1
+      }
+
+      .dropdown-menu>li:hover>.submenu {
+        display: block;
+      }
+    }
+  </style>
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     // document.querySelector(`.active`)?.classList?.remove('active');
@@ -230,4 +299,27 @@
       }
     }
   })
+</script>
+
+<script>
+  // run after jQuery and Bootstrap JS are loaded
+  (function ($) {
+    $(function () {
+      // Only apply on devices that actually have hover
+      if (window.matchMedia('(hover: hover)').matches) {
+        $('.nav-item.dropdown').hover(
+          function () {
+            $(this).addClass('show');
+            $(this).find('.dropdown-menu').addClass('show');
+            $(this).find('.nav-link').attr('aria-expanded', 'true');
+          },
+          function () {
+            $(this).removeClass('show');
+            $(this).find('.dropdown-menu').removeClass('show');
+            $(this).find('.nav-link').attr('aria-expanded', 'false');
+          }
+        );
+      }
+    });
+  })(jQuery);
 </script>

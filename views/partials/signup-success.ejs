@@ -3,33 +3,21 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Success</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180261214-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-180261214-1');
-  </script>
-
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>Sign-up Successful!</title>
+  <%- include("header-cdn")-%>
 </head>
 
 <body>
-  <div class="jumbotron jumbotron-fluid">
+  <div class="jumbotron jumbotron-fluid bg-light-blue">
     <div class="container">
-      <h1 class="display-4">Sign-up Successful!</h1>
+      <h2 class="display-4">Sign-up Successful!</h2>
       <br>
-      <p class="lead">Your subscription to our "Last Minute Club" has been confirmed. You will receive our special offers and trip plans from time to time.</p>
-      <p class="lead">Thank you for your interest! We look forward to seeing you in Malta!</p>
+      <p class="lead">Your subscription to our Newsletter has been confirmed. You will receive our special offers and mile builder plans from time to time. Usually we just send once a month. If that bothers you, you can unsubscribe at the end of the newsletter.</p>
+      <p class="lead">Thank you for joining our sailor community! We look forward to sailing with you in Greeece!</p>
       <%if(couponFound!=null && couponFound.expiration > new Date()) {%>
-      <p class="lead">The <b><%=couponFound.discount%>%</b> discount promotion coupon code is: <b><%=couponFound.coupon%></b> (valid until <b><%=couponFound.expiration.toDateString()%></b>)</p>
+      <p class="lead">As a welcome gift, here you have a <b><%=couponFound.discount%>%</b> discount coupon code: <b><%=couponFound.coupon%></b>, for any course booking.</p>
+      <p class="lead">Valid until <b><%=couponFound.expiration.toDateString()%></b></p>
       <%}%>
       <br>
       <a href="/course-dates">
@@ -37,12 +25,6 @@
       </a>
       <a href="/shop/promotion">
         <p>Check the available promotions >></p>
-      </a>
-      <a href="/accommodation">
-        <p>Check onboard accommodation >></p>
-      </a>
-      <a href="/images">
-        <p>Go to gallery >></p>
       </a>
       <a href="/faqs">
         <p>Check FAQs >></p>
