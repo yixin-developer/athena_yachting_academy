@@ -490,7 +490,7 @@ body {
 
 .about-us-hiring,
 .home-page-promotion {
-  font-family: "DM Serif Text", serif;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
   border-bottom-left-radius: .25rem;
   border-bottom-right-radius: .25rem;
@@ -671,7 +671,7 @@ body {
 
 .about-us-btn,
 .view-all-courses {
-  font-weight: 700;
+  /* font-weight: 700; */
   letter-spacing: 5px;
   text-transform: uppercase;
   transition: all 1000ms;
@@ -1347,7 +1347,7 @@ font-family: 'Playfair Display', serif;
 }
 
 .about-us-background {
-  background-color: #eee;
+  background-color: #E6F0FA;
   background-image: url(https://www.transparenttextures.com/patterns/foggy-birds.png)
 }
 
@@ -1359,6 +1359,18 @@ font-family: 'Playfair Display', serif;
   padding: 3%;
   display: inline-block;
   text-align: justify
+}
+
+.about-us-title {
+ font-family: 'Playfair Display', serif;
+  color: #003366;
+  font-size: 3rem;
+  font-weight:lighter;
+}
+
+.about-us-team-title {
+  font-family: 'Montserrat',  sans-serif;
+  color: #003366;
 }
 
 .about-us-intern {
@@ -1386,17 +1398,18 @@ font-family: 'Playfair Display', serif;
   }
 
   .about-us-intern {
-    margin-left: 24px;
-    width: 352px;
+    margin-left: 25px;
+    width: 370px;
     position: relative;
     float: right;
     top: -71px;
     right: 0;
     opacity: 0;
-    margin-bottom: 0
+    margin-bottom: -10px
   }
 
   .about-us-intern-shown {
+    border-radius: 0px 5px 0px 0px;
     opacity: 1;
     position: absolute;
     right: 0;
@@ -1418,14 +1431,25 @@ font-family: 'Playfair Display', serif;
 }
 
 .about-us__read-more {
+  font-family: 'Montserrat', sans-serif;
   cursor: pointer;
   text-decoration: underline;
   font-style: normal
 }
 
-.TM-logo-about-us,
+.boatowners-card {
+  border-radius: 5px;
+  /* margin: 30px auto; */
+}
+
+.AYA-logo-about-us {
+  width: 200px;
+  height: auto;
+  margin: 0 10px
+}
+
 .rya-logo-about-us {
-  width: 70px;
+  width: 100px;
   height: auto;
   margin: 0 10px
 }
