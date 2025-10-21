@@ -88,7 +88,7 @@ hr {
 
 .top-image {
   margin-top: 59px;
-  min-height: 50vh;
+  min-height: 30vh;
   object-fit: cover;
   width: 100%;
 }
@@ -503,6 +503,11 @@ body {
 
 .home-page-promotion a{
   border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.btn-light-blue {
+  background-color: #E6F0FA;
+  border: none;
 }
 
 .Promotion-page .promotions-below {
@@ -1983,7 +1988,7 @@ boat-ownersboat-owners .tm-nautical-bottom-image {
 }
 
 .course-dates .filters {
-  width: 76%
+  width: 75%
 }
 
 .course-dates .filter-btn {
@@ -2231,7 +2236,7 @@ boat-ownersboat-owners .tm-nautical-bottom-image {
     border: 1px solid #000;
     margin: 10px 0;
     background-color: #000;
-    background-image: linear-gradient(334deg, #000, #4c4c4c 74%);
+    background-image: linear-gradient(334deg, #003366, #125495 74%);
     background-size: cover;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .25);
     background-position: 50%;
@@ -3111,13 +3116,13 @@ boat-ownersboat-owners .tm-nautical-bottom-image {
 
 /* blog */
 .blog-background {
-  background-color: #eee;
+  background-color: #003366;
   background-image: url(https://www.transparenttextures.com/patterns/inspiration-geometry.png);
   padding: 2%
 }
 
 .blog-page {
-  background-color: #fff;
+  background-color: #E6F0FA;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
@@ -3136,7 +3141,7 @@ boat-ownersboat-owners .tm-nautical-bottom-image {
 }
 
 .jumbotron-blog-cover {
-  background-image: url(/images/blog/blog-cover.png);
+  background-image: url(/images/blog/image_204.png);
   background-size: cover;
   height: 500px
 }
