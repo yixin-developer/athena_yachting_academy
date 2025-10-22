@@ -86,6 +86,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.use(requestIp.mw());
 
+//   blog routes
+const blogRouter = require('./routes/blogs.js');
+app.use('/new-blog', blogRouter);
+
 // paypal environment setting
 paypal.configure({
   mode: paypalEnvMode, //sandbox or live

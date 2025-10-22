@@ -22,6 +22,7 @@
     "googleapis": "^52.1.0",
     "gridfs-stream": "^1.1.1",
     "lodash": "^4.17.15",
+    "marked": "^16.4.1",
     "method-override": "^3.0.0",
     "mongoose": "^5.9.13",
     "mongoose-encryption": "^2.0.2",

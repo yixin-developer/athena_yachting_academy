@@ -1,0 +1,69 @@
+<% const title = 'AYA Blog — Athena Yachting Academy'; %>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title><%= title %></title>
+    <meta name="description" content="Explore sailing insights, RYA courses, and sailing adventures in Greece with Athena Yachting Academy.">
+    <%- include('../partials/header') %>
+  </head>
+
+  <body>
+    <div class="container py-5">
+      <h1 class="mb-4 text-center fw-bold">AYA Blog</h1>
+
+      <% if (posts.length === 0) { %>
+        <p class="text-center">No blog posts available yet. Please check back soon!</p>
+      <% } else { %>
+        <div class="row">
+          <% posts.forEach(p => { 
+               const img = p.featuredimage?.formats?.medium?.url 
+                 || p.featuredimage?.url 
+                 ? `${CMS_BASE}${p.featuredimage.formats?.medium?.url || p.featuredimage.url}` 
+                 : '/images/no-image.jpg'; // fallback if you want
+          %>
+            <div class="col-md-4 mb-4">
+              <div class="card h-100 shadow-sm border-0">
+                <% if (img) { %>
+                  <img src="<%= img %>" class="card-img-top" alt="<%= p.featuredimage?.alternativeText || p.title %>">
+                <% } %>
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">
+                    <a href="/new-blog/<%= p.slug %>" class="text-decoration-none text-dark">
+                      <%= p.title %>
+                    </a>
+                  </h5>
+                  <% if (p.excerpt) { %>
+                    <p class="card-text text-muted"><%= p.excerpt.substring(0, 150) %>...</p>
+                  <% } %>
+                  <% if (p.publisheddate) { %>
+                    <p class="text-secondary small mb-0">
+                      <i>
+                        <%= new Date(p.publisheddate).toLocaleDateString('en-GB', { 
+                          year: 'numeric', month: 'long', day: 'numeric' 
+                        }) %>
+                      </i>
+                    </p>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+      <% } %>
+
+      <% if (pagination && pagination.pageCount > 1) { %>
+        <nav class="d-flex justify-content-center mt-4">
+          <ul class="pagination">
+            <% for (let i = 1; i <= pagination.pageCount; i++) { %>
+              <li class="page-item <%= i === pagination.page ? 'active' : '' %>">
+                <a class="page-link" href="/new-blog?page=<%= i %>"><%= i %></a>
+              </li>
+            <% } %>
+          </ul>
+        </nav>
+      <% } %>
+    </div>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>
