@@ -8,9 +8,10 @@
   </head>
 
   <body>
+    <div class="new">
     <div class="container py-5">
-      <h1 class="mb-4 text-center fw-bold">AYA Blog</h1>
-
+      <h1 class="my-5 text-center about-us-title">AYA Blog</h1>
+      <p class="mb-5 subtitle">RYA Sailing Courses in Greece. Athena Yachting Acaedmy latest news, open all year around!</p>
       <% if (posts.length === 0) { %>
         <p class="text-center">No blog posts available yet. Please check back soon!</p>
       <% } else { %>
@@ -22,18 +23,32 @@
                  : '/images/no-image.jpg'; // fallback if you want
           %>
             <div class="col-md-4 mb-4">
-              <div class="card h-100 shadow-sm border-0">
-                <% if (img) { %>
-                  <img src="<%= img %>" class="card-img-top" alt="<%= p.featuredimage?.alternativeText || p.title %>">
-                <% } %>
+              <div class="card blog-card shadow-sm border-0 rounded-3">
+                 <div class="card-img-wrap rounded-top-3">
+                  <% if (img) { %>
+                    <img src="<%= img %>" class="card-img-top" alt="<%= p.featuredimage?.alternativeText || p.title %>">
+                  <% } %>
+
+                  <% const cats = Array.isArray(p.categories) ? p.categories : []; %>
+                  <% if (cats.length) { %>
+                    <div class="badge-stack">
+                      <% cats.slice(0, 3).forEach(c => { %>
+                        <a class="category-pill"
+                          href="/new-blog/category/<%= encodeURIComponent(c.Slug || c.slug || c.Name || c.name) %>">
+                          <%= c.Name || c.name || c.Slug || c.slug %>
+                        </a>
+                      <% }) %>
+                    </div>
+                  <% } %>
+                </div>
                 <div class="card-body">
-                  <h5 class="card-title fw-bold">
-                    <a href="/new-blog/<%= p.slug %>" class="text-decoration-none text-dark">
+                  <h5 class="card-title blog-list-title">
+                    <a href="/new-blog/<%= p.slug %>">
                       <%= p.title %>
                     </a>
                   </h5>
                   <% if (p.excerpt) { %>
-                    <p class="card-text text-muted"><%= p.excerpt.substring(0, 150) %>...</p>
+                    <p class="card-text"><%= p.excerpt.substring(0, 100) %>...</p>
                   <% } %>
                   <% if (p.publisheddate) { %>
                     <p class="text-secondary small mb-0">
@@ -45,6 +60,11 @@
                     </p>
                   <% } %>
                 </div>
+                <div>
+                <a href="/new-blog/<%= p.slug %>" class="btn btn-read-more">
+                  Read More
+                </a>
+              </div>
               </div>
             </div>
           <% }) %>
@@ -63,7 +83,7 @@
         </nav>
       <% } %>
     </div>
-
+</div>
     <%- include('../partials/footer') %>
   </body>
 </html>

@@ -49,7 +49,7 @@ h1 {
 }
 
 /* Section / Small titles */
-h2, h3, h4 {
+h2, h3, h4, h5 {
   font-family: 'Playfair Display', serif;
   color: #003366;
 }
@@ -1324,6 +1324,45 @@ font-family: 'Playfair Display', serif;
 .hero-section__boxes {
   width: 100%
 }
+
+
+/* Home Faq */
+.faq-section { 
+  background:#E6F0FA; 
+}            
+
+.faq-section .text-white { 
+  color:#003366; 
+}
+
+.text-faq-subtle { 
+  color:#003366; 
+}
+
+.text-faq-body   { 
+  color:#003366; 
+}
+
+/* Image card on the right */
+.faq-image-wrap { min-height: 460px; }          /* adjust as you like */
+.object-fit-cover { object-fit: cover; }
+
+
+
+.cta-banner {
+  background-color: #E6F0FA;
+  color: #222831;
+  padding: 60px;
+  margin: 0px auto ;
+  text-align: center
+}
+
+.cta-banner-text {
+  max-width: 1000px;
+  text-align: center;
+  margin: 0 auto
+}
+
 
 /* about-us */
 .about-us-main-wrapper {
@@ -3112,6 +3151,91 @@ boat-ownersboat-owners .tm-nautical-bottom-image {
   display: block;
   margin: auto;
   width: 150px
+}
+
+
+/* new blog */
+.blog-list-title {
+  font-size:1.5rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.blog-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 10px !important;
+  overflow: hidden;
+  max-height: 600px; 
+}
+
+/* keep image corner clipping */
+.blog-card .card-img-wrap {
+  position: relative;
+  overflow: hidden;           /* ensures badges respect rounded corners */
+}
+
+/* badge container in top-right over the image */
+.blog-card .badge-stack {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  z-index: 2;
+  max-width: calc(100% - 24px);
+  justify-content: flex-end;
+}
+
+/* pill badges */
+.blog-card .category-pill {
+  background: #003366;        
+  color: #fff;
+  border-radius: 16px;
+  padding: 6px 12px;
+  font-family: 'montserrat', sans-serif;
+  font-size: .85rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,.18);
+}
+
+.card-img-top {
+  /* height: 180px; */
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.blog-category-badge {
+  background-color: #003366;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.btn-read-more {
+  background-color: #003366;
+  color: #fff;
+  font-size: 0.9rem;
+  margin: 0px 20px 30px 20px;
+  padding: 6px 16px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-read-more:hover {
+  background-color: #004080;
+  color: #fff;
+  transform: translateY(-2px);
+  text-decoration: none;
 }
 
 /* blog */
