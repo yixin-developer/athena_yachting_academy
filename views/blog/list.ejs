@@ -26,7 +26,7 @@
               <div class="card blog-card shadow-sm border-0 rounded-3">
                  <div class="card-img-wrap rounded-top-3">
                   <% if (img) { %>
-                    <img src="<%= img %>" class="card-img-top" alt="<%= p.featuredimage?.alternativeText || p.title %>">
+                    <img src="<%= img %>" class="blog-card-img-top" alt="<%= p.featuredimage?.alternativeText || p.title %>">
                   <% } %>
 
                   <% const cats = Array.isArray(p.categories) ? p.categories : []; %>

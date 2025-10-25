@@ -1,0 +1,154 @@
+<% const title = 'Our Base — Lavrion | Athena Yachting Academy'; %>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title><%= title %></title>
+    <meta name="description" content="Visit Athena Yachting Academy’s main base in Lavrion — the gateway to the Aegean islands and your starting point for unforgettable RYA sailing courses in Greece.">
+    <%- include('partials/header') %>
+    <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+        color: #003366;
+      }
+      .section-title {
+        font-weight: 700;
+        color: #003366;
+      }
+      .hero-img {
+        background: url('/images/about-us/1679399620.3f3ac143b7aad8eb9d05186df9a3a72c.jpg') center/cover no-repeat;
+        min-height: 420px;
+        border-radius: .5rem;
+      }
+      .feature-list li {
+        margin-bottom: .5rem;
+      }
+      .service-box {
+        background: #E6F0FA;
+        border-radius: .5rem;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .service-box h5 {
+        font-weight: 600;
+        margin-bottom: .75rem;
+      }
+      .service-box p {
+        margin-bottom: 0;
+      }
+      .img-placeholder {
+        background: #cbd6e2;
+        border-radius: .5rem;
+        height: 260px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #003366;
+        font-weight: 600;
+      }
+            .base-top-image {
+        margin-top: 58px;
+        min-height: 30vh;
+        object-fit: cover;
+          width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+          <div>
+      <img src="/images/about-us/Screenshot.png" width="100%" class="base-top-image" alt="">
+      </div>
+    <div class="container py-5">
+      <!-- HERO -->
+      <div class="row mb-5 align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h2 class="section-title mb-4">Our Base — Lavrion</h2>
+          <p>
+            You can find our entire fleet departing from Lavrion. We have chosen not to spread our boats in order to ensure that when you arrive at our base, you are personally assisted by our AYA team and everything remains under full control.
+          </p>
+          <p>
+            Lavrion serves as our home base for a number of reasons — most importantly because it lies at the gateway to the Aegean islands, one of the best sailing regions in the world. It’s only <u><b>25 minutes from Athens International Airport</b></u> (Eleftherios Venizelos) and just 16 nautical miles from the first Cycladic island, Kea.
+          </p>
+        </div>
+        <div class="col-md-6">
+                    <img class="img-placeholder" src="/images/about-us/Lavrion.8.gif" alt=""></i>
+        </div>
+      </div>
+
+      <!-- LOCAL FEATURES -->
+      <div class="row mb-5">
+        <div class="col-md-6">
+          <h4 class="mb-3">Marina Highlights</h4>
+          <ul class="feature-list">
+            <li>Pier in the centre of Lavrion</li>
+            <li>Cape Sounion — only 10 minutes by car</li>
+            <li>Temple of Poseidon — 10 minutes away</li>
+            <li>Shopping centre, restaurants and bars</li>
+            <li>Hotels, banks and car rental options</li>
+            <li>Nearby swimming facilities</li>
+            <li>Nearby sandy beaches</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <img class="img-placeholder" src="/images/about-us/lavrio_geniki.jpg" alt=""></i>
+        </div>
+      </div>
+
+      <!-- SERVICE -->
+      <div class="service-box">
+        <h5>Personal Service</h5>
+        <p>
+          The <strong>AYA team</strong> in Lavrion is here to help you prepare for your sailing course or charter holiday in every detail. Our technical crew ensures that all yachts are fully maintained and ready to depart, while our customer service team is happy to assist with travel advice, provisioning, and any special requests.
+        </p>
+      </div>
+
+      <div class="service-box">
+        <h5>On-Site Facilities</h5>
+        <p>
+          At our base you’ll find free parking, fresh-water supply, and full technical support equipment ready for your use. We aim to make your pre-departure time efficient and stress-free.
+        </p>
+      </div>
+
+      <div class="service-box">
+        <h5>24-Hour Standby</h5>
+        <p>
+          Our support line is available <strong>24 hours a day, 7 days a week</strong>. Whether you need weather updates or technical assistance anywhere in the Aegean, our team is always ready to help — quickly, reliably, and professionally.
+        </p>
+      </div>
+
+      <div class="service-box">
+        <h5>More Services</h5>
+        <p>
+          When you arrive in Lavrion, your yacht will be spotless and fully equipped — beds made, galley stocked, and a welcome basket with fresh fruit and a bottle of Ouzo waiting on board. Every boat also includes an iPad pre-loaded with Navionics Charts, useful sailing apps, and Wi-Fi Hotspot capabilities.
+        </p>
+      </div>
+
+      <div class="service-box">
+        <h5>Check-In & Provisioning</h5>
+        <p>
+          During check-in, our instructors will provide all the essential knowledge to help you sail safely and confidently. Even if you’re an experienced captain, you’ll appreciate our local tips and safety briefing — offered completely free of charge. Once complete, you’re ready to sail straight into the Aegean!
+        </p>
+      </div>
+
+      <div class="service-box">
+        <h5>Check-Out & End Cleaning</h5>
+        <p>
+          Upon your return to Lavrion — or at the final one-way destination — our staff will meet you for check-out and ensure every boat is thoroughly cleaned and disinfected. We maintain the highest hygiene standards and, for safety reasons, pets are not allowed aboard.
+        </p>
+      </div>
+
+      <!-- FOOTNOTE -->
+      <div class="text-center mt-5">
+        <blockquote class="blockquote">
+          <p class="mb-0">
+            “Furthermore, keep in mind that Lavrion is a very safe and friendly place with a lively nightlife — perfect for spending a night before or after your trip.”
+          </p>
+        </blockquote>
+      </div>
+
+    </div>
+        <%-include("./partials/call-to-action")-%>
+
+    <%- include('partials/footer') %>
+  </body>
+</html>

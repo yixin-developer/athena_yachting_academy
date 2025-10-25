@@ -967,7 +967,7 @@ body {
 
 .key-activities {
   text-align: center;
-  margin: 10px auto 0
+  margin: 10px auto 0px
 }
 
 .feature-box {
@@ -1248,10 +1248,10 @@ font-family: 'Playfair Display', serif;
 }
 
 .home-card-img-top {
-  width: 100%;
-  height: 300px;
+  width: auto;
+  height: 270px;
   border-radius: 0;
-  display: block;
+  display: cover;
 }
 
 .rya-logo {
@@ -1368,7 +1368,7 @@ font-family: 'Playfair Display', serif;
 .cta-banner {
   background-color: #E6F0FA;
   color: #222831;
-  padding-top: 10px;
+  padding-top: 50px;
   padding-bottom: 100px;
   margin: 0px auto ;
   text-align: center
@@ -1381,7 +1381,17 @@ font-family: 'Playfair Display', serif;
 }
 
 
-/* about-us */
+/* about */
+
+.about-card-img-top {
+  width: 100%;
+  height: 230px;
+  border-radius: 5px;
+  display: cover;
+}
+
+
+/* sailing-school */
 .about-us-main-wrapper {
   display: flex;
   position: relative;
@@ -1409,7 +1419,11 @@ font-family: 'Playfair Display', serif;
 
 .about-us-background {
   background-color: #E6F0FA;
-  background-image: url(https://www.transparenttextures.com/patterns/foggy-birds.png)
+  /* background-image: url(https://www.transparenttextures.com/patterns/foggy-birds.png) */
+}
+
+.school-and-team-title {
+  font-weight: 700;
 }
 
 .about-us,
@@ -3217,8 +3231,10 @@ boat-ownersboat-owners .tm-nautical-bottom-image {
   box-shadow: 0 2px 6px rgba(0,0,0,.18);
 }
 
-.card-img-top {
-  /* height: 180px; */
+.blog-card-img-top {
+  
+  width: 100%;
+  height: 300px;
   object-fit: cover;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;

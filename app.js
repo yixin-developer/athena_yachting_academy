@@ -654,10 +654,34 @@ async function saveEnquiryToSpreadsheet({ spreadsheetId, values, sheetTitle = 'E
 
 /////////////////////////////////////Static Pages//////////////////////////////
 
-// 1. render about-us page
-app.get('/about-us', function (req, res) {
-  res.render('about-us');
+// 0. render school page
+app.get('/about', function (req, res) {
+  res.render('about');
 });
+
+
+// 1. render about-us page
+app.get('/sailing-school', function (req, res) {
+  res.render('school-and-team');
+});
+
+app.get('/our-base', (req, res) => {
+  res.render('our-base');
+});
+
+app.get('/sailing-area', (req, res) => {
+  res.render('sailing-area');
+});
+
+app.get('/classroom', (req, res) => {
+  res.render('classroom');
+});
+
+// 0. render rya training center page
+app.get('/rya-training-center', (req, res) => {
+  res.render('rya-training-center');
+});
+
 
 // 2. render charter-and-cruise page
 app.get('/charter-and-cruises', function (req, res) {

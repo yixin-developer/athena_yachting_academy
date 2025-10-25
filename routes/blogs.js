@@ -40,10 +40,11 @@ router.get('/', async (req, res) => {
 
 router.get('/:slug', async (req, res) => {
   try {
-    const slug = req.params.slug;
+    const slug = encodeURIComponent(req.params.slug);
 
-    // ✅ Use lowercase slug + lowercase featuredimage
-    const url = `${POSTS_URL}?filters[slug][$eq]=${slug}`;
+    // ✅ Populate relations for single post
+    const qs = `populate=featuredimage&populate=categories`;
+    const url = `${POSTS_URL}?${qs}&filters[slug][$eq]=${slug}`;
     console.log('🔎 Fetching single post:', url);
 
     const response = await fetch(url);
@@ -61,9 +62,10 @@ router.get('/:slug', async (req, res) => {
     }
 
     console.log(`✅ Loaded post: ${post.title}`);
-
-    // Convert markdown to HTML
     const htmlContent = marked.parse(post.richcontent || '');
+
+    // (Optional) log to confirm categories are present
+    console.log('📚 Categories on post:', post.categories?.map(c => c.Name || c.name || c.Slug || c.slug));
 
     res.render('blog/single', { post, htmlContent });
   } catch (err) {

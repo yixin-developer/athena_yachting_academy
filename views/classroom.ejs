@@ -1,0 +1,104 @@
+<% const title = 'Our Classroom in Athens | Athena Yachting Academy'; %>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title><%= title %></title>
+    <meta name="description" content="Visit Athena Yachting Academy’s classroom in Athens — a modern RYA training facility offering theory, VHF, First Aid and navigation courses in Greece.">
+    <%- include('partials/header') %>
+    <style>
+      body { font-family: 'Montserrat', sans-serif; color: #003366; }
+      .classroom-hero {
+        background: url('/images/about-us/theory-courses-3b4dd81e3893ec39816e850895e15504.jpg') center/cover no-repeat;
+        height: 300px;
+        border-radius: .5rem;
+      }
+      .section-title {
+        color: #003366;
+        font-weight: 700;
+      }
+      .intro-text {
+        font-size: 1.1rem;
+        line-height: 1.7;
+      }
+      .course-list {
+        list-style: none;
+        padding-left: 0;
+      }
+      .course-list li {
+        background: #E6F0FA;
+        border-radius: .4rem;
+        padding: .75rem 1rem;
+        margin-bottom: .5rem;
+        font-weight: 500;
+      }
+      .feature-box {
+        background: #E6F0FA;
+        border-radius: .5rem;
+        padding: 1.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container my-5 py-5">
+
+      <!-- HEADER -->
+      <div class="row align-items-center mb-5">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h2 class="section-title mb-3">Our Classroom in Athens</h2>
+          <p class="intro-text">
+            Located in the heart of Athens, our fully equipped and air-conditioned classroom provides an ideal environment for focused, high-quality learning. 
+            Designed with comfort and practicality in mind, it’s where sailors come to expand their knowledge and confidence before heading out to sea.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <div class="classroom-hero shadow-sm"></div>
+        </div>
+      </div>
+
+      <!-- COURSES -->
+      <div class="row mb-5">
+        <div class="col-md-6">
+          <div class="feature-box h-100">
+            <h4 class="mb-3">RYA Theory Courses</h4>
+            <ul class="course-list">
+              <li>RYA Day Skipper Theory</li>
+              <li>RYA Coastal Skipper Yachtmaster Theory</li>
+            </ul>
+            <p>
+              These classroom-based courses provide the navigational and meteorological knowledge essential for safe and confident sailing. 
+              Taught by experienced RYA instructors, the courses blend theory with real-life sailing examples.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="feature-box h-100">
+            <h4 class="mb-3">RYA Specialist Courses</h4>
+            <ul class="course-list">
+              <li>RYA VHF / SRC (Short Range Radio)</li>
+              <li>RYA First Aid at Sea</li>
+              <li>RYA Sea Survival</li>
+              <li>RYA Powerboat Level 2</li>
+            </ul>
+            <p>
+              These short courses are designed to build vital practical knowledge for anyone navigating at sea. 
+              They are recognized worldwide and complement both practical and theory sailing qualifications.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOCATION & NOTE -->
+      <div class="text-center">
+        <p class="lead">
+          Our Athens classroom is conveniently located near public transport and amenities — just a short journey from the port of Lavrion and the Aegean coast.  
+          Whether you’re preparing for your RYA exam or advancing your maritime career, our classroom gives you the tools to succeed.
+        </p>
+        <a href="/courses/rya-theory" class="btn btn-primary mt-3" style="background:#003366; border:none;">View RYA Theory Courses</a>
+      </div>
+
+    </div>
+    <%-include("./partials/call-to-action")-%>
+    <%- include('partials/footer') %>
+  </body>
+</html>

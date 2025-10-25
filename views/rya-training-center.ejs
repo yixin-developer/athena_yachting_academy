@@ -1,0 +1,129 @@
+<% const title = 'RYA Tuition — Simply The Best! | Athena Yachting Academy'; %>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title><%= title %></title>
+    <meta name="description" content="Learn about RYA (Royal Yachting Association) training and why Athena Yachting Academy exceeds the highest international sailing education standards.">
+    <%- include('partials/header') %>
+    <style>
+      .rya-section {
+        background-color: #fff;
+        color: #003366;
+        font-family: 'Montserrat', sans-serif;
+
+      }
+
+      .rya-title {
+        font-weight: 700;
+        color: #003366;
+      }
+
+      .rya-subtitle {
+        font-weight: 600;
+        color: #003366;
+      }
+
+      .rya-logo {
+        max-width: 260px;
+      }
+
+      .rya-content p {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+      }
+
+      .rya-quote {
+        font-style: italic;
+        font-weight: 600;
+        color: #003366;
+        margin-bottom: 1rem;
+      }
+
+      .rya-quote strong {
+        display: block;
+        margin-top: 0.5rem;
+      }
+
+      .rya-list {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+      }
+
+      .rya-section hr {
+        margin: 2.5rem 0;
+        border-top: 1px solid #ccc;
+      }
+
+      .rya-top-image {
+        margin-top: 58px;
+        min-height: 15vh;
+        object-fit: cover;
+          width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="rya-section">
+      <div class="mb-5">
+      <img src="/images/about-us/Section3.png" width="100%" class="rya-top-image" alt="">
+      </div>
+      <div class="container">
+        <!-- 🧭 HERO SECTION -->
+        <div class="row align-items-end my-5">
+          <div class="col-md-6">
+            <h2 class="rya-title display-6 mb-5">RYA Sailing Courses in Greece</h2>
+            <p>The Royal Yachting Association (RYA) sets the global standard for excellence in sailing education. Their internationally recognized courses and training materials are trusted by sailors worldwide. Every RYA-approved sailing school is inspected annually to ensure it meets the highest training and safety standards.
+              If you’re looking for a certified RYA school in Greece that values quality, safety, and professionalism, you’ve come to the right place.</p>
+            <p>The RYA is the United Kingdom’s national authority for boating and one of the most respected organizations in the world of sailing. Their structured approach to teaching is recognized in more than 44 countries, with over 2,200 accredited training centres worldwide. Whether you’re interested in learning to sail, powerboating, or taking your RYA Day Skipper course in Greece, the RYA ensures consistency and quality at every level of training.</p>
+          </div>
+
+          <div class="col-md-6 text-center">
+            <!-- <img src="/images/rya-logo.png" alt="RYA Training Centre" class="rya-logo img-fluid"> -->
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/i5wkZzF_2hs?si=HlI09Ie3o4PfRVV8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <!-- 📘 MIDDLE TEXT SECTION -->
+        <div class="row rya-content mb-5">
+          <div class="col-12 rya-banner">
+            <p>The RYA’s standards are rigorous and strictly enforced. Every recognized sailing centre undergoes a detailed annual inspection covering yacht condition, instructor qualifications, equipment, and course materials.</p>
+            <p>All vessels used for RYA courses must be commercially licensed, fully insured, and equipped with approved safety and navigation systems. These requirements exceed most international boating regulations — including those in Greece — ensuring every RYA sailing course is conducted under the safest conditions possible.</p>
+            <p>Every RYA instructor must be highly trained, certified, and experienced both as a sailor and as an educator. Instructors renew qualifications regularly, complete First Aid at Sea training, and attend teaching updates to maintain active RYA recognition.</p>
+            <p>Failure to uphold these exacting standards means losing RYA certification — a testament to how seriously quality and safety are taken.</p>
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- 💬 QUOTES + BULLET POINTS -->
+        <div class="row g-4 align-items-start mb-5">
+          <!-- Left column -->
+          <div class="col-md-6">
+            <p class="rya-quote">“There’s no other sailing organization in the world that conducts such regular and rigorous inspections of all its schools.”</p>
+            <p>When you enroll in an RYA sailing course in Greece, you are guaranteed the same standard of excellence that sailors receive anywhere in the world. RYA qualifications are respected internationally, ensuring that your certificate is recognized whether you charter yachts in the Mediterranean, Caribbean, or beyond.</p>
+            <p class="rya-quote">“Any RYA school should provide adequate training — but at Athena Yachting Academy, we aim to not only meet but to exceed those standards.”</p>
+          </div>
+
+          <!-- Right column -->
+          <div class="col-md-6">
+            <ul class="rya-list">
+              <li>Beautifully designed, full-colour course materials that make learning engaging and effective.</li>
+              <li>A comprehensive selection of sailing books for adults and young sailors alike.</li>
+              <li>Professionally produced training charts, almanacs, and digital chart-plotting simulators.</li>
+              <li>Beginner and advanced courses — from Competent Crew to Yachtmaster Offshore.</li>
+	            <li>Flexible online theory and radio communication courses that fit your schedule.</li>
+              <li>No written exams for practical sailing courses — you’re evaluated based on real sailing skills.</li>
+              <li>Optional short courses such as First Aid at Sea or Diesel Engine Maintenance.</li>
+              <li>Annual inspections to ensure every RYA school, including Athena Yachting Academy, maintains the highest standards.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%-include("./partials/call-to-action")-%>
+
+
+    <%- include('partials/footer') %>
+  </body>
+</html>
