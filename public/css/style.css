@@ -34,7 +34,7 @@
 }
 
 /* === GLOBAL FONTS === */
-p  {
+p, span  {
   font-family: 'Montserrat', sans-serif;
   color: #003366; /* your AYA brand navy text color */
 }
@@ -59,6 +59,11 @@ button, .btn, .navbar {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   text-transform: uppercase;
+}
+
+ul li {
+  font-family: 'Montserrat', sans-serif;
+  color: #003366;
 }
 
 a,
@@ -220,7 +225,8 @@ body {
 .navbar-booknow-hamburger span {
   font-size: 12px;
   max-width: 86px;
-  line-height: 1.2
+  line-height: 1.2;
+  color: #ffffff;
 }
 
 .navbar-book-now-button--expand {
@@ -232,7 +238,7 @@ body {
 
 .navbar-book-now-button-text {
   font-family: 'Montserrat', sans-serif;
-  /* color: #003366; */
+  color: #003366;
 }
 
 .navbar-book-now-button,
@@ -388,12 +394,13 @@ body {
 
 .social-media {
   text-align: center;
-  margin-top: 40px
+  margin-top: 40px;
 }
 
 .social-media-icon {
-  font-size: 21px;
-  margin: 0 10px
+  font-size: 20px;
+  margin: 0 10px;
+  color:#003366
 }
 
 .image-wrapper {
@@ -555,7 +562,8 @@ body {
   padding: 10px 10px;
   font-weight: 700;
   letter-spacing: 1.2px;
-  font-size: 17px
+  font-size: 17px;
+  color: white;
 }
 
 .leave-message-icon {
@@ -2564,11 +2572,10 @@ boat-ownersboat-owners .tm-nautical-bottom-image {
 
 /* individual course page */
 .container-video {
-  height: 0;
   width: 100%;
   padding-bottom: 56.25%;
-  top: -4px;
-  margin-top: 60px
+  margin-top: 60px;
+  top: -4px
 }
 
 .video-top {
@@ -2581,7 +2588,7 @@ boat-ownersboat-owners .tm-nautical-bottom-image {
 
 .course-background,
 .video-course-background {
-  background-color: #eee;
+  background-color: #E6F0FA;
 
 }
 
@@ -2639,7 +2646,8 @@ boat-ownersboat-owners .tm-nautical-bottom-image {
 }
 
 .course-calendar {
-  margin-bottom: 10px
+  margin-bottom: 10px;
+  
 }
 
 .calendar-buttons,
@@ -2647,9 +2655,29 @@ boat-ownersboat-owners .tm-nautical-bottom-image {
   margin-bottom: 20px
 }
 
+/* Apply Montserrat and base color */
+.month-tabs .list-group-item {
+  font-family: 'Montserrat', sans-serif;
+  color: #003366;
+  border-color: rgba(0, 51, 102, 0.15);
+}
+
+/* Active (selected) tab */
+.month-tabs .list-group-item.active,
+.month-tabs .list-group-item.active:focus,
+.month-tabs .list-group-item.active:hover {
+  background-color: #E6F0FA;
+  border-color: #E6F0FA;
+  color: #003366;
+}
+
 .calendar-map {
   vertical-align: top;
   margin: auto
+}
+
+.bg-light-blue {
+  background-color: #E6F0FA;
 }
 
 .next-step-button {
@@ -2659,7 +2687,7 @@ boat-ownersboat-owners .tm-nautical-bottom-image {
 
 .course-bottom-buttons {
   display: block;
-  margin: 20px auto 0;
+  margin: 30px auto;
   text-align: center
 }
 
@@ -2891,7 +2919,7 @@ boat-ownersboat-owners .tm-nautical-bottom-image {
   top: 0;
   transform: scale(.5);
   right: 12px;
-  content: "next"
+  content: "";
 }
 
 .mySwiper .swiper-button-next:hover::after,
