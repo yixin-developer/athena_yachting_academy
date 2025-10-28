@@ -19,7 +19,6 @@
     font-family: 'Montserrat', sans-serif;
     color:#003366;
   }
-
 </style>
 
 <section>
@@ -28,7 +27,6 @@
   <div class="container-video">
     <iframe class="video-top" src="https://www.youtube.com/embed/VfHP3fmYEYI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
-  
 
   <div class="container-fluid course-background">
     <div class="course-sheet">
@@ -44,7 +42,8 @@
         <br>        
         <%- include("../partials/summary-course"); -%>
         <p class="lead mt-5"><em>"A short introduction to sailing for complete beginners - the perfect way to discover the joy of yachting."</em></p>
-        <br><br>
+        <br>
+        <br>
       </div>
 
       <div class="d-flex justify-content-center mb-5">
@@ -94,9 +93,8 @@
 
             <!-- Course detail accordion -->
             <div class="accordion" id="accordionExample">
-
               <div class="card">
-                <div class="card-header bg-light-blue bg-light-blue" id="headingOne">
+                <div class="card-header bg-light-blue" id="headingOne">
                   <h2 class="mb-0">
                     <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                       <h4>🧭 Course Overview</h4>
@@ -399,6 +397,8 @@
                 </div>
                 <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
                   <div class="card-body">
+                    <p>If you’re unsure about how much sailing you want to join in, it’s possible to book to take the Start Yachting course on one of our normal 5-day sailing trips, rather than Competent Crew. This may be suitable if it’s your partner who is really keen to take up yachting but you’d prefer to spend most of your time sunbathing, or if you have children who want to learn a little but not too much. <a href="/contact"><u>Contact us</u></a> for options and availability.</p>
+                    <hr>
                     <p>For more details about RYA Start Yachting course, logistics, accommodation, weather, booking, and certificate, please refer to the <a target="_blank" rel="noopener noreferrer"  href="/faqs"><em>FAQ's section.</em></a></p>
                   </div>
                 </div>
@@ -423,8 +423,10 @@
             </div>
 
             <%- include("../partials/reviews"); -%>
+
+            <!-- ending video -->
             <div class="container my-5 text-center">
-            <iframe width="100%" height="415" src="https://www.youtube.com/embed/lRyEbgVDjWQ?si=PJGkOtf-GgdhVqKh" title="Mile builder drone video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+             <iframe width="100%" height="415" src="https://www.youtube.com/embed/lRyEbgVDjWQ?si=PJGkOtf-GgdhVqKh" title="Mile builder drone video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
 
             <!-- Feature on -->
@@ -434,34 +436,32 @@
                 <%-include("../partials/referal")-%>
               </div>
             </section>
+
+            <!-- CTA -->
+            <section>
+              <div class="container text-center">
+                <h3 class="h1-seo-replace mb-5">Excited for your first sailing adventure?</h3>
+              </div>
+            </section>
+
             <!-- Bottom buttons -->
             <div class="course-bottom-buttons">
                 <a class="btn btn-deep-blue course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/booking/courses/<%=courseName%>" role="button">Book now &raquo;</a>
                 <a class="btn btn-light-blue course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/contact#enquiry-form" role="button">Enquiry now &raquo;</a>
-                <% if(courseProfileFound.onlineLink != "") {%>
-                <a target="_blank" rel="noopener noreferrer"  href="<%=courseProfileFound.onlineLink%>" class="btn btn-info course-four-bottom" role="button">Online course &raquo;</a>
-                <%}%>
-                <!-- <a class="btn btn-info course-four-bottom" target="_blank" rel="noopener noreferrer"  href="/booking/courses/<%=courseName%>" role="button">Joining instructions &raquo;</a> -->
-                <% if(courseProfileFound.ryaLink != "") {%>
-                <a target="_blank" rel="noopener noreferrer"  href="<%=courseProfileFound.ryaLink%>" class="btn btn-light course-four-bottom" role="button"><img src="/images/RYA_logo.png" width="50"></a>
-                <%}%>
             </div>
-
     </div>
 
     <div class="videos-wrapper">
       <h3>Recommended videos to understand the course better:</h3>
       <div class="videos-container">
-        <iframe width="300" height="170" src="https://www.youtube.com/embed/pExM7u3fKoI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/foKpbdHHLZM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <iframe width="300" height="170" src="https://www.youtube.com/embed/wpy0uhNovTE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
         <iframe width="300" height="170" src="https://www.youtube.com/embed/SWIX6SUh-nc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <iframe width="300" height="170" src="https://www.youtube.com/embed/3X8drKsdf5E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      
     </div>
 
-
+    <%-include("../partials/call-to-action")-%>
   </div>
 
 </section>

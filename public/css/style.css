@@ -2272,17 +2272,24 @@ boat-ownersboat-owners .tm-nautical-bottom-image {
 }
 
 .course-date-card-title {
-  font-size: 2.1rem
+  font-size: 2.5rem;
+  color: #ffffff
+}
+
+.course-date-card-title span {
+  font-size: 2.5rem;
+  color: #ffffff
 }
 
 .course-data-card-calendar-icon {
-  font-size: 19px;
-  margin: 5px
+  font-size: 20px;
+  margin: 5px;
 }
 
-.course-date-data p {
+.course-date-data p,i {
   margin: 4px 12px;
-  font-size: 1.3rem
+  font-size: 1.3rem;
+  color: #ffffff
 }
 
 @media screen and (min-width:862px) {
@@ -2699,7 +2706,8 @@ boat-ownersboat-owners .tm-nautical-bottom-image {
 @media (max-width:530px) {
   .course-four-bottom {
     display: block !important;
-    margin: 2% 15%
+    margin: 2% 15%;
+    padding-top: 10px ;
   }
 }
 
